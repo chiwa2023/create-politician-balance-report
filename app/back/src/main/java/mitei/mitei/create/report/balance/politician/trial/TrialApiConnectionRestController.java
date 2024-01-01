@@ -14,17 +14,18 @@ import mitei.mitei.create.report.balance.politician.dto.SelectOptionDto;
 @RestController
 public class TrialApiConnectionRestController {
 
-	@Autowired
-	private MakeTrialTestDataLogic makeTrialTestDataLogic;
-	
-	/**
-	 * ダミーのオプション項目リストを返却
-	 *
-	 * @return オプション項目リスト
-	 */
-	@GetMapping("/trial-api-rest")
-	public List<SelectOptionDto> trialApiConnection() {
+    /** リストデータ生成     */
+    @Autowired
+    private MakeTrialTestDataLogic makeTrialTestDataLogic;
 
-		return makeTrialTestDataLogic.practice();
-	}
+    /**
+     * ダミーのオプション項目リストを返却
+     *
+     * @return オプション項目リスト
+     */
+    @GetMapping("/trial-api-rest")
+    public List<SelectOptionDto> trialApiConnection() {
+
+        return makeTrialTestDataLogic.practice();
+    }
 }

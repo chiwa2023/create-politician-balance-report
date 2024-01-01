@@ -1,13 +1,22 @@
 package mitei.mitei.create.report.balance.politician;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+/**
+ * BackApplication単体テスト
+ */
 @SpringBootTest
 class BackApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    /**
+     * contextLoads test
+     */
+    @Test
+    void contextLoads() {
+        fail("not implements");
+    }
 
 }
