@@ -1,0 +1,14 @@
+<SYUUSHI07_16>
+  <SHEET>
+    <KINGAKU_GK>30000</KINGAKU_GK>
+    <ROW>
+      <ICHIREN_NO>1</ICHIREN_NO>
+      <SHISYUTU_KMK>支出の目的</SHISYUTU_KMK>
+      <KINGAKU>30000</KINGAKU>
+      <DT>R4/12/1</DT>
+      <HONSIBU_NM>本部支部名称</HONSIBU_NM>
+      <JIMU_ADR>東京都千代田区</JIMU_ADR>
+      <BIKOU>備考</BIKOU>
+    </ROW>
+  </SHEET>
+</SYUUSHI07_16>

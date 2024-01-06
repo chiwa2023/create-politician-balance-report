@@ -1,0 +1,6 @@
+<Row070400BorrowedMoneyDto>
+  <ICHIREN_NO>1</ICHIREN_NO>
+  <KARIIRESAKI>借入先</KARIIRESAKI>
+  <KINGAKU>30000</KINGAKU>
+  <BIKOU>備考</BIKOU>
+</Row070400BorrowedMoneyDto>

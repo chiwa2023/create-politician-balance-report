@@ -1,0 +1,7 @@
+<Row070900AnonymousInPoliticalPartyDto>
+  <ICHIREN_NO>1</ICHIREN_NO>
+  <BASYO>開催場所</BASYO>
+  <KINGAKU>30000</KINGAKU>
+  <DT>R4/3/1</DT>
+  <BIKOU>備考</BIKOU>
+</Row070900AnonymousInPoliticalPartyDto>

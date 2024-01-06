@@ -1,0 +1,3 @@
+<Sheet071900RealEstateDto>
+  <KUBUN>0</KUBUN>
+</Sheet071900RealEstateDto>

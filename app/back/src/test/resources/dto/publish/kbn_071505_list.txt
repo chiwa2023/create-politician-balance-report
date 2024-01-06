@@ -1,0 +1,18 @@
+<AllSheetKbn071505Dto>
+  <SHEET>
+    <KINGAKU_GK>30000</KINGAKU_GK>
+    <SONOTA_GK></SONOTA_GK>
+    <HIMOKU>費目</HIMOKU>
+    <ROW>
+      <ICHIREN_NO>1</ICHIREN_NO>
+      <MOKUTEKI>目的</MOKUTEKI>
+      <KINGAKU>30000</KINGAKU>
+      <DT>R4/12/1</DT>
+      <NM>支出の相手先名称</NM>
+      <ADR>東京都千代田区</ADR>
+      <BIKOU>備考</BIKOU>
+      <RYOUSYU>0</RYOUSYU>
+      <KOUFUKIN>1</KOUFUKIN>
+    </ROW>
+  </SHEET>
+</AllSheetKbn071505Dto>

@@ -1,0 +1,6 @@
+<Row070600OtherIncomeDto>
+  <ICHIREN_NO>1</ICHIREN_NO>
+  <TEKIYOU>摘要</TEKIYOU>
+  <KINGAKU>30000</KINGAKU>
+  <BIKOU>備考</BIKOU>
+</Row070600OtherIncomeDto>

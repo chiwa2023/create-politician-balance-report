@@ -1,0 +1,11 @@
+<AllSheetKbn071801Dto>
+  <SHEET>
+    <ROW>
+      <ICHIREN_NO>1</ICHIREN_NO>
+      <TEKIYOU>摘要</TEKIYOU>
+      <KINGAKU>30000</KINGAKU>
+      <DT>R4/12/1</DT>
+      <BIKOU>備考</BIKOU>
+    </ROW>
+  </SHEET>
+</AllSheetKbn071801Dto>

@@ -1,0 +1,11 @@
+<SHEET>
+  <KINGAKU_GK>30000</KINGAKU_GK>
+  <ROW>
+    <ICHIREN_NO>1</ICHIREN_NO>
+    <HONSIBU_NM>本部支部名称</HONSIBU_NM>
+    <KINGAKU>30000</KINGAKU>
+    <DT>R4/2/2</DT>
+    <JIMU_ADR>事務所住所</JIMU_ADR>
+    <BIKOU>備考</BIKOU>
+  </ROW>
+</SHEET>

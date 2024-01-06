@@ -1,0 +1,3 @@
+<Template0719SheetDto>
+  <KUBUN>0</KUBUN>
+</Template0719SheetDto>

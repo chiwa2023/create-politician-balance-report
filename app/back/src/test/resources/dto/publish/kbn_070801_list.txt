@@ -1,0 +1,18 @@
+<AllSheetKbn070801Dto>
+  <SHEET>
+    <KINGAKU_GK>30000</KINGAKU_GK>
+    <SONOTA_GK>2000</SONOTA_GK>
+    <ROW>
+      <ICHIREN_NO>1</ICHIREN_NO>
+      <NM>名称</NM>
+      <KINGAKU>30000</KINGAKU>
+      <DT>R4/2/2</DT>
+      <KIKAN>1/1-1/31</KIKAN>
+      <ADR>住所</ADR>
+      <SYOKUGYO>職業</SYOKUGYO>
+      <BIKOU>備考</BIKOU>
+      <SEQ_NO>1</SEQ_NO>
+      <ROWKBN>7</ROWKBN>
+    </ROW>
+  </SHEET>
+</AllSheetKbn070801Dto>
