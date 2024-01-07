@@ -1,0 +1,5 @@
+<RowSozei411714SupportingLocalLegislatorsDto>
+  <NM>選挙立候補者</NM>
+  <SENKYO>市議会議員選挙</SENKYO>
+  <DT>R4/12/1</DT>
+</RowSozei411714SupportingLocalLegislatorsDto>

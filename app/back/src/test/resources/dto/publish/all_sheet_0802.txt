@@ -1,0 +1,7 @@
+<SYUUSHI08_02>
+  <SHEET>
+    <KOMOKU>支出項目</KOMOKU>
+    <TEKIYOU>摘要</TEKIYOU>
+    <DANTAI_NM>団体名称</DANTAI_NM>
+  </SHEET>
+</SYUUSHI08_02>

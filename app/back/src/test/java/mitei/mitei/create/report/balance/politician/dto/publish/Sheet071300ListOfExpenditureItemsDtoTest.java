@@ -122,7 +122,6 @@ class Sheet071300ListOfExpenditureItemsDtoTest {
         sheet0.setBikouSonotaKeihi("備考");
         /// ** 活動費小計の合計 */
         sheet0.setGoukeiKatsudouhi(3000L);
-        // <KATUDOU_SKEI_KOUFU>0</KATUDOU_SKEI_KOUFU>
         /// ** 活動費小計の供与した交付金に係る支出 */
         sheet0.setKohfuKatsudouhi("400");
         /// ** 活動費小計の備考 */

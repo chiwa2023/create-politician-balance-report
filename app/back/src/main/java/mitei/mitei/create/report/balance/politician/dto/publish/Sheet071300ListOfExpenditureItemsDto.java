@@ -14,247 +14,198 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
     /** serialId */
     private static final long serialVersionUID = 1L;
 
-    // <JINKENHI_GK></JINKENHI_GK>
     /** 人件費項目の合計 */
     @JacksonXmlProperty(localName = "JINKENHI_GK")
     private Long goukeiJinkenhi = 0L;
 
-    // <JINKENHI_KOUFU></JINKENHI_KOUFU>
     /** 人件費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "JINKENHI_KOUFU")
     private String kohfuJinkenhi;
 
-    // <JINKENHI_BIKOU></JINKENHI_BIKOU>
     /** 人件費の備考 */
     @JacksonXmlProperty(localName = "JINKENHI_BIKOU")
     private String bikouJinkenhi;
 
-    // <KOUNETU_GK>1</KOUNETU_GK>
     /** 光熱費項目の合計 */
     @JacksonXmlProperty(localName = "KOUNETU_GK")
     private Long goukeiKohnetsuhi = 0L;
 
-    // <KOUNETU_KOUFU></KOUNETU_KOUFU>
     /** 光熱費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "KOUNETU_KOUFU")
     private String kohfuKohnetsuhi;
 
-    // <KOUNETU_BIKOU></KOUNETU_BIKOU>
     /** 光熱費の備考 */
     @JacksonXmlProperty(localName = "KOUNETU_BIKOU")
     private String bikouKohnetsuhi;
 
-    // <BIHIN_GK>1</BIHIN_GK>
     /** 備品項目の合計 */
     @JacksonXmlProperty(localName = "BIHIN_GK")
     private Long goukeiBihinhi = 0L;
 
-    // <BIHIN_KOUFU></BIHIN_KOUFU>
     /** 備品の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "BIHIN_KOUFU")
     private String kohfuBihinhi;
 
-    // <BIHIN_BIKOU></BIHIN_BIKOU>
     /** 備品の備考 */
     @JacksonXmlProperty(localName = "BIHIN_BIKOU")
     private String bikouBihinhi;
 
-    // <JIMUSYO_GK>1</JIMUSYO_GK>
     /** 事務所項目の合計 */
     @JacksonXmlProperty(localName = "JIMUSYO_GK")
     private Long goukeiJimushohi = 0L;
 
-    // <JIMUSYO_KOUFU></JIMUSYO_KOUFU>
     /** 事務所の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "JIMUSYO_KOUFU")
     private String kohfuJimushohi;
 
-    // <JIMUSYO_BIKOU></JIMUSYO_BIKOU>
     /** 事務所の備考 */
     @JacksonXmlProperty(localName = "JIMUSYO_BIKOU")
     private String bikouJimushohi;
 
-    // <KEIHI_SKEI_GK>3</KEIHI_SKEI_GK>
     /** 経費項目の合計 */
     @JacksonXmlProperty(localName = "KEIHI_SKEI_GK")
     private Long goukeiKeihiShoukei = 0L;
 
-    // <KEIHI_SKEI_KOUFU>0</KEIHI_SKEI_KOUFU>
     /** 経費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "KEIHI_SKEI_KOUFU")
     private String kohfuKeihiShoukei;
 
-    // <KEIHI_SKEI_BIKOU></KEIHI_SKEI_BIKOU>
     /** 経費の備考 */
     @JacksonXmlProperty(localName = "KEIHI_SKEI_BIKOU")
     private String bikouKeihiShoukei;
 
-    // <SOSIKI_GK>1</SOSIKI_GK>
     /** 組織活動費項目の合計 */
     @JacksonXmlProperty(localName = "SOSIKI_GK")
     private Long goukeiSoshikiKatsudouhi = 0L;
 
-    // <SOSIKI_KOUFU></SOSIKI_KOUFU>
     /** 組織活動費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "SOSIKI_KOUFU")
     private String kohfuSoshikiKatsudouhi;
 
-    // <SOSIKI_BIKOU></SOSIKI_BIKOU>
     /** 組織活動費の備考 */
     @JacksonXmlProperty(localName = "SOSIKI_BIKOU")
     private String bikouSoshikiKatsudouhi;
 
-    // <SENKYO_GK>1</SENKYO_GK>
     /** 選挙活動費項目の合計 */
     @JacksonXmlProperty(localName = "SENKYO_GK")
     private Long goukeiSenkyoKatsudou = 0L;
 
-    // <SENKYO_KOUFU></SENKYO_KOUFU>
     /** 選挙活動費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "SENKYO_KOUFU")
     private String kohfuSenkyoKatsudou;
 
-    // <SENKYO_BIKOU></SENKYO_BIKOU>
     /** 選挙活動費の備考 */
     @JacksonXmlProperty(localName = "SENKYO_BIKOU")
     private String bikouSenkyoKatsudou;
 
-    // <SONOTA_JIGYO_GK>4</SONOTA_JIGYO_GK>
     /** その他項目の合計 */
     @JacksonXmlProperty(localName = "SONOTA_JIGYO_GK")
     private Long goukeiSonota = 0L;
 
-    // <SONOTA_JIGYO_KOUFU>0</SONOTA_JIGYO_KOUFU>
     /** その他の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "SONOTA_JIGYO_KOUFU")
     private String kohfuSonota;
 
-    // <SONOTA_JIGYO_BIKOU></SONOTA_JIGYO_BIKOU>
     /** その他の備考 */
     @JacksonXmlProperty(localName = "SONOTA_JIGYO_BIKOU")
     private String bikouSonota;
 
-    // <HAKKOU_JIGYO_GK>1</HAKKOU_JIGYO_GK>
     /** 機関誌発行項目の合計 */
     @JacksonXmlProperty(localName = "HAKKOU_JIGYO_GK")
     private Long goukeiHakkou = 0L;
 
-    // <HAKKOU_JIGYO_KOUFU></HAKKOU_JIGYO_KOUFU>
     /** 機関誌発行の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "HAKKOU_JIGYO_KOUFU")
     private String kohfuHakkou;
 
-    // <HAKKOU_JIGYO_BIKOU></HAKKOU_JIGYO_BIKOU>
     /** 機関誌発行の備考 */
     @JacksonXmlProperty(localName = "HAKKOU_JIGYO_BIKOU")
     private String bikouHakkou;
 
-    // <SENDEN_GK>1</SENDEN_GK>
     /** 宣伝費項目の合計 */
     @JacksonXmlProperty(localName = "SENDEN_GK")
     private Long goukeiSenden = 0L;
 
-    // <SENDEN_KOUFU></SENDEN_KOUFU>
     /** 宣伝費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "SENDEN_KOUFU")
     private String kohfuSenden;
 
-    // <SENDEN_BIKOU></SENDEN_BIKOU>
     /** 宣伝費見書の備考 */
     @JacksonXmlProperty(localName = "SENDEN_BIKOU")
     private String bikouSenden;
 
-    // <KAISAI_GK>1</KAISAI_GK>
     /** 政治資金パーティ開催項目の合計 */
     @JacksonXmlProperty(localName = "KAISAI_GK")
     private Long goukeiKaisaiPty = 0L;
 
-    // <KAISAI_KOUFU></KAISAI_KOUFU>
     /** 政治資金パーティ開催の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "KAISAI_KOUFU")
     private String kohfuKaisaiPty;
 
-    // <KAISAI_BIKOU></KAISAI_BIKOU>
     /** 政治資金パーティ開催の備考 */
     @JacksonXmlProperty(localName = "KAISAI_BIKOU")
     private String bikouKaisaiPty;
 
-    // <SONOTA_GK>1</SONOTA_GK>
     /** その他事業費項目の合計 */
     @JacksonXmlProperty(localName = "SONOTA_GK")
     private Long goukeiSonotaJigyou = 0L;
 
-    // <SONOTA_KOUFU></SONOTA_KOUFU>
     /** その他事業費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "SONOTA_KOUFU")
     private String kohfuSonotaJigyou;
 
-    // <SONOTA_BIKOU></SONOTA_BIKOU>
     /** その他事業費の備考 */
     @JacksonXmlProperty(localName = "SONOTA_BIKOU")
     private String bikouSonotaJigyou;
 
-    // <CYOUSA_GK>1</CYOUSA_GK>
     /** 調査研究費項目の合計 */
     @JacksonXmlProperty(localName = "CYOUSA_GK")
     private Long goukeiChousaKenkyu = 0L;
 
-    // <CYOUSA_KOUFU></CYOUSA_KOUFU>
     /** 調査研究費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "CYOUSA_KOUFU")
     private String kohfuChousaKenkyu;
 
-    // <CYOUSA_BIKOU></CYOUSA_BIKOU>
     /** 調査研究費の備考 */
     @JacksonXmlProperty(localName = "CYOUSA_BIKOU")
     private String bikouChousaKenkyu;
 
-    // <KIFU_GK>1</KIFU_GK>
     /** 寄付金項目の合計 */
     @JacksonXmlProperty(localName = "KIFU_GK")
     private Long goukeiKifukin = 0L;
 
-    // <KIFU_KOUFU></KIFU_KOUFU>
     /** 寄付金の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "KIFU_KOUFU")
     private String kohfuKifukin;
 
-    // <KIFU_BIKOU></KIFU_BIKOU>
     /** 寄付金の備考 */
     @JacksonXmlProperty(localName = "KIFU_BIKOU")
     private String bikouKifukin;
 
-    // <SONOTA_KEIHI_GK>1</SONOTA_KEIHI_GK>
     /** その他の経費項目の合計 */
     @JacksonXmlProperty(localName = "SONOTA_KEIHI_GK")
     private Long goukeiSonotaKeihi = 0L;
 
-    // <SONOTA_KEIHI_KOUFU></SONOTA_KEIHI_KOUFU>
     /** その他の経費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "SONOTA_KEIHI_KOUFU")
     private String kohfuSonotaKeihi;
 
-    // <SONOTA_KEIHI_BIKOU></SONOTA_KEIHI_BIKOU>
     /** その他の経費の備考 */
     @JacksonXmlProperty(localName = "SONOTA_KEIHI_BIKOU")
     private String bikouSonotaKeihi;
 
-    // <KATUDOU_SKEI_GK>9</KATUDOU_SKEI_GK>
     /** 活動費小計の合計 */
     @JacksonXmlProperty(localName = "KATUDOU_SKEI_GK")
     private Long goukeiKatsudouhi = 0L;
 
-    // <KATUDOU_SKEI_KOUFU>0</KATUDOU_SKEI_KOUFU>
     /** 活動費小計の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "KATUDOU_SKEI_KOUFU")
     private String kohfuKatsudouhi;
 
-    // <KATUDOU_SKEI_BIKOU></KATUDOU_SKEI_BIKOU>
     /** 活動費小計の備考 */
     @JacksonXmlProperty(localName = "KATUDOU_SKEI_BIKOU")
     private String bikouKatsudouhi;
 
-    // <GKEI_GK>12</GKEI_GK>
     /** 現計合計 */
     @JacksonXmlProperty(localName = "GKEI_GK")
     private Long goukeiZenGohkei = 0L;

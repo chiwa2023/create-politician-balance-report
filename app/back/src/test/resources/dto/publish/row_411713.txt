@@ -1,0 +1,3 @@
+<RowSozei411713SupportingMembersParliamentDto>
+  <GIIN_NM>国会議員姓名</GIIN_NM>
+</RowSozei411713SupportingMembersParliamentDto>

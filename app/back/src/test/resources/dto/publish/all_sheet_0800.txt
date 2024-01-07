@@ -1,0 +1,12 @@
+<SYUUSHI08>
+  <SHEET>
+    <ROW>
+      <ICHIREN_NO>1</ICHIREN_NO>
+      <KOMOKU>支出項目</KOMOKU>
+      <TEKIYOU>摘要</TEKIYOU>
+      <KINGAKU>30000</KINGAKU>
+      <DT>R4/12/1</DT>
+      <JIJYOU>徴し難たかった事情</JIJYOU>
+    </ROW>
+  </SHEET>
+</SYUUSHI08>
