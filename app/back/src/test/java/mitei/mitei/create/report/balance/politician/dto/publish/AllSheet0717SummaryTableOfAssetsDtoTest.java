@@ -22,9 +22,9 @@ class AllSheet0717SummaryTableOfAssetsDtoTest {
 
     @Test
     void testConvretXml() throws Exception { // NOPMD
-        
+
         AllSheet0717SummaryTableOfAssetsDto allSheet0717SummaryTableOfAssetsDto = new AllSheet0717SummaryTableOfAssetsDto();
-        
+
         // 一種類のみ
         Sheet071700SummaryTableOfAssetsDto sheet0 = new Sheet071700SummaryTableOfAssetsDto();
         /// ** 土地報告フラグ */
@@ -77,14 +77,13 @@ class AllSheet0717SummaryTableOfAssetsDtoTest {
         sheet0.setBikouKariire("備考");
 
         allSheet0717SummaryTableOfAssetsDto.setSheet071700SummaryTableOfAssetsDto(sheet0);
-        
-        
+
         XmlMapper xmlMapper = new XmlMapper();
         xmlMapper.setSerializationInclusion(Include.ALWAYS);
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
-        
+
         String xml0 = xmlMapper.writeValueAsString(allSheet0717SummaryTableOfAssetsDto);
-        
+
         Path pathAnswer0 = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(),
                 "dto/publish/all_sheet_0717.txt");
         String answer0 = Files.readString(pathAnswer0);

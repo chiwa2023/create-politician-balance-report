@@ -74,7 +74,7 @@ class AllSheet0701CoverAndOrganizationDetailsDtoTest {
         /// ** 公職の名称 */
         sheet0.setKoushokuName("国会議員");
         /// ** 現職候補者の別 */
-        sheet0.setKoushokuGenKouho(1);
+        sheet0.setKoushokuGenKouho("1");
         /// ** 資金管理団体の設立者の姓 */
         sheet0.setShikinDaihyouName1("資金管理団体設立者の姓");
         /// ** 資金管理団体の設立者の名 */
@@ -94,7 +94,7 @@ class AllSheet0701CoverAndOrganizationDetailsDtoTest {
         /// ** 国家議員1の公職(衆参)*/
         sheet0.setKokkaiGiin1ShuuSan("衆議院");
         /// ** 国家議員1現職と候補者の別 */
-        sheet0.setKokkaiGiin1GenKouho(1);
+        sheet0.setKokkaiGiin1GenKouho("1");
         /// ** 国会議員関係団体の特例適用期間(開始) */
         sheet0.setGiinDantantaiTokureiPeriodStart("R4/1/1");
         /// ** 国会議員関係団体の特例適用期間(終了) */
@@ -108,7 +108,7 @@ class AllSheet0701CoverAndOrganizationDetailsDtoTest {
         /// ** 国家議員2の公職(衆参)*/
         sheet0.setKokkaiGiin2ShuuSan("衆議院");
         /// ** 国家議員2現職と候補者の別 */
-        sheet0.setKokkaiGiin2GenKouho(1);
+        sheet0.setKokkaiGiin2GenKouho("1");
         /// ** 国家議員3の姓 */
         sheet0.setKokkaiGiin3NameLast("国会議員2の姓");
         /// ** 国家議員3の姓 */
@@ -116,7 +116,7 @@ class AllSheet0701CoverAndOrganizationDetailsDtoTest {
         /// ** 国家議員3の公職(衆参)*/
         sheet0.setKokkaiGiin3ShuuSan("衆議院");
         /// ** 国家議員3現職と候補者の別 */
-        sheet0.setKokkaiGiin3GenKouho(1);
+        sheet0.setKokkaiGiin3GenKouho("1");
 
         allSheet0701CoverAndOrganizationDetailsDto.setSheet070100CoverAndOrganizationDetailsDto(sheet0);
 

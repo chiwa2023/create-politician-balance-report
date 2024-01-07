@@ -16,7 +16,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
 
     /** 人件費項目の合計 */
     @JacksonXmlProperty(localName = "JINKENHI_GK")
-    private Long goukeiJinkenhi = 0L;
+    private String goukeiJinkenhi;
 
     /** 人件費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "JINKENHI_KOUFU")
@@ -28,7 +28,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
 
     /** 光熱費項目の合計 */
     @JacksonXmlProperty(localName = "KOUNETU_GK")
-    private Long goukeiKohnetsuhi = 0L;
+    private String goukeiKohnetsuhi;
 
     /** 光熱費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "KOUNETU_KOUFU")
@@ -40,7 +40,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
 
     /** 備品項目の合計 */
     @JacksonXmlProperty(localName = "BIHIN_GK")
-    private Long goukeiBihinhi = 0L;
+    private String goukeiBihinhi;
 
     /** 備品の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "BIHIN_KOUFU")
@@ -52,7 +52,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
 
     /** 事務所項目の合計 */
     @JacksonXmlProperty(localName = "JIMUSYO_GK")
-    private Long goukeiJimushohi = 0L;
+    private String goukeiJimushohi;
 
     /** 事務所の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "JIMUSYO_KOUFU")
@@ -68,7 +68,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
 
     /** 経費の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "KEIHI_SKEI_KOUFU")
-    private String kohfuKeihiShoukei;
+    private Long kohfuKeihiShoukei = 0L;
 
     /** 経費の備考 */
     @JacksonXmlProperty(localName = "KEIHI_SKEI_BIKOU")
@@ -104,7 +104,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
 
     /** その他の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "SONOTA_JIGYO_KOUFU")
-    private String kohfuSonota;
+    private Long kohfuSonota = 0L;
 
     /** その他の備考 */
     @JacksonXmlProperty(localName = "SONOTA_JIGYO_BIKOU")
@@ -200,7 +200,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
 
     /** 活動費小計の供与した交付金に係る支出 */
     @JacksonXmlProperty(localName = "KATUDOU_SKEI_KOUFU")
-    private String kohfuKatsudouhi;
+    private Long kohfuKatsudouhi = 0L;
 
     /** 活動費小計の備考 */
     @JacksonXmlProperty(localName = "KATUDOU_SKEI_BIKOU")
@@ -215,7 +215,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @return 人件費合計
      */
-    public Long getGoukeiJinkenhi() {
+    public String getGoukeiJinkenhi() {
         return goukeiJinkenhi;
     }
 
@@ -224,7 +224,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @param goukeiJinkenhi 人件費合計
      */
-    public void setGoukeiJinkenhi(final Long goukeiJinkenhi) {
+    public void setGoukeiJinkenhi(final String goukeiJinkenhi) {
         this.goukeiJinkenhi = goukeiJinkenhi;
     }
 
@@ -269,7 +269,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @return 光熱費合計
      */
-    public Long getGoukeiKohnetsuhi() {
+    public String getGoukeiKohnetsuhi() {
         return goukeiKohnetsuhi;
     }
 
@@ -278,7 +278,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @param goukeiKohnetsuhi 光熱費合計
      */
-    public void setGoukeiKohnetsuhi(final Long goukeiKohnetsuhi) {
+    public void setGoukeiKohnetsuhi(final String goukeiKohnetsuhi) {
         this.goukeiKohnetsuhi = goukeiKohnetsuhi;
     }
 
@@ -323,7 +323,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @return 備品費合計
      */
-    public Long getGoukeiBihinhi() {
+    public String getGoukeiBihinhi() {
         return goukeiBihinhi;
     }
 
@@ -332,7 +332,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @param goukeiBihinhi 備品費合計
      */
-    public void setGoukeiBihinhi(final Long goukeiBihinhi) {
+    public void setGoukeiBihinhi(final String goukeiBihinhi) {
         this.goukeiBihinhi = goukeiBihinhi;
     }
 
@@ -377,7 +377,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @return 事務所費合計
      */
-    public Long getGoukeiJimushohi() {
+    public String getGoukeiJimushohi() {
         return goukeiJimushohi;
     }
 
@@ -386,7 +386,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @param goukeiJimushohi 事務所費合計
      */
-    public void setGoukeiJimushohi(final Long goukeiJimushohi) {
+    public void setGoukeiJimushohi(final String goukeiJimushohi) {
         this.goukeiJimushohi = goukeiJimushohi;
     }
 
@@ -449,7 +449,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @return 経費小計に係る交付金
      */
-    public String getKohfuKeihiShoukei() {
+    public Long getKohfuKeihiShoukei() {
         return kohfuKeihiShoukei;
     }
 
@@ -458,7 +458,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @param kohfuKeihiShoukei 経費小計に係る交付金
      */
-    public void setKohfuKeihiShoukei(final String kohfuKeihiShoukei) {
+    public void setKohfuKeihiShoukei(final Long kohfuKeihiShoukei) {
         this.kohfuKeihiShoukei = kohfuKeihiShoukei;
     }
 
@@ -611,7 +611,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @return その他の経費に係る交付金
      */
-    public String getKohfuSonota() {
+    public Long getKohfuSonota() {
         return kohfuSonota;
     }
 
@@ -620,7 +620,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @param kohfuSonota その他の経費に係る交付金
      */
-    public void setKohfuSonota(final String kohfuSonota) {
+    public void setKohfuSonota(final Long kohfuSonota) {
         this.kohfuSonota = kohfuSonota;
     }
 
@@ -1043,7 +1043,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @return 活動費に係る交付金
      */
-    public String getKohfuKatsudouhi() {
+    public Long getKohfuKatsudouhi() {
         return kohfuKatsudouhi;
     }
 
@@ -1052,7 +1052,7 @@ public class Sheet071300ListOfExpenditureItemsDto implements Serializable {
      *
      * @param kohfuKatsudouhi 活動費に係る交付金
      */
-    public void setKohfuKatsudouhi(final String kohfuKatsudouhi) {
+    public void setKohfuKatsudouhi(final Long kohfuKatsudouhi) {
         this.kohfuKatsudouhi = kohfuKatsudouhi;
     }
 

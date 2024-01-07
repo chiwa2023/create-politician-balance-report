@@ -36,11 +36,11 @@ public class Sheet070200SummaryTableIncomeExpenditureDto implements Serializable
 
     /** 個人の党費または会費を納入金額 */
     @JacksonXmlProperty(localName = "KOJIN_FUTAN_KGK")
-    private Long kojiFutanGoukei = 0L;
+    private String kojiFutanGoukei;
 
     /** 党費または会費を納入した員数 */
     @JacksonXmlProperty(localName = "KOJIN_FUTAN_SU")
-    private Long kojiFutanSuu = 0L;
+    private String kojiFutanSuu;
 
     /** 個人寄付の合計 */
     @JacksonXmlProperty(localName = "KOJIN_KIFU_GK")
@@ -52,7 +52,7 @@ public class Sheet070200SummaryTableIncomeExpenditureDto implements Serializable
 
     /** 特定寄付合計 */
     @JacksonXmlProperty(localName = "TOKUTEI_KIFU_GK")
-    private Long tokuteiKifuGoukei = 0L;
+    private String tokuteiKifuGoukei;
 
     /** うち特定寄付備考 */
     @JacksonXmlProperty(localName = "TOKUTEI_KIFU_BIKOU")
@@ -201,7 +201,7 @@ public class Sheet070200SummaryTableIncomeExpenditureDto implements Serializable
      *
      * @return 個人負担による党費や会費合計額
      */
-    public Long getKojiFutanGoukei() {
+    public String getKojiFutanGoukei() {
         return kojiFutanGoukei;
     }
 
@@ -210,7 +210,7 @@ public class Sheet070200SummaryTableIncomeExpenditureDto implements Serializable
      *
      * @param kojiFutanGoukei 個人負担による党費や会費合計額
      */
-    public void setKojiFutanGoukei(final Long kojiFutanGoukei) {
+    public void setKojiFutanGoukei(final String kojiFutanGoukei) {
         this.kojiFutanGoukei = kojiFutanGoukei;
     }
 
@@ -219,7 +219,7 @@ public class Sheet070200SummaryTableIncomeExpenditureDto implements Serializable
      *
      * @return 個人負担員数
      */
-    public Long getKojiFutanSuu() {
+    public String getKojiFutanSuu() {
         return kojiFutanSuu;
     }
 
@@ -228,7 +228,7 @@ public class Sheet070200SummaryTableIncomeExpenditureDto implements Serializable
      *
      * @param kojiFutanSuu 個人負担員数
      */
-    public void setKojiFutanSuu(final Long kojiFutanSuu) {
+    public void setKojiFutanSuu(final String kojiFutanSuu) {
         this.kojiFutanSuu = kojiFutanSuu;
     }
 
@@ -273,7 +273,7 @@ public class Sheet070200SummaryTableIncomeExpenditureDto implements Serializable
      *
      * @return 特定寄付額
      */
-    public Long getTokuteiKifuGoukei() {
+    public String getTokuteiKifuGoukei() {
         return tokuteiKifuGoukei;
     }
 
@@ -282,7 +282,7 @@ public class Sheet070200SummaryTableIncomeExpenditureDto implements Serializable
      *
      * @param tokuteiKifuGoukei 特定寄付額
      */
-    public void setTokuteiKifuGoukei(final Long tokuteiKifuGoukei) {
+    public void setTokuteiKifuGoukei(final String tokuteiKifuGoukei) {
         this.tokuteiKifuGoukei = tokuteiKifuGoukei;
     }
 

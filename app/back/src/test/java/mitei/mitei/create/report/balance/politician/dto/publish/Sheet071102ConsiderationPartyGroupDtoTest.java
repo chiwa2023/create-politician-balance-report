@@ -31,7 +31,7 @@ class Sheet071102ConsiderationPartyGroupDtoTest {
         Sheet071102ConsiderationPartyGroupDto sheet0 = new Sheet071102ConsiderationPartyGroupDto();
         sheet0.setPageTotal(30000L);
         sheet0.setPartyName("パーティ名称");
-        sheet0.setSortNo(9);
+        sheet0.setSortNo("9");
         String xml0 = xmlMapper.writeValueAsString(sheet0);
 
         Path pathAnswer0 = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(),
@@ -47,7 +47,7 @@ class Sheet071102ConsiderationPartyGroupDtoTest {
         Sheet071102ConsiderationPartyGroupDto sheet1 = new Sheet071102ConsiderationPartyGroupDto();
         sheet1.setPageTotal(30000L);
         sheet1.setPartyName("パーティ名称");
-        sheet1.setSortNo(9);
+        sheet1.setSortNo("9");
 
         //すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要
         Row070711DonateDto row0 = new Row070711DonateDto();

@@ -38,15 +38,15 @@ class AllSheet0702SummaryTableIncomeDtoTest {
         /// ** 翌年への繰越額 */
         sheet0.setYokunenKurikoshi(30000L);
         /// ** 個人の党費または会費を納入金額 */
-        sheet0.setKojiFutanGoukei(30000L);
+        sheet0.setKojiFutanGoukei("30000");
         /// ** 党費または会費を納入した員数 */
-        sheet0.setKojiFutanSuu(30000L);
+        sheet0.setKojiFutanSuu("30000");
         /// ** 個人寄付の合計 */
         sheet0.setKojinKifuGoukei(30000L);
         /// ** 個人寄付備考 */
         sheet0.setKojinKifuBikou("備考");
         /// ** 特定寄付合計 */
-        sheet0.setTokuteiKifuGoukei(30000L);
+        sheet0.setTokuteiKifuGoukei("30000");
         /// ** うち特定寄付備考 */
         sheet0.setTokuteiKifuBikou("備考");
         /// ** 法人寄付合計 */

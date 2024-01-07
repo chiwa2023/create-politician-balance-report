@@ -9,7 +9,7 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
  * 様式17その1 政治資金収支報告書の表紙を表すワークシートDto
  */
 @JacksonXmlRootElement(localName = "SHEET")
-public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable{
+public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable {
 
     /** serialId */
     private static final long serialVersionUID = 1L;
@@ -17,147 +17,147 @@ public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable{
     /** 報告年 */
     @JacksonXmlProperty(localName = "HOUKOKU_NEN")
     private Integer houkokuNen = 0;
-    
+
     /** 開催年月日 */
     @JacksonXmlProperty(localName = "KAISAI_DT")
     private String dateKaisai;
-    
+
     /** 政治団体名称 */
     @JacksonXmlProperty(localName = "DANTAI_NM")
     private String dantaiName;
-    
+
     /** 政治団体名称かな */
     @JacksonXmlProperty(localName = "DANTAI_KANA")
     private String dantaiNameKana;
-    
+
     /** 事務所の住所 */
     @JacksonXmlProperty(localName = "JIM_ADR")
     private String jimushoJusho;
-    
+
     /** 事務所の住所建物 */
     @JacksonXmlProperty(localName = "JIM_APA_ADR")
     private String jimushoJushoTatemono;
-    
+
     /** 代表者の姓 */
     @JacksonXmlProperty(localName = "DAI_NM1")
     private String daihyoushaNameLast;
-    
+
     /** 代表者の名 */
     @JacksonXmlProperty(localName = "DAI_NM2")
     private String daihyoushaNameFirst;
-    
+
     /** 会計責任者の姓 */
     @JacksonXmlProperty(localName = "KAI_NM1")
     private String kaikeiSekinnshaNameLast;
-    
+
     /** 会計責任者の名 */
     @JacksonXmlProperty(localName = "KAI_NM2")
     private String kaikeiSekinnshaNameFirst;
-    
+
     /** 事務担当者1の姓 */
     @JacksonXmlProperty(localName = "TANTOU1_NM1")
     private String jimuTantousha1NameLast;
-    
+
     /** 事務担当者1の名 */
     @JacksonXmlProperty(localName = "TANTOU1_NM2")
     private String jimuTantousha1NameFirst;
-    
+
     /** 事務担当者1の電話番号 */
     @JacksonXmlProperty(localName = "TANTOU1_TEL")
     private String jimuTantousha1Tel;
-    
+
     /** 事務担当者2の姓 */
     @JacksonXmlProperty(localName = "TANTOU2_NM1")
     private String jimuTantousha2NameLast;
-    
+
     /** 事務担当者2の名 */
     @JacksonXmlProperty(localName = "TANTOU2_NM2")
     private String jimuTantousha2NameFirst;
-    
+
     /** 事務担当者2の電話番号 */
     @JacksonXmlProperty(localName = "TANTOU2_TEL")
     private String jimuTantousha2Tel;
-    
+
     /** 事務担当者3の姓 */
     @JacksonXmlProperty(localName = "TANTOU3_NM1")
     private String jimuTantousha3NameLast;
-    
+
     /** 事務担当者3の名 */
     @JacksonXmlProperty(localName = "TANTOU3_NM2")
     private String jimuTantousha3NameFirst;
-    
+
     /** 事務担当者3の電話番号 */
     @JacksonXmlProperty(localName = "TANTOU3_TEL")
     private String jimuTantousha3Tel;
-    
+
     /** 団体区分 */
     @JacksonXmlProperty(localName = "DANTAI_KBN")
     private String dantaiKbn;
-    
-    /**　活動区域区分 */
+
+    /** 活動区域区分 */
     @JacksonXmlProperty(localName = "KATU_KUKI")
     private Integer katsudouKuikiKbn;
-    
+
     /** 資金管理団体の有無 */
     @JacksonXmlProperty(localName = "SIKIN_UMU")
     private Integer umuShikinKanrenDantai;
-    
+
     /** 公職の名称 */
     @JacksonXmlProperty(localName = "KOSYOKU_NM")
     private String koushokuName;
-    
+
     /** 現職候補者の別 */
     @JacksonXmlProperty(localName = "KOSYOKU_KBN")
-    private Integer koushokuGenKouho;
-    
+    private String koushokuGenKouho;
+
     /** 資金管理団体の設立者の姓 */
     @JacksonXmlProperty(localName = "SIKIN_TODOKE_NM1")
     private String shikinDaihyouName1;
-    
+
     /** 資金管理団体の設立者の名 */
     @JacksonXmlProperty(localName = "SIKIN_TODOKE_NM2")
     private String shikinDaihyouName2;
-    
+
     /** 資金管理団体の指定期間(開始) */
     @JacksonXmlProperty(localName = "SIKIN_KIKAN1")
     private String kanriDantaiPeriodStart;
-    
+
     /** 資金管理団体の指定期間(終了) */
     @JacksonXmlProperty(localName = "SIKIN_KIKAN2")
     private String kanriDantaiPeriodEnd;
-    
+
     /** 資金管理団体の複数指定期間 */
     @JacksonXmlProperty(localName = "SIKIN_KIKAN_FUKUSU")
     private String kanriDantaiPeriodRest;
-    
-    /** 国会議員関連団体区分*/
+
+    /** 国会議員関連団体区分 */
     @JacksonXmlProperty(localName = "GIIN_DANTAI_KBN")
     private Integer kokkaiGiinDantaiKbn;
-    
+
     /** 国家議員1の姓 */
     @JacksonXmlProperty(localName = "GIIN1_KOSYOKU_NM_1")
     private String kokkaiGiin1NameLast;
-    
+
     /** 国家議員1の名 */
     @JacksonXmlProperty(localName = "GIIN1_KOSYOKU_NM_2")
     private String kokkaiGiin1NameFirst;
-    
-    /** 国家議員1の公職(衆参)*/
+
+    /** 国家議員1の公職(衆参) */
     @JacksonXmlProperty(localName = "GIIN1_KOSYOKU_NM")
     private String kokkaiGiin1ShuuSan;
-    
+
     /** 国家議員1現職と候補者の別 */
     @JacksonXmlProperty(localName = "GIIN1_KOSYOKU_KBN")
-    private Integer kokkaiGiin1GenKouho;
-    
+    private String kokkaiGiin1GenKouho;
+
     /** 国会議員関係団体の特例適用期間(開始) */
     @JacksonXmlProperty(localName = "GIIN_KIKAN1")
     private String giinDantantaiTokureiPeriodStart;
-    
+
     /** 国会議員関係団体の特例適用期間(終了) */
     @JacksonXmlProperty(localName = "GIIN_KIKAN2")
     private String giinDantantaiTokureiPeriodEnd;
-    
+
     /** 国会議員関係団体の複数特例適用期間 */
     @JacksonXmlProperty(localName = "GIIN_KIKAN_FUKUSU")
     private String giinDantantaiTokureiPeriodRest;
@@ -165,48 +165,35 @@ public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable{
     /** 国家議員2の姓 */
     @JacksonXmlProperty(localName = "GIIN2_KOSYOKU_NM_1")
     private String kokkaiGiin2NameLast;
-    
+
     /** 国家議員2の名 */
     @JacksonXmlProperty(localName = "GIIN2_KOSYOKU_NM_2")
     private String kokkaiGiin2NameFirst;
-    
-    /** 国家議員2の公職(衆参)*/
+
+    /** 国家議員2の公職(衆参) */
     @JacksonXmlProperty(localName = "GIIN2_KOSYOKU_NM")
     private String kokkaiGiin2ShuuSan;
-    
+
     /** 国家議員2現職と候補者の別 */
     @JacksonXmlProperty(localName = "GIIN2_KOSYOKU_KBN")
-    private Integer kokkaiGiin2GenKouho;
-    
+    private String kokkaiGiin2GenKouho;
+
     /** 国家議員3の姓 */
     @JacksonXmlProperty(localName = "GIIN3_KOSYOKU_NM_1")
     private String kokkaiGiin3NameLast;
-    
+
     /** 国家議員3の姓 */
     @JacksonXmlProperty(localName = "GIIN3_KOSYOKU_NM_2")
     private String kokkaiGiin3NameFirst;
-    
-    /** 国家議員3の公職(衆参)*/
+
+    /** 国家議員3の公職(衆参) */
     @JacksonXmlProperty(localName = "GIIN3_KOSYOKU_NM")
     private String kokkaiGiin3ShuuSan;
-    
+
     /** 国家議員3現職と候補者の別 */
     @JacksonXmlProperty(localName = "GIIN3_KOSYOKU_KBN")
-    private Integer kokkaiGiin3GenKouho;
+    private String kokkaiGiin3GenKouho;
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     /**
      * 報告年を取得する
      *
@@ -626,7 +613,7 @@ public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable{
      *
      * @return 公職者の現職候補者
      */
-    public Integer getKoushokuGenKouho() {
+    public String getKoushokuGenKouho() {
         return koushokuGenKouho;
     }
 
@@ -635,7 +622,7 @@ public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable{
      *
      * @param koushokuGenKouho 公職者の現職候補者
      */
-    public void setKoushokuGenKouho(final Integer koushokuGenKouho) {
+    public void setKoushokuGenKouho(final String koushokuGenKouho) {
         this.koushokuGenKouho = koushokuGenKouho;
     }
 
@@ -806,7 +793,7 @@ public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable{
      *
      * @return 国会議員1の現職候補者
      */
-    public Integer getKokkaiGiin1GenKouho() {
+    public String getKokkaiGiin1GenKouho() {
         return kokkaiGiin1GenKouho;
     }
 
@@ -815,7 +802,7 @@ public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable{
      *
      * @param kokkaiGiin1GenKouho 国会議員1の現職候補者
      */
-    public void setKokkaiGiin1GenKouho(final Integer kokkaiGiin1GenKouho) {
+    public void setKokkaiGiin1GenKouho(final String kokkaiGiin1GenKouho) {
         this.kokkaiGiin1GenKouho = kokkaiGiin1GenKouho;
     }
 
@@ -932,7 +919,7 @@ public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable{
      *
      * @return 国会議員2の現職候補者
      */
-    public Integer getKokkaiGiin2GenKouho() {
+    public String getKokkaiGiin2GenKouho() {
         return kokkaiGiin2GenKouho;
     }
 
@@ -941,7 +928,7 @@ public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable{
      *
      * @param kokkaiGiin2GenKouho 国会議員2の現職候補者
      */
-    public void setKokkaiGiin2GenKouho(final Integer kokkaiGiin2GenKouho) {
+    public void setKokkaiGiin2GenKouho(final String kokkaiGiin2GenKouho) {
         this.kokkaiGiin2GenKouho = kokkaiGiin2GenKouho;
     }
 
@@ -1004,7 +991,7 @@ public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable{
      *
      * @return 国会議員3の現職候補者
      */
-    public Integer getKokkaiGiin3GenKouho() {
+    public String getKokkaiGiin3GenKouho() {
         return kokkaiGiin3GenKouho;
     }
 
@@ -1013,12 +1000,8 @@ public class Sheet070100CoverAndOrganizationDetailsDto implements Serializable{
      *
      * @param kokkaiGiin3GenKouho 国会議員3の現職候補者
      */
-    public void setKokkaiGiin3GenKouho(final Integer kokkaiGiin3GenKouho) {
+    public void setKokkaiGiin3GenKouho(final String kokkaiGiin3GenKouho) {
         this.kokkaiGiin3GenKouho = kokkaiGiin3GenKouho;
     }
 
-    
-    
-    
-    
 }

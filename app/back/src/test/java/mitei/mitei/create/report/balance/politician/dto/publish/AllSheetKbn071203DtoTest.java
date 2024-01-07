@@ -28,7 +28,7 @@ class AllSheetKbn071203DtoTest {
         Sheet071203ConsiderationMediationPartyPoliticOrgDto sheet1 = new Sheet071203ConsiderationMediationPartyPoliticOrgDto();
         sheet1.setPageTotal(30000L);
         sheet1.setPartyName("パーティ名称");
-        sheet1.setSortNo(9);
+        sheet1.setSortNo("9");
 
         // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要
         Row070812MediationDto row0 = new Row070812MediationDto();

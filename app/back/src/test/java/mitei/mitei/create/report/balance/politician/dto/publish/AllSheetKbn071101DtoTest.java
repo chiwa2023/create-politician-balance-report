@@ -28,7 +28,7 @@ class AllSheetKbn071101DtoTest {
         Sheet071101ConsiderationPartyPerspnalDto sheet1 = new Sheet071101ConsiderationPartyPerspnalDto();
         sheet1.setPageTotal(30000L);
         sheet1.setPartyName("パーティ名称");
-        sheet1.setSortNo(9);
+        sheet1.setSortNo("9");
 
         // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要
         Row070711DonateDto row0 = new Row070711DonateDto();

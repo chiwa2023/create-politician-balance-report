@@ -17,7 +17,7 @@ public class Template0712SheetDto extends AbstractWorksheet { // NOPMD DataClass
 
     /** 通し番号 */
     @JacksonXmlProperty(localName = "SORT_NO")
-    private Integer sortNo;
+    private String sortNo;
 
     /** 項目リスト */
     @JacksonXmlProperty(localName = "ROW")
@@ -65,7 +65,7 @@ public class Template0712SheetDto extends AbstractWorksheet { // NOPMD DataClass
      *
      * @return 並び順
      */
-    public Integer getSortNo() {
+    public String getSortNo() {
         return sortNo;
     }
 
@@ -74,7 +74,7 @@ public class Template0712SheetDto extends AbstractWorksheet { // NOPMD DataClass
      *
      * @param sortNo 並び順
      */
-    public void setSortNo(final Integer sortNo) {
+    public void setSortNo(final String sortNo) {
         this.sortNo = sortNo;
     }
 

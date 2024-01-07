@@ -31,25 +31,25 @@ class Sheet071300ListOfExpenditureItemsDtoTest {
         // 一種類のみ
         Sheet071300ListOfExpenditureItemsDto sheet0 = new Sheet071300ListOfExpenditureItemsDto();
         /// ** 人件費項目の合計 */
-        sheet0.setGoukeiJinkenhi(3000L);
+        sheet0.setGoukeiJinkenhi("3000");
         /// ** 人件費の供与した交付金に係る支出 */
         sheet0.setKohfuJinkenhi("400");
         /// ** 人件費の備考 */
         sheet0.setBikouJinkenhi("備考");
         /// ** 光熱費項目の合計 */
-        sheet0.setGoukeiKohnetsuhi(3000L);
+        sheet0.setGoukeiKohnetsuhi("3000");
         /// ** 光熱費の供与した交付金に係る支出 */
         sheet0.setKohfuKohnetsuhi("400");
         /// ** 光熱費の備考 */
         sheet0.setBikouKohnetsuhi("備考");
         /// ** 備品項目の合計 */
-        sheet0.setGoukeiBihinhi(3000L);
+        sheet0.setGoukeiBihinhi("3000");
         /// ** 備品の供与した交付金に係る支出 */
         sheet0.setKohfuBihinhi("400");
         /// ** 備品の備考 */
         sheet0.setBikouBihinhi("備考");
         /// ** 事務所項目の合計 */
-        sheet0.setGoukeiJimushohi(3000L);
+        sheet0.setGoukeiJimushohi("3000");
         /// ** 事務所の供与した交付金に係る支出 */
         sheet0.setKohfuJimushohi("400");
         /// ** 事務所の備考 */
@@ -57,7 +57,7 @@ class Sheet071300ListOfExpenditureItemsDtoTest {
         /// ** 経費項目の合計 */
         sheet0.setGoukeiKeihiShoukei(3000L);
         /// ** 経費の供与した交付金に係る支出 */
-        sheet0.setKohfuKeihiShoukei("400");
+        sheet0.setKohfuKeihiShoukei(400L);
         /// ** 経費の備考 */
         sheet0.setBikouKeihiShoukei("備考");
         /// ** 組織活動費項目の合計 */
@@ -75,7 +75,7 @@ class Sheet071300ListOfExpenditureItemsDtoTest {
         /// ** その他項目の合計 */
         sheet0.setGoukeiSonota(3000L);
         /// ** その他の供与した交付金に係る支出 */
-        sheet0.setKohfuSonota("400");
+        sheet0.setKohfuSonota(400L);
         /// ** その他の備考 */
         sheet0.setBikouSonota("備考");
         /// ** 機関誌発行項目の合計 */
@@ -123,7 +123,7 @@ class Sheet071300ListOfExpenditureItemsDtoTest {
         /// ** 活動費小計の合計 */
         sheet0.setGoukeiKatsudouhi(3000L);
         /// ** 活動費小計の供与した交付金に係る支出 */
-        sheet0.setKohfuKatsudouhi("400");
+        sheet0.setKohfuKatsudouhi(400L);
         /// ** 活動費小計の備考 */
         sheet0.setBikouKatsudouhi("備考");
         /// ** 現計合計 */

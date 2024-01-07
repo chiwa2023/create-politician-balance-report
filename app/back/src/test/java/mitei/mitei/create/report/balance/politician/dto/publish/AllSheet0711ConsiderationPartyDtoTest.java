@@ -31,7 +31,7 @@ class AllSheet0711ConsiderationPartyDtoTest {
         Sheet071101ConsiderationPartyPerspnalDto sheet1 = new Sheet071101ConsiderationPartyPerspnalDto();
         sheet1.setPageTotal(30000L);
         sheet1.setPartyName("パーティ名称");
-        sheet1.setSortNo(9);
+        sheet1.setSortNo("9");
 
         // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要
         Row070711DonateDto row1 = new Row070711DonateDto();
@@ -67,7 +67,7 @@ class AllSheet0711ConsiderationPartyDtoTest {
         Sheet071102ConsiderationPartyGroupDto sheet2 = new Sheet071102ConsiderationPartyGroupDto();
         sheet2.setPageTotal(30000L);
         sheet2.setPartyName("パーティ名称");
-        sheet2.setSortNo(9);
+        sheet2.setSortNo("9");
 
         // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要
         Row070711DonateDto row2 = new Row070711DonateDto();
@@ -103,7 +103,7 @@ class AllSheet0711ConsiderationPartyDtoTest {
         Sheet071103ConsiderationPartyPoliticOrgDto sheet3 = new Sheet071103ConsiderationPartyPoliticOrgDto();
         sheet3.setPageTotal(30000L);
         sheet3.setPartyName("パーティ名称");
-        sheet3.setSortNo(9);
+        sheet3.setSortNo("9");
 
         // すべてにデータが入っている場合。データ欠損などは作成Logicでの対応が必要
         Row070711DonateDto row3 = new Row070711DonateDto();
