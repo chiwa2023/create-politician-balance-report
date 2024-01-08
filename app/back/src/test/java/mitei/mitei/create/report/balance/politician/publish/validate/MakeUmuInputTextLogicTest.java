@@ -12,8 +12,6 @@ class MakeUmuInputTextLogicTest {
 
     @Test
     void test() {
-        
-        
         MakeUmuInputTextLogic makeUmuInputTextLogic = new MakeUmuInputTextLogic();
         
         String textAnswer =makeUmuInputTextLogic.practice(0);
