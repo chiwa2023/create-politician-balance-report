@@ -2,6 +2,8 @@ package mitei.mitei.create.report.balance.politician.publish.validate;
 
 import java.util.Objects;
 
+import org.springframework.stereotype.Component;
+
 import mitei.mitei.create.report.balance.politician.dto.publish.AllSheet0703JournalAndOtherDto;
 import mitei.mitei.create.report.balance.politician.dto.publish.Row070300JournalAndOtherDto;
 import mitei.mitei.create.report.balance.politician.dto.publish.Sheet070300JournalAndOtherDto;
@@ -9,6 +11,7 @@ import mitei.mitei.create.report.balance.politician.dto.publish.Sheet070300Journ
 /**
  * 様式7その３シートの妥当性を検証するLogic
  */
+@Component
 public class Validate070300AllSheetLogic {
 
     /**
@@ -47,7 +50,7 @@ public class Validate070300AllSheetLogic {
             this.checkNull(row.getJigyoNoShurui(), "シート03事業の種類" + index + "番目");
         }
 
-        int answer = 0;
+        int answer;
         if (0 == sizeList) {
             // リストサイズ0入力なし
             if (0 == sheet070300Dto.getPageTotal()) {
