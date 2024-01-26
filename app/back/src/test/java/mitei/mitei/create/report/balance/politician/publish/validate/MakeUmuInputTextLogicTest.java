@@ -59,7 +59,7 @@ class MakeUmuInputTextLogicTest {
     }
 
     @Test
-    void confimInputUmuTest() throws Exception {
+    void confimInputUmuTest() throws Exception { //NOPMD
         
         /**
          * 妥当性Logic(private Validate.....Logic validate...)が指定位置にセットされているかだけをチェック
