@@ -1,0 +1,9 @@
+package mitei.mitei.create.report.balance.politician.dto.publish;
+
+public class SheetJournalAndOtherDto {
+
+    public SheetJournalAndOtherDto() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

@@ -1,0 +1,2176 @@
+!SESSION 2024-02-04 15:54:37.963 -----------------------------------------------
+eclipse.buildId=4.28.0.20230608-1200
+java.version=19.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+This is a continuation of log file C:\my_works\politician-balance_report\create-politician-balance-report\app\.metadata\.bak_0.log
+Created Time: 2024-02-04 15:59:28.229
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:28.230
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:31.875
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:31.879
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:35.683
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:35.690
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:39.653
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:39.729
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 15:59:42.277
+!MESSAGE Classpath changed for project: back
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:43.267
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:43.270
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:46.538
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:46.542
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:50.459
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:50.463
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:53.385
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:53.387
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 15:59:56.317
+!MESSAGE Classpath changed for project: back
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:56.363
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 15:59:56.367
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:00.216
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:00.220
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:00:00.633
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:00:03.718
+!MESSAGE Classpath changed for project: back
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:04.022
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:04.025
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:00:05.248
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:00:06.796
+!MESSAGE Classpath changed for project: back
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:07.926
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:07.951
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:00:08.342
+!MESSAGE Classpath changed for project: back
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:11.265
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:11.268
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:12.530
+!MESSAGE Marker id 50348 not found.Marker id 50348 not found.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/back/pom.xml)[376]: java.lang.IllegalStateException
+	at org.eclipse.core.internal.resources.Marker.checkInfo(Marker.java:63)
+	at org.eclipse.core.internal.resources.Marker.getType(Marker.java:214)
+	at net.sourceforge.pmd.eclipse.ui.properties.MarkerPropertyTester.test(MarkerPropertyTester.java:23)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:65)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:107)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.internal.expressions.AdaptExpression.evaluate(AdaptExpression.java:121)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:202)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.WithExpression.evaluate(WithExpression.java:84)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:79)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:109)
+	at org.eclipse.ui.internal.services.EvaluationReference.changed(EvaluationReference.java:103)
+	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:105)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.processScheduled(EclipseContext.java:358)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.set(EclipseContext.java:374)
+	at org.eclipse.ui.internal.services.EvaluationService$1.changed(EvaluationService.java:79)
+	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:105)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.processScheduled(EclipseContext.java:358)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.set(EclipseContext.java:374)
+	at org.eclipse.ui.internal.e4.compatibility.SelectionService.handleSelectionChanged(SelectionService.java:85)
+	at org.eclipse.ui.internal.e4.compatibility.SelectionService.lambda$0(SelectionService.java:72)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator$1.run(SelectionAggregator.java:123)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator.notifyListeners(SelectionAggregator.java:120)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator$5.lambda$0(SelectionAggregator.java:220)
+	at org.eclipse.e4.core.contexts.RunAndTrack.runExternalCode(RunAndTrack.java:59)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator$5.changed(SelectionAggregator.java:220)
+	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:105)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.processScheduled(EclipseContext.java:358)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.set(EclipseContext.java:374)
+	at org.eclipse.e4.ui.internal.workbench.SelectionServiceImpl.setSelection(SelectionServiceImpl.java:34)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.selectionChanged(CompatibilityPart.java:471)
+	at org.eclipse.jface.viewers.Viewer$1.run(Viewer.java:151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.Viewer.fireSelectionChanged(Viewer.java:148)
+	at org.eclipse.jface.viewers.StructuredViewer.updateSelection(StructuredViewer.java:2128)
+	at org.eclipse.jface.viewers.StructuredViewer.handleSelect(StructuredViewer.java:1176)
+	at org.eclipse.jface.viewers.StructuredViewer$4.widgetSelected(StructuredViewer.java:1205)
+	at org.eclipse.jface.util.OpenStrategy.fireSelectionEvent(OpenStrategy.java:263)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:421)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4274)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4072)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3660)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+!SUBENTRY 1 org.eclipse.core.resources 4 376 2024-02-04 16:00:12.531
+!MESSAGE Marker id 50348 not found.
+!STACK 0
+java.lang.IllegalStateException
+	at org.eclipse.core.internal.resources.Marker.checkInfo(Marker.java:63)
+	at org.eclipse.core.internal.resources.Marker.getType(Marker.java:214)
+	at net.sourceforge.pmd.eclipse.ui.properties.MarkerPropertyTester.test(MarkerPropertyTester.java:23)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:65)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:107)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.internal.expressions.AdaptExpression.evaluate(AdaptExpression.java:121)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.internal.expressions.IterateExpression.evaluate(IterateExpression.java:202)
+	at org.eclipse.core.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:54)
+	at org.eclipse.core.expressions.WithExpression.evaluate(WithExpression.java:84)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:79)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:109)
+	at org.eclipse.ui.internal.services.EvaluationReference.changed(EvaluationReference.java:103)
+	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:105)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.processScheduled(EclipseContext.java:358)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.set(EclipseContext.java:374)
+	at org.eclipse.ui.internal.services.EvaluationService$1.changed(EvaluationService.java:79)
+	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:105)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.processScheduled(EclipseContext.java:358)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.set(EclipseContext.java:374)
+	at org.eclipse.ui.internal.e4.compatibility.SelectionService.handleSelectionChanged(SelectionService.java:85)
+	at org.eclipse.ui.internal.e4.compatibility.SelectionService.lambda$0(SelectionService.java:72)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator$1.run(SelectionAggregator.java:123)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator.notifyListeners(SelectionAggregator.java:120)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator$5.lambda$0(SelectionAggregator.java:220)
+	at org.eclipse.e4.core.contexts.RunAndTrack.runExternalCode(RunAndTrack.java:59)
+	at org.eclipse.e4.ui.internal.workbench.SelectionAggregator$5.changed(SelectionAggregator.java:220)
+	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:105)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.processScheduled(EclipseContext.java:358)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.set(EclipseContext.java:374)
+	at org.eclipse.e4.ui.internal.workbench.SelectionServiceImpl.setSelection(SelectionServiceImpl.java:34)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.selectionChanged(CompatibilityPart.java:471)
+	at org.eclipse.jface.viewers.Viewer$1.run(Viewer.java:151)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:174)
+	at org.eclipse.jface.viewers.Viewer.fireSelectionChanged(Viewer.java:148)
+	at org.eclipse.jface.viewers.StructuredViewer.updateSelection(StructuredViewer.java:2128)
+	at org.eclipse.jface.viewers.StructuredViewer.handleSelect(StructuredViewer.java:1176)
+	at org.eclipse.jface.viewers.StructuredViewer$4.widgetSelected(StructuredViewer.java:1205)
+	at org.eclipse.jface.util.OpenStrategy.fireSelectionEvent(OpenStrategy.java:263)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:421)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4274)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4072)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3660)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:12.555
+!MESSAGE Marker id 50348 not found.
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:14.285
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:14.288
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:17.000
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:17.003
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:20.362
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:20.366
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:23.799
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:23.803
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:27.087
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:27.091
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:30.010
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:30.071
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:00:31.721
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:00:31.726
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:00:31.731
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:00:31.736
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:00:31.805
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:00:31.845
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:33.439
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:33.443
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:37.118
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:37.121
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:39.848
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:39.851
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY org.eclipse.jface 2 0 2024-02-04 16:00:40.196
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-02-04 16:00:40.196
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.tm4e.languageconfiguration.toggleLineCommentCommand"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		WorkbenchHandlerServiceHandler("org.springframework.tooling.boot.ls.ToggleComment"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:44.347
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:44.350
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:46.777
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:46.780
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:48.930
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:48.933
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:50.979
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:50.983
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:54.189
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:54.192
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:56.802
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:56.805
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:58.618
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:00:58.621
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:00.287
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:00.290
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:01.820
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:01.823
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:03.704
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:03.706
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:04.977
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:04.980
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:06.126
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:06.127
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:07.242
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:07.244
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:08.372
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:08.375
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:09.397
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:09.400
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:10.531
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:10.533
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:12.120
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:12.123
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:13.253
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:13.254
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:14.861
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:14.865
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:16.016
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:16.017
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:17.332
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:17.335
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:18.307
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:18.308
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:20.240
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:20.241
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:21.043
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:21.044
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:22.894
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:22.897
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:24.095
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:24.098
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:25.191
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:25.193
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:26.321
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:26.323
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:27.492
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:27.494
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:28.581
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:28.598
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:29.758
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:29.759
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:30.875
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:30.878
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:31.919
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:31.922
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:34.440
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:34.443
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:37.351
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:37.353
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-02-04 16:01:39.458
+!MESSAGE Could not get trigger characters due to timeout after 50 miliseconds
+!STACK 0
+java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.eclipse.lsp4e.operations.completion.LSContentAssistProcessor.getFuture(LSContentAssistProcessor.java:280)
+	at org.eclipse.lsp4e.operations.completion.LSContentAssistProcessor.getCompletionProposalAutoActivationCharacters(LSContentAssistProcessor.java:316)
+	at org.eclipse.jface.text.contentassist.IContentAssistProcessorExtension$1.isCompletionProposalAutoActivation(IContentAssistProcessorExtension.java:115)
+	at org.eclipse.jface.text.contentassist.ContentAssistant.getAutoActivationTriggerType(ContentAssistant.java:1248)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$AutoAssistListener.keyPressed(ContentAssistant.java:345)
+	at org.eclipse.jface.text.contentassist.ContentAssistant$InternalListener.verifyKey(ContentAssistant.java:834)
+	at org.eclipse.jface.text.TextViewer$VerifyKeyListenersManager.verifyKey(TextViewer.java:480)
+	at org.eclipse.swt.custom.StyledTextListener.handleEvent(StyledTextListener.java:70)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4274)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1090)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1075)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:778)
+	at org.eclipse.swt.custom.StyledText.handleKeyDown(StyledText.java:5742)
+	at org.eclipse.swt.custom.StyledText.lambda$28(StyledText.java:5426)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4274)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1090)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1075)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1117)
+	at org.eclipse.swt.widgets.Widget.sendKeyEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Widget.wmKeyDown(Widget.java:1840)
+	at org.eclipse.swt.widgets.Control.WM_KEYDOWN(Control.java:5152)
+	at org.eclipse.swt.widgets.Canvas.WM_KEYDOWN(Canvas.java:406)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4775)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:340)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5040)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1440)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:40.500
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:40.505
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:44.276
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:44.280
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:47.731
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:47.733
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:50.571
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:50.575
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:01:50.897
+!MESSAGE Classpath changed for project: back
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:53.359
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:53.364
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:56.083
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:56.086
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:58.676
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:01:58.679
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:01:59.311
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:02:01.638
+!MESSAGE Classpath changed for project: back
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:01.729
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:01.731
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:02:03.265
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:02:04.789
+!MESSAGE Classpath changed for project: back
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:05.438
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:05.441
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:09.075
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:09.078
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:12.863
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:12.866
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:16.495
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:16.499
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:19.438
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:19.441
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:22.286
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:22.288
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:25.467
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:25.471
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:28.360
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:28.363
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:31.035
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:31.038
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:32.776
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:32.778
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:34.207
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:34.210
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:36.022
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:36.025
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:37.575
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:37.578
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:39.538
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:39.541
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:41.002
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:41.006
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:43.478
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:43.480
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:45.562
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:45.565
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:47.334
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:47.336
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:48.939
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:48.942
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:50.271
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:50.273
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:51.485
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:51.486
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:52.565
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:52.566
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:53.877
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:53.878
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:54.760
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:54.761
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:55.583
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:55.585
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:57.321
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:57.324
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:58.165
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:58.167
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:59.457
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:02:59.459
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:00.508
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:00.511
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:02.165
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:02.167
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:03.007
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:03.009
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:04.910
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:04.912
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:05.665
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:05.666
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:07.048
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:07.050
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:08.054
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:08.057
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:09.686
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:09.689
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:10.838
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:10.840
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:11.884
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:11.886
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:12.916
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:12.918
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:14.079
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:14.080
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:15.123
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:15.126
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:16.127
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:16.128
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:16.927
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:16.928
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:18.350
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:18.352
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:19.645
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:19.647
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:20.906
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:20.909
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:22.227
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:22.228
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:23.535
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:23.537
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:24.692
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:24.694
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:26.603
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:26.606
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:27.392
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:27.393
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:29.010
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:29.013
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:30.411
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:30.414
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:31.481
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:31.483
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:32.496
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:32.497
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:33.690
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:33.692
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:34.886
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:34.887
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:36.007
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:36.008
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:37.059
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:37.061
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:38.000
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:38.002
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:38.863
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:38.864
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:40.758
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:40.761
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:41.555
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:41.556
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:43.186
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:43.189
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:44.223
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:44.225
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:45.267
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:45.268
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:46.783
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:46.786
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:47.907
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:47.908
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:49.222
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:49.225
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:50.802
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:50.804
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:51.897
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:51.899
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:52.991
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:52.994
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:54.094
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:54.096
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:55.122
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:55.125
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:56.318
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:56.320
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:57.485
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:57.487
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:58.530
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:58.532
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:59.401
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:03:59.403
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 2 0 2024-02-04 16:04:00.798
+!MESSAGE Removed misconfigured rule: LoosePackageCoupling cause: No packages or classes specified
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:00.804
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:00.806
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 2 0 2024-02-04 16:04:01.959
+!MESSAGE There were configuration errors!
+LoosePackageCoupling: No packages or classes specified
+
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:01.995
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:01.997
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:03.650
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:03.652
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:06.963
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:06.967
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:08.179
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:08.182
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:10.323
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:10.325
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:11.957
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:11.958
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:13.298
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:13.299
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:14.747
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:14.749
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:16.065
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:16.067
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:17.597
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:17.599
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:18.757
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:18.758
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:20.365
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:20.368
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:21.986
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:21.987
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:23.795
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:23.798
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:24.971
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:24.972
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:26.930
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:26.933
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:28.082
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:28.085
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:30.126
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:30.128
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:31.497
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:31.499
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:33.298
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:33.301
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:34.588
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:34.590
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:35.929
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:35.931
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:37.443
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:37.446
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:38.701
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:38.702
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:40.065
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:40.068
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:41.544
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:41.546
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:43.002
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:43.005
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:44.479
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:44.480
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:46.062
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:46.065
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:47.421
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:47.423
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:49.301
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:49.303
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:50.749
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:50.751
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:52.265
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:52.267
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:53.734
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:53.736
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:55.065
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:55.067
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:56.356
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:56.358
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:57.730
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:57.732
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:58.979
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:04:58.981
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:00.834
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:00.837
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:01.810
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:01.812
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:03.622
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:03.624
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:04.837
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:04.840
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:06.715
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:06.717
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:07.619
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:07.621
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:08.946
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:08.950
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:10.681
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:10.683
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:11.864
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:11.866
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:13.017
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:13.019
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:14.256
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:14.258
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:15.461
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:15.462
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:16.609
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:16.610
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:17.765
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:17.767
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:19.024
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:19.026
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:20.235
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:20.238
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:21.452
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:21.454
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:22.865
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:22.866
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:25.063
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:25.066
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:26.779
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:26.780
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:28.088
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:28.091
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:29.704
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:29.705
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:31.106
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:31.108
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:32.730
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:32.732
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:33.939
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:33.940
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:35.193
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:35.194
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:36.507
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:36.509
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:37.744
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:37.746
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:38.981
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:38.983
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:40.296
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:40.297
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:41.333
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:41.336
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:43.236
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:43.239
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:44.289
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:44.290
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:46.330
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:46.332
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:48.219
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:48.222
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:49.667
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:49.669
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:51.597
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:51.600
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:53.041
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:53.042
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:54.335
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:54.337
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:55.611
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:55.612
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:56.878
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:56.880
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:58.335
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:58.336
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:59.624
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:05:59.625
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:00.796
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:00.798
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:02.297
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:02.300
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:03.754
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:03.755
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:05.181
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:05.182
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:06.106
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:06.109
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:08.083
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:08.084
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:09.188
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:09.190
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:10.476
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:10.478
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:12.419
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:12.421
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:13.742
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:13.745
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:14.938
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:14.940
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:16.170
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:16.172
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:17.388
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:17.390
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:18.741
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:18.743
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:19.960
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:19.962
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:21.101
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:21.103
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:22.307
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:22.310
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:24.109
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:24.110
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:25.133
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:25.135
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:27.592
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:27.594
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:28.977
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:28.979
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:30.786
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:30.787
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:31.918
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:31.921
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:33.822
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:33.824
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:35.050
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:35.052
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:36.307
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:36.309
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:37.512
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:37.515
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:38.830
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:38.832
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:40.141
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:40.143
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:41.436
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:41.438
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:42.376
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:42.378
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:44.207
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:44.209
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:45.435
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:45.436
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:47.181
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:47.184
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:48.315
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:48.317
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:50.251
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:50.254
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:51.290
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:51.292
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:53.296
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:53.298
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:54.597
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:54.599
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:55.878
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:55.880
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:57.171
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:57.173
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:58.443
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:58.445
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:59.957
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:06:59.959
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:01.277
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:01.279
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:02.258
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:02.260
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:03.937
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:03.940
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:05.202
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:05.203
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:06.647
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:06.648
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:07.683
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:07.685
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:09.471
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:09.473
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:10.852
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:10.854
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:12.422
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:12.423
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:13.721
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:13.723
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:15.481
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:15.483
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:16.703
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:16.705
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:17.896
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:17.897
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:19.150
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:19.152
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:20.435
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:20.437
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:21.664
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:21.665
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 2 0 2024-02-04 16:07:23.131
+!MESSAGE Removed misconfigured rule: LoosePackageCoupling cause: No packages or classes specified
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:23.137
+!MESSAGE Exception while initializing Apexlink (Could not initialize class com.nawforce.common.types.other.ComponentDeclaration$)
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 4 0 2024-02-04 16:07:23.138
+!MESSAGE PMD will not attempt to initialize Apexlink further, this can cause rules like UnusedMethod to be dysfunctional
+
+!ENTRY net.sourceforge.pmd.eclipse.plugin 2 0 2024-02-04 16:07:24.090
+!MESSAGE There were configuration errors!
+LoosePackageCoupling: No packages or classes specified
+
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:12:13.489
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:12:13.704
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:12:13.705
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:12:13.707
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:12:13.709
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:12:13.725
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:12:13.735
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+!SESSION 2024-02-04 16:16:18.657 -----------------------------------------------
+eclipse.buildId=4.28.0.20230608-1200
+java.version=19.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ja_JP
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2024-02-04 16:16:29.457
+!MESSAGE Both 'org.eclipse.jst.j2ee.core' and 'org.eclipse.jst.j2ee.core' register a package for 'application.xmi'
+
+!ENTRY org.eclipse.jface 2 0 2024-02-04 16:16:48.202
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2024-02-04 16:16:48.202
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.jdt.ui.navigate.open.type"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		WorkbenchHandlerServiceHandler("org.eclipse.lsp4e.symbolinworkspace"),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-02-04 16:16:58.437
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+C:\Program Files\Java\jdk-19\bin\javaw.exe
+-cp
+C:\eclipse202303\eclipse\..\..\Users\chiwa\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\classes;C:\eclipse202303\eclipse\..\..\Users\chiwa\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\lib\*
+-Dsts.lsp.client=eclipse
+-Dlsp.completions.indentation.enable=true
+-Xmx1024m
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:C:\eclipse202303\eclipse\..\..\Users\chiwa\.p2\pool\plugins\org.springframework.tooling.boot.ls_1.47.0.202306150731\servers\spring-boot-language-server\BOOT-INF\classes\application.properties
+-XX:ErrorFile=C:/my_works/politician-balance_report/create-politician-balance-report/app/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1707031018437
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:16:58.442
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-02-04 16:16:58.467
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 11188
+
+!ENTRY org.eclipse.lsp4e 4 0 2024-02-04 16:16:58.598
+!MESSAGE org.springframework.ide.vscode.commons.protocol.spring.SpringModelLanguageServer cannot be found by org.springframework.tooling.boot.ls_1.47.0.202306150731
+!STACK 0
+java.lang.ClassNotFoundException: org.springframework.ide.vscode.commons.protocol.spring.SpringModelLanguageServer cannot be found by org.springframework.tooling.boot.ls_1.47.0.202306150731
+	at org.eclipse.osgi.internal.loader.BundleLoader.generateException(BundleLoader.java:541)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:536)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:416)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:622)
+	at org.eclipse.lsp4e.LanguageServersRegistry$ExtensionLanguageServerDefinition.getServerInterface(LanguageServersRegistry.java:196)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$1(LanguageServerWrapper.java:291)
+	at java.base/java.util.concurrent.CompletableFuture$UniRun.tryFire(CompletableFuture.java:787)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1311)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1841)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1806)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:177)
+
+!ENTRY org.eclipse.egit.ui 2 0 2024-02-04 16:17:04.463
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\chiwa'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:17:05.200
+!MESSAGE Boot project ADDED: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:17:05.207
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:17:05.212
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:17:14.608
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:17:28.209
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:17:28.212
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:17:28.215
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:17:28.218
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:17:28.259
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-02-04 16:17:28.432
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:17:43.959
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:18:02.985
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:18:04.557
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:18:07.664
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:18:09.210
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:18:10.750
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:18:12.281
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:18:13.806
+!MESSAGE Classpath changed for project: back
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-02-04 16:18:15.386
+!MESSAGE Classpath changed for project: back

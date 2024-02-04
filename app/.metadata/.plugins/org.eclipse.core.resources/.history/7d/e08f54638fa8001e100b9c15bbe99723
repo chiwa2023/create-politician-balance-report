@@ -1,0 +1,12 @@
+package mitei.mitei.create.report.balance.politician.dto.publish;
+
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
+@JacksonXmlRootElement(localName = "SHEET")
+public class AbstractWroksheetDto {
+
+    public AbstractWroksheetDto() {
+        // TODO Auto-generated constructor stub
+    }
+
+}
