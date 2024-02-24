@@ -335,7 +335,6 @@ function onSave() {
         この結びつけ形式を保存できるよう申請する<br>
         <input v-model="newCsvReadTemplate">形式<button style="margin-left: 2%;">申請</button>
     </div>
-
     <BalancesheetInput :list-income="listBalancesheetIncome" :list-outcome="listBalancesheetOutcome"></BalancesheetInput>
 
     <div class="footer">

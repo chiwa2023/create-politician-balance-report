@@ -1,101 +1,203 @@
-﻿export default interface BalancesheetIncomeInterface {
+﻿/**
+ * 収支報告書収入情報Interface
+ *
+ * @export
+ * @interface BalancesheetIncomeInterface
+ */
+export default interface BalancesheetIncomeInterface {
+    /** 書証Id */
+    shoushoId: string;
+
+    /** 書証識別コード */
+    shoushoHistroyCode: number;
+
+    /** 書証区分 */
+    shoushoKbn: number;
+
+    /** 参照した摘要 */
+    referDigest: string;
+
+    /** 入力済項目編集区分 */
+    isEditAutoInput: boolean;
+
+    /** 収支報告区分 */
+    reportKbn: number;
+
+    /** 様式仕訳区分 */
+    yoshikiKbn: string;
+
+    /** 様式仕訳枝項目区分 */
+    yoshikiEdaKbn: string;
+
+    /** 取引金額 */
+    amount: number;
+
+    /** 発生日 */
+    accrualDate: string;
+
+    /** 集めた期間開始日 */
+    mediationStartDate: string;
+
+    /** 集めた期間終了日 */
+    mediationEndDate: string;
+
+    /** パーティ開催日 */
+    partyDate: string;
+
+    /** 氏名・団体名称 */
+    shimeiOrgnizationName: string;
+
+    /** 項目名称 */
+    itemName: string;
+
+    /** 個人・団体住所 */
+    orgnizationAddress: string;
+
+    /** 備考 */
+    biko: string;
+
+    /** 税額控除有無 */
+    isCreditTax: boolean;
+
+    /** 寄付が遺贈有無フラグ */
+    isBequest:boolean;
+
+    /** 寄付法人が上場または外資50%超え会社有無フラグ */
+    isPrimeListedOrForeign:boolean;
+
+    /** 政治資金パーティ名称 */
+    partyName: string;
+
+    /** 意見付記 */
+    note: string;
+
+    /** 前例と異なる処理フラグ */
     isDifferPrecedent: boolean;
+
+    /** 保全証票リスト */
+    storagedDocumentIdList: string[];
 
 }
 
-
+/**
+ * 収支報告書収入情報Dto
+ *
+ * @export
+ * @class BalancesheetIncomeDto
+ * @implements {BalancesheetIncomeInterface}
+ */
 export default class BalancesheetIncomeDto implements BalancesheetIncomeInterface {
 
-    //| 書証Id                 | 物理名           | String                      | 書証を一意に識別するId                                                               |
+    /** 書証Id */
     shoushoId: string;
 
-    //| 書証識別コード         | 物理名           | Long                        | 編集履歴を把握するための識別コード                                                   |
+    /** 書証識別コード */
     shoushoHistroyCode: number;
 
-    //| 書証区分               | 物理名           | Integer                     | 例示「1:口座振り込み」「2:領収書(レシート)」                                         |
+    /** 書証区分 */
     shoushoKbn: number;
 
-    //参照した摘要
+    /** 参照した摘要 */
     referDigest: string;
 
-    //| 入力済項目編集区分     | 物理名           | Boolean                     | 例示「false:自動入力部分を編集していない」「true:自動入力部分を編集している」        |
+    /** 入力済項目編集区分 */
     isEditAutoInput: boolean;
 
-    //| 収支報告区分           | 物理名           | Integer                     | 収支報告選択入力を受け付けること                                                     |
+    /** 収支報告区分 */
     reportKbn: number;
 
-    //| 様式仕訳区分           | 物理名           | Integer                     | 収支仕訳(大項目)選択を受け付けること                                                 |
+    /** 様式仕訳区分 */
     yoshikiKbn: string;
 
-    //| 様式仕訳枝項目区分     | 物理名           | Integer                     | 収支仕訳(枝別れ項目)選択を受け付けること                                             |
+    /** 様式仕訳枝項目区分 */
     yoshikiEdaKbn: string;
 
-    //| 取引金額               | 物理名           | Long                        | 取引金額を表示すること                                                               |
+    /** 取引金額 */
     amount: number;
 
-    //| 発生日                 | 物理名           | LocalDate                   | 発生日を表示すること                                                                 |
+    /** 発生日 */
     accrualDate: string;
 
-    //| 集めた期間開始日       | 物理名           | LocalDate                   | 選択された項目が期間入力を必要とする場合に表示<br>期間の開始日を表示すること         |
+    /** 集めた期間開始日 */
     mediationStartDate: string;
 
-    //| 集めた期間終了日       | 物理名           | LocalDate                   | 選択された項目が期間入力を必要とする場合に表示<br>期間の終了日を表示すること         |
+    /** 集めた期間終了日 */
     mediationEndDate: string;
 
+    /** パーティ開催日 */
     partyDate: string;
 
-    //| 氏名・団体名称         | 物理名           | String                      | 選択された項目が氏名・名称入力を必要とする場合に表示<br>名称を表示すること           |
+    /** 氏名・団体名称 */
     shimeiOrgnizationName: string;
 
-    //| 氏名名称               | 物理名           | String                      | 選択された項目が団体の名称とその氏名入力を必要とする場合に表示<br>氏名を表示すること |
+    /** 項目名称 */
     itemName: string;
 
-    //| 団体住所               | 物理名           | String                      | 選択された項目が団体の住所入力を必要とする場合に表示<br>団体の住所を表示すること     |
+    /** 個人・団体住所 */
     orgnizationAddress: string;
 
-    //| 備考                   | 物理名           | String                      | 備考を表示すること                                                                   |
+    /** 備考 */
     biko: string;
 
-    //| 税額控除有無           | 物理名           | Boolean                     | 税額控除の有無入力を受け付けること                                                   |
+    /** 税額控除有無 */
     isCreditTax: boolean;
 
-    //寄付が遺贈の有無
+    /** 寄付が遺贈有無フラグ */
     isBequest:boolean;
 
-    //寄付法人が上場または外資50%超え会社からかどうか
-    isPrimeListedOrForeign;
+    /** 寄付法人が上場または外資50%超え会社有無フラグ */
+    isPrimeListedOrForeign:boolean;
 
-    //政治資金パーティ名称
+    /** 政治資金パーティ名称 */
     partyName: string;
 
-
-    //| 意見付記               | 物理名           | String                      | 最新の意見付記の入力を受け付けること                                                 |
+    /** 意見付記 */
     note: string;
 
-    //| 前例と異なる処理フラグ | 物理名           | Boolean                     | この処理が前例と異なっていることの入力を受け付けること                               |
+    /** 前例と異なる処理フラグ */
     isDifferPrecedent: boolean;
 
-    //| 保全証票リスト         | listSaveShohyoId | ArrayLst<保全証票Id:String> | この証票に関連した証票をストレージに保存した時に発行された、一意に証票を識別するId   |
+    /** 保全証票リスト */
+    storagedDocumentIdList: string[];
 
+    /** 様式仕訳区分使用フラグ */
     isUseYoshikiKbn: boolean;
+    /** 様式仕訳枝項目区分使用フラグ */
     isUseYoshikiEdaKbn: boolean;
+    /** あっせん(期間)使用フラグ */
     isUseMediation: boolean;
+    /** 項目名使用フラグ */
     isUseItemName: boolean;
+    /** 組織・個人名使用フラグ */
     isUseOrgName: boolean;
+    /** 個人・組織住所使用フラグ */
     isUseAddress: boolean;
+    /** 政治資金パーティ開催日使用フラグ */
     isUsePartyDate: boolean;
+    /** 備考使用フラグ */
     isUseBiko: boolean;
+    /** 税額控除使用フラグ */
     isUseCreditTax: boolean;
+    /** パーティ名称使用フラグ */
     isUsePartyName: boolean;
+    /** 寄付遺贈使用フラグ */
     isUseBequest:boolean;
+    /** 上場会社または50%外資会社使用フラグ */
     isUsePrimeListedOrForeign:boolean;
 
+    /** 項目名称入力内容示唆*/
     attentionItemName: string;
+    /** 個人・組織名称入力内容示唆 */
     attentionOrgName: string;
+    /** 個人・組織住所入力内容示唆 */
     attentionAddress: string;
+    /** 期間入力内容示唆 */
     attentionMediation: string;
+    /** パーティ日付入力内容示唆 */
     attentionPartyDate: string;
+    /** 税額控除内容示唆 */
     attentionCreditTax: string;
+    /** パーティ名称名称入力内容示唆 */
     attentionPartyName: string;
 
     constructor() {
@@ -122,7 +224,7 @@ export default class BalancesheetIncomeDto implements BalancesheetIncomeInterfac
         this.isPrimeListedOrForeign=false;
         this.note = "意見付記";
         this.isDifferPrecedent = false;
-        //| 保全証票リスト         | listSaveShohyoId | ArrayLst<保全証票Id:String> | この証票に関連した証票をストレージに保存した時に発行された、一意に証票を識別するId   |
+        this.storagedDocumentIdList=[];
         this.isUseYoshikiKbn = true;
         this.isUseYoshikiEdaKbn = true;
         this.isUseMediation = true;

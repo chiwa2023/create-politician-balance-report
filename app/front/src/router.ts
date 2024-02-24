@@ -3,7 +3,8 @@ import TopPage from "./TopPage.vue";
  
 const routes = [
     { path: '/', name: 'TopPage', component: TopPage },
-    { path: '/read_fin_institution_csv', name: 'Survey', component: () => import("./components/read_fin_institution_csv/ReadFinInstitutionCsv.vue") },
+    { path: '/read_fin_institution_csv', name: 'ReadFinInstitutionCsv', component: () => import("./components/read_fin_institution_csv/ReadFinInstitutionCsv.vue") },
+    { path: '/publish_submisson', name: 'PublishSubmission', component: () => import("./components/publish_submisson/PublishSubmission.vue") },
     { path: '/component', name: 'Component', component: () => import("./components/BaseComponent.vue") },
 ]
 const router = createRouter({
