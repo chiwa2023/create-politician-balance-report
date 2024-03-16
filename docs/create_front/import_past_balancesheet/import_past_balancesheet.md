@@ -58,9 +58,9 @@ CheckConmbinedBalancesheetInterface
  |              論理名              |           物理名            |   型    |          説明(例)          |
  | -------------------------------- | --------------------------- | ------- | -------------------------- |
  | 政治団体Id                       | politicianOrganizationId    | Long    | 政治団体を識別する一意のId |
- | 報告年                           | submisshonYear              | Integer | 報告年                     |
+ | 報告年                           | submissionYear              | Integer | 報告年                     |
  | 取込み前確認・報告年             | isConfirmYear               | boolean | 0/1の2項値                 |
- | 取込み前確認・代表者名           | isConfirmYear               | boolean | 0/1の2項値                 |
+ | 取込み前確認・代表者名           | isConfirmDelegate               | boolean | 0/1の2項値                 |
  | 取込み前確認・会計責任者名       | isConfirmAccountOfiicerName | boolean | 0/1の2項値                 |
  | 取込み前確認・主たる事務所の住所 | isConfirmOfficeAddress      | boolean | 0/1の2項値                 |
  | 取込み前確認・政治団体区分       | isConfirmRepresentName      | boolean | 0/1の2項値                 |
@@ -68,4 +68,4 @@ CheckConmbinedBalancesheetInterface
 
 ## 7. 連携
 
-TODO 子画面からの入力変更内容を都度受信する
+**TODO** 子画面からの入力変更内容を都度受信する

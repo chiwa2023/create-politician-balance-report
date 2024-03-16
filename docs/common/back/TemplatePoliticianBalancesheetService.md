@@ -32,13 +32,13 @@ Backend処理のうちService部分で共通化できる処理をフレームワ
 ### 2. boolean checkPrivilege
 
 - 引数:(パッケージ未定)PrivilegeDto
-- 処理内容：TODO 仕様が決定次第修正する
+- 処理内容：**TODO** 仕様が決定次第修正する
 - NG時の処理：`false/javax.naming.AuthenticationException`を返却すること
 - OK時の処理：`true`を返却すること
 
 ### 3. boolean checkPrivilege
 
 - 引数:(パッケージ未定)TransactionControllDto
-- 処理内容：TODO 仕様が決定次第修正する
+- 処理内容：**TODO** 仕様が決定次第修正する
 - NG時の処理：`false/org.springframework.dao.DuplicateKeyException`を返却すること
 - OK時の処理：`true`を返却すること

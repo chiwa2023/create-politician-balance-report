@@ -1,6 +1,6 @@
 ﻿# 発行政治資金収支報告書データ提出(総務省)【表示画面】設計書
 
-## 状態：フィールド要素はほぼ確定(実装しながら修正)
+## 状態：Mockデータによる実装完了
 
 ※データ受信側との折衝が必要
 
@@ -51,19 +51,21 @@
 
 CheckSendBalancesheetInterface
 
- |             論理名             |           物理名            |    型     |            説明(例)             |
- | ------------------------------ | --------------------------- | --------- | ------------------------------- |
- | 政治団体Id                     | politicianOrganizationId    | Long      | 政治団体を識別する一意のId      |
- | 報告年                         | submisshonYear              | Integer   | 報告年                          |
- | 収支発行時刻                   | publishTimestamp            | Timestamp | 例示「2022/06/01 12:34:56 333」 |
- | 送信前確認・報告年             | isConfirmYear               | boolean   | 0/1の2項値                      |
- | 送信前確認・代表者名           | isConfirmYear               | boolean   | 0/1の2項値                      |
- | 送信前確認・会計責任者名       | isConfirmAccountOfiicerName | boolean   | 0/1の2項値                      |
- | 送信前確認・主たる事務所の住所 | isConfirmOfficeAddress      | boolean   | 0/1の2項値                      |
- | 送信前確認・政治団体区分       | isConfirmRepresentName      | boolean   | 0/1の2項値                      |
- | 送信前確認・政治資金団体の有無 | isConfirmHasOtherOrg        | boolean   | 0/1の2項値                      |
- | オンライン提出ユーザ名         | userNameSubmissionOrg       | String    | 例示省略                        |
- | オンライン提出パスワード       | userPasswordSubmissionOrg   | String    | 例示省略                        |
+ |             論理名             |           物理名            |    型     |                      説明(例)                      |
+ | ------------------------------ | --------------------------- | --------- | -------------------------------------------------- |
+ | 政治団体Id                     | politicianOrganizationId    | Long      | 政治団体を識別する一意のId                         |
+ | 報告年                         | submissionYear              | Integer   | 報告年                                             |
+ | 発行XMLパス                    | publishXmlPath              | String    | (発行したXMLファイルへのURLダウンロード／送信用途) |
+ | 収支発行時刻                   | publishTimestamp            | Timestamp | 例示「2022/06/01 12:34:56 333」                    |
+ | 収支発行時刻表示用テキスト     | publishTimestampText        | String    | 例示「2022/06/01 12:34」                           |
+ | 送信前確認・報告年             | isConfirmYear               | Boolean   | 0/1の2項値                                         |
+ | 送信前確認・代表者名           | isConfirmRepresentName      | Boolean   | 0/1の2項値                                         |
+ | 送信前確認・会計責任者名       | isConfirmAccountOfiicerName | Boolean   | 0/1の2項値                                         |
+ | 送信前確認・主たる事務所の住所 | isConfirmOfficeAddress      | Boolean   | 0/1の2項値                                         |
+ | 送信前確認・政治団体区分       | isConfirmOrganizationKbn    | Boolean   | 0/1の2項値                                         |
+ | 送信前確認・政治資金団体の有無 | isConfirmHasOtherOrg        | Boolean   | 0/1の2項値                                         |
+ | オンライン提出ユーザ名         | userNameSubmissionOrg       | String    | 例示省略                                           |
+ | オンライン提出パスワード       | userPasswordSubmissionOrg   | String    | 例示省略                                           |
 
 ## 7. 連携
 

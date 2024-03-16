@@ -53,7 +53,7 @@
  |       論理名       |           物理名           |   型    |                                     説明(例)                                      |
  | ------------------ | -------------------------- | ------- | --------------------------------------------------------------------------------- |
  | 政治団体名称       | dantaiName                 | String  | 該当Dto.dantaiName                                                                |
- | 報告年             | submisshonYear             | Integer | 該当Dto.houkokuNen                                                                |
+ | 報告年             | submissionYear             | Integer | 該当Dto.houkokuNen                                                                |
  | 代表者名           | organizationManagerName    | String  | 該当Dto.daihyoushaNameLastと該当Dto.daihyoushaNameFirstを連結した文字列           |
  | 会計責任者名       | organizationAccountOfficer | String  | 該当Dto.kaikeiSekinnshaNameLastと該当Dto.kaikeiSekinnshaNameFirstを連結した文字列 |
  | 主たる事務所の住所 | organizationAddress        | String  | 該当Dto.jimushoJushoと該当Dto.jimushoJushoTatemonoを連結した文字列                |
