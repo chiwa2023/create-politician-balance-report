@@ -8,7 +8,7 @@ export default interface CheckSendBalancesheetInterface {
         /** 政治団体Id */ 
         politicianOrganizationId: number;
         /** 報告年 */
-        submisshonYear: number;
+        submissionYear: number;
         /** 収支報告書発行時刻 */
         publishTimestamp: Date;
         /** 収支報告書発行時刻(表示用) */
@@ -45,7 +45,7 @@ export default class CheckSendBalancesheetDto implements CheckSendBalancesheetIn
         /** 政治団体Id */ 
         politicianOrganizationId: number;
         /** 報告年 */
-        submisshonYear: number;
+        submissionYear: number;
         /** 収支報告書発行時刻 */
         publishTimestamp: Date;
         /** 収支報告書発行時刻(表示用) */
@@ -75,7 +75,7 @@ export default class CheckSendBalancesheetDto implements CheckSendBalancesheetIn
      */
     constructor() {
         this.politicianOrganizationId = 111222333;
-        this.submisshonYear = 2022;
+        this.submissionYear = 2022;
         this.publishTimestamp = new Date();
         this.publishTimestampText = "2022-08-08 12:34";
         this.isConfirmYear = false;
