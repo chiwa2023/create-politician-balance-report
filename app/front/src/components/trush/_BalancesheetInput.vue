@@ -1,11 +1,9 @@
 ﻿<script setup lang="ts">
-import { ref, Ref, watch } from "vue";
+import { ref, Ref, watch, onBeforeMount } from "vue";
 import BalancesheetIncomeDto from "../../dto/balancesheetIncomeDto";
 import BalancesheetOutcomeDto from "../../dto/balancesheetOutcomeDto";
 import mockIncomeDeepCopy from "../read_fin_institution_csv/mock/mockIncomeDeepCopy";
 import mockOutcomeDeepCopy from "../read_fin_institution_csv/mock/mockOutcomeDeepCopy";
-import getOrdinaryExpensesEdaKbn from "../../dto/balancesheet/getOrdinaryExpensesEdaKbn";
-import getPoliticalExpensesEdaKbn from "../../dto/balancesheet/getPoliticalExpensesEdaKbn";
 
 //props
 const props = defineProps<{ listIncome: BalancesheetIncomeDto[], listOutcome: BalancesheetOutcomeDto[] }>();
@@ -20,23 +18,12 @@ const listBalancesheetOutcome: Ref<BalancesheetOutcomeDto[]> = ref([]);
 const backupBalancesheetOutcome: Ref<BalancesheetOutcomeDto[]> = ref([]);
 const editBalancesheetOutcome: Ref<BalancesheetOutcomeDto[]> = ref([]);
 
-/* propsが変更になったらバックアップデータと編集比較データを更新します */
-watch(props, () => {
-    //propsから表示データもDeepコピー
-    for (const dto of props.listIncome) {
-        listBalancesheetIncome.value.push(mockIncomeDeepCopy(dto));
-    }
-    for (const dto of props.listOutcome) {
-        listBalancesheetOutcome.value.push(mockOutcomeDeepCopy(dto));
-    }
+//この方式でないとpropsデータの表示設定ができない
+onBeforeMount(() => {
+    listBalancesheetIncome.value = props.listIncome;
+    listBalancesheetOutcome.value = props.listOutcome;
 
-    const maxLineIncome = listBalancesheetIncome.value.length;
-    editBalancesheetIncome.value.splice(0);
-    backupBalancesheetIncome.value.splice(0);
-    for (let index = 0; index < maxLineIncome; index++) {
-        backupBalancesheetIncome.value.push(mockIncomeDeepCopy(listBalancesheetIncome.value[index]));
-        editBalancesheetIncome.value.push(mockIncomeDeepCopy(listBalancesheetIncome.value[index]));
-    }
+    //バックアップと編集比較用データ保存
     const maxLineOutcome = listBalancesheetOutcome.value.length;
     editBalancesheetOutcome.value.splice(0);
     backupBalancesheetOutcome.value.splice(0);
@@ -45,23 +32,26 @@ watch(props, () => {
         editBalancesheetOutcome.value.push(mockOutcomeDeepCopy(listBalancesheetOutcome.value[index]));
     }
 
-    //作成したデータに従って表示チェックをする
-    for (let index = 0; index < maxLineIncome; index++) {
-        changeIncomeYoshikiKbnState(index, backupBalancesheetIncome.value[index].yoshikiKbn);
-        judgeIncomeReportKbn(index, backupBalancesheetIncome.value[index].reportKbn);
+    //props直後の表示変更
+    //for (let index = 0; index < maxLineIncome; index++) {
+    //    judgeIncomeReportKbn(index, listBalancesheetIncome.value[index].reportKbn);
+    //    changeIncomeYoshikiKbnState(index, listBalancesheetIncome.value[index].yoshikiKbn);
+    //}
+    //for (let index = 0; index < maxLineOutcome; index++) {
+    //    judgeOutcomeReportKbn(index, listBalancesheetOutcome.value[index].reportKbn);
+    //    changeOutcomeYoshikiKbnState(index, listBalancesheetOutcome.value[index].yoshikiKbn);
+    //}
+});
 
-    }
-    for (let index = 0; index < maxLineOutcome; index++) {
-        changeOutcomeYoshikiKbnState(index, backupBalancesheetOutcome.value[index].yoshikiKbn);
-        judgeOutcomeReportKbn(index, backupBalancesheetOutcome.value[index].reportKbn);
-    }
-},
-{ deep: true }
-);
 
 /* 収入の変更を検知する */
 watch(listBalancesheetIncome, () => {
+    alert("変更検知収入");
     const maxLine = listBalancesheetIncome.value.length;
+    if (maxLine !== backupBalancesheetIncome.value.length) {
+        createBakupAndEditDataIncome();
+    }
+
     let dtoOld;
     let dtoNew;
     for (let index = 0; index < maxLine; index++) {
@@ -77,52 +67,32 @@ watch(listBalancesheetIncome, () => {
         //仕訳大項目を変更した場合枝分類と表示項目が変化する
         if (dtoOld.yoshikiKbn !== dtoNew.yoshikiKbn) {
             changeIncomeYoshikiKbnState(index, dtoNew.yoshikiKbn);
-            //前データが7でいくつか設定をオープンした可能性がある場合は閉じに行く
-            if (dtoOld.yoshikiKbn === "7") {
-                changeStateEdaKbn(index, listBalancesheetIncome.value[index].yoshikiKbn, listBalancesheetIncome.value[index].yoshikiEdaKbn);
-            }
         }
         //様式仕分け小項目
         if (dtoOld.yoshikiEdaKbn !== dtoNew.yoshikiEdaKbn) {
-            changeStateEdaKbn(index, dtoNew.yoshikiKbn, dtoNew.yoshikiEdaKbn);
+            //様式その7
+            if (dtoNew.yoshikiEdaKbn === "1" && dtoNew.yoshikiKbn === "7") {
+                //税額控除を入力をオープンにします
+                listBalancesheetIncome.value[index].isUseCreditTax = true;
+                listBalancesheetIncome.value[index].attentionCreditTax = "寄付金控除";
+            }
+            else {
+                //税額控除を入力をクローズします
+                listBalancesheetIncome.value[index].isUseCreditTax = false;
+            }
         }
         //収支報告区分を変更すると表示項目が変化する
         if (dtoOld.reportKbn !== dtoNew.reportKbn) {
             judgeIncomeReportKbn(index, dtoNew.reportKbn);
         }
-
-        //遺贈が変更された場合
-        if (dtoOld.isBequest.toString() !== dtoNew.isBequest.toString()) {
-            if (dtoNew.isBequest) {
-                if (listBalancesheetIncome.value[index].biko.indexOf("「遺贈」") == -1) {
-                    listBalancesheetIncome.value[index].biko = listBalancesheetIncome.value[index].biko + "「遺贈」";
-                }
-            }
-            else {
-                const content = listBalancesheetIncome.value[index].biko.replace("「遺贈」", "");
-                listBalancesheetIncome.value[index].biko = content;
-            }
-        }
-
-        //上場が変更された場合
-        if (dtoOld.isPrimeListedOrForeign.toString() !== dtoNew.isPrimeListedOrForeign.toString()) {
-            if (dtoNew.isPrimeListedOrForeign) {
-                if (listBalancesheetIncome.value[index].biko.indexOf("「上場・外資50%超」") == -1) {
-                    listBalancesheetIncome.value[index].biko = listBalancesheetIncome.value[index].biko + "「上場・外資50%超」";
-                }
-            }
-            else {
-                const content = listBalancesheetIncome.value[index].biko.replace("「上場・外資50%超」", "");
-                listBalancesheetIncome.value[index].biko = content;
-            }
-        }
-
     }
+
     //次の編集に備えて現値を保持
     editBalancesheetIncome.value.splice(0);
     for (let index = 0; index < maxLine; index++) {
         editBalancesheetIncome.value.push(mockIncomeDeepCopy(listBalancesheetIncome.value[index]));
     }
+
 },
 { deep: true }
 );
@@ -130,28 +100,30 @@ watch(listBalancesheetIncome, () => {
 
 /* 支出の変更を検知する */
 watch(listBalancesheetOutcome, () => {
+    alert("変更検知支出");
     const maxLine = listBalancesheetOutcome.value.length;
-    let dtoOld;
-    let dtoNew;
+
+    //let dtoOld;
+    //let dtoNew;
     for (let index = 0; index < maxLine; index++) {
-        dtoNew = listBalancesheetOutcome.value[index];
-        dtoOld = editBalancesheetOutcome.value[index];
+        //dtoNew = listBalancesheetOutcome.value[index];
+        //dtoOld = editBalancesheetOutcome.value[index];
 
         //編集不可部分を編集したがっていたが、やっぱり編集しないことにする場合、バックアップデータで値を戻す
-        if (dtoOld.isEditAutoInput && !dtoNew.isEditAutoInput) {
-            listBalancesheetOutcome.value[index].accrualDate = backupBalancesheetOutcome.value[index].accrualDate;
-            listBalancesheetOutcome.value[index].amount = backupBalancesheetOutcome.value[index].amount;
-        }
+        //        if (dtoOld.isEditAutoInput && !dtoNew.isEditAutoInput) {
+        //            listBalancesheetOutcome.value[index].accrualDate = backupBalancesheetOutcome.value[index].accrualDate;
+        //            listBalancesheetOutcome.value[index].amount = backupBalancesheetOutcome.value[index].amount;
+        //        }
 
-        //仕訳大項目を変更した場合枝分類と表示項目が変化する
-        if (dtoOld.yoshikiKbn !== dtoNew.yoshikiKbn) {
-            changeOutcomeYoshikiKbnState(index, dtoNew.yoshikiKbn);
-        }
+        //        //仕訳大項目を変更した場合枝分類と表示項目が変化する
+        //        if (dtoOld.yoshikiKbn !== dtoNew.yoshikiKbn) {
+        //            changeOutcomeYoshikiKbnState(index, dtoNew.yoshikiKbn);
+        //        }
 
         //収支報告区分を変更すると表示項目が変化する
-        if (dtoOld.reportKbn !== dtoNew.reportKbn) {
-            judgeOutcomeReportKbn(index, dtoNew.reportKbn);
-        }
+        //if (dtoOld.reportKbn !== dtoNew.reportKbn) {
+        //judgeOutcomeReportKbn(index, dtoNew.reportKbn);
+        //}
 
     }
     //次の編集に備えて現値を保持
@@ -163,6 +135,65 @@ watch(listBalancesheetOutcome, () => {
 { deep: true }
 );
 
+function createBakupAndEditDataIncome() {
+    const maxLineIncome = listBalancesheetIncome.value.length;
+    editBalancesheetIncome.value.splice(0);
+    backupBalancesheetIncome.value.splice(0);
+    for (let index = 0; index < maxLineIncome; index++) {
+        backupBalancesheetIncome.value.push(mockIncomeDeepCopy(listBalancesheetIncome.value[index]));
+        editBalancesheetIncome.value.push(mockIncomeDeepCopy(listBalancesheetIncome.value[index]));
+    }
+}
+
+
+
+
+/* 収入データの報告区分の挙動を設定する */
+function judgeIncomeReportKbn(index: number, reportKbn: number) {
+    switch (reportKbn) {
+    //報告対象
+    case 1:
+        //収支報告するのですべての入力フォームを開きます
+        if (openInputIncomeForm(index)) {
+            //過去データが残っていない可能性があるのでその他チェックの実施が必要
+        }
+        break;
+        //生活費
+    case 20:
+        //収支報告しないのですべての入力フォームを閉じます
+        closeInputIncomeForm(index);
+        break;
+        //政治活動
+    case 11:
+        //収支報告しないのですべての入力フォームを閉じます
+        closeInputIncomeForm(index);
+        break;
+    }
+}
+
+/* 支出データの報告区分の挙動を設定する */
+//function judgeOutcomeReportKbn(index: number, reportKbn: number) {
+//
+//    switch (reportKbn) {
+//        //報告対象
+//        case 1:
+//            //収支報告するのですべての入力フォームを開きます
+//            if (openInputOutcomeForm(index)) {
+//                //過去データが残っていない可能性があるのでその他チェックの実施が必要
+//            }
+//            break;
+//        //生活費
+//        case 20:
+//            //収支報告しないのですべての入力フォームを閉じます
+//            closeInputOutcomeForm(index);
+//            break;
+//        //政治活動
+//        case 11:
+//            //収支報告しないのですべての入力フォームを閉じます
+//            closeInputOutcomeForm(index);
+//            break;
+//    }
+//}
 
 /* 収入様式区分の値が変更になったら修正 */
 function changeIncomeYoshikiKbnState(index: number, yoshikiKbn: string) {
@@ -258,8 +289,6 @@ function changeIncomeYoshikiKbnState(index: number, yoshikiKbn: string) {
         listBalancesheetIncome.value[index].isUsePartyName = false;
         //パーティ日付は不要です
         listBalancesheetIncome.value[index].isUsePartyDate = false;
-        //様式区分が7の場合は特殊設定を明けに行く            
-        changeStateEdaKbn(index, listBalancesheetIncome.value[index].yoshikiKbn, listBalancesheetIncome.value[index].yoshikiEdaKbn);
         break;
     case "8":
         //枝区分は必要です
@@ -371,105 +400,25 @@ function changeIncomeYoshikiKbnState(index: number, yoshikiKbn: string) {
     }
 }
 
-function changeStateEdaKbn(index: number, yoshikiKbn: string, yoshikiEdaKbn: string) {
-    //枝区分によって特殊な動きをするのは様式区分7の場合のみです
-    if (yoshikiKbn === "7") {
-        switch (yoshikiEdaKbn) {
-        case "1":
-            //個人寄付の時、遺贈チェックと寄付金控除チェックをオンにします
-            listBalancesheetIncome.value[index].isUseCreditTax = true;
-            listBalancesheetIncome.value[index].isUseBequest = true;
-            listBalancesheetIncome.value[index].isUsePrimeListedOrForeign = false;
-            break;
-        case "2":
-            //法人寄付の時、上場・外資50%チェックをオンにします
-            listBalancesheetIncome.value[index].isUseCreditTax = false;
-            listBalancesheetIncome.value[index].isUseBequest = false;
-            listBalancesheetIncome.value[index].isUsePrimeListedOrForeign = true;
-            break;
-        case "3":
-            //政治団体の場合は特殊なInputをすべて消します。
-            listBalancesheetIncome.value[index].isUseCreditTax = false;
-            listBalancesheetIncome.value[index].isUseBequest = false;
-            listBalancesheetIncome.value[index].isUsePrimeListedOrForeign = false;
-            break;
-        }
-    }
-    else {
-        //それ以外の場合は特殊なInputをすべて消します。
-        listBalancesheetIncome.value[index].isUseCreditTax = false;
-        listBalancesheetIncome.value[index].isUseBequest = false;
-        listBalancesheetIncome.value[index].isUsePrimeListedOrForeign = false;
-    }
-}
-
-
 /* 支出様式区分変更時の処理 */
-function changeOutcomeYoshikiKbnState(index: number, yoshikiKbn: string) {
-
-    switch (yoshikiKbn) {
-    case "14":
-        listBalancesheetOutcome.value[index].isUseYoshikiEdaKbn = true;
-        listBalancesheetOutcome.value[index].yoshikiEdaKbnOptions = getOrdinaryExpensesEdaKbn();
-        break;
-
-    case "15":
-        listBalancesheetOutcome.value[index].isUseYoshikiEdaKbn = true;
-        listBalancesheetOutcome.value[index].yoshikiEdaKbnOptions = getPoliticalExpensesEdaKbn();
-        break;
-
-    case "16":
-        listBalancesheetOutcome.value[index].isUseYoshikiEdaKbn = false;
-        break;
-    }
-}
-
-/* 収入データの報告区分の挙動を設定する */
-function judgeIncomeReportKbn(index: number, reportKbn: number) {
-    switch (reportKbn) {
-    //報告対象
-    case 1:
-        //収支報告するのですべての入力フォームを開きます
-        if (openInputIncomeForm(index)) {
-            changeIncomeYoshikiKbnState(index, listBalancesheetIncome.value[index].yoshikiEdaKbn);
-        }
-        break;
-        //生活費
-    case 20:
-        //収支報告しないのですべての入力フォームを閉じます
-        closeInputIncomeForm(index);
-        break;
-        //政治活動
-    case 11:
-        //収支報告しないのですべての入力フォームを閉じます
-        closeInputIncomeForm(index);
-        break;
-    }
-}
-
-/* 支出データの報告区分の挙動を設定する */
-function judgeOutcomeReportKbn(index: number, reportKbn: number) {
-
-    switch (reportKbn) {
-    //報告対象
-    case 1:
-        //収支報告するのですべての入力フォームを開きます
-        if (openInputOutcomeForm(index)) {
-            changeOutcomeYoshikiKbnState(index, listBalancesheetOutcome.value[index].yoshikiEdaKbn);
-        }
-        break;
-        //生活費
-    case 20:
-        //収支報告しないのですべての入力フォームを閉じます
-        closeInputOutcomeForm(index);
-        break;
-        //政治活動
-    case 11:
-        //収支報告しないのですべての入力フォームを閉じます
-        closeInputOutcomeForm(index);
-        break;
-    }
-}
+//function changeOutcomeYoshikiKbnState(index: number, yoshikiKbn: string) {
+//
+//    switch (yoshikiKbn) {
+//        case "14":
+//            listBalancesheetOutcome.value[index].isUseYoshikiEdaKbn = true;
+//            listBalancesheetOutcome.value[index].yoshikiEdaKbnOptions = getOrdinaryExpensesEdaKbn();
+//            break;
+//
+//        case "15":
+//            listBalancesheetOutcome.value[index].isUseYoshikiEdaKbn = true;
+//            listBalancesheetOutcome.value[index].yoshikiEdaKbnOptions = getPoliticalExpensesEdaKbn();
+//            break;
+//
+//        case "16":
+//            listBalancesheetOutcome.value[index].isUseYoshikiEdaKbn = false;
+//            break;
+//    }
+//}
 
 //収入収支報告しないので不要な入力フォームを閉じます
 function closeInputIncomeForm(index: number) {
@@ -523,52 +472,52 @@ function openInputIncomeForm(index: number): boolean {
 
 
 //支出の収支報告しないので不要な入力フォームを閉じます
-function closeInputOutcomeForm(index: number) {
-    //様式区分を非表示にします
-    listBalancesheetOutcome.value[index].isUseYoshikiKbn = false;
-    //様式区分枝項目を非表示にします
-    listBalancesheetOutcome.value[index].isUseYoshikiEdaKbn = false;
-    //団体名称を非表示にします
-    listBalancesheetOutcome.value[index].isUseOrgName = false;
-    //項目名を非表示にします
-    listBalancesheetOutcome.value[index].isUseItemName = false;
-    //団体住所を非表示にします
-    listBalancesheetOutcome.value[index].isUseAddress = false;
-    //備考を非表示にします
-    listBalancesheetOutcome.value[index].isUseBiko = false;
-    //寄付金控除を非表示にします
-    listBalancesheetOutcome.value[index].isUseCollectRecipt = false;
-    listBalancesheetOutcome.value[index].isUseRelatedGrants = false;
-    //パーティ名称は非表示にします
-    listBalancesheetOutcome.value[index].isUseCategorizedGroup = false;
-    //パーティ日付を非表示にします
-    listBalancesheetOutcome.value[index].isUseItemName = false;
-}
+//function closeInputOutcomeForm(index: number) {
+//    //様式区分を非表示にします
+//    listBalancesheetOutcome.value[index].isUseYoshikiKbn = false;
+//    //様式区分枝項目を非表示にします
+//    listBalancesheetOutcome.value[index].isUseYoshikiEdaKbn = false;
+//    //団体名称を非表示にします
+//    listBalancesheetOutcome.value[index].isUseOrgName = false;
+//    //項目名を非表示にします
+//    listBalancesheetOutcome.value[index].isUseItemName = false;
+//    //団体住所を非表示にします
+//    listBalancesheetOutcome.value[index].isUseAddress = false;
+//    //備考を非表示にします
+//    listBalancesheetOutcome.value[index].isUseBiko = false;
+//    //寄付金控除を非表示にします
+//    listBalancesheetOutcome.value[index].isUseCollectRecipt = false;
+//    listBalancesheetOutcome.value[index].isUseRelatedGrants = false;
+//    //パーティ名称は非表示にします
+//    listBalancesheetOutcome.value[index].isUseCategorizedGroup = false;
+//    //パーティ日付を非表示にします
+//    listBalancesheetOutcome.value[index].isUseItemName = false;
+//}
 
 //支出の収支報告するのでとりあえずすべての入力フォームをあけます
-function openInputOutcomeForm(index: number): boolean {
-    //様式区分を表示します;
-    listBalancesheetOutcome.value[index].isUseYoshikiKbn = true;
-    //様式区分枝項目を表示します
-    listBalancesheetOutcome.value[index].isUseYoshikiEdaKbn = true;
-    //組織名称を表示します
-    listBalancesheetOutcome.value[index].isUseOrgName = true;
-    //項目部分を表示します
-    listBalancesheetOutcome.value[index].isUseItemName = true;
-    //団体住所部分を表示します
-    listBalancesheetOutcome.value[index].isUseAddress = true;
-    //備考部分を表示ます
-    listBalancesheetOutcome.value[index].isUseBiko = true;
-    //寄付金控除を表示します
-    listBalancesheetOutcome.value[index].isUseRelatedGrants = true;
-    listBalancesheetOutcome.value[index].isUseCollectRecipt = true;
-    //パーティ名称を表示します
-    listBalancesheetOutcome.value[index].isUseCategorizedGroup = true;
-    //パーティ日付を表示します
-    listBalancesheetOutcome.value[index].isUseItemName = true;
-
-    return true;
-}
+//function openInputOutcomeForm(index: number): boolean {
+//    //様式区分を表示します;
+//    listBalancesheetOutcome.value[index].isUseYoshikiKbn = true;
+//    //様式区分枝項目を表示します
+//    listBalancesheetOutcome.value[index].isUseYoshikiEdaKbn = true;
+//    //組織名称を表示します
+//    listBalancesheetOutcome.value[index].isUseOrgName = true;
+//    //項目部分を表示します
+//    listBalancesheetOutcome.value[index].isUseItemName = true;
+//    //団体住所部分を表示します
+//    listBalancesheetOutcome.value[index].isUseAddress = true;
+//    //備考部分を表示ます
+//    listBalancesheetOutcome.value[index].isUseBiko = true;
+//    //寄付金控除を表示します
+//    listBalancesheetOutcome.value[index].isUseRelatedGrants = true;
+//    listBalancesheetOutcome.value[index].isUseCollectRecipt = true;
+//    //パーティ名称を表示します
+//    listBalancesheetOutcome.value[index].isUseCategorizedGroup = true;
+//    //パーティ日付を表示します
+//    listBalancesheetOutcome.value[index].isUseItemName = true;
+//
+//    return true;
+//}
 
 </script>
 <template>
@@ -643,23 +592,17 @@ function openInputOutcomeForm(index: number): boolean {
                             v-model="incomeItem.mediationEndDate"></div>
                 </td>
                 <td>
-                    <div v-show="incomeItem.isUsePartyName">パーティ名称：<br><input type="text" v-model="incomeItem.partyName">
+                    <div v-show="incomeItem.isUsePartyName">パーティ名称：<br><input type="text"
+                            v-model="incomeItem.partyName">
                     </div>
                 </td>
                 <td>
-                    <div v-show="incomeItem.isUsePartyDate">パーティ開催日付：<br><input type="date" v-model="incomeItem.partyDate">
+                    <div v-show="incomeItem.isUsePartyDate">パーティ開催日付：<br><input type="date"
+                            v-model="incomeItem.partyDate">
                     </div>
                 </td>
                 <td>
-                    <div v-show="incomeItem.isUseBiko"><input type="text" v-model="incomeItem.biko">
-                        <div v-if="incomeItem.isUseBequest">
-                            <input type="checkbox" v-model="incomeItem.isBequest">遺贈
-                        </div>
-                        <div v-if="incomeItem.isUsePrimeListedOrForeign">
-                            <input type="checkbox" v-model="incomeItem.isPrimeListedOrForeign">上場・外資50%超
-                        </div>
-                    </div>
-
+                    <div v-show="incomeItem.isUseBiko"><input type="text" v-model="incomeItem.biko"></div>
                 </td>
                 <td>
                     <div v-show="incomeItem.isUseCreditTax">寄付金控除：<br><input type="checkbox"
@@ -743,8 +686,8 @@ function openInputOutcomeForm(index: number): boolean {
                     <div v-show="outcomeItem.isUseCollectRecipt">
                         <select v-model="outcomeItem.notCollectReciptKbn">
                             <option value=""></option>
-                            <option value="1">1.支出明細書作成</option>
-                            <option value="2">2.支出目的書(振込明細)を作成</option>
+                            <option value="15">15.支出の明細書を作成</option>
+                            <option value="16">16.振込み明細書に係る支出目的書を作成</option>
                         </select>
                     </div>
                 </td>

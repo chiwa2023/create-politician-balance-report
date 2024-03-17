@@ -1,16 +1,18 @@
 ﻿<script setup lang="ts">
-import { ref, Ref, watch } from 'vue';
-import mockReadTemplate from './mock/mockReadTemplate';
-import CsvReadTemplateInterface from '../../dto/read_csv/csvReadTemplate';
-import CsvReadTemplateDto from '../../dto/read_csv/csvReadTemplate';
-import CsvCellInterface from '../../dto/read_csv/csvCell';
-import SelectOptionsArrayDto from '../../dto/selectOptionsArrayDto';
-import BalancesheetIncomeDto from '../../dto/balancesheetIncomeDto';
-import BalancesheetOutcomeDto from '../../dto/balancesheetOutcomeDto';
-import mockCsvData from './mock/mockCsvData';
-import getOrdinaryExpensesEdaKbn from '../../dto/balancesheet/getOrdinaryExpensesEdaKbn';
-
-import BalancesheetInput from '../../components/common/balancesheet_input/BalancesheetInput.vue';
+import { ref, Ref, toRaw, watch } from "vue";
+import mockReadTemplate from "./mock/mockReadTemplate";
+import CsvReadTemplateInterface from "../../dto/read_csv/csvReadTemplate";
+import CsvReadTemplateDto from "../../dto/read_csv/csvReadTemplate";
+import CsvCellInterface from "../../dto/read_csv/csvCell";
+import SelectOptionsArrayDto from "../../dto/selectOptionsArrayDto";
+import BalancesheetIncomeDto from "../../dto/balancesheetIncomeDto";
+import BalancesheetOutcomeDto from "../../dto/balancesheetOutcomeDto";
+import mockCsvData from "./mock/mockCsvData";
+import convertBalancesheetIncomeFromTradingCore from "../../dto/balancesheet/convertBalancesheetIncomeFromTradingCore";
+import convertBalancesheetOutcomeFromTradingCore from "../../dto/balancesheet/convertBalancesheetOutcomeFromTradingCore";
+import viewPrepareIncome from "../../dto/balancesheet/viewPrepareIncome";
+import viewPrepareOutcome from "../../dto/balancesheet/viewPrepareOutcome";
+import BalancesheetInput from "../../components/common/balancesheet_input/BalancesheetInput.vue";
 
 
 //csv読み取りテンプレートを取得する
@@ -75,8 +77,11 @@ watch(hasHeader, () => {
 
 //収支報告書収入リスト
 const listBalancesheetIncome: Ref<BalancesheetIncomeDto[]> = ref([]);
+const backupListIncome: Ref<BalancesheetIncomeDto[]> = ref([]);
+
 //収支報告書支出リスト
 const listBalancesheetOutcome: Ref<BalancesheetOutcomeDto[]> = ref([]);
+const backupListOutcome: Ref<BalancesheetOutcomeDto[]> = ref([]);
 
 //読み取り形式変更監視
 const isSelectTemplate: Ref<boolean> = ref(true);
@@ -123,10 +128,15 @@ watch(selectedCsvReadTemplate, () => {
             }
         }
 
-        listBalancesheetIncome.value.push(new BalancesheetIncomeDto());
-        listBalancesheetIncome.value.push(new BalancesheetIncomeDto());
-        listBalancesheetOutcome.value.push(new BalancesheetOutcomeDto());
-        listBalancesheetOutcome.value.push(new BalancesheetOutcomeDto());
+        //テスト用仮データ
+        listBalancesheetIncome.value.push(viewPrepareIncome(new BalancesheetIncomeDto()));
+        listBalancesheetIncome.value.push(viewPrepareIncome(new BalancesheetIncomeDto()));
+        listBalancesheetOutcome.value.push(viewPrepareOutcome(new BalancesheetOutcomeDto()));
+        listBalancesheetOutcome.value.push(viewPrepareOutcome(new BalancesheetOutcomeDto()));
+
+        //バックアップを取る
+        backupListIncome.value = structuredClone(toRaw(listBalancesheetIncome.value));
+        backupListOutcome.value = structuredClone(toRaw(listBalancesheetOutcome.value));
 
     }
     else {
@@ -135,152 +145,31 @@ watch(selectedCsvReadTemplate, () => {
 });
 
 
-//取引コアInterfaceから収支報告書収入データに変換
-function convertBalancesheetIncomeFromTradingCore(line: CsvCellInterface[], inputArray: string[]): BalancesheetIncomeDto | null {
 
-    const incomeDto: BalancesheetIncomeDto = new BalancesheetIncomeDto();
-    const maxSize = line.length;
-    let action: string = "";
-    let tempAmount: number = 0;
-    for (let index = 0; index < maxSize; index++) {
-        action = inputArray[index];
-        switch (action) {
-            //| 指定なし`0`
-            case "0":
-                //何もしない
-                break;
 
-            //| 取引金額支出 `1`
-            case "1":
-                if (line[index].data !== "") {
-                    //支出用データなのでnullで収入処理させない
-                    return null;
-                }
-                break;
 
-            //| 取引金額収入 `2`
-            case "2":
-                if (line[index].data !== "") {
-                    incomeDto.amount = parseInt(line[index].data);
-                }
-                break;
 
-            //| 取引金額増減兼用`3`
-            case "3":
-                tempAmount = parseInt(line[index].data);
-                if (tempAmount < 0) {
-                    //値が0より小さいときは支出、収入処理させない
-                    return null;
-                }
-                else {
-                    incomeDto.amount = tempAmount;
-                }
-                break;
 
-            //| 発生日`15`
-            case "15":
-                incomeDto.accrualDate = line[index].data;
-                break;
 
-            //| 摘要`16`
-            case "16":
-                incomeDto.referDigest = line[index].data;
-                break;
 
-            //| 取引相手名称`17`
-            case "17":
-                break;
-        }
 
-    }
 
-    //TODO incomeDto.referDigestデータをもとにデータを入れていく
-    incomeDto.reportKbn = 1;
-    incomeDto.biko = "入力備考";
-    incomeDto.itemName = "ｼｴﾝｼｬ ﾊﾅｺ";
-    incomeDto.yoshikiKbn = "7";
-    incomeDto.yoshikiEdaKbn = "1";
-    incomeDto.shimeiOrgnizationName = "弁護士";
-    incomeDto.orgnizationAddress = "東京都千代田区";
-    incomeDto.isCreditTax = true;
 
-    return incomeDto;
+
+
+
+
+//自動読み込みデータの編集をやめるならデータを復元(収入)
+function restoreIncomeReadData(index: number) {
+    listBalancesheetIncome.value[index].accrualDate = backupListIncome.value[index].accrualDate;
+    listBalancesheetIncome.value[index].amount = backupListIncome.value[index].amount;
 }
 
-//取引コアInterfaceから収支報告書支出データに変換
-function convertBalancesheetOutcomeFromTradingCore(line: CsvCellInterface[], inputArray: string[]): BalancesheetOutcomeDto | null {
-
-    const outcomeDto: BalancesheetOutcomeDto = new BalancesheetOutcomeDto();
-    const maxSize = line.length;
-    let action: string = "";
-    let tempAmount: number = 0;
-    for (let index = 0; index < maxSize; index++) {
-        action = inputArray[index];
-        switch (action) {
-            //| 指定なし`0`
-            case "0":
-                //何もしない
-                break;
-
-            //| 取引金額支出 `1`
-            case "1":
-                if (line[index].data !== "") {
-                    outcomeDto.amount = parseInt(line[index].data);
-                }
-                break;
-
-            //| 取引金額収入 `2`
-            case "2":
-                if (line[index].data !== "") {
-                    //支出用データなのでnullで収入処理させない
-                    return null;
-                }
-                break;
-
-            //| 取引金額増減兼用`3`
-            case "3":
-                tempAmount = parseInt(line[index].data);
-                if (tempAmount < 0) {
-                    outcomeDto.amount = tempAmount;
-                }
-                else {
-                    //値が0より大きいときは収入、支出処理させない
-                    return null;
-                }
-                break;
-
-            //| 発生日`15`
-            case "15":
-                outcomeDto.accrualDate = line[index].data;
-                break;
-
-            //| 摘要`16`
-            case "16":
-                outcomeDto.referDigest = line[index].data;
-                break;
-
-            //| 取引相手名称`17`
-            case "17":
-                break;
-        }
-    }
-
-    //TODO outcomeDto.referDigestデータをもとにデータを入れていく
-    outcomeDto.reportKbn = 1;
-    outcomeDto.biko = "入力備考";
-    outcomeDto.itemName = "ﾁﾎｳｷﾞｲﾝ11";
-    outcomeDto.yoshikiKbn = "15";
-    outcomeDto.yoshikiEdaKbn = "1";
-    outcomeDto.shimeiOrgnizationName = "市議会議員";
-    outcomeDto.orgnizationAddress = "東京都千代田区";
-    outcomeDto.isExpendituresRelatedGrants = true;
-    outcomeDto.notCollectReciptKbn = 1;
-    outcomeDto.yoshikiEdaKbnOptions = getOrdinaryExpensesEdaKbn();
-    outcomeDto.categorizeGroup = "お祝いパーティ";
-
-    return outcomeDto;
+//自動読み込みデータの編集をやめるならデータを復元(支出)
+function restoreOutcomeReadData(index: number) {
+    listBalancesheetOutcome.value[index].accrualDate = backupListOutcome.value[index].accrualDate;
+    listBalancesheetOutcome.value[index].amount = backupListOutcome.value[index].amount;
 }
-
 
 //保存
 function onSave() {
@@ -299,8 +188,8 @@ function onSave() {
     <div class="right-area">
         <select v-model="selectedCsvReadTemplate" :disabled="!isReadData">
             <option v-for="option in listCsvReadTemplate" v-bind:value="option.value" v-bind:key="option.value">{{
-                option.text
-            }}
+            option.text
+        }}
             </option>
         </select><br>
     </div>
@@ -315,9 +204,10 @@ function onSave() {
         読みとったCSVデータ
         <table v-if="isReadData">
             <tr>
-                <th v-for="(itemSelect) in listPointItems">
+                <th v-for="(itemSelect) in listPointItems" :key="itemSelect.selectedOption">
                     <select v-model="itemSelect.selectedOption">
-                        <option v-for="option in itemSelect.options" v-bind:value="option.value" v-bind:key="option.value">
+                        <option v-for="option in itemSelect.options" v-bind:value="option.value"
+                            v-bind:key="option.value">
                             {{ option.text }}
                         </option>
                     </select>
@@ -335,8 +225,9 @@ function onSave() {
         この結びつけ形式を保存できるよう申請する<br>
         <input v-model="newCsvReadTemplate">形式<button style="margin-left: 2%;">申請</button>
     </div>
-    <BalancesheetInput :list-income="listBalancesheetIncome" :list-outcome="listBalancesheetOutcome"></BalancesheetInput>
-
+    <BalancesheetInput :list-income="listBalancesheetIncome" :list-outcome="listBalancesheetOutcome"
+        @restoreIncomeReadData="restoreIncomeReadData" @restoreOutcomeReadData="restoreOutcomeReadData">
+    </BalancesheetInput>
     <div class="footer">
         <button>キャンセル</button>
         <button @click="onSave">保存</button>

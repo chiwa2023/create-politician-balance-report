@@ -1,4 +1,4 @@
-﻿import SelectOptionInterface from "../selectOptionDto"
+﻿import SelectOptionInterface from "../selectOptionDto";
 
 export default interface CsvReadTemplateInterface extends SelectOptionInterface{
     selectOptionsArray:string[];

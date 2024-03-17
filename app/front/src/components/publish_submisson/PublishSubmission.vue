@@ -1,8 +1,8 @@
 ﻿<script setup lang="ts">
-import { ref, Ref, onBeforeMount } from 'vue';
-import CheckSendBalancesheetInterface from '../../dto/checkSendBalancesheetDto';
-import CheckSendBalancesheetDto from '../../dto/checkSendBalancesheetDto';
-import mockGetCheckSendBalancesheetDto from './mock/mockGetCheckSendBalancesheetDto';
+import { ref, Ref, onBeforeMount } from "vue";
+import CheckSendBalancesheetInterface from "../../dto/checkSendBalancesheetDto";
+import CheckSendBalancesheetDto from "../../dto/checkSendBalancesheetDto";
+import mockGetCheckSendBalancesheetDto from "./mock/mockGetCheckSendBalancesheetDto";
 
 const checkSendDto: Ref<CheckSendBalancesheetInterface> = ref(new CheckSendBalancesheetDto());
 
@@ -68,7 +68,7 @@ function checkInputError():string[] {
 function saveMyDevice() {
     const url: string = checkSendDto.value.publishXmlPath;
     const cell: string[] = url.split("/");
-    let anchorElement = document.createElement('a');
+    let anchorElement = document.createElement("a");
     anchorElement.href = url;
     anchorElement.download = cell[cell.length - 1];
     document.body.appendChild(anchorElement);

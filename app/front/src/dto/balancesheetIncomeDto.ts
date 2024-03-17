@@ -5,6 +5,9 @@
  * @interface BalancesheetIncomeInterface
  */
 export default interface BalancesheetIncomeInterface {
+    /** 読み取り時の行 */
+    readingLine: number;
+
     /** 書証Id */
     shoushoId: string;
 
@@ -77,6 +80,7 @@ export default interface BalancesheetIncomeInterface {
     /** 保全証票リスト */
     storagedDocumentIdList: string[];
 
+// eslint-disable-next-line semi
 }
 
 /**
@@ -87,6 +91,9 @@ export default interface BalancesheetIncomeInterface {
  * @implements {BalancesheetIncomeInterface}
  */
 export default class BalancesheetIncomeDto implements BalancesheetIncomeInterface {
+
+    /** 読み取り時の行 */
+    readingLine: number;
 
     /** 書証Id */
     shoushoId: string;
@@ -201,6 +208,7 @@ export default class BalancesheetIncomeDto implements BalancesheetIncomeInterfac
     attentionPartyName: string;
 
     constructor() {
+        this.readingLine=0;
         this.shoushoId = "";
         this.shoushoHistroyCode = 0;
         this.shoushoKbn = 0;
@@ -237,7 +245,7 @@ export default class BalancesheetIncomeDto implements BalancesheetIncomeInterfac
         this.isUsePartyName = true;
         this.isUseBequest=false;
         this.isUsePrimeListedOrForeign=false;
-       this.attentionItemName = "";
+        this.attentionItemName = "";
         this.attentionOrgName = "";
         this.attentionAddress = "";
         this.attentionMediation = "";

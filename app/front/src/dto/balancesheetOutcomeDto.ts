@@ -7,6 +7,9 @@
  * @interface BalancesheetOutcomeInterface
  */
 export default interface BalancesheetOutcomeInterface {
+    /** 読み取り時の行 */
+    readingLine: number;
+
     /** 書証Id */
     shoushoId: string;
 
@@ -69,6 +72,8 @@ export default interface BalancesheetOutcomeInterface {
 
     /** 保全証票リスト */
     storagedDocumentIdList: string[];
+    
+// eslint-disable-next-line semi
 }
 
 /**
@@ -79,6 +84,9 @@ export default interface BalancesheetOutcomeInterface {
  * @implements {BalancesheetOutcomeInterface}
  */
 export default class BalancesheetIncomeDto implements BalancesheetOutcomeInterface {
+
+    /** 読み取り時の行 */
+    readingLine: number;
 
     /** 書証Id */
     shoushoId: string;
@@ -169,6 +177,8 @@ export default class BalancesheetIncomeDto implements BalancesheetOutcomeInterfa
      * @memberof BalancesheetIncomeDto
      */
     constructor() {
+        /** 読み取り時の行 */
+        this.readingLine = 0;
         this.shoushoId = "";
         this.shoushoHistroyCode = 0;
         this.shoushoKbn = 0;

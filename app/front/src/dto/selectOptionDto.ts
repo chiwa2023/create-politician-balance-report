@@ -1,6 +1,14 @@
-﻿export default interface SelectOptionInterface {
+﻿/**
+ * HTMLにおける、Selectボタンの選択(option)項目データInterface
+ *
+ * @export
+ * @interface SelectOptionInterface 
+ */
+export default interface SelectOptionInterface {
     value: string;
     text: string;
+
+// eslint-disable-next-line semi
 }
 
 /**
