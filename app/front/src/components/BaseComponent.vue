@@ -28,13 +28,19 @@ const onButton = () => {
     backupListOutcome.value = structuredClone(toRaw(listBalancesheetOutcome.value));
 };
 
-//自動読み込みデータの編集をやめるならデータを復元(収入)
+/**
+ * 自動読み込みデータの編集をやめるならデータを復元(収入)
+ * @param index 行番号
+ */
 function restoreIncomeReadData(index: number) {
     listBalancesheetIncome.value[index].accrualDate = backupListIncome.value[index].accrualDate;
     listBalancesheetIncome.value[index].amount = backupListIncome.value[index].amount;
 }
 
-//自動読み込みデータの編集をやめるならデータを復元(支出)
+/**
+ * 自動読み込みデータの編集をやめるならデータを復元(支出)
+ * @param index 行番号
+ */
 function restoreOutcomeReadData(index: number) {
     alert("復元(component)" + index);
     listBalancesheetOutcome.value[index].accrualDate = backupListOutcome.value[index].accrualDate;

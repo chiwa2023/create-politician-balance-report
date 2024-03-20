@@ -1,8 +1,5 @@
 ﻿/**
  * 収支報告書を送信時の最終チェックと接続情報Interface
- *
- * @export
- * @interface CheckSendBalancesheetInterface 収支報告書送信前チェックInterface
  */
 export default interface CheckSendBalancesheetInterface {
         /** 政治団体Id */ 
@@ -37,10 +34,6 @@ export default interface CheckSendBalancesheetInterface {
 
 /**
  * 収支報告書を送信時の最終チェックと接続情報Dto
- *
- * @export
- * @class CheckSendBalancesheetDto
- * @implements {CheckSendBalancesheetInterface}
  */
 export default class CheckSendBalancesheetDto implements CheckSendBalancesheetInterface {
 
@@ -73,7 +66,6 @@ export default class CheckSendBalancesheetDto implements CheckSendBalancesheetIn
 
     /**
      * Creates an instance of CheckSendBalancesheetDto.
-     * @memberof CheckSendBalancesheetDto
      */
     constructor() {
         this.politicianOrganizationId = 111222333;

@@ -3,6 +3,11 @@ import closeInputOutcomeForm from "./closeInputOutcomeForm";
 import openInputOutcomeForm from "./openInputOutcomeForm";
 import changeOutcomeYoshikiKbnState from "./changeOutcomeYoshikiKbnState";
 
+/**
+ * 収支報告書の表示nにかかわる値設定
+ * @param outcomeDto 収支報告書(支出)データ
+ * @returns 収支報告書(支出)データ
+ */
 export default function viewPrepareOutcome(outcomeDto: BalancesheetOutcomeDto): BalancesheetOutcomeDto {
 
     switch (outcomeDto.reportKbn) {

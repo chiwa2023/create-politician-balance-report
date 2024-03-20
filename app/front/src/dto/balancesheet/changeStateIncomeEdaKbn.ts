@@ -1,6 +1,10 @@
 ﻿import BalancesheetIncomeDto from "../../dto/balancesheetIncomeDto";
 
-/* 収入様式枝区分の値が変更になったら修正 */
+/**
+ * 収入様式枝区分の値が変更になったら修正
+ * @param incomeDto 収支報告書収入データ
+ * @returns 収支報告書収入データ
+ */
 export default function changeStateIncomeEdaKbn(incomeDto:BalancesheetIncomeDto):BalancesheetIncomeDto {
     //枝区分によって特殊な動きをするのは様式区分7の場合のみです
     if (incomeDto.yoshikiKbn === "7") {

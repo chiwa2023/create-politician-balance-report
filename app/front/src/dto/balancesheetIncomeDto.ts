@@ -1,8 +1,5 @@
 ﻿/**
  * 収支報告書収入情報Interface
- *
- * @export
- * @interface BalancesheetIncomeInterface
  */
 export default interface BalancesheetIncomeInterface {
     /** 読み取り時の行 */
@@ -85,10 +82,7 @@ export default interface BalancesheetIncomeInterface {
 
 /**
  * 収支報告書収入情報Dto
- *
- * @export
- * @class BalancesheetIncomeDto
- * @implements {BalancesheetIncomeInterface}
+ * BalancesheetIncomeDto 収支報告書収入データ
  */
 export default class BalancesheetIncomeDto implements BalancesheetIncomeInterface {
 

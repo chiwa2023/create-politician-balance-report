@@ -1,6 +1,10 @@
 ﻿import SelectOptionInterface from "../selectOptionDto";
 import SelectOptionDto from "../selectOptionDto";
 
+/**
+ * 収支報告書収入データの収支報告書支出仕訳項目リストを取得する
+ * @returns 収支報告書支出仕訳項目リスト
+ */
 export default function getPoliticalExpensesEdaKbn(): SelectOptionInterface[] {
     const list: SelectOptionDto[] = [];
     list.splice(0);
@@ -18,6 +22,12 @@ export default function getPoliticalExpensesEdaKbn(): SelectOptionInterface[] {
     return list;
 }
 
+/**
+ * 選択肢を生成する
+ * @param value オプション項目の値
+ * @param text オプション項目の表示テキスト
+ * @returns セレクトボックス選択肢Dto
+ */
 function createDto(value: string, text: string): SelectOptionDto {
 
     const dto: SelectOptionDto = new SelectOptionDto();

@@ -3,7 +3,12 @@ import BalancesheetOutcomeDto from "../../dto/balancesheetOutcomeDto";
 import viewPrepareOutcome from "./viewPrepareOutcome";
 import getOrdinaryExpensesEdaKbn from "./getOrdinaryExpensesEdaKbn";
 
-//取引コアInterfaceから収支報告書支出データに変換
+/**
+ * 取引コアInterfaceから収支報告書支出データに変換
+ * @param line CSVの行
+ * @param inputArray ＣSV読み取り指定配列
+ * @returns 収支報告書支出データ
+ */
 export default function convertBalancesheetOutcomeFromTradingCore(line: CsvCellInterface[], inputArray: string[]): BalancesheetOutcomeDto | null {
 
     const outcomeDto: BalancesheetOutcomeDto = new BalancesheetOutcomeDto();

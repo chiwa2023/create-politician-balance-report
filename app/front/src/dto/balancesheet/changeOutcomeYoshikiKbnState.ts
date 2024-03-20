@@ -2,7 +2,11 @@
 import getOrdinaryExpensesEdaKbn from "./getOrdinaryExpensesEdaKbn";
 import getPoliticalExpensesEdaKbn from "./getPoliticalExpensesEdaKbn";
 
-/* 支出様式区分変更時の処理 */
+/**
+ * 支出様式区分変更時の処理
+ * @param outcomeDto 収支報告書支出データ
+ * @returns 収支報告書支出データ
+ */
 export default function changeOutcomeYoshikiKbnState(outcomeDto:BalancesheetOutcomeDto):BalancesheetOutcomeDto {
 
     switch (outcomeDto.yoshikiKbn) {

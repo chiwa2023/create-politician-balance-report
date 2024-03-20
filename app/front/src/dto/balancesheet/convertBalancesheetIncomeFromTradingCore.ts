@@ -2,7 +2,12 @@
 import BalancesheetIncomeDto from "../../dto/balancesheetIncomeDto";
 import viewPrepareIncome from "./viewPrepareIncome";
 
-//取引コアInterfaceから収支報告書収入データに変換
+/**
+ * 取引コアInterfaceから収支報告書収入データに変換
+ * @param line csv読取り行(1行)
+ * @param inputArray csv読取り列指定
+ * @returns 収支報告書収入データ
+ */
 export default function convertBalancesheetIncomeFromTradingCore(line: CsvCellInterface[], inputArray: string[]): BalancesheetIncomeDto | null {
 
     const incomeDto: BalancesheetIncomeDto = new BalancesheetIncomeDto();
@@ -58,7 +63,6 @@ export default function convertBalancesheetIncomeFromTradingCore(line: CsvCellIn
         case "17":
             break;
         }
-
     }
 
     //TODO incomeDto.referDigestデータをもとにデータを入れていく

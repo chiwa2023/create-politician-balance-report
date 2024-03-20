@@ -6,7 +6,8 @@
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:vue/vue3-essential"
+        "plugin:vue/vue3-essential",
+        "plugin:jsdoc/recommended-typescript-error"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -14,7 +15,8 @@
     },
     "plugins": [
         "@typescript-eslint",
-        "vue"
+        "vue",
+        "jsdoc"
     ],
     "rules": {
         "indent": [
@@ -32,6 +34,25 @@
         "semi": [
             "error",
             "always"
+        ],
+        "jsdoc/require-description": [
+            "error",
+            {
+                "contexts": [
+                    "ArrowFunctionExpression",
+                    "ClassDeclaration",
+                    "ClassExpression",
+                    "FunctionDeclaration",
+                    "FunctionExpression",
+                    "MethodDefinition",
+                    "PropertyDefinition",
+                    "VariableDeclaration",
+                    "TSInterfaceDeclaration",
+                    "TSTypeAliasDeclaration",
+                    "TSPropertySignature",
+                    "TSMethodSignature"
+                ]
+            }
         ]
     }
 }

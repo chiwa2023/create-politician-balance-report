@@ -2,9 +2,6 @@
 
 /**
  *収支報告書支出データInterface
- *
- * @export
- * @interface BalancesheetOutcomeInterface
  */
 export default interface BalancesheetOutcomeInterface {
     /** 読み取り時の行 */
@@ -78,10 +75,6 @@ export default interface BalancesheetOutcomeInterface {
 
 /**
  *収支報告書支出データDto
- *
- * @export
- * @class BalancesheetIncomeDto
- * @implements {BalancesheetOutcomeInterface}
  */
 export default class BalancesheetIncomeDto implements BalancesheetOutcomeInterface {
 
@@ -174,7 +167,6 @@ export default class BalancesheetIncomeDto implements BalancesheetOutcomeInterfa
 
     /**
      * Creates an instance of BalancesheetIncomeDto.
-     * @memberof BalancesheetIncomeDto
      */
     constructor() {
         /** 読み取り時の行 */

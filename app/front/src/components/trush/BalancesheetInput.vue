@@ -164,7 +164,11 @@ watch(listBalancesheetOutcome, () => {
 );
 
 
-/* 収入様式区分の値が変更になったら修正 */
+/**
+ * 収入様式区分の値が変更になったら修正
+ * @param index 行番号
+ * @param yoshikiKbn 様式区分
+ */
 function changeIncomeYoshikiKbnState(index: number, yoshikiKbn: string) {
     listBalancesheetIncome.value[index].isUseMediation = false;
     switch (yoshikiKbn) {
@@ -371,6 +375,12 @@ function changeIncomeYoshikiKbnState(index: number, yoshikiKbn: string) {
     }
 }
 
+/**
+ * 収入データの仕訳枝項目の表示設定を行う
+ * @param index 行番号
+ * @param yoshikiKbn 様式区分
+ * @param yoshikiEdaKbn 様式枝区分
+ */
 function changeStateEdaKbn(index: number, yoshikiKbn: string, yoshikiEdaKbn: string) {
     //枝区分によって特殊な動きをするのは様式区分7の場合のみです
     if (yoshikiKbn === "7") {
@@ -404,7 +414,11 @@ function changeStateEdaKbn(index: number, yoshikiKbn: string, yoshikiEdaKbn: str
 }
 
 
-/* 支出様式区分変更時の処理 */
+/**
+ * 支出様式区分変更時の処理 
+ * @param index 行番号
+ * @param yoshikiKbn 様式区分
+ */
 function changeOutcomeYoshikiKbnState(index: number, yoshikiKbn: string) {
 
     switch (yoshikiKbn) {
@@ -424,7 +438,11 @@ function changeOutcomeYoshikiKbnState(index: number, yoshikiKbn: string) {
     }
 }
 
-/* 収入データの報告区分の挙動を設定する */
+/**
+ * 収入データの報告区分の挙動を設定する
+ * @param index 行番号
+ * @param reportKbn 報告区分
+ */
 function judgeIncomeReportKbn(index: number, reportKbn: number) {
     switch (reportKbn) {
     //報告対象
@@ -447,7 +465,11 @@ function judgeIncomeReportKbn(index: number, reportKbn: number) {
     }
 }
 
-/* 支出データの報告区分の挙動を設定する */
+/**
+ * 支出データの報告区分の挙動を設定する
+ * @param index 行番号
+ * @param reportKbn 報告区分
+ */
 function judgeOutcomeReportKbn(index: number, reportKbn: number) {
 
     switch (reportKbn) {
@@ -471,7 +493,10 @@ function judgeOutcomeReportKbn(index: number, reportKbn: number) {
     }
 }
 
-//収入収支報告しないので不要な入力フォームを閉じます
+/**
+ * 収入収支報告しないので不要な入力フォームを閉じます
+ * @param index 行番号
+ */
 function closeInputIncomeForm(index: number) {
     //様式区分を非表示にします
     listBalancesheetIncome.value[index].isUseYoshikiKbn = false;
@@ -495,7 +520,11 @@ function closeInputIncomeForm(index: number) {
     listBalancesheetIncome.value[index].isUsePartyDate = false;
 }
 
-//収入収支報告するのでとりあえずすべての入力フォームをあけます
+/**
+ * 収入収支報告するのでとりあえずすべての入力フォームをあけます
+ * @param index 行番号
+ * @returns 処理が終了したらtrue
+ */
 function openInputIncomeForm(index: number): boolean {
     //様式区分を表示します;
     listBalancesheetIncome.value[index].isUseYoshikiKbn = true;
@@ -522,7 +551,10 @@ function openInputIncomeForm(index: number): boolean {
 }
 
 
-//支出の収支報告しないので不要な入力フォームを閉じます
+/**
+ * 支出の収支報告しないので不要な入力フォームを閉じます
+ * @param index 行番号
+ */
 function closeInputOutcomeForm(index: number) {
     //様式区分を非表示にします
     listBalancesheetOutcome.value[index].isUseYoshikiKbn = false;
@@ -545,7 +577,11 @@ function closeInputOutcomeForm(index: number) {
     listBalancesheetOutcome.value[index].isUseItemName = false;
 }
 
-//支出の収支報告するのでとりあえずすべての入力フォームをあけます
+/**
+ * 支出の収支報告するのでとりあえずすべての入力フォームをあけます
+ * @param index 行番号
+ * @returns 処理が終了したらtrue
+ */
 function openInputOutcomeForm(index: number): boolean {
     //様式区分を表示します;
     listBalancesheetOutcome.value[index].isUseYoshikiKbn = true;

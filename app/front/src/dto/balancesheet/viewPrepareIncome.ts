@@ -3,6 +3,11 @@ import closeInputIncomeForm from "./closeInputIncomeForm";
 import openInputIncomeForm from "./openInputIncomeForm";
 import changeIncomeYoshikiKbnState from "./changeIncomeYoshikiKbnState";
 
+/**
+ * 収支報告書収入データの報告対象が変更した時に値を変更するLogic
+ * @param incomeDto 収支報告書収入データ
+ * @returns 収支報告書収入データ
+ */
 export default function viewPrepareIncome(incomeDto:BalancesheetIncomeDto):BalancesheetIncomeDto{
 
     switch (incomeDto.reportKbn) {

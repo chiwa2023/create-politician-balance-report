@@ -38,7 +38,9 @@ const temp: Ref<string> = ref("");
 
 const isReadData: Ref<boolean> = ref(false);
 
-//読み取りCsvデータを受信 
+/**
+ * 読み取りCsvデータを受信する
+ */
 function recieveGeneralCsvData() {
     //データを受信する
     backCsvReadData.value = mockCsvData();
@@ -145,33 +147,27 @@ watch(selectedCsvReadTemplate, () => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//自動読み込みデータの編集をやめるならデータを復元(収入)
+/**
+ * 自動読み込みデータの編集をやめるならデータを復元(収入)
+ * @param index 行番号
+ */
 function restoreIncomeReadData(index: number) {
     listBalancesheetIncome.value[index].accrualDate = backupListIncome.value[index].accrualDate;
     listBalancesheetIncome.value[index].amount = backupListIncome.value[index].amount;
 }
 
-//自動読み込みデータの編集をやめるならデータを復元(支出)
+/**
+ * 自動読み込みデータの編集をやめるならデータを復元(支出)
+ * @param index 行番号
+ */
 function restoreOutcomeReadData(index: number) {
     listBalancesheetOutcome.value[index].accrualDate = backupListOutcome.value[index].accrualDate;
     listBalancesheetOutcome.value[index].amount = backupListOutcome.value[index].amount;
 }
 
-//保存
+/**  
+ * 入力内容を保存する
+ */
 function onSave() {
     alert(temp.value);
 }

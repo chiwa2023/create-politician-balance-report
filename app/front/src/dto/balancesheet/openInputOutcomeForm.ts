@@ -1,6 +1,11 @@
 ﻿import BalancesheetOutcomeDto from "../../dto/balancesheetOutcomeDto";
 
-//支出の収支報告するのでとりあえずすべての入力フォームをあけます
+//
+/**
+ * 収支報告書支出データの収支報告する場合、とりあえずすべての入力フォームをあけます
+ * @param outcomeDto 収支報告書支出データ
+ * @returns 収支報告書支出データ
+ */
 export default function openInputOutcomeForm(outcomeDto:BalancesheetOutcomeDto): BalancesheetOutcomeDto {
     //様式区分を表示します;
     outcomeDto.isUseYoshikiKbn = true;

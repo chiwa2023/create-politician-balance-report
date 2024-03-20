@@ -23,6 +23,7 @@
     "@vitejs/plugin-vue": "^4.5.2",
     "@vue/test-utils": "^2.4.3",
     "eslint": "^8.57.0",
+    "eslint-plugin-jsdoc": "^48.2.1",
     "eslint-plugin-vue": "^9.23.0",
     "jsdom": "^23.2.0",
     "typescript": "^5.2.2",

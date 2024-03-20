@@ -1,8 +1,5 @@
 ﻿/**
  * HTMLにおける、Selectボタンの選択(option)項目データInterface
- *
- * @export
- * @interface SelectOptionInterface 
  */
 export default interface SelectOptionInterface {
     value: string;
@@ -13,30 +10,21 @@ export default interface SelectOptionInterface {
 
 /**
  * HTMLにおける、Selectボタンの選択(option)項目データDto
- *
- * @class SelectOptionDto
  */
 export default class SelectOptionDto implements SelectOptionInterface{
 
     /**
      * option項目の値
-     * @type {string}
-     * @memberof SelectOption
      */
     value: string;
 
     /**
      * option項目の表示内容
-     * @type {string}
-     * @memberof SelectOption
      */
     text: string;
 
     /**
-     * Creates an instance of SelectOption.
-     * @param {string} value option項目に設定したい値
-     * @param {string} text option項目に設定したいテキスト
-     * @memberof SelectOption
+     * Creates an instance of SelectOptionDto.
      */
     constructor() {
         this.value = "";

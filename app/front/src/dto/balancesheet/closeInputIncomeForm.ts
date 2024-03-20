@@ -1,6 +1,9 @@
 ﻿import BalancesheetIncomeDto from "../../dto/balancesheetIncomeDto";
 
-//収入収支報告しないので不要な入力フォームを閉じます
+/**
+ * 収入収支報告しないので不要な入力フォームを閉じます
+ * @param incomeDto 収入データDto
+ */
 export default function closeInputIncomeForm(incomeDto:BalancesheetIncomeDto) {
     //様式区分を非表示にします
     incomeDto.isUseYoshikiKbn = false;

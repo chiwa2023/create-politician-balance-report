@@ -19,11 +19,20 @@ const listBalancesheetOutcome: WritableComputedRef<BalancesheetOutcomeInterface[
     () => props.listOutcome,
 );
 
+/**
+ * 自動読み込みデータの編集をやめるならデータを復元(収入)
+ * @param index 行番号
+ */
 function restoreIncomeReadData(index: number) {
     //中継するだけ
     emit("restoreIncomeReadData", index);
 }
 
+
+/**
+ * 自動読み込みデータの編集をやめるならデータを復元(支出)
+ * @param index 行番号
+ */
 function restoreOutcomeReadData(index: number) {
     //中継するだけ
     emit("restoreOutcomeReadData", index);

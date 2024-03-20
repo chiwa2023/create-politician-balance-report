@@ -13,12 +13,16 @@ onBeforeMount(async () => {
 });
 
 
-//キャンセル
+/**  
+ * 入力内容を破棄する
+ */
 function onCancel() {
     alert("キャンセル");
 }
 
-//送信
+/**  
+ * 入力内容を保存する
+ */
 function onExecute() {
     const errorList = checkInputError();    
     if(errorList.length ===0 ){
@@ -33,6 +37,10 @@ function onExecute() {
     }
 }
 
+/**
+ * 送信前チェック
+ * @returns 該当エラメッセージリスト
+ */
 function checkInputError():string[] {
     let message:string[] = [];
     if(!checkSendDto.value.isConfirmYear){
@@ -63,8 +71,9 @@ function checkInputError():string[] {
     return message;
 }
 
-
-//自分のデバイスに保存
+/**
+ * 生成した収支報告書XMLを自分のデバイスに保存(ダウンロード)
+ */
 function saveMyDevice() {
     const url: string = checkSendDto.value.publishXmlPath;
     const cell: string[] = url.split("/");
@@ -75,7 +84,9 @@ function saveMyDevice() {
     anchorElement.click();
 }
 
-//送信データプレビュー
+/**
+ * 送信データプレビューする
+ */
 function previewPublish() {
     alert("送信するデータのプレビュー");
 }

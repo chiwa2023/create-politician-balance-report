@@ -1,7 +1,11 @@
 ﻿import BalancesheetIncomeDto from "../../dto/balancesheetIncomeDto";
 import changeStateIncomeEdaKbn from "./changeStateIncomeEdaKbn";
 
-/* 収入様式区分の値が変更になったら修正 */
+/**
+ * 収入様式区分の値が変更になったら修正する
+ * @param incomeDto 収支報告書収入データ
+ * @returns 収支報告書収入データ
+ */
 export default function changeIncomeYoshikiKbnState(incomeDto:BalancesheetIncomeDto):BalancesheetIncomeDto {
     switch (incomeDto.yoshikiKbn) {
     case "3":

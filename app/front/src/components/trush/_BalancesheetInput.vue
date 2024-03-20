@@ -135,6 +135,9 @@ watch(listBalancesheetOutcome, () => {
 { deep: true }
 );
 
+/**
+ * 収入データのバックアップデータを作成する
+ */
 function createBakupAndEditDataIncome() {
     const maxLineIncome = listBalancesheetIncome.value.length;
     editBalancesheetIncome.value.splice(0);
@@ -148,7 +151,11 @@ function createBakupAndEditDataIncome() {
 
 
 
-/* 収入データの報告区分の挙動を設定する */
+/**
+ * 収入データの報告区分の挙動を設定する
+ * @param index 行番号
+ * @param reportKbn 報告区分
+ */
 function judgeIncomeReportKbn(index: number, reportKbn: number) {
     switch (reportKbn) {
     //報告対象
@@ -195,7 +202,11 @@ function judgeIncomeReportKbn(index: number, reportKbn: number) {
 //    }
 //}
 
-/* 収入様式区分の値が変更になったら修正 */
+/**
+ * 収入収支報告するのでとりあえずすべての入力フォームをあけます
+ * @param index 行番号
+ * @param yoshikiKbn 様式区分
+ */
 function changeIncomeYoshikiKbnState(index: number, yoshikiKbn: string) {
     listBalancesheetIncome.value[index].isUseMediation = false;
     switch (yoshikiKbn) {
@@ -420,7 +431,10 @@ function changeIncomeYoshikiKbnState(index: number, yoshikiKbn: string) {
 //    }
 //}
 
-//収入収支報告しないので不要な入力フォームを閉じます
+/**
+ * 収入収支報告しないので不要な入力フォームを閉じます
+ * @param index 行番号
+ */
 function closeInputIncomeForm(index: number) {
     //様式区分を非表示にします
     listBalancesheetIncome.value[index].isUseYoshikiKbn = false;
@@ -444,7 +458,11 @@ function closeInputIncomeForm(index: number) {
     listBalancesheetIncome.value[index].isUsePartyDate = false;
 }
 
-//収入収支報告するのでとりあえずすべての入力フォームをあけます
+/**
+ * 収入収支報告するのでとりあえずすべての入力フォームをあけます 
+ * @param index 行番号
+ * @returns 処理が完了したらtrue 
+ */
 function openInputIncomeForm(index: number): boolean {
     //様式区分を表示します;
     listBalancesheetIncome.value[index].isUseYoshikiKbn = true;
