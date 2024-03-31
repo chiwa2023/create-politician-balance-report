@@ -68,7 +68,6 @@
   - 生年月日が非表示であること
   - 選任年月日非表示であること
 
-
 ## 6.責任者編集インターフェース
 
 収支報告書解析表示一覧するときに表示する満たすべき要素。
@@ -105,4 +104,4 @@ PersonManagerInterface
 
 ## 7. 連携
 
-入力内容が変更された都度、入力チェックを行い変更内容を通知する`emit(sendPersonManagerInterface(data,errorInfo))`
+親画面から`props{personManagerDto:PersonManagerInterface}`を受け取り、`computed`を設定することで変更状態を常に親画面に通知すること

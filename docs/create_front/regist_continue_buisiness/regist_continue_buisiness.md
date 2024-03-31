@@ -49,8 +49,8 @@ ContinueBuissinessInterface
 
  |         論理名         |         論理名         |   型    |                                  説明(例)                                   |
  | ---------------------- | ---------------------- | ------- | --------------------------------------------------------------------------- |
- | 継続事業Id             | continueBuissinessId   | String  | 継続事業を識別する一意のId。政治団体コード+"-"+事業通番+"-"+"該当西暦年"    |
- | 継続事業同一識別コード | continueBuissinessCode | String  | 継続事業の変更に対応するための同一識別コード。政治団体コード+"-"+事業通番+" |
+ | 継続事業Id             | continueBuissinessId   | String  | 継続事業を識別する一意のId。    |
+ | 継続事業同一識別コード | continueBuissinessCode | String  | 継続事業の変更に対応するための同一識別コード |
  | 事業区分               | buissinessKbn          | Integer | `1:特定パーティ開催`、`2:機関誌発行`、`3:その他`                            |
  | 事業名称               | buissinessName         | String  | 共通事業名称                                                                |
 

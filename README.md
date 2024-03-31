@@ -169,3 +169,14 @@ viteを起動`npm run dev`
 ### 2. back
 
 mvnから起動`mvn spring-boot:run`
+
+## 5.テスト
+
+### a. front
+
+vitestを起動`npm test`
+VsCodeを使用している場合はJUnit感覚でテスト駆動できる[Vitestプラグイン](https://marketplace.visualstudio.com/items?itemName=vitest.explorer)の利用をお勧めする
+
+### b. back
+
+EclipseからJUnit起動
