@@ -180,3 +180,8 @@ VsCodeを使用している場合はJUnit感覚でテスト駆動できる[Vites
 ### b. back
 
 EclipseからJUnit起動
+
+## 6. その他
+
+- ソフトウェアの規模想定については[同一識別コード値のサイズ妥当性検証](https://github.com/chiwa2023/investigate-politician-balance-report/blob/main/docs/validatie_code_value.md)を参照
+- システムで使用する定数値は[定数設計書](https://github.com/chiwa2023/investigate-politician-balance-report/blob/main/docs/constants.md)を参照
