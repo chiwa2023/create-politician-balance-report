@@ -1,5 +1,5 @@
-﻿import CsvCellInterface from "../../../dto/read_csv/csvCell";
-import CsvCellDto from "../../../dto/read_csv/csvCell";
+﻿import CsvCellInterface from "../../../../dto/read_csv/csvCell";
+import CsvCellDto from "../../../../dto/read_csv/csvCell";
 
 /**
  * csvダミーデータ

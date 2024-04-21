@@ -1,6 +1,10 @@
 ﻿import SelectOptionInterface from "../../dto/selectOptionDto";
 import SelectOptionDto from "../../dto/selectOptionDto";
 
+/**
+ * CSV指定項目を取得する
+ * @returns 選択肢オプション項目
+ */
 export default function getCsvReadItem():SelectOptionInterface[]{
 
     // TODO backと共通の定数値なのでbackから取得することも検討する
