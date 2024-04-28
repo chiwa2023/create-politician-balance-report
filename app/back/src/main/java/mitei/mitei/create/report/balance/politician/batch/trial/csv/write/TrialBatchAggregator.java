@@ -12,14 +12,12 @@ public class TrialBatchAggregator implements LineAggregator<TrialBatch> {
      */
     @Override
     public String aggregate(final TrialBatch item) {
-        System.out.println("convert data!!!");
-        StringBuilder sb = new StringBuilder();
-        sb.append("\"" + item.getId() + "\"");
-        sb.append(",");
-        sb.append("\"" + item.getContent() + "\"");
-        sb.append(",");
-        sb.append("\"" + item.getUpdateTime() + "\"");
-        System.out.println(sb.toString());
-        return sb.toString();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("\"").append(item.getId()).append("\""); // NOPMD
+        stringBuilder.append(","); // NOPMD
+        stringBuilder.append("\"").append(item.getContent()).append("\""); // NOPMD
+        stringBuilder.append(","); // NOPMD
+        stringBuilder.append("\"").append(item.getUpdateTime()).append("\""); // NOPMD
+        return stringBuilder.toString();
     }
 }

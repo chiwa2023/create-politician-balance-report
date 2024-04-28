@@ -15,7 +15,7 @@ import mitei.mitei.create.report.balance.politician.dto.report_item.zengin.recor
 class ConvertTradingDetailHeaderFromCsvLogicTest {
 // CHECKSTYLE:OFF
     @Test
-    void testPractice() {
+    void testPractice() { // NOPMD
 
         final String data = "1,03,0,041001,040901,050131,0123,ｷﾞﾝｺｳﾒｲ   ,098,ｼﾃﾝﾒｲ     ,ﾀﾞﾐｰ  ,1,00002345,ｺｳｻﾞﾒｲｼｮｳ     ,1,1,00024680,   ";
 
@@ -131,10 +131,10 @@ class ConvertTradingDetailHeaderFromCsvLogicTest {
         assertThat(dto2.getOverdraftKbn()).isEqualTo(1);
 
         // 通帳・証書区分の格納位置
-        assertNull(dto2.getPassbookKbn());
+        assertNull(dto2.getPassbookKbn(),"必ず値が設定");
 
         // 取引前残高の格納位置
-        assertNull(dto2.getPreTransactionBalance());
+        assertNull(dto2.getPreTransactionBalance(),"必ず値が設定");
 
         // ダミーの格納位置
         assertThat(dto2.getDummyEnd()).isEqualTo("");

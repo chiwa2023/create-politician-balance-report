@@ -1,5 +1,10 @@
 ﻿import BalancesheetIncomeDto from "../../../dto/balancesheetIncomeDto";
 
+/**  
+ * 収支報告書収入データのコピー
+ * @param dtoSrc 収支報告書収入データ
+ * @returns コピー
+ */
 export default function mockIncomeDeepCopy(dtoSrc:BalancesheetIncomeDto):BalancesheetIncomeDto{
 
     const dtoCopy:BalancesheetIncomeDto = new BalancesheetIncomeDto();

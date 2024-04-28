@@ -3,62 +3,70 @@
 /**
  * CSVファイル読み込みのための位置指定Interface
  */
-export default interface CsvReadTemplateInterface extends SelectOptionInterface{
+export default interface CsvReadTemplateInterface extends SelectOptionInterface {
 
     /** csv指定配列  */
-    selectOptionsArray:string[];
+    arrayText: string;
 
-    /** 金融機関Id  */
-    finacialOrgId:number;
+    /** csv項目数  */
+    arrayNumber: number;
 
     /** 金融機関区分  */
-    finacialOrgKbn:number;
+    financialOrgKbn: number;
+
+    /** 金融機関Id  */
+    financialOrgId: number;
+
 
     /** 金融機関同一識別コード  */
-    finacialOrgCode:number;
+    financialOrgCode: number;
 
     /** 金融機関名称  */
-    finacialOrgName:string;
+    financialOrgName: string;
 
-// eslint-disable-next-line semi
+    // eslint-disable-next-line semi
 }
 
 /**
  * CsvReadTemplateDto Csv読み込み位置Dto
  */
-export default class CsvReadTemplateDto implements CsvReadTemplateInterface{
-    
+export default class CsvReadTemplateDto implements CsvReadTemplateInterface {
+
     /** オプション項目の値  */
     value: string;
-   
+
     /** オプション項目の表示テキスト  */
     text: string;
-    
+
     /** csv指定配列  */
-    selectOptionsArray:string[];
+    arrayText: string;
+
+    /** csv項目数  */
+    arrayNumber: number;
 
     /** 金融機関Id  */
-    finacialOrgId:number;
+    financialOrgId: number;
 
     /** 金融機関区分  */
-    finacialOrgKbn:number;
+    financialOrgKbn: number;
 
     /** 金融機関同一識別コード  */
-    finacialOrgCode:number;
+    financialOrgCode: number;
 
     /** 金融機関名称  */
-    finacialOrgName:string;
+    financialOrgName: string;
 
     /**
      * Creates an instance of CsvReadTemplateDto.
      */
-    constructor(){
+    constructor() {
         this.value = "";
         this.text = "";
-        this.selectOptionsArray = [];
-        this.finacialOrgId=0;
-        this.finacialOrgKbn=0;
-        this.finacialOrgCode=0;
-        this.finacialOrgName="";
+        this.arrayText = "";
+        this.arrayNumber = 0;
+        this.financialOrgId = 0;
+        this.financialOrgKbn = 0;
+        this.financialOrgCode = 0;
+        this.financialOrgName = "";
     }
 }

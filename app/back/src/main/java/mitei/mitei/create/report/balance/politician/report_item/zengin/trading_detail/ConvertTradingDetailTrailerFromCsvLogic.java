@@ -10,6 +10,8 @@ import mitei.mitei.create.report.balance.politician.dto.report_item.zengin.recor
  */
 @Component
 public class ConvertTradingDetailTrailerFromCsvLogic {
+    /** 半角スペース */
+    private static final String charHalfSpace = " ";
 
     /**
      * トレーラレコードに変換する
@@ -17,7 +19,7 @@ public class ConvertTradingDetailTrailerFromCsvLogic {
      * @param cell csvの各セル
      * @return トレーラレコード
      */
-    public TradingZenginFormatTransactionDetailTrailerRecordDto practice(final String[] cell) {
+    public TradingZenginFormatTransactionDetailTrailerRecordDto practice(final String[] cell) { // NOPMD
         
         TradingZenginFormatTransactionDetailTrailerRecordDto dto = new TradingZenginFormatTransactionDetailTrailerRecordDto();
         
@@ -53,7 +55,7 @@ public class ConvertTradingDetailTrailerFromCsvLogic {
 
     private Integer parseInt(final String data) {
         // 半角スペースは入力省略
-        if(" ".equals(data)) {
+        if(charHalfSpace.equals(data)) {
             return null;
         }
         
@@ -63,7 +65,7 @@ public class ConvertTradingDetailTrailerFromCsvLogic {
 
     private Long parseLong(final String data) {
         // 半角スペースは入力省略
-        if(" ".equals(data)) {
+        if(charHalfSpace.equals(data)) {
             return null;
         }
         

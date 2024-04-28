@@ -50,7 +50,9 @@ class CsvReadBatchLauncherTest {
 
     @Test
     void testCsvReadBatchLauncher() {
-        assertEquals(CsvReadBatchConfiguration.JOB_NAME, csvReadBatchLauncher.getJobCsvRead().getName(),
+        assertEquals(
+                CsvReadBatchConfiguration.JOB_NAME, 
+                csvReadBatchLauncher.getJobCsvRead().getName(), // NOPMD
                 "設定しようとしたJob名であること");
     }
 

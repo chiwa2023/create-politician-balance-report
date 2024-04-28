@@ -36,11 +36,11 @@ function createDto(text:string,dummy:number):CsvReadTemplateInterface{
     
     selectOptionDto.value = text;
     selectOptionDto.text = text;
-    selectOptionDto.selectOptionsArray = ["15","1","2","16","0","0","0"];
-    selectOptionDto.finacialOrgKbn = 1;
-    selectOptionDto.finacialOrgId = 4000+dummy;
-    selectOptionDto.finacialOrgCode = 123*dummy;
-    selectOptionDto.finacialOrgName = text;
+    selectOptionDto.arrayText = "15,1,2,16,0,0,0";
+    selectOptionDto.financialOrgKbn = 1;
+    selectOptionDto.financialOrgId = 4000+dummy;
+    selectOptionDto.financialOrgCode = 123*dummy;
+    selectOptionDto.financialOrgName = text;
 
     return selectOptionDto;
 }

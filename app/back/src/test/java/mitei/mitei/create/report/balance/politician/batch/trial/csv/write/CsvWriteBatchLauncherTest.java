@@ -49,7 +49,9 @@ class CsvWriteBatchLauncherTest {
 
     @Test
     void testCsvWriteBatchLauncher() {
-        assertEquals(CsvWriteBatchConfiguration.JOB_NAME, csvWriteBatchLauncher.getJobCsvWrite().getName(),
+        assertEquals(
+                CsvWriteBatchConfiguration.JOB_NAME, 
+                csvWriteBatchLauncher.getJobCsvWrite().getName(), // NOPMD
                 "設定しようとしたJob名であること");
     }
 

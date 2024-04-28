@@ -14,7 +14,6 @@ import viewPrepareIncome from "../../dto/balancesheet/viewPrepareIncome";
 import viewPrepareOutcome from "../../dto/balancesheet/viewPrepareOutcome";
 import BalancesheetInput from "../../components/common/balancesheet_input/BalancesheetInput.vue";
 import InputInstitutionCsv from "../common/input_institution_csv/InputInstitutionCsv.vue";
-import SelectOptionsArrayInterface from "../../dto/selectOptionsArrayDto";
 
 //csv読み取りテンプレートを取得する
 const listCsvReadTemplate: Ref<CsvReadTemplateInterface[]> = ref([]);
@@ -96,16 +95,16 @@ watch(selectedCsvReadTemplate, () => {
             }
         }
         //格納された値に合わせて設定
-        const maxLength = selectedDto.selectOptionsArray.length;
+        const maxLength = selectedDto.arrayText.length;
         for (let index = 0; index < maxLength; index++) {
-            listPointItems.value[index].selectedOption = selectedDto.selectOptionsArray[index];
+            listPointItems.value[index].selectedOption = selectedDto.arrayText[index];
         }
         isSelectTemplate.value = false;
 
         //読みとられたcsvデータを収支報告書収入形式に変換
         listBalancesheetIncome.value.splice(0);
         listBalancesheetOutcome.value.splice(0);
-        const inputArray = selectedDto.selectOptionsArray;
+        const inputArray:string[] = selectedDto.arrayText.split(",");
         let incomeDto: BalancesheetIncomeDto | null;
         let outcomeDto: BalancesheetOutcomeDto | null;
         let isSet = false;
@@ -213,7 +212,7 @@ function onSave() {
     alert("保存");
 }
 /**  
- * 入力内容を破棄するする
+ * 入力内容を破棄する
  */
 function onCancel() {
     alert("キャンセル");

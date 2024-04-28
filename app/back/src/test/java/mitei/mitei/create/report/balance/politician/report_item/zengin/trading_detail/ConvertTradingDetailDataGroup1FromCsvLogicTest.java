@@ -16,7 +16,7 @@ class ConvertTradingDetailDataGroup1FromCsvLogicTest {
     // CHECKSTYLE:OFF
     
     @Test
-    void testPractice() throws Exception {
+    void testPractice() throws Exception { // NOPMD
         ConvertTradingDetailDataGroup1FromCsvLogic convertTradingDetailDataGroup1FromCsvLogic = new ConvertTradingDetailDataGroup1FromCsvLogic();
 
         final String data = "2,12345,031201,031218,1,11,0000098765,0003333,030913,031024,2,00468,456,2468013579,振込信金ユーザ太郎,××銀行,○○支店,取引詳細,edi,ｴﾝﾄﾞ";
@@ -84,7 +84,7 @@ class ConvertTradingDetailDataGroup1FromCsvLogicTest {
         // ダミーの格納位置
         assertThat(dto.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");
 
-        
+        final String emptyData = "空データ";
         
         final String data2 = "2, ,031201,031218,1, ,0000098765,0003333, , , , , , , , , , , ,ｴﾝﾄﾞ";
 
@@ -95,7 +95,7 @@ class ConvertTradingDetailDataGroup1FromCsvLogicTest {
         assertThat(dto2.getDataKbn()).isEqualTo(2);
 
         // 照会番号の格納位置
-        assertNull(dto2.getReferNo());
+        assertNull(dto2.getReferNo(),emptyData);
 
         // 勘定日の格納位置
         assertThat(dto2.getAccountingDate()).isEqualTo(LocalDate.of(2021, 12, 1));
@@ -107,7 +107,7 @@ class ConvertTradingDetailDataGroup1FromCsvLogicTest {
         assertThat(dto2.getDeWdKbn()).isEqualTo(1);
 
         // 取引区分の格納位置
-        assertNull(dto2.getTradingKbn());
+        assertNull(dto2.getTradingKbn(),emptyData);
 
         // 取引金額の格納位置
         assertThat(dto2.getTransactionAmount()).isEqualTo(98765L);
@@ -116,37 +116,37 @@ class ConvertTradingDetailDataGroup1FromCsvLogicTest {
         assertThat(dto2.getOtherStoreTicketAmount()).isEqualTo(3333L);
 
         // 交換呈示日の格納位置
-        assertNull(dto2.getExchangePresentationDate());
+        assertNull(dto2.getExchangePresentationDate(),emptyData);
 
         // 不渡返還日の格納位置
-        assertNull(dto2.getDishonoredReturnDate());
+        assertNull(dto2.getDishonoredReturnDate(),emptyData);
 
         // 手形・小切手区分の格納位置
-        assertNull(dto2.getBillCheckKbn());
+        assertNull(dto2.getBillCheckKbn(),emptyData);
 
         // 手形・小切手番号の格納位置
-        assertNull(dto2.getBillCheckNo());
+        assertNull(dto2.getBillCheckNo(),emptyData);
 
         // 僚店番号の格納位置
-        assertNull(dto2.getBranchNo());
+        assertNull(dto2.getBranchNo(),emptyData);
 
         // 振込依頼人コードの格納位置
-        assertNull(dto2.getTransferRequesterCode());
+        assertNull(dto2.getTransferRequesterCode(),emptyData);
 
         // 依頼人名または契約者番号の格納位置
-        assertNull(dto2.getTradingDetail());
+        assertNull(dto2.getTradingDetail(),emptyData);
 
         // 仕向銀行名の格納位置
-        assertNull(dto2.getSendingBankName());
+        assertNull(dto2.getSendingBankName(),emptyData);
 
         // 仕向店名の格納位置
-        assertNull(dto2.getSendingBankBranchName());
+        assertNull(dto2.getSendingBankBranchName(),emptyData);
 
         // 摘要内容の格納位置
-        assertNull(dto2.getAbstractContent());
+        assertNull(dto2.getAbstractContent(),emptyData);
 
         // EDI情報の格納位置
-        assertNull(dto2.getEdiInfo());
+        assertNull(dto2.getEdiInfo(),emptyData);
 
         // ダミーの格納位置
         assertThat(dto2.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");

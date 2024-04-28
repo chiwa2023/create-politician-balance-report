@@ -32,7 +32,7 @@ class ConvertTradingDetailAllFromCsvLogicTest {
     // CHECKSTYLE:OFF
 
     @Test
-    void testPractice()throws Exception {
+    void testPractice()throws Exception { // NOPMD
         ConvertTradingDetailAllFromCsvLogic convertTradingDetailAllFromCsvLogic = new ConvertTradingDetailAllFromCsvLogic();
         
         Path path = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "report_item/zegin_csv_format.csv");
@@ -51,7 +51,7 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(listGroup1.size()).isEqualTo(1);
             
             /* ヘッダレコード */
-            TradingZenginFormatTransactionDetailHeaderRecordDto headerDto1 = listGroup1.get(0).getTradingZenginFormatTransactionDetailHeaderRecordDto();
+            TradingZenginFormatTransactionDetailHeaderRecordDto headerDto1 = listGroup1.get(0).getTradingZenginFormatTransactionDetailHeaderRecordDto(); // NOPMD Low Of Demeter
             assertThat(headerDto1.getDataKbn()).isEqualTo(1);
             assertThat(headerDto1.getBusinessType()).isEqualTo("03");
             assertThat(headerDto1.getCodeKbn()).isEqualTo(0);
@@ -72,7 +72,7 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(headerDto1.getDummyEnd()).isEqualTo("ｻｲｼｭｳ");
             
             /* トレーラレコード */
-            TradingZenginFormatTransactionDetailTrailerRecordDto trailerDto1 = listGroup1.get(0).getTradingZenginFormatTransactionDetailTrailerRecordDto();
+            TradingZenginFormatTransactionDetailTrailerRecordDto trailerDto1 = listGroup1.get(0).getTradingZenginFormatTransactionDetailTrailerRecordDto(); // NOPMD Low Of Demeter
             assertThat(trailerDto1.getDataKbn()).isEqualTo(8);
             assertThat(trailerDto1.getCountIncome()).isEqualTo(1);
             assertThat(trailerDto1.getSumIncome()).isEqualTo(35791L);
@@ -81,7 +81,7 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(trailerDto1.getOverdraftKbn()).isEqualTo(1);
             assertThat(trailerDto1.getBalanceAfterTransaction()).isEqualTo(97531L);
             assertThat(trailerDto1.getCountData()).isEqualTo(2);
-            assertThat(trailerDto1.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");
+            assertThat(trailerDto1.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ"); // NOPMD Duplicate Liiteral
             
             List<TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto> listData1 = listGroup1.get(0).getListData();
             
@@ -138,7 +138,7 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(listGroup2.size()).isEqualTo(1);
 
             /* ヘッダレコード */
-            TradingZenginFormatTransactionDetailHeaderRecordDto headerDto2 = listGroup2.get(0).getTradingZenginFormatTransactionDetailHeaderRecordDto();
+            TradingZenginFormatTransactionDetailHeaderRecordDto headerDto2 = listGroup2.get(0).getTradingZenginFormatTransactionDetailHeaderRecordDto(); // NOPMD Low Of Demeter
             assertThat(headerDto2.getDataKbn()).isEqualTo(1);
             assertThat(headerDto2.getBusinessType()).isEqualTo("03");
             assertThat(headerDto2.getCodeKbn()).isEqualTo(0);
@@ -159,7 +159,7 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(headerDto2.getDummyEnd()).isEqualTo("ｻｲｼｭｳ");
             
             /* トレーラレコード */
-            TradingZenginFormatTransactionDetailTrailerRecordDto trailerDto2 = listGroup2.get(0).getTradingZenginFormatTransactionDetailTrailerRecordDto();
+            TradingZenginFormatTransactionDetailTrailerRecordDto trailerDto2 = listGroup2.get(0).getTradingZenginFormatTransactionDetailTrailerRecordDto(); // NOPMD Low Of Demeter
             assertThat(trailerDto2.getDataKbn()).isEqualTo(8);
             assertThat(trailerDto2.getCountIncome()).isEqualTo(1);
             assertThat(trailerDto2.getSumIncome()).isEqualTo(35791L);
@@ -246,7 +246,7 @@ class ConvertTradingDetailAllFromCsvLogicTest {
 
             
             //エンドレコード
-            TradingZenginFormatTransactionDetailEndRecordDto endDto = detailDto.getTradingZenginFormatTransactionDetailEndRecordDto();
+            TradingZenginFormatTransactionDetailEndRecordDto endDto = detailDto.getTradingZenginFormatTransactionDetailEndRecordDto(); // NOPMD Low Of Demeter
             assertThat(endDto.getDataKbn()).isEqualTo(9);
             assertThat(endDto.getCountRecord()).isEqualTo(11);
             assertThat(endDto.getCountAccount()).isEqualTo(2);
@@ -278,10 +278,6 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(allDepositDto.getListGroup2().size()).isEqualTo(1);
             
         }
-        
-        
-        
-        
     }
 
 }

@@ -17,7 +17,7 @@ public class ConvertTradingDetailEndFromCsvLogic {
      * @param cell csvの各セル
      * @return ヘッダレコード
      */
-    public TradingZenginFormatTransactionDetailEndRecordDto practice(final String[] cell) {
+    public TradingZenginFormatTransactionDetailEndRecordDto practice(final String[] cell) { // NOPMD
 
         TradingZenginFormatTransactionDetailEndRecordDto dto = new TradingZenginFormatTransactionDetailEndRecordDto();
 

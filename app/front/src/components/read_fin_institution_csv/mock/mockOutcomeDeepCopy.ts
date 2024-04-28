@@ -1,5 +1,10 @@
 ﻿import BalancesheetOutcomeDto from "../../../dto/balancesheetOutcomeDto";
 
+/**
+ * 収支報告書支出項目データの複写を行う
+ * @param dtoSrc コピー元
+ * @returns コピー先
+ */
 export default function mockOutcomeDeepCopy(dtoSrc:BalancesheetOutcomeDto):BalancesheetOutcomeDto{
 
     const dtoCopy:BalancesheetOutcomeDto = new BalancesheetOutcomeDto();

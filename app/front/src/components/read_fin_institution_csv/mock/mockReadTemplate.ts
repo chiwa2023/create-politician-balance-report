@@ -1,6 +1,11 @@
 ﻿import CsvReadTemplateInterface from "../../../dto/read_csv/csvReadTemplate";
 import CsvReadTemplateDto from "../../../dto/read_csv/csvReadTemplate";
 
+/**
+ * 配列内で選択肢を設定するためのInterface
+ * @param columnSize 読み取ったcsvの列数
+ * @returns 読み取り選択項目
+ */
 export default function mockReadTemplate(columnSize:number):CsvReadTemplateInterface[]{
     const listOptions:CsvReadTemplateInterface[] = []; 
 
@@ -20,11 +25,16 @@ export default function mockReadTemplate(columnSize:number):CsvReadTemplateInter
     return listOptions;
 }
 
+/**
+ * Dtoを生成する
+ * @param text 設定する値
+ * @returns Dto
+ */
 function createDto(text:string):CsvReadTemplateInterface{
     const selectOptionDto:CsvReadTemplateInterface = new CsvReadTemplateDto();
     
     selectOptionDto.value = text;
     selectOptionDto.text = text;
-    selectOptionDto.selectOptionsArray = ["15","1","2","16","0","0","0"];
+    selectOptionDto.arrayText = "15,1,2,16,0,0,0";
     return selectOptionDto;
 }

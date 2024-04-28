@@ -69,11 +69,14 @@ class ConvertTradingDetailTrailerFromCsvLogicTest {
         // 出金額合計の格納位置 
         assertThat(dto2.getSumOutcome()).isEqualTo(123);
 
+
+        final String emptyData = "空データ";
+
         // 貸越区分の格納位置 
-        assertNull(dto2.getOverdraftKbn());
+        assertNull(dto2.getOverdraftKbn(),emptyData);
 
         // 取引後残高の格納位置 
-        assertNull(dto2.getBalanceAfterTransaction());
+        assertNull(dto2.getBalanceAfterTransaction(),emptyData);
 
         // データ・レコード件数の格納位置 
         assertThat(dto2.getCountData()).isEqualTo(2);
