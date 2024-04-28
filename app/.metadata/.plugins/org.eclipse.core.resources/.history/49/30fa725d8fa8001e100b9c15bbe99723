@@ -1,9 +1,0 @@
-package mitei.mitei.create.report.balance.politician.dto.publish;
-
-public class AbstractWroksheetDto {
-
-    public AbstractWroksheetDto() {
-        // TODO Auto-generated constructor stub
-    }
-
-}
