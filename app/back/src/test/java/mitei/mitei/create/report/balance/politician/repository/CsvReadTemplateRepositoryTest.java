@@ -40,8 +40,9 @@ class CsvReadTemplateRepositoryTest {
         assertThat(listCondition.size()).isEqualTo(2);
 
         //それぞれの仕様の名称を確認します。
-        assertThat(listCondition.get(0).getCsvReadTemplateName()).isEqualTo("きつねが木の葉で払うPay");
-        assertThat(listCondition.get(1).getCsvReadTemplateName()).isEqualTo("首都圏信用金庫");
+        assertThat(listCondition.get(0).getCsvReadTemplateName()).isEqualTo("木の葉のポイントざくざくPay");
+        assertThat(listCondition.get(1).getCsvReadTemplateName()).isEqualTo("きつねが木の葉で払うPay");
+        
     }
 
     @Test

@@ -69,9 +69,9 @@ export default function convertBalancesheetIncomeFromTradingCore(line: CsvCellIn
     incomeDto.reportKbn = 1;
     incomeDto.biko = "入力備考";
     incomeDto.itemName = "ｼｴﾝｼｬ ﾊﾅｺ";
-    incomeDto.yoshikiKbn = "7";
-    incomeDto.yoshikiEdaKbn = "1";
-    incomeDto.shimeiOrgnizationName = "弁護士";
+    incomeDto.youshikiKbn = 7;
+    incomeDto.youshikiEdaKbn = 1;
+    incomeDto.professionOrgnizationName = "弁護士";
     incomeDto.orgnizationAddress = "東京都千代田区";
     incomeDto.isCreditTax = true;
 

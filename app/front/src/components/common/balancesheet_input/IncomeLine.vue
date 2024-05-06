@@ -1,12 +1,13 @@
 ﻿<script setup lang="ts">
-import closeInputIncomeForm from "../../../dto/balancesheet/closeInputIncomeForm";
-import openInputIncomeForm from "../../../dto/balancesheet/openInputIncomeForm";
-import changeIncomeYoshikiKbnState from "../../../dto/balancesheet/changeIncomeYoshikiKbnState";
+import changeIncomeYoushikiKbnState from "../../../dto/balancesheet/changeIncomeYoushikiKbnState";
 import changeStateIncomeEdaKbn from "../../../dto/balancesheet/changeStateIncomeEdaKbn";
-import BalancesheetIncomeInterface from "../../../dto/balancesheetIncomeDto";
-import { computed, watch } from "vue";
+import BalancesheetIncomeDto from "../../../dto/balancesheetIncomeDto";
+import { computed, watch, Ref, ref, WritableComputedRef } from "vue";
+import viewPrepareIncome from "../../../dto/balancesheet/viewPrepareIncome";
+import CallingItemEntity from "../../../entity/callingItemEntity";
+import ShowCallingItem from "../show_calling_item/ShowCallingItem.vue";
 
-const props = defineProps<{ lineIndex: number, lineDto: BalancesheetIncomeInterface }>();
+const props = defineProps<{ lineIndex: number, lineDto: BalancesheetIncomeDto,listItem:CallingItemEntity[] }>();
 const emit = defineEmits(["restoreIncomeReadData"]);
 
 //行Index
@@ -23,329 +24,23 @@ const incomeItem = computed(
     }
 );
 
-
+//候補マップ
+const listCallingItem: WritableComputedRef<CallingItemEntity[]> = computed(
+    () => props.listItem,
+);
 
 /** 報告区分を監視 */
-watch(() => incomeItem.value.reportKbn, (newValue) => {
-    switch (newValue) {
-    //報告対象
-    case 1:
-        //収支報告するのですべての入力フォームを開きます
-        openInputIncomeForm(changeIncomeYoshikiKbnState(incomeItem.value));
-        break;
-    //生活費
-    case 20:
-        //収支報告しないのですべての入力フォームを閉じます
-        closeInputIncomeForm(incomeItem.value);
-        break;
-    //政治活動
-    case 11:
-        //収支報告しないのですべての入力フォームを閉じます
-        closeInputIncomeForm(incomeItem.value);
-        break;
-    //政治活動
-    case 50:
-        openInputIncomeForm(changeIncomeYoshikiKbnState(incomeItem.value));
-        break;
-    }
+watch(() => incomeItem.value.reportKbn, () => {
+    viewPrepareIncome(incomeItem.value);
 });
-
-//収入収支報告しないので不要な入力フォームを閉じます
-//function closeInputIncomeForm() {
-//    //様式区分を非表示にします
-//    incomeItem.value.isUseYoshikiKbn = false;
-//    //様式区分枝項目を非表示にします
-//    incomeItem.value.isUseYoshikiEdaKbn = false;
-//    //あっせん期間部分を非表示にします
-//    incomeItem.value.isUseMediation = false;
-//    //団体名称を非表示にします
-//    incomeItem.value.isUseOrgName = false;
-//    //項目名を非表示にします
-//    incomeItem.value.isUseItemName = false;
-//    //団体住所を非表示にします
-//    incomeItem.value.isUseAddress = false;
-//    //備考を非表示にします
-//    incomeItem.value.isUseBiko = false;
-//    //寄付金控除を非表示にします
-//    incomeItem.value.isUseCreditTax = false;
-//    //パーティ名称は非表示にします
-//    incomeItem.value.isUsePartyName = false;
-//    //パーティ日付を非表示にします
-//    incomeItem.value.isUsePartyDate = false;
-//}
-
-//収入収支報告するのでとりあえずすべての入力フォームをあけます
-//function openInputIncomeForm(): boolean {
-//    //様式区分を表示します;
-//    incomeItem.value.isUseYoshikiKbn = true;
-//    //様式区分枝項目を表示します
-//    incomeItem.value.isUseYoshikiEdaKbn = true;
-//    //あっせん期間を表示します
-//    incomeItem.value.isUseMediation = true;
-//    //組織名称を表示します
-//    incomeItem.value.isUseOrgName = true;
-//    //項目部分を表示します
-//    incomeItem.value.isUseItemName = true;
-//    //団体住所部分を表示します
-//    incomeItem.value.isUseAddress = true;
-//    //備考部分を表示ます
-//    incomeItem.value.isUseBiko = true;
-//    //寄付金控除を表示します
-//    incomeItem.value.isUseCreditTax = true;
-//    //パーティ名称を表示します
-//    incomeItem.value.isUsePartyName = true;
-//    //パーティ日付を表示ます
-//    incomeItem.value.isUsePartyDate = true;
-//    return true;
-//}
-
 
 //様式区分を監視
-watch(() => incomeItem.value.yoshikiKbn, () => {
-    changeIncomeYoshikiKbnState(incomeItem.value);
+watch(() => incomeItem.value.youshikiKbn, () => {
+    changeIncomeYoushikiKbnState(incomeItem.value);
 });
 
-///* 収入様式区分の値が変更になったら修正 */
-//function changeIncomeYoshikiKbnState(yoshikiKbn: string) {
-//    switch (yoshikiKbn) {
-//        case "3":
-//            //枝区分は不要です
-//            incomeItem.value.isUseYoshikiEdaKbn = false;
-//            //団体名称は不要です
-//            incomeItem.value.isUseOrgName = false;
-//            //団体住所は不要です
-//            incomeItem.value.isUseAddress = false;
-//            //項目は必要です
-//            incomeItem.value.isUseItemName = true;
-//            incomeItem.value.attentionItemName = "事業の種類";
-//            //寄付金控除は不要です
-//            incomeItem.value.isUseCreditTax = false;
-//            //パーティ名称は不要です
-//            incomeItem.value.isUsePartyName = false;
-//            //パーティ日付は不要です
-//            incomeItem.value.isUsePartyDate = false;
-//            break;
-//
-//        case "4":
-//            //枝区分は不要です
-//            incomeItem.value.isUseYoshikiEdaKbn = false;
-//            //団体名称は不要です
-//            incomeItem.value.isUseOrgName = false;
-//            //団体住所は不要です
-//            incomeItem.value.isUseAddress = false;
-//            //項目は必要です
-//            incomeItem.value.isUseItemName = true;
-//            incomeItem.value.attentionItemName = "借入した相手";
-//            //寄付金控除は不要です
-//            incomeItem.value.isUseCreditTax = false;
-//            //パーティ名称は不要です
-//            incomeItem.value.isUsePartyName = false;
-//            //パーティ日付は不要です
-//            incomeItem.value.isUsePartyDate = false;
-//            break;
-//        case "5":
-//            //枝区分は不要です
-//            incomeItem.value.isUseYoshikiEdaKbn = false;
-//            //団体名称は必要です
-//            incomeItem.value.isUseOrgName = true;
-//            incomeItem.value.attentionOrgName = "本部または支部名称";
-//            //団体住所は必要です
-//            incomeItem.value.isUseAddress = true;
-//            incomeItem.value.attentionAddress = "本部または支部住所";
-//            //項目は不要です
-//            incomeItem.value.isUseItemName = false;
-//            //寄付金控除は不要です
-//            incomeItem.value.isUseCreditTax = false;
-//            //パーティ名称は不要です
-//            incomeItem.value.isUsePartyName = false;
-//            //パーティ日付は不要です
-//            incomeItem.value.isUsePartyDate = false;
-//            break;
-//
-//        case "6":
-//            //枝区分は不要です
-//            incomeItem.value.isUseYoshikiEdaKbn = false;
-//            //団体名称は不要です
-//            incomeItem.value.isUseOrgName = false;
-//            //団体住所は不要です
-//            incomeItem.value.isUseAddress = false;
-//            //項目は必要です
-//            incomeItem.value.isUseItemName = true;
-//            incomeItem.value.attentionItemName = "収入の摘要";
-//            //寄付金控除は不要です
-//            incomeItem.value.isUseCreditTax = false;
-//            //パーティ名称は不要です
-//            incomeItem.value.isUsePartyName = false;
-//            //パーティ日付は不要です
-//            incomeItem.value.isUsePartyDate = false;
-//            break;
-//
-//        case "7":
-//            //枝区分は必要です
-//            incomeItem.value.isUseYoshikiEdaKbn = true;
-//            //団体名称は必要です
-//            incomeItem.value.isUseOrgName = true;
-//            incomeItem.value.attentionOrgName = "団体の場合は代表者名、個人の場合は職業";
-//            //団体住所は必要です
-//            incomeItem.value.isUseAddress = true;
-//            incomeItem.value.attentionAddress = "寄付者自身または団体の住所";
-//            //項目は必要です
-//            incomeItem.value.isUseItemName = true;
-//            incomeItem.value.attentionItemName = "寄付者の個人氏名または団体名称";
-//            //寄付金控除は不要です
-//            //incomeItem.value.isUseCreditTax = false;
-//            //パーティ名称は不要です
-//            incomeItem.value.isUsePartyName = false;
-//            //パーティ日付は不要です
-//            incomeItem.value.isUsePartyDate = false;
-//            //様式区分が7の場合は特殊設定を明けに行く            
-//            changeStateEdaKbn(yoshikiKbn, incomeItem.value.yoshikiEdaKbn);
-//            break;
-//        case "8":
-//            //枝区分は必要です
-//            incomeItem.value.isUseYoshikiEdaKbn = true;
-//            //あっせん項目は期間の記載が必要となります
-//            incomeItem.value.isUseMediation = true;
-//            incomeItem.value.attentionMediation = "寄付をあっせんした期間";
-//            //団体名称は必要です
-//            incomeItem.value.isUseOrgName = true;
-//            incomeItem.value.attentionOrgName = "団体の場合は代表者名、個人の場合は職業";
-//            //団体住所は必要です
-//            incomeItem.value.isUseAddress = true;
-//            incomeItem.value.attentionAddress = "寄付あっせん者自身または団体の住所";
-//            //概要は必要です
-//            incomeItem.value.isUseItemName = true;
-//            incomeItem.value.attentionItemName = "寄付あっせん者の個人氏名または団体名称";
-//            //寄付金控除は不要です
-//            incomeItem.value.isUseCreditTax = false;
-//            //パーティ名称は不要です
-//            incomeItem.value.isUsePartyName = false;
-//            //パーティ日付は不要です
-//            incomeItem.value.isUsePartyDate = false;
-//            break;
-//
-//        case "9":
-//            //枝区分は不要です
-//            incomeItem.value.isUseYoshikiEdaKbn = false;
-//            //団体名称は不要です
-//            incomeItem.value.isUseOrgName = false;
-//            //団体住所は不要です
-//            incomeItem.value.isUseAddress = false;
-//            //項目は必要です
-//            incomeItem.value.isUseItemName = true;
-//            incomeItem.value.attentionItemName = "政党匿名寄付を受けた場所";
-//            //寄付金控除は不要です
-//            incomeItem.value.isUseCreditTax = false;
-//            //パーティ名称は不要です
-//            incomeItem.value.isUsePartyName = false;
-//            //パーティ日付は不要です
-//            incomeItem.value.isUsePartyDate = false;
-//            break;
-//
-//        case "10":
-//            //枝区分は不要です
-//            incomeItem.value.isUseYoshikiEdaKbn = false;
-//            //団体名称は必要です
-//            incomeItem.value.isUseOrgName = true;
-//            incomeItem.value.attentionOrgName = "パーティ名称";
-//            //団体住所は必要です
-//            incomeItem.value.isUseAddress = true;
-//            incomeItem.value.attentionAddress = "パーティ開催場所住所";
-//            //概要は必要です
-//            incomeItem.value.isUseItemName = true;
-//            incomeItem.value.attentionItemName = "対価を支払った人数";
-//            //寄付金控除は不要です
-//            incomeItem.value.isUseCreditTax = false;
-//            //パーティ名称は不要です
-//            incomeItem.value.isUsePartyName = false;
-//            //パーティ日付は不要です
-//            incomeItem.value.isUsePartyDate = false;
-//            break;
-//
-//        case "11":
-//            //枝区分は必要です
-//            incomeItem.value.isUseYoshikiEdaKbn = true;
-//            //団体名称は必要です
-//            incomeItem.value.isUseOrgName = true;
-//            incomeItem.value.attentionOrgName = "団体の場合は代表者名、個人の場合は職業";
-//            //団体住所は必要です
-//            incomeItem.value.isUseAddress = true;
-//            incomeItem.value.attentionAddress = "個人または団体住所";
-//            //概要は必要です
-//            incomeItem.value.isUseItemName = true;
-//            incomeItem.value.attentionItemName = "費用を支払った氏名";
-//            //寄付金控除は不要です
-//            incomeItem.value.isUseCreditTax = false;
-//            //パーティ名称は必要です
-//            incomeItem.value.isUsePartyName = true;
-//            incomeItem.value.attentionPartyName = "開催したパーティ名称";
-//            //パーティ日付は必要です
-//            incomeItem.value.isUsePartyDate = true;
-//            incomeItem.value.attentionPartyDate = "パーティ開催日";
-//            break;
-//
-//        case "12":
-//            //枝区分は必要です
-//            incomeItem.value.isUseYoshikiEdaKbn = true;
-//            //あっせん項目は期間の記載が必要となります
-//            incomeItem.value.isUseMediation = true;
-//            incomeItem.value.attentionMediation = "寄付をあっせんした期間";
-//            //団体名称は必要です
-//            incomeItem.value.isUseOrgName = true;
-//            incomeItem.value.attentionOrgName = "団体の場合は代表者名、個人の場合は職業";
-//            //団体住所は必要です
-//            incomeItem.value.isUseAddress = true;
-//            incomeItem.value.attentionAddress = "個人または団体住所";
-//            //概要は必要です
-//            incomeItem.value.isUseItemName = true;
-//            incomeItem.value.attentionItemName = "費用を支払った氏名";
-//            //寄付金控除は不要です
-//            incomeItem.value.isUseCreditTax = false;
-//            //パーティ名称は必要です
-//            incomeItem.value.isUsePartyName = true;
-//            incomeItem.value.attentionPartyName = "開催したパーティ名称";
-//            //パーティ日付は必要です
-//            incomeItem.value.isUsePartyDate = true;
-//            incomeItem.value.attentionPartyDate = "パーティ開催日";
-//            break;
-//    }
-//};
-
-///* 収入様式枝区分の値が変更になったら修正 */
-//function changeStateEdaKbn(yoshikiKbn: string, yoshikiEdaKbn: string) {
-//    //枝区分によって特殊な動きをするのは様式区分7の場合のみです
-//    if (yoshikiKbn === "7") {
-//        switch (yoshikiEdaKbn) {
-//            case "1":
-//                //個人寄付の時、遺贈チェックと寄付金控除チェックをオンにします
-//                incomeItem.value.isUseCreditTax = true;
-//                incomeItem.value.isUseBequest = true;
-//                incomeItem.value.isUsePrimeListedOrForeign = false;
-//                break;
-//            case "2":
-//                //法人寄付の時、上場・外資50%チェックをオンにします
-//                incomeItem.value.isUseCreditTax = false;
-//                incomeItem.value.isUseBequest = false;
-//                incomeItem.value.isUsePrimeListedOrForeign = true;
-//                break;
-//            case "3":
-//                //政治団体の場合は特殊なInputをすべて消します。
-//                incomeItem.value.isUseCreditTax = false;
-//                incomeItem.value.isUseBequest = false;
-//                incomeItem.value.isUsePrimeListedOrForeign = false;
-//                break;
-//        }
-//    }
-//    else {
-//        //それ以外の場合は特殊なInputをすべて消します。
-//        incomeItem.value.isUseCreditTax = false;
-//        incomeItem.value.isUseBequest = false;
-//        incomeItem.value.isUsePrimeListedOrForeign = false;
-//    }
-//}
-
 //様式枝区分を監視
-watch(() => incomeItem.value.yoshikiEdaKbn, () => {
+watch(() => incomeItem.value.youshikiEdaKbn, () => {
     changeStateIncomeEdaKbn(incomeItem.value);
 });
 
@@ -384,6 +79,28 @@ watch(() => incomeItem.value.isEditAutoInput, (newValue) => {
     }
 });
 
+const isVisibleShowCallingItem: Ref<boolean> = ref(false);
+/**
+ * 他の呼び出し候補表示コンポーネントを表示する
+ */
+function showCallinItem() {
+    isVisibleShowCallingItem.value = true;
+}
+/**
+ * 他の呼び出し候補表示コンポーネントを非表示にする
+ */
+function recieveCancelShowCallingItem() {
+    isVisibleShowCallingItem.value = false;
+}
+/**
+ * 他の呼び出し候補を選択する
+ * @param selectedDto 選択項目
+ */
+function recieveCallingItemEntity(selectedDto: CallingItemEntity) {
+    alert("選択" + selectedDto.youshikiKbn);
+    //TODO 選択データを更新するのは追加修正とする
+    isVisibleShowCallingItem.value = false;
+}
 </script>
 <template>
     <td><input type="text" v-model="incomeItem.referDigest" :disabled="true"></td>
@@ -394,7 +111,7 @@ watch(() => incomeItem.value.isEditAutoInput, (newValue) => {
             :value="11">報告対象外政治関連(廃止予定)<br><input type="radio" v-model="incomeItem.reportKbn" :value="50">タスク計上(後で確定)
     </td>
     <td>
-        <div v-show="incomeItem.isUseYoshikiKbn"><select v-model="incomeItem.yoshikiKbn">
+        <div v-show="incomeItem.isUseYoushikiKbn"><select v-model="incomeItem.youshikiKbn">
                 <option value="3">3.機関誌発行その他事業収入</option>
                 <option value="4">4.借入金</option>
                 <option value="5">5.本部／支部から交付金収入</option>
@@ -406,9 +123,10 @@ watch(() => incomeItem.value.isEditAutoInput, (newValue) => {
                 <option value="11">11.政治資金パーティー収入</option>
                 <option value="12">12.政治資金パーティ収入(あっせん)</option>
             </select></div>
+        <br><button @click="showCallinItem">他の紐づけ候補</button>
     </td>
     <td>
-        <div v-show="incomeItem.isUseYoshikiEdaKbn"><select v-model="incomeItem.yoshikiEdaKbn">
+        <div v-show="incomeItem.isUseYoushikiEdaKbn"><select v-model="incomeItem.youshikiEdaKbn">
                 <option value="1">1.個人</option>
                 <option value="2">2.法人その他の団体</option>
                 <option value="3">3.政治団体</option>
@@ -421,7 +139,7 @@ watch(() => incomeItem.value.isEditAutoInput, (newValue) => {
     </td>
     <td>
         <div v-show="incomeItem.isUseOrgName">{{ incomeItem.attentionOrgName }}：<br><input type="text"
-                v-model="incomeItem.shimeiOrgnizationName"></div>
+                v-model="incomeItem.professionOrgnizationName"></div>
     </td>
     <td>
         <div v-show="incomeItem.isUseAddress">{{ incomeItem.attentionAddress }}：<br><textarea
@@ -458,6 +176,14 @@ watch(() => incomeItem.value.isEditAutoInput, (newValue) => {
     <td><textarea v-model="incomeItem.note"></textarea></td>
     <td><input type="checkbox" v-model="incomeItem.isDifferPrecedent">前例と異なる処理</td>
     <td><input type="checkbox" v-model="incomeItem.isEditAutoInput">入力できない部分を<br>入力可能にする</td>
+    <!-- ベースを操作禁止するレイヤ -->
+    <div v-if="isVisibleShowCallingItem" class="overBackground"></div>
+    <!--上にかぶせるコンポーネント -->
+    <div v-if="isVisibleShowCallingItem" class="overComponent">
+        <ShowCallingItem :digest="incomeItem.referDigest" :listItem="listCallingItem"
+            @sendCancelShowCallingItem="recieveCancelShowCallingItem" @sendCallingItemEntity="recieveCallingItemEntity">
+        </ShowCallingItem>
+    </div>
 </template>
 <style scoped>
 table {

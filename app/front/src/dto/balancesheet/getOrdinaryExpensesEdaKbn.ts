@@ -1,5 +1,6 @@
 ﻿import SelectOptionInterface from "../selectOptionDto";
 import SelectOptionDto from "../selectOptionDto";
+import YoushikiEdaKbnOutcomeConstants from "./youshikiEdaKbnOutcomeConstants";
 
 /**
  * 収支報告書支出データ仕訳枝項目(仕訳項目14)選択の選択肢を取得する
@@ -8,9 +9,9 @@ import SelectOptionDto from "../selectOptionDto";
 export default function getOrdinaryExpensesEdaKbn(): SelectOptionInterface[] {
     const list: SelectOptionDto[] = [];
     list.splice(0);
-    list.push(createDto("2", "2.光熱水費"));
-    list.push(createDto("3", "3.備品・消耗品費"));
-    list.push(createDto("4", "4.事務所費"));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.KOUNETSUHI, YoushikiEdaKbnOutcomeConstants.KOUNETSUHI_TEXT));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.SHOUMOUHIN, YoushikiEdaKbnOutcomeConstants.SHOUMOUHIN_TEXT));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.JIMUSHO, YoushikiEdaKbnOutcomeConstants.JIMUSHO_TEXT));
 
     return list;
 }

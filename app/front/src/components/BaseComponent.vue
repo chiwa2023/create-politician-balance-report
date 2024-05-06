@@ -2,6 +2,8 @@
 import { ref, Ref } from "vue";
 import SearchVariousFinancialPay from "./common/search_various_financial_pay/SearchVariousFinancialPay.vue";
 import VariousFinancialPayInterface from "../dto/financial/vairousFinancialPayDto";
+import VariousFinancialPayDto from "../dto/financial/vairousFinancialPayDto";
+import InputSearchVariousFinancialPay from "./common/input_search_various_financial_pay/InputSearchVariousFinancialPay.vue";
 
 const financialOrgCode: Ref<number> = ref(0);
 const financialOrgName: Ref<string> = ref("");
@@ -20,15 +22,17 @@ function recieveCancelSearchVariousFinancialPay() {
     isVisibleSearchVariousFinancialPay.value = false;
 }
 
+const viewDto: Ref<VariousFinancialPayInterface> = ref(new VariousFinancialPayDto());
+
 /**
  * 各種Pay検索コンポーネントから選択されたデータを受け取り非表示にする
- * @param slectedDto 選択された各種PayDto
+ * @param selectedDto 選択された各種PayDto
  */
-function recieveVariousFinancialPayInterface(slectedDto:VariousFinancialPayInterface) {
+function recieveVariousFinancialPayInterface(selectedDto: VariousFinancialPayInterface) {
     //受信内容を複写
-    financialOrgCode.value = slectedDto.variousFinancialPayCode;
-    financialOrgName.value = slectedDto.variousFinancialPayName;
-   
+    financialOrgCode.value = selectedDto.variousFinancialPayCode;
+    financialOrgName.value = selectedDto.variousFinancialPayName;
+    viewDto.value = selectedDto;
     //コンポーネント非表示
     isVisibleSearchVariousFinancialPay.value = false;
 }
@@ -37,23 +41,30 @@ function recieveVariousFinancialPayInterface(slectedDto:VariousFinancialPayInter
     <h1>コンポーネントをページと関係なく作成するための台紙</h1>
     <hr>
     <div class="left-area">
-                金融機関(各種Pay／全銀)
-            </div>
-            <div class="right-area">
-                <input type="number" v-model="financialOrgCode" disabled="false" style="margin-right: 2%;">
-                <input type="text" v-model="financialOrgName" disabled="false" style="margin-right: 2%;">
-                <button style="margin-right: 2%;" @click="showSearchVariousFinancialPay">各種Pay検索</button>
-                <!--
+        金融機関(各種Pay／全銀)
+    </div>
+    <div class="right-area">
+        <input type="number" v-model="financialOrgCode" disabled="false" style="margin-right: 2%;">
+        <input type="text" v-model="financialOrgName" disabled="false" style="margin-right: 2%;">
+        <button style="margin-right: 2%;" @click="showSearchVariousFinancialPay">各種Pay検索</button>
+        <!--
                 <button style="margin-right: 2%;" @click="showSearchZenginFinancialOrg">全銀金融機関検索</button>
                 -->
-            </div>
+    </div>
 
-            <hr>
+    <hr>
 
     <!-- 各種Pay機関検索コンポーネント -->
     <div v-if="isVisibleSearchVariousFinancialPay">
-        <SearchVariousFinancialPay :isEditable="false"  @sendCancelSearchVariousFinancialPay="recieveCancelSearchVariousFinancialPay"  @sendVariousFinancialPayInterface="recieveVariousFinancialPayInterface"></SearchVariousFinancialPay>
+        <SearchVariousFinancialPay :isEditable="true"
+            @sendCancelSearchVariousFinancialPay="recieveCancelSearchVariousFinancialPay"
+            @sendVariousFinancialPayInterface="recieveVariousFinancialPayInterface"></SearchVariousFinancialPay>
     </div>
+
+    {{ viewDto.variousFinancialPayId }}<br>
+    {{ viewDto.variousFinancialPayName }}<br>
+
+    <InputSearchVariousFinancialPay :selectedDto="viewDto"></InputSearchVariousFinancialPay>
 
 </template>
 <style scoped></style>

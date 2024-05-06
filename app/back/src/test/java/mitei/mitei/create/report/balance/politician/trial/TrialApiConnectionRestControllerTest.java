@@ -20,6 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import mitei.mitei.create.report.balance.politician.dto.SelectOptionDto;
+import mitei.mitei.create.report.balance.politician.util.GetObjectMapperWithTimeModuleUtil;
 
 /**
  * TrialApiConnectionRestController単体テスト
@@ -40,7 +41,7 @@ class TrialApiConnectionRestControllerTest {
         String responsContent = this.mockMvc.perform(get("/trial-api-rest")) // NOPMD
                 .andExpect(status().isOk()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
 
-        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectMapper objectMapper = GetObjectMapperWithTimeModuleUtil.practice();
 
         MakeTrialTestDataLogic makeTrialTestDataLogic = new MakeTrialTestDataLogic();
         List<SelectOptionDto> list = makeTrialTestDataLogic.practice();

@@ -3,6 +3,8 @@ package mitei.mitei.create.report.balance.politician.entity;
 import java.io.Serializable;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -41,6 +43,7 @@ public class VariousFinancialPayEntity implements Serializable { // NOPMD DataCl
 
     /** 各種PayId */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long variousFinancialPayId;
 
     /**
@@ -122,6 +125,27 @@ public class VariousFinancialPayEntity implements Serializable { // NOPMD DataCl
      */
     public void setVariousFinancialPayCode(final Integer variousFinancialPayCode) {
         this.variousFinancialPayCode = variousFinancialPayCode;
+    }
+
+    /** ログインユーザ氏名 */
+    private String loginUserName;
+
+    /**
+     * ログインユーザ氏名を取得する
+     *
+     * @return ログインユーザ氏名
+     */
+    public String getLoginUserName() {
+        return loginUserName;
+    }
+
+    /**
+     * ログインユーザ氏名を設定する
+     *
+     * @param loginUserName ログインユーザ氏名
+     */
+    public void setLoginUserName(final String loginUserName) {
+        this.loginUserName = loginUserName;
     }
 
 }

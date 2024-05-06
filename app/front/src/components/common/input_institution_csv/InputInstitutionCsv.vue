@@ -8,17 +8,26 @@ import CsvReadTemplateInterface from "../../../dto/read_csv/csvReadTemplate";
 import CsvReadTemplateDto from "../../../dto/read_csv/csvReadTemplate";
 import PropseCsvReadTemplateInterface from "../../../dto/read_csv/proposeCsvReadTemplate";
 import ProposeCsvReadTemplateDto from "../../../dto/read_csv/proposeCsvReadTemplate";
-import mockReadTemplate from "./mock/mockReadTemplate";
 import SearchZenginFinancialOrg from "../search_zengin_financial_org/SearchZenginFinancialOrg.vue";
 import SearchVariousFinancialPay from "../search_various_financial_pay/SearchVariousFinancialPay.vue";
 import ZenginFinancialOrgInterface from "../../../dto/financial/zenginFinancialOrg";
 import VariousFinancialPayInterface from "../../../dto/financial/vairousFinancialPayDto";
+import CsvReadTemplateCapsuleDto from "../../../dto/read_csv/csvReadTemplateCapsuleDto";
+import SessionStorageCommonCheck from "../../../dto/common_check/sessionStorageCommonCheck";
+import createCheckTransactionDto from "../../../dto/common_check/createCheckTransactionDto";
+import axios from "axios";
+import showErrorMessage from "../../../dto/common_check/showErrorMessage";
+import SendCsvAndStragedShoshouDto from "../../../dto/read_csv/sendCsvAndStragedShoshouDto";
+import SaveStorageResultDto from "../../../dto/storage/saveStorageResultDto";
+import PropseCsvReadTemplateEntity from "../../../entity/proposeCsvReadTemplateEntity";
+import FinancialOrgConstants from "../../../dto/financial/financialOrgConstants";
+import RegistProposeCsvReadRemplateCapsuleDto from "../../../dto/read_csv/registProposeCsvReadRemplateCapsuleDto";
 
 //props,emit
 const props = defineProps<{ csvData: [CsvCellInterface[]], }>();
 const emits = defineEmits(["sendSelectOptionsArrayInterface"]);
 
-//表示用(リストヘッダの無の場合受信データ後の1行目削除前データに戻す必要がある)
+//表示用(リストヘッダの有から無にする場合、受信データ後の1行目削除前データに戻す必要がある)
 const viewCsvReadData: WritableComputedRef<[CsvCellInterface[]]> = computed(
     () => props.csvData,
 );
@@ -30,11 +39,12 @@ const selectedCsvReadTemplate: Ref<string> = ref("");
 //1行目ヘッダ有無
 const hasHeader: Ref<boolean> = ref(false);
 
+//csv読み取り情報
+const sendCsvAndStragedShoshouDto: Ref<SendCsvAndStragedShoshouDto> = ref(new SendCsvAndStragedShoshouDto());
 //csv読み取りリスト(保存用)
 const backCsvReadData: Ref<[CsvCellInterface[]]> = ref([[]]);
-
-//表示用(リストヘッダの有無でリストが変わるので)
-//const viewCsvReadData: Ref<[CsvCellInterface[]]> = ref([[]]);
+//書証情報
+const saveStorageResultDto: Ref<SaveStorageResultDto> = ref(new SaveStorageResultDto());
 
 //csv項目指定リストの指定用配列
 const listPointItems: Ref<SelectOptionsArrayInterface[]> = ref([]);
@@ -44,14 +54,16 @@ const isReadData: Ref<boolean> = ref(false);
 
 /**
  * 読み取られたCsvデータを受信する
- * @param csvData csvデータ
+ * @param sendDto csv変換結果
  */
-function recieveGeneralCsvDataInterface(csvData: [CsvCellInterface[]]) {
+async function recieveGeneralCsvDataInterface(sendDto: SendCsvAndStragedShoshouDto) {
     //受信時は必ずヘッダが入っている
     hasHeader.value = false;
 
     //データを受信する
-    backCsvReadData.value = csvData;
+    sendCsvAndStragedShoshouDto.value = sendDto;
+    backCsvReadData.value = sendDto.listAllCsv;
+    saveStorageResultDto.value = sendDto.saveStorageResultDto;
 
     //csvデータを受信したら初期化して表示
     viewCsvReadData.value.splice(0);
@@ -64,8 +76,24 @@ function recieveGeneralCsvDataInterface(csvData: [CsvCellInterface[]]) {
 
     //読み取りしたcsvの項目数に合わせたテンプレートのみを呼び出す
     listCsvReadTemplate.value.splice(0);
-    listCsvReadTemplate.value = mockReadTemplate(columnSize);
-    selectedCsvReadTemplate.value = "選択解除";
+
+    //セッションストレージ取得
+    const csvReadTemplateCapsuleDto: CsvReadTemplateCapsuleDto = new CsvReadTemplateCapsuleDto();
+    csvReadTemplateCapsuleDto.checkSecurityDto = SessionStorageCommonCheck.getSecurity();
+    csvReadTemplateCapsuleDto.checkPrivilegeDto = SessionStorageCommonCheck.getPrivilege();
+    csvReadTemplateCapsuleDto.checkTransactionDto = createCheckTransactionDto(false);
+    //独自変数設定
+    csvReadTemplateCapsuleDto.arrayNumber = columnSize;
+
+    //実接続
+    const url = "http://localhost:8080/csv-read-template/select-template-by-number";
+    await axios.post(url, csvReadTemplateCapsuleDto)
+        .then((response) => {
+            listCsvReadTemplate.value = response.data;
+        })
+        .catch((error) => showErrorMessage(error.status));
+
+    selectedCsvReadTemplate.value = "0";//選択解除
 
     //受信したデータをもとに指定用項目を準備する
     listPointItems.value.splice(0);
@@ -90,7 +118,7 @@ watch(hasHeader, () => {
 //読み取り形式変更監視
 const isSelectTemplate: Ref<boolean> = ref(true);
 watch(selectedCsvReadTemplate, () => {
-    if (selectedCsvReadTemplate.value !== "選択解除") {
+    if (selectedCsvReadTemplate.value !== "0") {
 
         //選択された項目のDtoを抽出
         let selectedDto: CsvReadTemplateInterface = new CsvReadTemplateDto();
@@ -101,18 +129,22 @@ watch(selectedCsvReadTemplate, () => {
             }
         }
         //格納された値に合わせて設定
-        const list:string[] = selectedDto.arrayText.split(",");
+        const list: string[] = selectedDto.arrayText.split(",");
         const maxLength = list.length;
         for (let index = 0; index < maxLength; index++) {
             listPointItems.value[index].selectedOption = list[index];
         }
+
+        selectedDto.hasHeader = true;
+
+        hasHeader.value = selectedDto.hasHeader;
 
         propseCsvReadTemplateDto.value.financialOrgCode = selectedDto.financialOrgCode;
         propseCsvReadTemplateDto.value.financialOrgName = selectedDto.financialOrgName;
         isSelectTemplate.value = false;
 
         //呼びだした選択項目の指定内容をそのまま投げる
-        emits("sendSelectOptionsArrayInterface", list);
+        emits("sendSelectOptionsArrayInterface", list, saveStorageResultDto.value);
     }
     else {
         for (const pointItem of listPointItems.value) {
@@ -126,9 +158,6 @@ watch(selectedCsvReadTemplate, () => {
 
 //csv読み取り形式申請名
 const isAppling: Ref<boolean> = ref(false);
-//const newCsvReadTemplate: Ref<string> = ref("");
-//const financialOrgCode: Ref<number> = ref(0);
-//const financialOrgName: Ref<string> = ref("");
 
 /**
  * 収支報告書データの更新を強制する
@@ -139,24 +168,24 @@ function refreshBalanceSheet() {
     for (const item of listPointItems.value) {
         selectedList.push(item.selectedOption);
     }
-    emits("sendSelectOptionsArrayInterface", selectedList);
+    emits("sendSelectOptionsArrayInterface", selectedList, hasHeader.value, saveStorageResultDto.value);
 }
 
 //申請モード定数
-const templateNew:number = 1;
-const templateChange:number = 2;
+const templateNew: number = 1;
+const templateChange: number = 2;
 
-const proposeMode:Ref<number> = ref(0);
-const isNameEditDisable:Ref<boolean> = ref(false);
+const proposeMode: Ref<number> = ref(0);
+const isNameEditDisable: Ref<boolean> = ref(false);
 
 /**
  * 申請が新規か変更かで入力可能項目を変更する
  */
 function onProposeMode() {
-    if(templateChange === proposeMode.value){
+    if (templateChange === proposeMode.value) {
         isNameEditDisable.value = false;
     }
-    if(templateNew === proposeMode.value){
+    if (templateNew === proposeMode.value) {
         isNameEditDisable.value = true;
         //選択された値からDto呼び出し、設定が必要
         propseCsvReadTemplateDto.value.csvReadTemplateName = selectedCsvReadTemplate.value;
@@ -164,7 +193,7 @@ function onProposeMode() {
 }
 
 //csv読み取り仕様登録申請Interface
-const propseCsvReadTemplateDto:Ref<PropseCsvReadTemplateInterface> = ref(new ProposeCsvReadTemplateDto());
+const propseCsvReadTemplateDto: Ref<PropseCsvReadTemplateInterface> = ref(new ProposeCsvReadTemplateDto());
 
 const isVisibleSearchZenginFinancialOrg: Ref<boolean> = ref(false);
 /**
@@ -201,8 +230,10 @@ function recieveCancelSearchVariousFinancialPay() {
  * 全銀金融機関検索コンポーネントから選択されたデータを受け取り非表示にする
  * @param selectedDto 選択されたDto
  */
-function recieveZenginFinancialOrgInterface(selectedDto:ZenginFinancialOrgInterface) {
+function recieveZenginFinancialOrgInterface(selectedDto: ZenginFinancialOrgInterface) {
     //受信内容を複写
+    propseCsvReadTemplateDto.value.financialOrgKbn = FinancialOrgConstants.ZENGIN_ORG;
+    propseCsvReadTemplateDto.value.financialOrgId = selectedDto.zenginFinancialOrgId;
     propseCsvReadTemplateDto.value.financialOrgCode = selectedDto.zenginFinancialOrgCode;
     propseCsvReadTemplateDto.value.financialOrgName = selectedDto.zenginFinancialOrgName;
 
@@ -212,8 +243,10 @@ function recieveZenginFinancialOrgInterface(selectedDto:ZenginFinancialOrgInterf
  * 各種Pay検索コンポーネントから選択されたデータを受け取り非表示にする
  * @param selectedDto 選択されたDto
  */
-function recieveVariousFinancialPayInterface(selectedDto:VariousFinancialPayInterface) {
+function recieveVariousFinancialPayInterface(selectedDto: VariousFinancialPayInterface) {
     //受信内容を複写
+    propseCsvReadTemplateDto.value.financialOrgKbn = FinancialOrgConstants.VARIOUS_PAY;
+    propseCsvReadTemplateDto.value.financialOrgId = selectedDto.variousFinancialPayId;
     propseCsvReadTemplateDto.value.financialOrgCode = selectedDto.variousFinancialPayCode;
     propseCsvReadTemplateDto.value.financialOrgName = selectedDto.variousFinancialPayName;
 
@@ -223,9 +256,59 @@ function recieveVariousFinancialPayInterface(selectedDto:VariousFinancialPayInte
 /**
  * 利用申請作業を行う
  */
-function onPromoteTemplate(){
-    alert("テンプレート"+propseCsvReadTemplateDto.value.csvReadTemplateId + "==="+propseCsvReadTemplateDto.value.csvReadTemplateCode + "==="+propseCsvReadTemplateDto.value.csvReadTemplateName);
-    alert("金融機関"+propseCsvReadTemplateDto.value.financialOrgId + "==="+propseCsvReadTemplateDto.value.financialOrgCode + "==="+propseCsvReadTemplateDto.value.financialOrgName);
+async function onPromoteTemplate() {
+
+    const propseCsvReadTemplateEntity: PropseCsvReadTemplateEntity = new PropseCsvReadTemplateEntity();
+
+    propseCsvReadTemplateEntity.proposeCsvReadTemplateId = propseCsvReadTemplateDto.value.csvReadTemplateId;
+    propseCsvReadTemplateEntity.proposeCsvReadTemplateCode = propseCsvReadTemplateDto.value.csvReadTemplateCode;
+    propseCsvReadTemplateEntity.proposeCsvReadTemplateName = propseCsvReadTemplateDto.value.csvReadTemplateName;
+
+    let arrayText: string = "";
+
+    for (const selectValue of listPointItems.value) {
+        arrayText = arrayText + selectValue.selectedOption + ",";
+    }
+    arrayText = arrayText.substring(0, arrayText.length - 1);
+
+    propseCsvReadTemplateEntity.arrayNumber = listPointItems.value.length;
+    propseCsvReadTemplateEntity.arrayText = arrayText;
+    propseCsvReadTemplateEntity.financialOrgKbn = propseCsvReadTemplateDto.value.financialOrgKbn;
+    propseCsvReadTemplateEntity.financialOrgId = propseCsvReadTemplateDto.value.financialOrgId;
+    propseCsvReadTemplateEntity.financialOrgCode = propseCsvReadTemplateDto.value.financialOrgCode;
+    propseCsvReadTemplateEntity.financialOrgName = propseCsvReadTemplateDto.value.financialOrgName;
+    propseCsvReadTemplateEntity.hasHeader = hasHeader.value;
+
+    const registProposeCsvReadRemplateCapsuleDto: RegistProposeCsvReadRemplateCapsuleDto = new RegistProposeCsvReadRemplateCapsuleDto();
+
+    registProposeCsvReadRemplateCapsuleDto.checkSecurityDto = SessionStorageCommonCheck.getSecurity();
+    registProposeCsvReadRemplateCapsuleDto.checkPrivilegeDto = SessionStorageCommonCheck.getPrivilege();
+    registProposeCsvReadRemplateCapsuleDto.checkTransactionDto = createCheckTransactionDto(false);
+    //独自変数設定
+    registProposeCsvReadRemplateCapsuleDto.proposeCsvReadTemplateEntity = propseCsvReadTemplateEntity;
+
+    if (proposeMode.value === templateNew) {
+        //登録
+        const url = "http://localhost:8080/propose-csv-read-template/regist";
+        await axios.post(url, registProposeCsvReadRemplateCapsuleDto)
+            .then((response) => {
+                const result: boolean = response.data;
+                if (result) {
+                    alert("利用申請登録が完了しました");
+                } else {
+                    //TODO 仕様が決定次第修正する
+                    alert("利用申請登録ができませんでした");
+                }
+            })
+            .catch((error) => showErrorMessage(error.status));
+
+    }
+
+    //TODO 変更更新部分は追加修正とする
+    if (proposeMode.value === templateChange) {
+        alert("未実装です");
+    }
+
 }
 </script>
 <template>
@@ -284,23 +367,30 @@ function onPromoteTemplate(){
                 金融機関(各種Pay／全銀)
             </div>
             <div class="right-area">
-                <input type="number" v-model="propseCsvReadTemplateDto.financialOrgCode" disabled="false" style="margin-right: 2%;">
-                <input type="text" v-model="propseCsvReadTemplateDto.financialOrgName" disabled="false" style="margin-right: 2%;">
-                <button style="margin-right: 2%;" @click="showSearchVariousFinancialPay" :disabled="!isSelectTemplate">各種Pay検索</button>
-                <button style="margin-right: 2%;" @click="showSearchZenginFinancialOrg" :disabled="!isSelectTemplate">全銀金融機関検索</button>
+                <input type="number" v-model="propseCsvReadTemplateDto.financialOrgCode" disabled="false"
+                    style="margin-right: 2%;">
+                <input type="text" v-model="propseCsvReadTemplateDto.financialOrgName" disabled="false"
+                    style="margin-right: 2%;">
+                <button style="margin-right: 2%;" @click="showSearchVariousFinancialPay"
+                    :disabled="!isSelectTemplate">各種Pay検索</button>
+                <button style="margin-right: 2%;" @click="showSearchZenginFinancialOrg"
+                    :disabled="!isSelectTemplate">全銀金融機関検索</button>
             </div>
             <div class="left-area">
                 新規／変更
             </div>
             <div class="right-area">
-                <input type="radio" id="templateNew" :value="templateNew" v-model="proposeMode" @click="onProposeMode">新規
-                <input type="radio" id="templateChange" :value="templateChange" v-model="proposeMode" @click="onProposeMode">変更
+                <input type="radio" id="templateNew" :value="templateNew" v-model="proposeMode"
+                    @click="onProposeMode">新規
+                <input type="radio" id="templateChange" :value="templateChange" v-model="proposeMode"
+                    @click="onProposeMode">変更
             </div>
             <div class="left-area">
                 読み取り形式名称
             </div>
             <div class="right-area">
-                <input v-model="propseCsvReadTemplateDto.csvReadTemplateName" :disabled="isNameEditDisable">形式<button style="margin-left: 2%;" @click="onPromoteTemplate">申請</button>
+                <input v-model="propseCsvReadTemplateDto.csvReadTemplateName" :disabled="isNameEditDisable">形式<button
+                    style="margin-left: 2%;" @click="onPromoteTemplate">申請</button>
             </div>
         </div>
     </div>
@@ -318,9 +408,9 @@ function onPromoteTemplate(){
     <!-- 各種Pay機関検索コンポーネント -->
     <div v-if="isVisibleSearchVariousFinancialPay">
         <div class="overComponent">
-        <SearchVariousFinancialPay :isEditable="false"
-            @sendCancelSearchVariousFinancialPay="recieveCancelSearchVariousFinancialPay"
-            @sendVariousFinancialPayInterface="recieveVariousFinancialPayInterface"></SearchVariousFinancialPay>
+            <SearchVariousFinancialPay :isEditable="false"
+                @sendCancelSearchVariousFinancialPay="recieveCancelSearchVariousFinancialPay"
+                @sendVariousFinancialPayInterface="recieveVariousFinancialPayInterface"></SearchVariousFinancialPay>
         </div>
     </div>
 </template>

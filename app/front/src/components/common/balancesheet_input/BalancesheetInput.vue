@@ -1,22 +1,28 @@
 ﻿<script setup lang="ts">
 import { computed, WritableComputedRef } from "vue";
-import BalancesheetIncomeInterface from "../../../dto/balancesheetIncomeDto";
-import BalancesheetOutcomeInterface from "../../../dto/balancesheetOutcomeDto";
+import BalancesheetIncomeDto from "../../../dto/balancesheetIncomeDto";
+import BalancesheetOutcomeDto from "../../../dto/balancesheetOutcomeDto";
 import IncomeLineVue from "./IncomeLine.vue";
 import OutcomeLineVue from "./OutcomeLine.vue";
+import CallingItemEntity from "../../../entity/callingItemEntity";
 
 //propsとemit
-const props = defineProps<{ listIncome: BalancesheetIncomeInterface[], listOutcome: BalancesheetOutcomeInterface[] }>();
+const props = defineProps<{ listIncome: BalancesheetIncomeDto[], listOutcome: BalancesheetOutcomeDto[],listItem:CallingItemEntity[] }>();
 const emit = defineEmits(["restoreIncomeReadData", "restoreOutcomeReadData"]);
 
 //収入リスト
-const listBalancesheetIncome: WritableComputedRef<BalancesheetIncomeInterface[]> = computed(
+const listBalancesheetIncome: WritableComputedRef<BalancesheetIncomeDto[]> = computed(
     () => props.listIncome,
 );
 
 //支出リスト
-const listBalancesheetOutcome: WritableComputedRef<BalancesheetOutcomeInterface[]> = computed(
+const listBalancesheetOutcome: WritableComputedRef<BalancesheetOutcomeDto[]> = computed(
     () => props.listOutcome,
+);
+
+//候補マップ
+const listCallingItem: WritableComputedRef<CallingItemEntity[]> = computed(
+    () => props.listItem,
 );
 
 /**
@@ -62,7 +68,7 @@ function restoreOutcomeReadData(index: number) {
                 <th>+自動入力編集</th>
             </tr>
             <tr v-for="(incomeItem, indexIncome) in listBalancesheetIncome" :key="incomeItem.readingLine">
-                <IncomeLineVue :lineIndex="indexIncome" :lineDto="incomeItem"
+                <IncomeLineVue :lineIndex="indexIncome" :lineDto="incomeItem" :listItem="listCallingItem"
                     @restoreIncomeReadData="restoreIncomeReadData"></IncomeLineVue>
             </tr>
         </table>
@@ -90,14 +96,12 @@ function restoreOutcomeReadData(index: number) {
                 <th>+自動入力編集</th>
             </tr>
             <tr v-for="(outcomeItem, indexOutcome) in listBalancesheetOutcome" :key="outcomeItem.readingLine">
-                <OutcomeLineVue :lineIndex="indexOutcome" :lineDto="outcomeItem"
+                <OutcomeLineVue :lineIndex="indexOutcome" :lineDto="outcomeItem" :listItem="listCallingItem"
                     @restoreOutcomeReadData="restoreOutcomeReadData"></OutcomeLineVue>
             </tr>
         </table>
         *…収支報告書に記載される項目。+…このソフトウェア独自項目
     </div>
-
-
 </template>
 <style scoped>
 table {

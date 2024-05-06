@@ -6,9 +6,9 @@
  */
 export default function closeInputOutcomeForm(outcomeDto:BalancesheetOutcomeDto) {
     //様式区分を非表示にします
-    outcomeDto.isUseYoshikiKbn = false;
+    outcomeDto.isUseYoushikiKbn = false;
     //様式区分枝項目を非表示にします
-    outcomeDto.isUseYoshikiEdaKbn = false;
+    outcomeDto.isUseYoushikiEdaKbn = false;
     //団体名称を非表示にします
     outcomeDto.isUseOrgName = false;
     //項目名を非表示にします

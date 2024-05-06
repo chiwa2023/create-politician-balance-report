@@ -2,7 +2,11 @@
 import { Ref, ref } from "vue";
 import ZenginFinancialOrgInterface from "../../../dto/financial/zenginFinancialOrg";
 import ZenginFinancialOrgDto from "../../../dto/financial/zenginFinancialOrg";
-import mockGetZenginFinancialOrg from "./mock/mockGetZenginFainancialOrg";
+import SearchZenginFinancialOrgCapsuleDto from "../../../dto/financial/searchZenginFinancialOrgCapsuleDto";
+import axios from "axios";
+import showErrorMessage from "../../../dto/common_check/showErrorMessage";
+import createCheckTransactionDto from "../../../dto/common_check/createCheckTransactionDto";
+import SessionStorageCommonCheck from "../../../dto/common_check/sessionStorageCommonCheck";
 
 //props,emit
 const props = defineProps<{ isEditable: boolean }>();
@@ -14,13 +18,32 @@ const list: Ref<ZenginFinancialOrgInterface[]> = ref([]);
 const selectedRow:Ref<number> = ref(0);
 
 /**  
+ * 選択行を通知する
+ * @param rowId その行のDtoのId
+ */
+function onSelectChange(rowId: number) {
+    if (true === props.isEditable) {
+        sendData(rowId);
+    }
+}
+
+/**  
  * 入力内容を選択する
  */
 function onSelect() {
+    sendData(selectedRow.value);
+}
+
+/**  
+ * 選択データを送信する
+ * @param rowId その行のDtoのId
+ */
+function sendData(rowId: number) {
     //PrimaryIdをKeyにしているので、1件だけに絞られることが保証されている
-    const selectedDto:ZenginFinancialOrgInterface = list.value.filter((dto) => dto.zenginFinancialOrgId == selectedRow.value )[0];
+    const selectedDto:ZenginFinancialOrgInterface = list.value.filter((dto) => dto.zenginFinancialOrgId == rowId )[0];
     emits("sendZenginFinancialOrgInterface",selectedDto);
 }
+
 /**  
  * 入力内容を破棄する
  */
@@ -35,9 +58,8 @@ function onCancel() {
 function deleteRow(rowId:number) {
     const newList:ZenginFinancialOrgInterface[] = list.value.filter((dto) => dto.zenginFinancialOrgId != rowId );
     list.value = newList;
-
-    alert("行削除:"+rowId);
 }
+
 /**  
  * 最終行のあとに行追加を行う
  */
@@ -57,10 +79,27 @@ const searchWords:Ref<string> = ref("");
 /**  
  * 検索条件に基づき検索を行う
  */
-function onSearch(){
-    alert(searchWords.value);
+async function onSearch(){
     //リストを取得する
-    list.value = mockGetZenginFinancialOrg();
+    //list.value = mockGetZenginFinancialOrg();
+
+    //実接続
+    //セッションストレージ取得
+    const zenginFinancialOrgCapsuleDto: SearchZenginFinancialOrgCapsuleDto = new SearchZenginFinancialOrgCapsuleDto();
+    zenginFinancialOrgCapsuleDto.checkSecurityDto = SessionStorageCommonCheck.getSecurity();
+    zenginFinancialOrgCapsuleDto.checkPrivilegeDto = SessionStorageCommonCheck.getPrivilege();
+    //編集フラグがある場合は、そのフラグ(の反転した値)を照会フラグに設定する
+    zenginFinancialOrgCapsuleDto.checkTransactionDto = createCheckTransactionDto(!props.isEditable);
+
+    //独自変数設定
+    zenginFinancialOrgCapsuleDto.searchWords = searchWords.value;
+
+    const url = "http://localhost:8080/zengin-financial-org/search-table";
+    await axios.post(url, zenginFinancialOrgCapsuleDto)
+        .then((response) => {
+            list.value = response.data;
+        })
+        .catch((error) => showErrorMessage(error.status));
 }
 </script>
 <template>
@@ -85,7 +124,7 @@ function onSearch(){
             <th v-if="props.isEditable" style="width:20%;">&nbsp;</th>
         </tr>
         <tr v-for="variousDto in list" :key="variousDto.zenginFinancialOrgId">
-            <td style="text-align: center;"><input type="radio" id="variousDto.ZenginFinancialOrgId" :value="variousDto.zenginFinancialOrgId" v-model="selectedRow"  /></td>
+            <td style="text-align: center;"><input type="radio" id="variousDto.ZenginFinancialOrgId" :value="variousDto.zenginFinancialOrgId" v-model="selectedRow" @click="onSelectChange(variousDto.zenginFinancialOrgId)"/></td>
             <td style="text-align: right;">{{ variousDto.zenginFinancialOrgCode }}</td>
             <td>{{ variousDto.zenginFinancialOrgName }}</td>
             <td v-if="props.isEditable" style="text-align: center;"><button @click="deleteRow(variousDto.zenginFinancialOrgId)">削除</button></td>
@@ -93,7 +132,7 @@ function onSearch(){
     </table>
     <button v-if="props.isEditable" @click="addRow">新規行追加</button>
     </div>
-    <div class="footer">
+    <div class="footer" v-if="!props.isEditable">
         <button @click="onCancel">キャンセル</button>
         <button @click="onSelect">選択</button>
     </div>

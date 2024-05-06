@@ -2,92 +2,66 @@ package mitei.mitei.create.report.balance.politician.dto.institution_csv;
 
 import java.io.Serializable;
 
-import mitei.mitei.create.report.balance.politician.dto.SelectOptionDto;
+import mitei.mitei.create.report.balance.politician.dto.SelectOptionInterface;
+import mitei.mitei.create.report.balance.politician.entity.CsvReadTemplateEntity;
 
 /**
- * csv読み取り仕様テーブルDto
+ * CSV読み取りテンプレートDto
  */
-public class CsvReadTemplateDto extends SelectOptionDto implements Serializable{ // NOPMD DataClass
+public class CsvReadTemplateDto extends CsvReadTemplateEntity // NOPMD DataClass
+        implements Serializable, SelectOptionInterface {
 
+    /** Serialize id */
     private static final long serialVersionUID = 1L;
 
-    /** csv指定配列  */
-    private String arrayText;
-
-    /** 金融機関Id  */
-    private Long finacialOrgId;
-
-    /** 金融機関区分  */
-    private Integer finacialOrgKbn;
-
-    /** 金融機関同一識別コード  */
-    private Integer finacialOrgCode;
-
-    /** 金融機関名称  */
-    private String finacialOrgName;
+    /**
+     * option項目のvalue(値)
+     */
+    private String value;
 
     /**
-     * @return
+     * option項目の表示テキスト
      */
-    public Long getFinacialOrgId() {
-        return finacialOrgId;
+    private String text;
+
+    /**
+     * オプション項目の値を取得する
+     *
+     * @return オプション項目の値
+     */
+    @Override
+    public String getValue() {
+        return value;
     }
 
     /**
-     * @param finacialOrgId
+     * オプション項目の値を設定する
+     *
+     * @param value オプション項目の値
      */
-    public void setFinacialOrgId(final Long finacialOrgId) {
-        this.finacialOrgId = finacialOrgId;
+    @Override
+    public void setValue(final String value) {
+        this.value = value;
     }
 
     /**
-     * @return
+     * オプション項目のテキストを取得する
+     *
+     * @return オプション項目のテキスト
      */
-    public Integer getFinacialOrgKbn() {
-        return finacialOrgKbn;
+    @Override
+    public String getText() {
+        return text;
     }
 
     /**
-     * @param finacialOrgKbn
+     * オプション項目のテキストを設定する
+     *
+     * @param text オプション項目のテキスト
      */
-    public void setFinacialOrgKbn(final Integer finacialOrgKbn) {
-        this.finacialOrgKbn = finacialOrgKbn;
-    }
-
-    /**
-     * @return
-     */
-    public Integer getFinacialOrgCode() {
-        return finacialOrgCode;
-    }
-
-    /**
-     * @param finacialOrgCode
-     */
-    public void setFinacialOrgCode(final Integer finacialOrgCode) {
-        this.finacialOrgCode = finacialOrgCode;
-    }
-
-    /**
-     * @return
-     */
-    public String getFinacialOrgName() {
-        return finacialOrgName;
-    }
-
-    /**
-     * @param finacialOrgName
-     */
-    public void setFinacialOrgName(final String finacialOrgName) {
-        this.finacialOrgName = finacialOrgName;
-    }
-
-    public String getArrayText() {
-        return arrayText;
-    }
-
-    public void setArrayText(String arrayText) {
-        this.arrayText = arrayText;
+    @Override
+    public void setText(final String text) {
+        this.text = text;
     }
 
 }

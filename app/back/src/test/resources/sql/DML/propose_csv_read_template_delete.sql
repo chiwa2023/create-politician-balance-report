@@ -1,0 +1,1 @@
+DELETE FROM `propose_csv_read_template`;

@@ -1,5 +1,0 @@
-DELETE FROM `various_financial_pay` WHERE `various_financial_pay_id` BETWEEN 1 AND 4;
-INSERT INTO `various_financial_pay` (`various_financial_pay_id`,`various_financial_pay_code`,`various_financial_pay_name`,`saishin_kbn`,`table_all_search_text`,`update_time`) VALUES (1,1,'きつねが木の葉で払うPay',1,'きつねが木の葉で払うpay','2012-12-12 00:00:00');
-INSERT INTO `various_financial_pay` (`various_financial_pay_id`,`various_financial_pay_code`,`various_financial_pay_name`,`saishin_kbn`,`table_all_search_text`,`update_time`) VALUES (2,2,'首都圏信用金庫(個人)',1,'首都圏信用金庫(個人)','2012-12-13 00:00:00');
-INSERT INTO `various_financial_pay` (`various_financial_pay_id`,`various_financial_pay_code`,`various_financial_pay_name`,`saishin_kbn`,`table_all_search_text`,`update_time`) VALUES (3,2,'首都圏信用金庫(個人)',0,'首都圏信用金庫(個人)','2012-12-14 00:00:00');
-INSERT INTO `various_financial_pay` (`various_financial_pay_id`,`various_financial_pay_code`,`various_financial_pay_name`,`saishin_kbn`,`table_all_search_text`,`update_time`) VALUES (4,3,'木の葉のポイントざくざくPay',1,'木の葉のポイントざくざくpay','2012-12-15 00:00:00');

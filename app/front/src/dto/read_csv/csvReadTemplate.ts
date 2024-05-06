@@ -11,12 +11,14 @@ export default interface CsvReadTemplateInterface extends SelectOptionInterface 
     /** csv項目数  */
     arrayNumber: number;
 
+    /** ヘッダの有無  */
+    hasHeader: boolean;
+
     /** 金融機関区分  */
     financialOrgKbn: number;
 
     /** 金融機関Id  */
     financialOrgId: number;
-
 
     /** 金融機関同一識別コード  */
     financialOrgCode: number;
@@ -32,6 +34,15 @@ export default interface CsvReadTemplateInterface extends SelectOptionInterface 
  */
 export default class CsvReadTemplateDto implements CsvReadTemplateInterface {
 
+    /** 金融機関Id  */
+    csvReadTemplateId: number;
+
+    /** 金融機関同一識別コード  */
+    csvReadTemplateCode: number;
+
+    /** 金融機関名称  */
+    csvReadTemplateName: string;
+
     /** オプション項目の値  */
     value: string;
 
@@ -43,6 +54,9 @@ export default class CsvReadTemplateDto implements CsvReadTemplateInterface {
 
     /** csv項目数  */
     arrayNumber: number;
+
+    /** ヘッダの有無  */
+    hasHeader: boolean;
 
     /** 金融機関Id  */
     financialOrgId: number;
@@ -62,11 +76,16 @@ export default class CsvReadTemplateDto implements CsvReadTemplateInterface {
     constructor() {
         this.value = "";
         this.text = "";
+        this.csvReadTemplateId = 0;
+        this.csvReadTemplateCode = 0;
+        this.csvReadTemplateName = "";
         this.arrayText = "";
         this.arrayNumber = 0;
         this.financialOrgId = 0;
         this.financialOrgKbn = 0;
         this.financialOrgCode = 0;
         this.financialOrgName = "";
+        this.hasHeader = true;
+
     }
 }

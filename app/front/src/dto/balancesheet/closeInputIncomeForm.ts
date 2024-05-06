@@ -6,9 +6,9 @@
  */
 export default function closeInputIncomeForm(incomeDto:BalancesheetIncomeDto) {
     //様式区分を非表示にします
-    incomeDto.isUseYoshikiKbn = false;
+    incomeDto.isUseYoushikiKbn = false;
     //様式区分枝項目を非表示にします
-    incomeDto.isUseYoshikiEdaKbn = false;
+    incomeDto.isUseYoushikiEdaKbn = false;
     //あっせん期間部分を非表示にします
     incomeDto.isUseMediation = false;
     //団体名称を非表示にします

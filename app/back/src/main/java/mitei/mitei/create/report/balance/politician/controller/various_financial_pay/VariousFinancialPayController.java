@@ -3,7 +3,8 @@ package mitei.mitei.create.report.balance.politician.controller.various_financia
 import java.util.List;
 
 import org.apache.tomcat.websocket.AuthenticationException;
-import org.springframework.dao.DuplicateKeyException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.PessimisticLockingFailureException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -12,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.transaction.Transactional;
-import mitei.mitei.create.report.balance.politician.controller.template.AbstractTemplateCheckController;
-import mitei.mitei.create.report.balance.politician.dto.various_finacial_pay.VariousFinanciallPayCapsuleDto;
+import mitei.mitei.create.report.balance.politician.controller.AbstractTemplateCheckController;
+import mitei.mitei.create.report.balance.politician.dto.various_financial_pay.VariousFinanciallPayCapsuleDto;
 import mitei.mitei.create.report.balance.politician.entity.VariousFinancialPayEntity;
+import mitei.mitei.create.report.balance.politician.service.various_financial_pay.VariousFinancialPayService;
 
 /**
  * 各種Pay操作Controller
@@ -32,6 +34,10 @@ public class VariousFinancialPayController extends AbstractTemplateCheckControll
     /** ビジネス処理続行定数 */
     private static final int CHECK_TRUE = AbstractTemplateCheckController.CHECK_TRUE;
 
+    /**　各種PayテーブルService */
+    @Autowired
+    private VariousFinancialPayService variousFinancialPayService;
+    
     /**
      * 各種Payテーブルの検索を行う
      *
@@ -39,13 +45,13 @@ public class VariousFinancialPayController extends AbstractTemplateCheckControll
      * @return 各種Payエンティティリスト
      * @throws SecurityException       セキュリティ例外
      * @throws AuthenticationException 権限例外
-     * @throws DuplicateKeyException   トランザクション例外
+     * @throws PessimisticLockingFailureException   トランザクション例外
      */
     @Transactional // CHECKSTYLE:OFF
     @PostMapping("/search-table")
     public ResponseEntity<List<VariousFinancialPayEntity>> searchTable(
             final @RequestBody VariousFinanciallPayCapsuleDto variousFinanciallPayCapsuleDto)
-            throws SecurityException, AuthenticationException, DuplicateKeyException { // NOPMD
+            throws SecurityException, AuthenticationException,PessimisticLockingFailureException { // NOPMD
 
         // NOTE:共通処理を行ったのちビジネス処理を行うフレームワークのため、ビジネス処理以外は丸コピすること
         try {
@@ -75,19 +81,16 @@ public class VariousFinancialPayController extends AbstractTemplateCheckControll
              * ここに固有のビジネス処理を記載する
              * 
              */
-            // TODO ビジネス処理
-            // ビジネス処理作業結果 = politicianViewService.practice();
-
-            return ResponseEntity.ok(null);// TODO 正常に処理できた場合はここに結果を挿入する
-
+            return ResponseEntity.ok(variousFinancialPayService.searchTable(variousFinanciallPayCapsuleDto.getSearchWords()));
             /* ここまで */
+            
         } catch (AuthenticationException authenticationException) { // NOPMD
             // 権限不足
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         } catch (SecurityException securityException) {
             // セキュリティ事故
             return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
-        } catch (DuplicateKeyException duplicateKeyException) {
+        } catch (PessimisticLockingFailureException pessimisticLockingFailureException) {
             // 排他の対象
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         } catch (Exception exception) { // NOPMD
@@ -95,5 +98,4 @@ public class VariousFinancialPayController extends AbstractTemplateCheckControll
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
 }

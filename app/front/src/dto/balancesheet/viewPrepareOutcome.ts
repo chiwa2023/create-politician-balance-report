@@ -1,7 +1,7 @@
 ﻿import BalancesheetOutcomeDto from "../../dto/balancesheetOutcomeDto";
 import closeInputOutcomeForm from "./closeInputOutcomeForm";
-import openInputOutcomeForm from "./openInputOutcomeForm";
-import changeOutcomeYoshikiKbnState from "./changeOutcomeYoshikiKbnState";
+import changeOutcomeYoushikiKbnState from "./changeOutcomeYoushikiKbnState";
+import ReportKbnConstants from "./reportKbnConstants";
 
 /**
  * 収支報告書の表示nにかかわる値設定
@@ -12,24 +12,24 @@ export default function viewPrepareOutcome(outcomeDto: BalancesheetOutcomeDto): 
 
     switch (outcomeDto.reportKbn) {
     //報告対象
-    case 1:
+    case ReportKbnConstants.PUBLISH_REPORT:
         //収支報告するのですべての入力フォームを開きます
-        outcomeDto = openInputOutcomeForm(changeOutcomeYoshikiKbnState(outcomeDto));
+        outcomeDto = changeOutcomeYoushikiKbnState(outcomeDto);
         break;
     //生活費
-    case 20:
+    case ReportKbnConstants.LIVING_COST:
         //収支報告しないのですべての入力フォームを閉じます
         closeInputOutcomeForm(outcomeDto);
         break;
         //政治活動
-    case 11:
+    case ReportKbnConstants.ABPLITION:
         //収支報告しないのですべての入力フォームを閉じます
         closeInputOutcomeForm(outcomeDto);
         break;
         //政治活動
-    case 50:
+    case ReportKbnConstants.PLAN_TASK:
         //後で入力したい、ということなので入力自体は可能です
-        outcomeDto = openInputOutcomeForm(changeOutcomeYoshikiKbnState(outcomeDto));
+        outcomeDto = changeOutcomeYoushikiKbnState(outcomeDto);
         break;
     }
     return outcomeDto;

@@ -1,10 +1,12 @@
 ﻿<script setup lang="ts">
-import { computed, watch } from "vue";
-import changeOutcomeYoshikiKbnState from "../../../dto/balancesheet/changeOutcomeYoshikiKbnState";
+import { computed, watch, Ref, ref, WritableComputedRef } from "vue";
+import changeOutcomeYoushikiKbnState from "../../../dto/balancesheet/changeOutcomeYoushikiKbnState";
 import viewPrepareOutcome from "../../../dto/balancesheet/viewPrepareOutcome";
-import BalancesheetOutcomeInterface from "../../../dto/balancesheetOutcomeDto";
+import BalancesheetOutcomeDto from "../../../dto/balancesheetOutcomeDto";
+import ShowCallingItem from "../show_calling_item/ShowCallingItem.vue";
+import CallingItemEntity from "../../../entity/callingItemEntity";
 
-const props = defineProps<{ lineIndex: number, lineDto: BalancesheetOutcomeInterface }>();
+const props = defineProps<{ lineIndex: number, lineDto: BalancesheetOutcomeDto,listItem:CallingItemEntity[] }>();
 const emit = defineEmits(["restoreOutcomeReadData"]);
 
 //行Index
@@ -21,15 +23,42 @@ const outcomeItem = computed(
     }
 );
 
+//候補マップ
+const listCallingItem: WritableComputedRef<CallingItemEntity[]> = computed(
+    () => props.listItem,
+);
+
+const isVisibleShowCallingItem: Ref<boolean> = ref(false);
+/**
+ * 他の呼び出し候補表示コンポーネントを表示する
+ */
+function showCallinItem() {
+    isVisibleShowCallingItem.value = true;
+}
+/**
+ * 他の呼び出し候補表示コンポーネントを非表示にする
+ */
+function recieveCancelShowCallingItem() {
+    isVisibleShowCallingItem.value = false;
+}
+
+/**
+ * 他の呼び出し候補を選択する
+ * @param selectedDto 選択項目
+ */
+function recieveCallingItemEntity(selectedDto: CallingItemEntity) {
+    alert("選択" + selectedDto.youshikiKbn);
+    //TODO 選択データを更新するのは追加修正とする
+    isVisibleShowCallingItem.value = false;
+}
+
 /** 報告区分を監視 */
 watch(() => outcomeItem.value.reportKbn, () => {
     viewPrepareOutcome(outcomeItem.value);
 });
-
-
 /** 様式区分を監視 */
-watch(() => outcomeItem.value.yoshikiKbn, () => {
-    changeOutcomeYoshikiKbnState(outcomeItem.value);
+watch(() => outcomeItem.value.youshikiKbn, () => {
+    changeOutcomeYoushikiKbnState(outcomeItem.value);
 });
 
 //入力不可能を監視
@@ -38,6 +67,7 @@ watch(() => outcomeItem.value.isEditAutoInput, (newValue) => {
         emit("restoreOutcomeReadData", lineIndex.value);
     }
 });
+
 </script>
 <template>
     <td><input type="text" v-model="outcomeItem.referDigest" :disabled="true"></td>
@@ -48,16 +78,18 @@ watch(() => outcomeItem.value.isEditAutoInput, (newValue) => {
             v-model="outcomeItem.reportKbn" :value="11">報告対象外政治関連(廃止予定)<br><input type="radio"
             v-model="outcomeItem.reportKbn" :value="50">タスク計上(後で変更)</td>
     <td>
-        <div v-show="outcomeItem.isUseYoshikiKbn"><select v-model="outcomeItem.yoshikiKbn">
+        <div v-show="outcomeItem.isUseYoushikiKbn"><select v-model="outcomeItem.youshikiKbn">
                 <option value="14">14.人件費を除く経常収支</option>
                 <option value="15">15.政治活動費</option>
                 <option value="16">16.本部／支部交付金に係る支出</option>
-            </select></div>
+            </select>
+            <br><button @click="showCallinItem">他の紐づけ候補</button>
+        </div>
     </td>
     <td>
-        <div v-show="outcomeItem.isUseYoshikiEdaKbn">
-            <select v-model="outcomeItem.yoshikiEdaKbn">
-                <option v-for="option in outcomeItem.yoshikiEdaKbnOptions" v-bind:value="option.value"
+        <div v-show="outcomeItem.isUseYoushikiEdaKbn">
+            <select v-model="outcomeItem.youshikiEdaKbn">
+                <option v-for="option in outcomeItem.youshikiEdaKbnOptions" v-bind:value="option.value"
                     v-bind:key="option.value">
                     {{ option.text }}
                 </option>
@@ -75,7 +107,7 @@ watch(() => outcomeItem.value.isEditAutoInput, (newValue) => {
     </td>
     <td>
         <div v-show="outcomeItem.isUseOrgName">支出を受けた者の氏名(団体名称)：<br><input type="text"
-                v-model="outcomeItem.shimeiOrgnizationName"></div>
+                v-model="outcomeItem.professionOrgnizationName"></div>
     </td>
     <td>
         <div v-show="outcomeItem.isUseAddress">支出を受けた者の住所：<br><input type="text"
@@ -100,6 +132,13 @@ watch(() => outcomeItem.value.isEditAutoInput, (newValue) => {
     <td><textarea v-model="outcomeItem.note"></textarea></td>
     <td><input type="checkbox" v-model="outcomeItem.isDifferPrecedent">前例と異なる処理</td>
     <td><input type="checkbox" v-model="outcomeItem.isEditAutoInput">入力できない部分を<br>入力可能にする</td>
+    <!-- ベースを操作禁止するレイヤ -->
+    <div v-if="isVisibleShowCallingItem" class="overBackground"></div>
+    <!--上にかぶせるコンポーネント -->
+    <div v-if="isVisibleShowCallingItem" class="overComponent">
+        <ShowCallingItem :digest="outcomeItem.referDigest"  :listItem="listCallingItem" @sendCancelShowCallingItem="recieveCancelShowCallingItem"
+            @sendCallingItemEntity="recieveCallingItemEntity"></ShowCallingItem>
+    </div>
 </template>
 <style scoped>
 table {

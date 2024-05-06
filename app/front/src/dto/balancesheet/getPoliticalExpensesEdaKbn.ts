@@ -1,5 +1,6 @@
 ﻿import SelectOptionInterface from "../selectOptionDto";
 import SelectOptionDto from "../selectOptionDto";
+import YoushikiEdaKbnOutcomeConstants from "./youshikiEdaKbnOutcomeConstants";
 
 /**
  * 収支報告書収入データの収支報告書支出仕訳項目リストを取得する
@@ -9,15 +10,15 @@ export default function getPoliticalExpensesEdaKbn(): SelectOptionInterface[] {
     const list: SelectOptionDto[] = [];
     list.splice(0);
 
-    list.push(createDto("1", "1.組織活動費"));
-    list.push(createDto("2", "2.選挙関係費"));
-    list.push(createDto("3", "3.機関紙発行事業費"));
-    list.push(createDto("4", "4.宣伝事業費"));
-    list.push(createDto("5", "5.政治資金パーティー開催事業費"));
-    list.push(createDto("6", "6.その他の事業費"));
-    list.push(createDto("7", "7.調査研究費"));
-    list.push(createDto("8", "8.寄付交付金"));
-    list.push(createDto("9", "9.その他の経費"));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.ACTIVATION, YoushikiEdaKbnOutcomeConstants.ACTIVATION_TEXT));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.ELECTION, YoushikiEdaKbnOutcomeConstants.ELECTION_TEXT));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.PAPER, YoushikiEdaKbnOutcomeConstants.PAPER_TEXT));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.COMERCIAL, YoushikiEdaKbnOutcomeConstants.COMERCIAL_TEXT));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.PARTY, YoushikiEdaKbnOutcomeConstants.PARTY_TEXT));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.BUISSINESS, YoushikiEdaKbnOutcomeConstants.BUISSINESS_TEXT));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.RESEARCH, YoushikiEdaKbnOutcomeConstants.RESEARCH_TEXT));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.DONATION, YoushikiEdaKbnOutcomeConstants.DONATION_TEXT));
+    list.push(createDto(YoushikiEdaKbnOutcomeConstants.OTHER, YoushikiEdaKbnOutcomeConstants.OTHER_TEXT));
 
     return list;
 }

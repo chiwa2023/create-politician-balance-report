@@ -70,13 +70,13 @@ export default function convertBalancesheetOutcomeFromTradingCore(line: CsvCellI
     outcomeDto.reportKbn = 1;
     outcomeDto.biko = "入力備考";
     outcomeDto.itemName = "ﾁﾎｳｷﾞｲﾝ11";
-    outcomeDto.yoshikiKbn = "15";
-    outcomeDto.yoshikiEdaKbn = "1";
-    outcomeDto.shimeiOrgnizationName = "市議会議員";
+    outcomeDto.youshikiKbn = 15;
+    outcomeDto.youshikiEdaKbn = 1;
+    outcomeDto.professionOrgnizationName = "市議会議員";
     outcomeDto.orgnizationAddress = "東京都千代田区";
     outcomeDto.isExpendituresRelatedGrants = true;
     outcomeDto.notCollectReciptKbn = 1;
-    outcomeDto.yoshikiEdaKbnOptions = getOrdinaryExpensesEdaKbn();
+    outcomeDto.youshikiEdaKbnOptions = getOrdinaryExpensesEdaKbn();
     outcomeDto.categorizeGroup = "お祝いパーティ";
 
     return viewPrepareOutcome(outcomeDto);

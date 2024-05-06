@@ -1,7 +1,7 @@
 ﻿/**
  * CSVファイル読み込みのための位置指定Interface
  */
-export default interface PropseCsvReadTemplateInterface {
+export default interface ProposeCsvReadTemplateInterface {
 
     /** csvテンプレートId  */
     csvReadTemplateId: number;
@@ -37,7 +37,7 @@ export default interface PropseCsvReadTemplateInterface {
 /**
  * CsvReadTemplateDto Csv読み込み位置Dto
  */
-export default class PropseCsvReadTemplateDto implements PropseCsvReadTemplateInterface {
+export default class ProposeCsvReadTemplateDto implements ProposeCsvReadTemplateInterface {
 
     /** csvテンプレートId  */
     csvReadTemplateId: number;

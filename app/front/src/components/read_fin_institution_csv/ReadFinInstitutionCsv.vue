@@ -1,78 +1,27 @@
 ﻿<script setup lang="ts">
-import { ref, Ref, toRaw, watch } from "vue";
-//import mockReadTemplate from "./mock/mockReadTemplate";
-import CsvReadTemplateInterface from "../../dto/read_csv/csvReadTemplate";
-import CsvReadTemplateDto from "../../dto/read_csv/csvReadTemplate";
+import { ref, Ref, toRaw } from "vue";
 import CsvCellInterface from "../../dto/read_csv/csvCell";
-import SelectOptionsArrayDto from "../../dto/selectOptionsArrayDto";
 import BalancesheetIncomeDto from "../../dto/balancesheetIncomeDto";
 import BalancesheetOutcomeDto from "../../dto/balancesheetOutcomeDto";
-//import mockCsvData from "./mock/mockCsvData";
-import convertBalancesheetIncomeFromTradingCore from "../../dto/balancesheet/convertBalancesheetIncomeFromTradingCore";
-import convertBalancesheetOutcomeFromTradingCore from "../../dto/balancesheet/convertBalancesheetOutcomeFromTradingCore";
-import viewPrepareIncome from "../../dto/balancesheet/viewPrepareIncome";
-import viewPrepareOutcome from "../../dto/balancesheet/viewPrepareOutcome";
 import BalancesheetInput from "../../components/common/balancesheet_input/BalancesheetInput.vue";
 import InputInstitutionCsv from "../common/input_institution_csv/InputInstitutionCsv.vue";
-
-//csv読み取りテンプレートを取得する
-const listCsvReadTemplate: Ref<CsvReadTemplateInterface[]> = ref([]);
-const selectedCsvReadTemplate: Ref<string> = ref("");
-
-//1行目ヘッダ有無
-//const hasHeader: Ref<boolean> = ref(false);
-
-//csv読み取りリスト(保存用)
-//const backCsvReadData: Ref<[CsvCellInterface[]]> = ref([[]]);
+import SaveStorageResultDto from "../../dto/storage/saveStorageResultDto";
+import SessionStorageCommonCheck from "../../dto/common_check/sessionStorageCommonCheck";
+import createCheckTransactionDto from "../../dto/common_check/createCheckTransactionDto";
+import axios from "axios";
+import RegistBalancesheetInOutCapsuleDto from "../../dto/balancesheet/registBalancesheetInOutCapsuleDto";
+import CreateBalancesheetInOutDataByCsvCapsuleDto from "../../dto/balancesheet/createBalancesheetInOutDataByCsvCapsuleDto";
+import CreateBalancsheetInOutItemResultDto from "../../dto/balancesheet/createBalancsheetInOutItemResultDto";
+import viewPrepareIncome from "../../dto/balancesheet/viewPrepareIncome";
+import viewPrepareOutcome from "../../dto/balancesheet/viewPrepareOutcome";
+import showErrorMessage from "../../dto/common_check/showErrorMessage";
+import CallingItemEntity from "../../entity/callingItemEntity";
 
 //CSVデータ解析用
 const viewCsvReadData: Ref<[CsvCellInterface[]]> = ref([[]]);
 
 //csv項目指定リストの指定用配列
-const listPointItems: Ref<SelectOptionsArrayDto[]> = ref([]);
-
-//新テンプレートを申請
-//const newCsvReadTemplate: Ref<string> = ref("");
-//const temp: Ref<string> = ref("");
-//const isReadData: Ref<boolean> = ref(true);
-
-///**
-// * 読み取りCsvデータを受信する
-// */
-//function recieveGeneralCsvData() {
-//    //データを受信する
-//    backCsvReadData.value = mockCsvData();
-//
-//    viewCsvReadData.value.splice(0);
-//    for (const data of backCsvReadData.value) {
-//        viewCsvReadData.value.push(data);
-//    }
-//
-//    const columnSize: number = backCsvReadData.value[0].length;
-//
-//    //読み取りしたcsvの項目数に合わせたテンプレートのみを呼び出す
-//    listCsvReadTemplate.value.splice(0);
-//    listCsvReadTemplate.value = mockReadTemplate(columnSize);
-//
-//    //受信したデータをもとに指定用項目を準備する
-//    listPointItems.value.splice(0);
-//    for (let i: number = 0; i < columnSize; i++) {
-//        listPointItems.value.push(new SelectOptionsArrayDto());
-//    }
-//
-//    //準備ができたら表示する
-//    isReadData.value = true;
-//}
-
-//ヘッダ有無の変更監視
-//watch(hasHeader, () => {
-//    if (hasHeader.value) {
-//        viewCsvReadData.value.shift();
-//    }
-//    else {
-//        viewCsvReadData.value.unshift(backCsvReadData.value[0]);
-//    }
-//});
+//const listPointItems: Ref<SelectOptionsArrayDto[]> = ref([]);
 
 //収支報告書収入リスト
 const listBalancesheetIncome: Ref<BalancesheetIncomeDto[]> = ref([]);
@@ -82,109 +31,55 @@ const backupListIncome: Ref<BalancesheetIncomeDto[]> = ref([]);
 const listBalancesheetOutcome: Ref<BalancesheetOutcomeDto[]> = ref([]);
 const backupListOutcome: Ref<BalancesheetOutcomeDto[]> = ref([]);
 
-//読み取り形式変更監視
-const isSelectTemplate: Ref<boolean> = ref(true);
-watch(selectedCsvReadTemplate, () => {
-    if (selectedCsvReadTemplate.value !== "選択解除") {
-        //選択された項目のDtoを抽出
-        let selectedDto: CsvReadTemplateInterface = new CsvReadTemplateDto();
-        for (const dto of listCsvReadTemplate.value) {
-            if (dto.value === selectedCsvReadTemplate.value) {
-                selectedDto = dto;
-                break;
-            }
-        }
-        //格納された値に合わせて設定
-        const maxLength = selectedDto.arrayText.length;
-        for (let index = 0; index < maxLength; index++) {
-            listPointItems.value[index].selectedOption = selectedDto.arrayText[index];
-        }
-        isSelectTemplate.value = false;
-
-        //読みとられたcsvデータを収支報告書収入形式に変換
-        listBalancesheetIncome.value.splice(0);
-        listBalancesheetOutcome.value.splice(0);
-        const inputArray:string[] = selectedDto.arrayText.split(",");
-        let incomeDto: BalancesheetIncomeDto | null;
-        let outcomeDto: BalancesheetOutcomeDto | null;
-        let isSet = false;
-        for (const line of viewCsvReadData.value) {
-            isSet = false;
-
-            incomeDto = convertBalancesheetIncomeFromTradingCore(line, inputArray);
-            if (incomeDto !== null) {
-                listBalancesheetIncome.value.push(incomeDto);
-                isSet = true;
-            }
-            outcomeDto = convertBalancesheetOutcomeFromTradingCore(line, inputArray);
-            if (outcomeDto !== null) {
-                listBalancesheetOutcome.value.push(outcomeDto);
-                isSet = true;
-            }
-            if (!isSet) {
-                //TODO 未変換データの処理は決定次第修正する
-                alert("未変換");
-            }
-        }
-
-        //テスト用仮データ
-        listBalancesheetIncome.value.push(viewPrepareIncome(new BalancesheetIncomeDto()));
-        listBalancesheetIncome.value.push(viewPrepareIncome(new BalancesheetIncomeDto()));
-        listBalancesheetOutcome.value.push(viewPrepareOutcome(new BalancesheetOutcomeDto()));
-        listBalancesheetOutcome.value.push(viewPrepareOutcome(new BalancesheetOutcomeDto()));
-
-        //バックアップを取る
-        backupListIncome.value = structuredClone(toRaw(listBalancesheetIncome.value));
-        backupListOutcome.value = structuredClone(toRaw(listBalancesheetOutcome.value));
-
-    }
-    else {
-        isSelectTemplate.value = true;
-    }
-});
+//呼び出し候補リスト
+const listCallingItem:Ref<CallingItemEntity[]> = ref([]);
 
 /**
  * CSVデータを収支項目データに変換する
  * @param listPointArray 列と指定項目の組み合わせ
+ * @param saveStorageResultDto 読み取りした書証情報
  */
-function recieveSelectOptionsArrayInterface(listPointArray:string[]){
+async function recieveSelectOptionsArrayInterface(listPointArray: string[], saveStorageResultDto: SaveStorageResultDto) {
 
-    //読みとられたcsvデータを収支報告書収入形式に変換
-    listBalancesheetIncome.value.splice(0);
-    listBalancesheetOutcome.value.splice(0);
-    //const inputArray = listPointItems;
-    let incomeDto: BalancesheetIncomeDto | null;
-    let outcomeDto: BalancesheetOutcomeDto | null;
-    let isSet = false;
-    for (const line of viewCsvReadData.value) {
-        isSet = false;
+    //接続情報を準備する0
+    const createBalancesheetInOutDataByCsvCapsuleDto: CreateBalancesheetInOutDataByCsvCapsuleDto = new CreateBalancesheetInOutDataByCsvCapsuleDto();
+    //共通情報をセッションストレージから取得
+    createBalancesheetInOutDataByCsvCapsuleDto.checkSecurityDto = SessionStorageCommonCheck.getSecurity();
+    createBalancesheetInOutDataByCsvCapsuleDto.checkPrivilegeDto = SessionStorageCommonCheck.getPrivilege();
+    createBalancesheetInOutDataByCsvCapsuleDto.checkTransactionDto = createCheckTransactionDto(false);
 
-        incomeDto = convertBalancesheetIncomeFromTradingCore(line, listPointArray);
-        if (incomeDto !== null) {
-            listBalancesheetIncome.value.push(incomeDto);
-            isSet = true;
-        }
-        outcomeDto = convertBalancesheetOutcomeFromTradingCore(line, listPointArray);
-        if (outcomeDto !== null) {
-            listBalancesheetOutcome.value.push(outcomeDto);
-            isSet = true;
-        }
-        if (!isSet) {
-            //TODO 未変換データの処理は決定次第修正する
-            alert("未変換");
-        }
-    }
+    //独自情報をセット
+    //createBalancesheetInOutDataByCsvCapsuleDto.hasHeader = hasHeader;
+    createBalancesheetInOutDataByCsvCapsuleDto.saveStorageResultDto = saveStorageResultDto;
+    createBalancesheetInOutDataByCsvCapsuleDto.listPointer = listPointArray;
+    createBalancesheetInOutDataByCsvCapsuleDto.listCsvData = viewCsvReadData.value;
 
-    //テスト用仮データ
-    listBalancesheetIncome.value.push(viewPrepareIncome(new BalancesheetIncomeDto()));
-    listBalancesheetIncome.value.push(viewPrepareIncome(new BalancesheetIncomeDto()));
-    listBalancesheetOutcome.value.push(viewPrepareOutcome(new BalancesheetOutcomeDto()));
-    listBalancesheetOutcome.value.push(viewPrepareOutcome(new BalancesheetOutcomeDto()));
+    //csvデータ、列項目指定、書証情報からcsv設定データに変換
+    const url = "http://localhost:8080/create-balancesheet-in-out/by-csv";
+    await axios.post(url, createBalancesheetInOutDataByCsvCapsuleDto)
+        .then((response) => {
+            //データを取得
+            const resultDto: CreateBalancsheetInOutItemResultDto = response.data;
+            
+            listCallingItem.value = resultDto.listCallingItem;
+            
+            listBalancesheetIncome.value.splice(0);
+            listBalancesheetOutcome.value.splice(0);
 
-    //バックアップを取る
-    backupListIncome.value = structuredClone(toRaw(listBalancesheetIncome.value));
-    backupListOutcome.value = structuredClone(toRaw(listBalancesheetOutcome.value));
+            //データに合わせて画面表示コントロールする
+            for (const dtoIncome of resultDto.listIncome) {
+                listBalancesheetIncome.value.push(viewPrepareIncome(dtoIncome));
+            }
+            for (const dtoOutcome of resultDto.listOutcome) {
+                listBalancesheetOutcome.value.push(viewPrepareOutcome(dtoOutcome));
+            }
 
+            //バックアップを取る
+            backupListIncome.value = structuredClone(toRaw(listBalancesheetIncome.value));
+            backupListOutcome.value = structuredClone(toRaw(listBalancesheetOutcome.value));
+
+        })
+        .catch((error) => showErrorMessage(error.status));
 }
 
 /**
@@ -208,8 +103,27 @@ function restoreOutcomeReadData(index: number) {
 /**  
  * 入力内容を保存する
  */
-function onSave() {
-    alert("保存");
+async function onSave() {
+
+    //登録するリストを設定する
+    const capsuleDto: RegistBalancesheetInOutCapsuleDto = new RegistBalancesheetInOutCapsuleDto();
+    //セッションストレージ取得
+    capsuleDto.checkSecurityDto = SessionStorageCommonCheck.getSecurity();
+    capsuleDto.checkPrivilegeDto = SessionStorageCommonCheck.getPrivilege();
+    capsuleDto.checkTransactionDto = createCheckTransactionDto(false);
+    //独自変数設定
+    capsuleDto.listIncome = listBalancesheetIncome.value;
+    capsuleDto.listOutcome = listBalancesheetOutcome.value;
+
+    //csvデータ、列項目指定、書証情報からcsv設定データに変換
+    const url = "http://localhost:8080/create-balancesheet-in-out/regist";
+    await axios.post(url, capsuleDto)
+        .then((response) => {
+            const count: number = response.data;
+            //TODO メッセージの方法は決定次第修正する
+            alert(count + "件登録しました");
+        })
+        .catch((error) =>  showErrorMessage(error.status));
 }
 /**  
  * 入力内容を破棄する
@@ -223,11 +137,12 @@ function onCancel() {
 
     <h3>csvを指定する</h3>
     <!-- CSV読み取りコンポーネント -->
-    <InputInstitutionCsv :csvData="viewCsvReadData" @sendSelectOptionsArrayInterface="recieveSelectOptionsArrayInterface"></InputInstitutionCsv>
+    <InputInstitutionCsv :csvData="viewCsvReadData"
+        @sendSelectOptionsArrayInterface="recieveSelectOptionsArrayInterface"></InputInstitutionCsv>
 
     <h3>変換された収支報告書データ</h3>
     <!-- 政治資金収支報告書コンポーネント -->
-    <BalancesheetInput :list-income="listBalancesheetIncome" :list-outcome="listBalancesheetOutcome"
+    <BalancesheetInput :list-income="listBalancesheetIncome" :list-outcome="listBalancesheetOutcome" :listItem="listCallingItem"
         @restoreIncomeReadData="restoreIncomeReadData" @restoreOutcomeReadData="restoreOutcomeReadData">
     </BalancesheetInput>
 

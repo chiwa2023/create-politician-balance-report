@@ -7,10 +7,10 @@ it("closeInput", () => {
     closeInputIncomeForm(dto);
 
     //様式区分を非表示にします
-    expect(dto.isUseYoshikiKbn).toBe(false);
+    expect(dto.isUseYoushikiKbn).toBe(false);
 
     //様式区分枝項目を非表示にします
-    expect(dto.isUseYoshikiEdaKbn).toBe(false);
+    expect(dto.isUseYoushikiEdaKbn).toBe(false);
 
     //あっせん期間部分を非表示にします
     expect(dto.isUseMediation).toBe(false);

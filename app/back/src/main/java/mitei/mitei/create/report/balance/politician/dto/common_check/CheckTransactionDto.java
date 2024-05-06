@@ -17,6 +17,9 @@ public class CheckTransactionDto implements Serializable { // NOPMD DataClass
     /** 他機能確認用Mock判定結果 */
     private Boolean isResult;
 
+    /** 照会専用フラグ(排他制御チェック不要) */
+    private Boolean isSelectOnly;
+
     /**
      * 他機能確認用Mock強制例外発生フラグを取得する
      *
@@ -52,4 +55,24 @@ public class CheckTransactionDto implements Serializable { // NOPMD DataClass
     public void setIsResult(final Boolean isResult) {
         this.isResult = isResult;
     }
+
+    /**
+     * 照会専用フラグを取得する
+     *
+     * @return 照会専用フラグ
+     */
+    public Boolean getIsSelectOnly() {
+        return isSelectOnly;
+    }
+
+    /**
+     * 照会専用フラグを設定する
+     *
+     * @param isSelectOnly 照会専用フラグ
+     */
+    public void setIsSelectOnly(final Boolean isSelectOnly) {
+        this.isSelectOnly = isSelectOnly;
+    }
+
+
 }

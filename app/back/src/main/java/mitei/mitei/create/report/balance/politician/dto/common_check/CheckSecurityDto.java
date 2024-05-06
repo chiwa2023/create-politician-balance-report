@@ -17,6 +17,7 @@ public class CheckSecurityDto implements Serializable { // NOPMD DataClass
     /** 他機能確認用Mock判定結果 */
     private Boolean isResult;
 
+    
     /**
      * 他機能確認用Mock強制例外発生フラグを取得する
      *

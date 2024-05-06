@@ -1,5 +1,8 @@
 package mitei.mitei.create.report.balance.politician.batch.trial.csv.read;
 
+
+import static org.junit.jupiter.api.Assertions.fail;
+
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -55,7 +58,8 @@ class CsvReadTrialBatchItemWriterTest {
         
         Chunk<TrialBatch> chunk = new Chunk<>(list);
         csvReadTrialBatchItemWriter.write(chunk);
-
+        
+        fail("not yet implement");
    }
 
 }
