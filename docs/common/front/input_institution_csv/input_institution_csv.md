@@ -131,19 +131,19 @@ b. チェック非該当時
 
 ProposeCsvReadTemplateInterface
 
- |            論理名             |       論理名        |   型    |                            説明(例)                             |
- | ----------------------------- | ------------------- | ------- | --------------------------------------------------------------- |
- | CSV読取り形式Id               | readCsvTemplateId   | Long    | csv読み取り形式を識別する一意のId                               |
- | CSV読取り形式同一識別コード   | readCsvTemplateCode | Integer | 変更にかかわらず、csv読み取り形式を同一とする識別コード         |
- | CSV読取り形式名称             | readCsvTemplateName | String  | csv読み取り形式を識別する一意のId                               |
- | 最新区分                      | saishinKbn          | Integer | 最新データかどうか区分する値                                    |
- | 金融機関区分                  | financialOrgKbn     | Integer | 仕様保持者が各種Payか全銀金融機関かを区分する値                 |
- | 金融機関Id                    | financialOrgId      | Long    | csv読み取り仕様保持者を一意に識別する一意のId                   |
- | 金融機関同一識別コード        | financialOrgCode    | Integer | 変更にかかわらず、cscsv読み取り仕様保持者を同一とする識別コード |
- | 金融機関名称                  | financialOrgName    | String  | csv読み取り仕様保持者名称                                       |
- | 1行目ヘッダデータの該当非該当 | hasHeader           | boolean | ヘッダの有無                                                    |
- | 配列項目数                    | arrayNumber         | Integer | 読み取り配列の項目数                                            |
- | 読み取り配列                  | arrayTumber         | String  | 項目数分、読み取りする列指定データを格納したもの                |
+ |           論理名            |       論理名        |   型    |                            説明(例)                             |
+ | --------------------------- | ------------------- | ------- | --------------------------------------------------------------- |
+ | CSV読取り形式Id             | readCsvTemplateId   | Long    | csv読み取り形式を識別する一意のId                               |
+ | CSV読取り形式同一識別コード | readCsvTemplateCode | Integer | 変更にかかわらず、csv読み取り形式を同一とする識別コード         |
+ | CSV読取り形式名称           | readCsvTemplateName | String  | csv読み取り形式を識別する一意のId                               |
+ | 最新区分                    | saishinKbn          | Integer | 最新データかどうか区分する値                                    |
+ | 金融機関区分                | financialOrgKbn     | Integer | 仕様保持者が各種Payか全銀金融機関かを区分する値                 |
+ | 金融機関Id                  | financialOrgId      | Long    | csv読み取り仕様保持者を一意に識別する一意のId                   |
+ | 金融機関同一識別コード      | financialOrgCode    | Integer | 変更にかかわらず、cscsv読み取り仕様保持者を同一とする識別コード |
+ | 金融機関名称                | financialOrgName    | String  | csv読み取り仕様保持者名称                                       |
+ | 1行目ヘッダデータのフラグ   | hasHeader           | boolean | ヘッダの有無                                                    |
+ | 配列項目数                  | arrayNumber         | Integer | 読み取り配列の項目数                                            |
+ | 読み取り配列                | arrayTumber         | String  | 項目数分、読み取りする列指定データを格納したもの                |
 
 ### 6.1 CSV読取り形式インターフェイス
 
