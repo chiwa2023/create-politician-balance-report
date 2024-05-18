@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 
 import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
+import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
+import mitei.mitei.create.report.balance.politician.logic.read_csv.CheckValidateCsvPointListLogic;
 import mitei.mitei.create.report.balance.politician.repository.ProposeCsvReadTemplateRepository;
 
 /**
@@ -22,38 +24,57 @@ public class RegistProposeCsvReadTemplateService {
     /** csv読み取りテンプレート登録提案Reposiory */
     @Autowired
     private ProposeCsvReadTemplateRepository proposeCsvReadTemplateRepository;
-    
+
+    /** 列指定妥当性検証Logic */
+    @Autowired
+    private CheckValidateCsvPointListLogic checkValidateCsvPointListLogic;
+
     /**
      * csv読み取りテンプレート登録提案を行う
      *
      * @param proposeCsvReadTemplateEntity 登録内容Entity
      * @return 登録結果
      */
-    public boolean practice(final ProposeCsvReadTemplateEntity proposeCsvReadTemplateEntity,final CheckPrivilegeDto checkPrivilegeDto){
-        
-        //全文検索対象は名称
-        proposeCsvReadTemplateEntity.setTableAllSearchText(proposeCsvReadTemplateEntity.getProposeCsvReadTemplateName());
+    public TemplateFrameworkResultDto practice(final ProposeCsvReadTemplateEntity proposeCsvReadTemplateEntity,
+            final CheckPrivilegeDto checkPrivilegeDto) {
 
-        //auto increment
-        proposeCsvReadTemplateEntity.setProposeCsvReadTemplateId(0L);
-        
-        //最大同一識別コード
-        Optional<ProposeCsvReadTemplateEntity> optional = proposeCsvReadTemplateRepository.findFirstByOrderByProposeCsvReadTemplateCodeDesc();
-        if(!optional.isEmpty()) {
-            proposeCsvReadTemplateEntity.setProposeCsvReadTemplateCode(optional.get().getProposeCsvReadTemplateCode()+1);
+        //指定リストの妥当性のチェック
+        TemplateFrameworkResultDto resultDto = checkValidateCsvPointListLogic
+                .practice(proposeCsvReadTemplateEntity.getArrayText().split(","));
+        if (!resultDto.getIsOk()) {
+            return resultDto;
         }
-        
-        //新規登録は最新
+
+        // 全文検索対象は名称
+        proposeCsvReadTemplateEntity
+                .setTableAllSearchText(proposeCsvReadTemplateEntity.getProposeCsvReadTemplateName());
+
+        // auto increment
+        proposeCsvReadTemplateEntity.setProposeCsvReadTemplateId(0L);
+
+        // 最大同一識別コード
+        Optional<ProposeCsvReadTemplateEntity> optional = proposeCsvReadTemplateRepository
+                .findFirstByOrderByProposeCsvReadTemplateCodeDesc();
+        if (!optional.isEmpty()) {
+            proposeCsvReadTemplateEntity
+                    .setProposeCsvReadTemplateCode(optional.get().getProposeCsvReadTemplateCode() + 1);
+        }
+
+        // 新規登録は最新
         proposeCsvReadTemplateEntity.setSaishinKbn(SaishinKbnConstants.SAISHIN);
-        
-        //ログインユーザ設定と更新時間
+
+        // ログインユーザ設定と更新時間
         BeanUtils.copyProperties(checkPrivilegeDto, proposeCsvReadTemplateEntity);
         Timestamp timestampNow = Timestamp.valueOf(LocalDateTime.now());
         proposeCsvReadTemplateEntity.setUpdateTime(timestampNow);
-        
+
         ProposeCsvReadTemplateEntity result = proposeCsvReadTemplateRepository.save(proposeCsvReadTemplateEntity);
-        
-        return 0 != result.getProposeCsvReadTemplateId();//auto incrementで新たに値が採番された
-        //return false;
+
+        // auto incrementで新たに値が採番された
+        if (0 != result.getProposeCsvReadTemplateId()) {
+            resultDto.setIsOk(true);
+        }
+
+        return resultDto;
     }
 }

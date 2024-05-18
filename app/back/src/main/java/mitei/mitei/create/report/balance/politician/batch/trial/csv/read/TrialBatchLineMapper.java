@@ -17,7 +17,7 @@ public class TrialBatchLineMapper implements LineMapper<TrialBatch> {
      */
     @Override
     public TrialBatch mapLine(final String line, final int lineNumber) throws Exception {
-        System.out.println(line);
+        
         TrialBatch trialBatch = new TrialBatch();
         
         String[] cell = line.split(",");

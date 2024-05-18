@@ -3,14 +3,15 @@ package mitei.mitei.create.report.balance.politician.dto.balancesheet;
 import java.io.Serializable;
 import java.util.List;
 
+import mitei.mitei.create.report.balance.politician.dto.calling_item.CallingItemDto;
+import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
 import mitei.mitei.create.report.balance.politician.entity.BalancesheetIncome2025Entity;
 import mitei.mitei.create.report.balance.politician.entity.BalancesheetOutcome2025Entity;
-import mitei.mitei.create.report.balance.politician.entity.CallingItemEntity;
 
 /**
  * 生成した政治資金収支報告書収入・支出項目リストDto
  */
-public class CreateBalancsheetInOutItemResultDto implements Serializable{ // NOPMD DataClass
+public class CreateBalancsheetInOutItemResultDto extends TemplateFrameworkResultDto implements Serializable{ // NOPMD DataClass
 
     /** SerializableId */
     private static final long serialVersionUID = 1L;
@@ -22,7 +23,7 @@ public class CreateBalancsheetInOutItemResultDto implements Serializable{ // NOP
     private List<BalancesheetOutcome2025Entity> listOutcome;
 
     /** 結びつけ項目検索結果リスト */
-    private List<CallingItemEntity> listCallingItem;
+    private List<CallingItemDto> listCallingItem;
     
     /**
      * 収入項目リストを取得する
@@ -65,7 +66,7 @@ public class CreateBalancsheetInOutItemResultDto implements Serializable{ // NOP
      *
      * @return 結びつけ項目検索結果マップ
      */
-    public List<CallingItemEntity> getListCallingItem() {
+    public List<CallingItemDto> getListCallingItem() {
         return listCallingItem;
     }
 
@@ -74,7 +75,7 @@ public class CreateBalancsheetInOutItemResultDto implements Serializable{ // NOP
      *
      * @param listCallingItem 結びつけ項目検索結果マップ
      */
-    public void setListCallingItem(final List<CallingItemEntity> listCallingItem) {
+    public void setListCallingItem(final List<CallingItemDto> listCallingItem) {
         this.listCallingItem = listCallingItem;
     }
     

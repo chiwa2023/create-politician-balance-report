@@ -7,7 +7,7 @@ import mitei.mitei.create.report.balance.politician.dto.common_check.CheckTransa
 /**
  * front側からback側に遷移するときに共通のチェック処理情報を格納するDto
  */
-public class AbstactCapsuleDto { // NOPMD DataClass
+public abstract class AbstractCapsuleDto { // NOPMD DataClass
 
     /** セキュリティチェック情報 */
     private CheckSecurityDto checkSecurityDto;

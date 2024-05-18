@@ -1,29 +1,29 @@
 ﻿<script setup lang="ts">
 import { Ref, WritableComputedRef, computed, onBeforeMount, ref } from "vue";
-import CallingItemEntity from "../../../entity/callingItemEntity";
 import YoushikiEdaKbnIncomeConstants from "../../../dto/balancesheet/youshikiEdaKbnIncomeConstants";
 import YoushikiEdaKbnOutcomeConstants from "../../../dto/balancesheet/youshikiEdaKbnOutcomeConstants";
 import YoushikiKbnIncomeConstants from "../../../dto/balancesheet/youshikiKbnIncomeConstants";
 import YoushikiKbnOutcomeConstants from "../../../dto/balancesheet/youshikiKbnOutcomeConstants";
+import CallingItemDto from "../../../dto/calling_item/callingItemDto";
 
 //props,emits
-const props = defineProps<{ digest: string, listItem: CallingItemEntity[] }>();
+const props = defineProps<{ readLine: number, listItem: CallingItemDto[] }>();
 const emits = defineEmits(["sendCancelShowCallingItem", "sendCallingItemEntity"]);
 
 //候補マップ
-const listCallingItem: WritableComputedRef<CallingItemEntity[]> = computed(
+const listCallingItem: WritableComputedRef<CallingItemDto[]> = computed(
     () => props.listItem,
 );
 
-const list: Ref<CallingItemEntity[]> = ref([]);
+const list: Ref<CallingItemDto[]> = ref([]);
 
 onBeforeMount(() => {
-    alert(listCallingItem.value.length);
 
     //初期化して追加
     list.value.splice(0);
     for (const dto of listCallingItem.value) {
-        if (dto.callingReferDigest === props.digest) {
+        //alert("読み取り行"+props.readLine+"--dto"+dto.readLine);
+        if (dto.readLine === props.readLine) {
             //一致するデータに絞込
             list.value.push(dto);
         }
@@ -45,7 +45,7 @@ function onCancel() {
  */
 function onSelect() {
     //PrimaryIdをKeyにしているので、1件だけに絞られることが保証されている
-    const selectedDto: CallingItemEntity = list.value.filter((dto) => dto.callingItemId == selectedRow.value)[0];
+    const selectedDto: CallingItemDto = list.value.filter((dto) => dto.callingItemId == selectedRow.value)[0];
     emits("sendCallingItemEntity", selectedDto);
 }
 

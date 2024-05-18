@@ -8,8 +8,8 @@ import mitei.mitei.create.report.balance.politician.entity.ZenginFinancialOrgEnt
 /**
  * 全銀金融機関Dto
  */
-public class ZenginFinancialOrgDto extends ZenginFinancialOrgEntity implements Serializable, SelectOptionInterface{
-
+public class ZenginFinancialOrgDto extends ZenginFinancialOrgEntity // NOPMD DataClass
+        implements Serializable, SelectOptionInterface {
 
     /** Serialize id */
     private static final long serialVersionUID = 1L;
@@ -63,6 +63,5 @@ public class ZenginFinancialOrgDto extends ZenginFinancialOrgEntity implements S
     public void setText(final String text) {
         this.text = text;
     }
-
 
 }

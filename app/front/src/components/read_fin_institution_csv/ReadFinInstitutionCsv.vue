@@ -15,7 +15,8 @@ import CreateBalancsheetInOutItemResultDto from "../../dto/balancesheet/createBa
 import viewPrepareIncome from "../../dto/balancesheet/viewPrepareIncome";
 import viewPrepareOutcome from "../../dto/balancesheet/viewPrepareOutcome";
 import showErrorMessage from "../../dto/common_check/showErrorMessage";
-import CallingItemEntity from "../../entity/callingItemEntity";
+import CallingItemDto from "../../dto/calling_item/callingItemDto";
+import TemplateFrameworkResultDto from "../../dto/template/templateFrameworkResultDto";
 
 //CSVデータ解析用
 const viewCsvReadData: Ref<[CsvCellInterface[]]> = ref([[]]);
@@ -32,7 +33,7 @@ const listBalancesheetOutcome: Ref<BalancesheetOutcomeDto[]> = ref([]);
 const backupListOutcome: Ref<BalancesheetOutcomeDto[]> = ref([]);
 
 //呼び出し候補リスト
-const listCallingItem:Ref<CallingItemEntity[]> = ref([]);
+const listCallingItem: Ref<CallingItemDto[]> = ref([]);
 
 /**
  * CSVデータを収支項目データに変換する
@@ -60,23 +61,29 @@ async function recieveSelectOptionsArrayInterface(listPointArray: string[], save
         .then((response) => {
             //データを取得
             const resultDto: CreateBalancsheetInOutItemResultDto = response.data;
-            
-            listCallingItem.value = resultDto.listCallingItem;
-            
-            listBalancesheetIncome.value.splice(0);
-            listBalancesheetOutcome.value.splice(0);
 
-            //データに合わせて画面表示コントロールする
-            for (const dtoIncome of resultDto.listIncome) {
-                listBalancesheetIncome.value.push(viewPrepareIncome(dtoIncome));
-            }
-            for (const dtoOutcome of resultDto.listOutcome) {
-                listBalancesheetOutcome.value.push(viewPrepareOutcome(dtoOutcome));
-            }
+            if (200 === response.status) {
+                listCallingItem.value = resultDto.listCallingItem;
 
-            //バックアップを取る
-            backupListIncome.value = structuredClone(toRaw(listBalancesheetIncome.value));
-            backupListOutcome.value = structuredClone(toRaw(listBalancesheetOutcome.value));
+                listBalancesheetIncome.value.splice(0);
+                listBalancesheetOutcome.value.splice(0);
+
+                //データに合わせて画面表示コントロールする
+                for (const dtoIncome of resultDto.listIncome) {
+                    listBalancesheetIncome.value.push(viewPrepareIncome(dtoIncome));
+                }
+                for (const dtoOutcome of resultDto.listOutcome) {
+                    listBalancesheetOutcome.value.push(viewPrepareOutcome(dtoOutcome));
+                }
+
+                //バックアップを取る
+                backupListIncome.value = structuredClone(toRaw(listBalancesheetIncome.value));
+                backupListOutcome.value = structuredClone(toRaw(listBalancesheetOutcome.value));
+            }
+            //正常にデータが取得できなかった
+            if (204 === response.status) {
+                alert(resultDto.message);
+            }
 
         })
         .catch((error) => showErrorMessage(error.status));
@@ -119,11 +126,18 @@ async function onSave() {
     const url = "http://localhost:8080/create-balancesheet-in-out/regist";
     await axios.post(url, capsuleDto)
         .then((response) => {
-            const count: number = response.data;
-            //TODO メッセージの方法は決定次第修正する
-            alert(count + "件登録しました");
+            const resultDto: TemplateFrameworkResultDto = response.data;
+
+            if (200 === response.status) {
+                alert(resultDto.successCount + "件登録できました");
+            }
+
+            if (204 === response.status) {
+                alert(resultDto.message);
+            }
+
         })
-        .catch((error) =>  showErrorMessage(error.status));
+        .catch((error) => showErrorMessage(error.status));
 }
 /**  
  * 入力内容を破棄する
@@ -142,8 +156,9 @@ function onCancel() {
 
     <h3>変換された収支報告書データ</h3>
     <!-- 政治資金収支報告書コンポーネント -->
-    <BalancesheetInput :list-income="listBalancesheetIncome" :list-outcome="listBalancesheetOutcome" :listItem="listCallingItem"
-        @restoreIncomeReadData="restoreIncomeReadData" @restoreOutcomeReadData="restoreOutcomeReadData">
+    <BalancesheetInput :list-income="listBalancesheetIncome" :list-outcome="listBalancesheetOutcome"
+        :listItem="listCallingItem" @restoreIncomeReadData="restoreIncomeReadData"
+        @restoreOutcomeReadData="restoreOutcomeReadData">
     </BalancesheetInput>
 
     <div class="footer">

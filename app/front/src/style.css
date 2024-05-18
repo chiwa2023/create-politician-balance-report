@@ -83,7 +83,9 @@ textarea {
   background-color: #CCCCCC;
   opacity: .5;
 }
-
+.leftMargin{
+  margin-left: 2%;
+}
 /**
 a {
   font-weight: 500;

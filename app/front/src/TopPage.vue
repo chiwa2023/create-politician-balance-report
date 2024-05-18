@@ -48,6 +48,8 @@ SessionStorageCommonCheck.setPrivilege(checkPrivilegeDto);
 <template>
     <h1>(仮)Top Page</h1>
     <RouterLink to="/read_fin_institution_csv">一般CSVを読みとってデータの仕分けをする</RouterLink><br>
+    <RouterLink to="/meeting_adjust_income">意見付記履歴を参照して編集(収入項目)</RouterLink><br>
+    <RouterLink to="/meeting_adjust_outcome">意見付記履歴を参照して編集(支出項目)</RouterLink><br>
     <RouterLink to="/publish_submisson">発行した収支報告書XMLを提出する</RouterLink><br>
     <RouterLink to="/component">コンポーネント作成台紙</RouterLink><br>
 

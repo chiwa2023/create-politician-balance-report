@@ -28,7 +28,6 @@ import mitei.mitei.create.report.balance.politician.dto.storage.SaveStorageResul
 import mitei.mitei.create.report.balance.politician.entity.BalancesheetIncome2025Entity;
 import mitei.mitei.create.report.balance.politician.entity.BalancesheetOutcome2025Entity;
 import mitei.mitei.create.report.balance.politician.service.read_csv.ReadCsvReadByFileService;
-import mitei.mitei.create.report.balance.politician.util.GetObjectMapperWithTimeModuleUtil;
 
 /**
  * CreateBalancesheetInOutByCsvService単体テスト
@@ -45,7 +44,7 @@ class CreateBalancesheetInOutByCsvServiceTest {
     private CreateBalancesheetInOutByCsvService createBalancesheetInOutByCsvService;
 
     @Test
-    void test() throws Exception {
+    void test() throws Exception { // NOPMD
 
         Path path = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "service/read_csv/read_csv_test.csv");
         String fileContent = Files.readString(path);

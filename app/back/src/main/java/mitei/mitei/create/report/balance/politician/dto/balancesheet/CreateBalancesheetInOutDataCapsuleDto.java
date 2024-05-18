@@ -3,14 +3,15 @@ package mitei.mitei.create.report.balance.politician.dto.balancesheet;
 import java.io.Serializable;
 import java.util.List;
 
+import mitei.mitei.create.report.balance.politician.dto.AbstractCapsuleDto;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.CsvCellDto;
 import mitei.mitei.create.report.balance.politician.dto.storage.SaveStorageResultDto;
-import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkCapsuleDto;
 
 /**
  * 政治資金収支報告書支出・収入項目リスト作成用情報リスト
  */
-public class CreateBalancesheetInOutDataCapsuleDto extends TemplateFrameworkCapsuleDto implements Serializable { // NOPMD DataClass
+public class CreateBalancesheetInOutDataCapsuleDto extends AbstractCapsuleDto // NOPMD DataClass
+        implements Serializable {
 
     /** Serial Id */
     private static final long serialVersionUID = 1L;
@@ -77,5 +78,5 @@ public class CreateBalancesheetInOutDataCapsuleDto extends TemplateFrameworkCaps
     public void setListPointer(final String[] listPointer) { // NOPMD
         this.listPointer = listPointer; // NOPMD
     }
-    
+
 }

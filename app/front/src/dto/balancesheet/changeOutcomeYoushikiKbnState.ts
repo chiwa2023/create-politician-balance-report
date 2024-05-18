@@ -12,6 +12,9 @@ export default function changeOutcomeYoushikiKbnState(outcomeDto:BalancesheetOut
     //収支報告するときは常に大項目はオープン
     outcomeDto.isUseYoushikiKbn = true;
 
+    //大前提として備考は使用します
+    outcomeDto.isUseBiko = true;
+
     switch (String(outcomeDto.youshikiKbn)) {
     case "14":
         outcomeDto.isUseYoushikiEdaKbn = true;

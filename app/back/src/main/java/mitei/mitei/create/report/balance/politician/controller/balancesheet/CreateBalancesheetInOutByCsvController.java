@@ -1,5 +1,7 @@
 package mitei.mitei.create.report.balance.politician.controller.balancesheet;
 
+import java.time.format.DateTimeParseException;
+
 import org.apache.tomcat.websocket.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.PessimisticLockingFailureException;
@@ -72,19 +74,27 @@ public class CreateBalancesheetInOutByCsvController extends AbstractTemplateChec
 
             // 想定外の値(実装ミス?)
             default:
-                throw new IllegalArgumentException("共通チェック処理で発生しえない値が挿入されています");
+                return this.createIllegalExceptionResult("共通チェック処理で発生しえない値が挿入されています");
             }
             
             /*
              * ここに固有のビジネス処理を記載する
              */
-            return ResponseEntity
-                    .ok(createBalancesheetInOutByCsvService.practice(
+            
+            CreateBalancsheetInOutItemResultDto resultDto = createBalancesheetInOutByCsvService.practice(
                             createBalancesheetInOutDataCapsuleDto.getListCsvData(),
                             createBalancesheetInOutDataCapsuleDto.getSaveStorageResultDto(),   
                             createBalancesheetInOutDataCapsuleDto.getCheckPrivilegeDto(),
                             createBalancesheetInOutDataCapsuleDto.getListPointer()
-                            ));
+                            );
+            
+            if(resultDto.getIsOk()) {
+                return ResponseEntity.ok().body(resultDto);
+            }else {
+                //ユーザさん操作起因の例外はno_contentで返す
+                return new ResponseEntity<>(resultDto,HttpStatus.NO_CONTENT);
+            }
+            
             /* ここまで */
             
         } catch (AuthenticationException authenticationException) { // NOPMD
@@ -96,6 +106,24 @@ public class CreateBalancesheetInOutByCsvController extends AbstractTemplateChec
         } catch (PessimisticLockingFailureException pessimisticLockingFailureException) {
             // 排他の対象
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
+            
+        } catch(NumberFormatException ne) {
+            //数値変換不可
+            CreateBalancsheetInOutItemResultDto resultDto = new CreateBalancsheetInOutItemResultDto();
+            resultDto.setIsOk(false);
+            resultDto.setMessage("金額指定の中に数字変換できない値があります");
+            return new ResponseEntity<>(resultDto,HttpStatus.NO_CONTENT);
+            
+        } catch(DateTimeParseException de) {
+            //日付変換不可
+            CreateBalancsheetInOutItemResultDto resultDto = new CreateBalancsheetInOutItemResultDto();
+            resultDto.setIsOk(false);
+            resultDto.setMessage("日付指定の中に日付変換できない値があります");
+            return new ResponseEntity<>(resultDto,HttpStatus.NO_CONTENT);
+            
+        } catch(IllegalArgumentException ie) {
+            return this.createIllegalExceptionResult(ie.getMessage());
+            
         } catch (Exception exception) { // NOPMD
             super.showError(exception); //TODO log処理が確定した段階で修正する
             // その他のビジネスロジック処理例外はInternalServerError
@@ -103,4 +131,11 @@ public class CreateBalancesheetInOutByCsvController extends AbstractTemplateChec
         }
     }
 
+    private ResponseEntity<CreateBalancsheetInOutItemResultDto> createIllegalExceptionResult(final String message){
+        //csvの紐づけまたは行設定が不正
+        CreateBalancsheetInOutItemResultDto resultDto = new CreateBalancsheetInOutItemResultDto();
+        resultDto.setIsOk(false);
+        resultDto.setMessage(message);
+        return new ResponseEntity<>(resultDto,HttpStatus.NO_CONTENT);
+    }
 }

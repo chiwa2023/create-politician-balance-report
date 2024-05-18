@@ -21,6 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import mitei.mitei.create.report.balance.politician.dto.financial.FinancialOrgConstants;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
+import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.util.CreateCommonCheckDtoTestOnlyUtil;
 import mitei.mitei.create.report.balance.politician.util.GetObjectMapperWithTimeModuleUtil;
@@ -65,7 +66,9 @@ class RegistProposeCsvReadTemplateControllerTest {
                         .contentType(MediaType.APPLICATION_JSON_VALUE)) // Content Typeを指定
                 .andExpect(status().isOk()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
 
-        assertThat(Boolean.valueOf(responseContent)).isTrue();
+        TemplateFrameworkResultDto resultDto = objectMapper.readValue(responseContent, TemplateFrameworkResultDto.class);
+        
+        assertThat(resultDto.getIsOk()).isTrue();
     }
 
 }

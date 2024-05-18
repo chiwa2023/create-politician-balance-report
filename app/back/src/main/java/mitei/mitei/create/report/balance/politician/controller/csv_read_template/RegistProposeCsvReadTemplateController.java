@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.transaction.Transactional;
 import mitei.mitei.create.report.balance.politician.controller.AbstractTemplateCheckController;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
+import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
 import mitei.mitei.create.report.balance.politician.service.csv_read_template.RegistProposeCsvReadTemplateService;
 
 /**
@@ -46,7 +47,7 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
      */
     @Transactional // CHECKSTYLE:OFF
     @PostMapping("/regist")
-    public ResponseEntity<Boolean> practice(
+    public ResponseEntity<TemplateFrameworkResultDto> practice(
             final @RequestBody RegistProposeCsvReadRemplateCapsuleDto registProposeCsvReadRemplateCapsuleDto)
             throws SecurityException, AuthenticationException, PessimisticLockingFailureException { // NOPMD
 

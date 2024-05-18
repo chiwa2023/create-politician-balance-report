@@ -60,6 +60,9 @@ class CreateBalancesheetInOutByCsvControllerTest {
         ReadCsvReadByFileService ReadCsvReadByFileService = new ReadCsvReadByFileService();
         List<List<CsvCellDto>> listCsv = ReadCsvReadByFileService.practice(fileContent);
 
+        //サンプルデータは1行目がヘッダなので削除する
+        listCsv.remove(0);
+        
         SaveStorageResultDto saveStorageResultDto = new SaveStorageResultDto();
         String shoshouId = "/96325/zrgzrgaskda/20221212123456888";
         saveStorageResultDto.setShoshouId(shoshouId);

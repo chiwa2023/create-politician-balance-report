@@ -8,7 +8,8 @@ import mitei.mitei.create.report.balance.politician.entity.VariousFinancialPayEn
 /**
  * 各種payDto
  */
-public class VariousFinancialPayDto extends VariousFinancialPayEntity  implements Serializable, SelectOptionInterface{
+public class VariousFinancialPayDto extends VariousFinancialPayEntity // NOPMD DataClass
+        implements Serializable, SelectOptionInterface {
 
     /** Serialize id */
     private static final long serialVersionUID = 1L;
@@ -62,6 +63,5 @@ public class VariousFinancialPayDto extends VariousFinancialPayEntity  implement
     public void setText(final String text) {
         this.text = text;
     }
-
 
 }

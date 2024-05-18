@@ -4,9 +4,9 @@ import changeOutcomeYoushikiKbnState from "../../../dto/balancesheet/changeOutco
 import viewPrepareOutcome from "../../../dto/balancesheet/viewPrepareOutcome";
 import BalancesheetOutcomeDto from "../../../dto/balancesheetOutcomeDto";
 import ShowCallingItem from "../show_calling_item/ShowCallingItem.vue";
-import CallingItemEntity from "../../../entity/callingItemEntity";
+import CallingItemDto from "../../../dto/calling_item/callingItemDto";
 
-const props = defineProps<{ lineIndex: number, lineDto: BalancesheetOutcomeDto,listItem:CallingItemEntity[] }>();
+const props = defineProps<{ lineIndex: number, lineDto: BalancesheetOutcomeDto,listItem:CallingItemDto[] }>();
 const emit = defineEmits(["restoreOutcomeReadData"]);
 
 //行Index
@@ -24,7 +24,7 @@ const outcomeItem = computed(
 );
 
 //候補マップ
-const listCallingItem: WritableComputedRef<CallingItemEntity[]> = computed(
+const listCallingItem: WritableComputedRef<CallingItemDto[]> = computed(
     () => props.listItem,
 );
 
@@ -46,7 +46,7 @@ function recieveCancelShowCallingItem() {
  * 他の呼び出し候補を選択する
  * @param selectedDto 選択項目
  */
-function recieveCallingItemEntity(selectedDto: CallingItemEntity) {
+function recieveCallingItemEntity(selectedDto: CallingItemDto) {
     alert("選択" + selectedDto.youshikiKbn);
     //TODO 選択データを更新するのは追加修正とする
     isVisibleShowCallingItem.value = false;
@@ -136,7 +136,7 @@ watch(() => outcomeItem.value.isEditAutoInput, (newValue) => {
     <div v-if="isVisibleShowCallingItem" class="overBackground"></div>
     <!--上にかぶせるコンポーネント -->
     <div v-if="isVisibleShowCallingItem" class="overComponent">
-        <ShowCallingItem :digest="outcomeItem.referDigest"  :listItem="listCallingItem" @sendCancelShowCallingItem="recieveCancelShowCallingItem"
+        <ShowCallingItem :readLine="outcomeItem.readingLine"  :listItem="listCallingItem" @sendCancelShowCallingItem="recieveCancelShowCallingItem"
             @sendCallingItemEntity="recieveCallingItemEntity"></ShowCallingItem>
     </div>
 </template>

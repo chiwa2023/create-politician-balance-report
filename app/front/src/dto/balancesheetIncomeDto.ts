@@ -9,6 +9,9 @@ export default interface BalancesheetIncomeInterface {
     /** ログインユーザ同一識別コード */
     loginUserCode: number;
 
+    /** ログインユーザ名称 */
+    loginUserName: string;
+
     /** 書証Id */
     shoshouId: string;
 
@@ -19,7 +22,7 @@ export default interface BalancesheetIncomeInterface {
     relationCorporationCode: number;
 
     /** 収支報告書収入Id */
-    balancesheetIncomeIde: number;
+    balancesheetIncomeId: number;
 
     /** 発生日 */
     accrualDate: string;
@@ -156,6 +159,9 @@ export default class BalancesheetIncomeDto implements BalancesheetIncomeInterfac
     /** ログインユーザ同一識別コード */
     loginUserCode: number;
 
+    /** ログインユーザ名称 */
+    loginUserName: string;
+
     /** 書証Id */
     shoshouId: string;
 
@@ -166,7 +172,7 @@ export default class BalancesheetIncomeDto implements BalancesheetIncomeInterfac
     relationCorporationCode: number;
 
     /** 収支報告書収入Id */
-    balancesheetIncomeIde: number;
+    balancesheetIncomeId: number;
 
     /** 発生日 */
     accrualDate: string;
@@ -358,7 +364,7 @@ export default class BalancesheetIncomeDto implements BalancesheetIncomeInterfac
         this.loginUserCode = 0;
         this.shoshouId = "";
         this.relationCorporationCode = 0;
-        this.balancesheetIncomeIde = 0;
+        this.balancesheetIncomeId = 0;
         this.politicalOrganizationCodee = 0;
         this.continueBuissinessId = 0;
         this.shoshouHistoryCode = 0;
@@ -369,6 +375,7 @@ export default class BalancesheetIncomeDto implements BalancesheetIncomeInterfac
         this.shoshouKbn = 0;
         this.generalItemId = 0;
         this.loginUserId = 0;
+        this.loginUserName = "";
         this.updateTime = new Date();
         this.generalItemCode = 0;
         this.balancesheetIncomeCode = 0;

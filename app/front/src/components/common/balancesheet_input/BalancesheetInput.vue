@@ -4,10 +4,10 @@ import BalancesheetIncomeDto from "../../../dto/balancesheetIncomeDto";
 import BalancesheetOutcomeDto from "../../../dto/balancesheetOutcomeDto";
 import IncomeLineVue from "./IncomeLine.vue";
 import OutcomeLineVue from "./OutcomeLine.vue";
-import CallingItemEntity from "../../../entity/callingItemEntity";
+import CallingItemDto from "../../../dto/calling_item/callingItemDto";
 
 //propsとemit
-const props = defineProps<{ listIncome: BalancesheetIncomeDto[], listOutcome: BalancesheetOutcomeDto[],listItem:CallingItemEntity[] }>();
+const props = defineProps<{ listIncome: BalancesheetIncomeDto[], listOutcome: BalancesheetOutcomeDto[],listItem:CallingItemDto[] }>();
 const emit = defineEmits(["restoreIncomeReadData", "restoreOutcomeReadData"]);
 
 //収入リスト
@@ -21,7 +21,7 @@ const listBalancesheetOutcome: WritableComputedRef<BalancesheetOutcomeDto[]> = c
 );
 
 //候補マップ
-const listCallingItem: WritableComputedRef<CallingItemEntity[]> = computed(
+const listCallingItem: WritableComputedRef<CallingItemDto[]> = computed(
     () => props.listItem,
 );
 

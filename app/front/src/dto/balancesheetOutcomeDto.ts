@@ -10,6 +10,9 @@ export default interface BalancesheetOutcomeInterface {
 
     /** ログインユーザ同一識別コード */
     loginUserCode: number;
+    
+    /** ログインユーザ名称 */
+    loginUserName: string;
 
     /** 書証Id */
     shoshouId: string;
@@ -148,6 +151,9 @@ export default class BalancesheetIncomeDto implements BalancesheetOutcomeInterfa
 
     /** ログインユーザ同一識別コード */
     loginUserCode: number;
+
+    /** ログインユーザ名称 */
+    loginUserName: string;
 
     /** 書証Id */
     shoshouId: string;
@@ -339,6 +345,7 @@ export default class BalancesheetIncomeDto implements BalancesheetOutcomeInterfa
         this.shoshouKbn = 0;
         this.generalItemId = 0;
         this.loginUserId = 0;
+        this.loginUserName = "";
         this.generalItemCode = 0;
         this.politicalOrganizationId = 0;
         this.relationKbn = 0;

@@ -22,10 +22,10 @@ public class BalancesheetIncome2025Entity implements Serializable { // NOPMD Dat
     private static final long serialVersionUID = 1L;
 
     /** Integer初期値 */
-    private static final int INT_INIT = -1;
+    private static final int INT_INIT = 0;
 
     /** Long初期値 */
-    private static final long LONG_INIT = -1L;
+    private static final long LONG_INIT = 0L;
 
     /** 文字列初期値 */
     private static final String STRING_INIT = "";

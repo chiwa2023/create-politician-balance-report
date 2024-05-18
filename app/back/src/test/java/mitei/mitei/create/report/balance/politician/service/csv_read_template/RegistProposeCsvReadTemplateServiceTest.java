@@ -49,7 +49,7 @@ class RegistProposeCsvReadTemplateServiceTest {
         entity.setFinancialOrgName("石のお金Pay");
         entity.setHasHeader(false);
         
-        boolean result = registProposeCsvReadTemplateService.practice(entity, capsuleDto.getCheckPrivilegeDto());
+        boolean result = registProposeCsvReadTemplateService.practice(entity, capsuleDto.getCheckPrivilegeDto()).getIsOk();
         
         assertThat(result).isTrue();
     }

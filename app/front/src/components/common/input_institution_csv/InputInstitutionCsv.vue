@@ -22,6 +22,7 @@ import SaveStorageResultDto from "../../../dto/storage/saveStorageResultDto";
 import PropseCsvReadTemplateEntity from "../../../entity/proposeCsvReadTemplateEntity";
 import FinancialOrgConstants from "../../../dto/financial/financialOrgConstants";
 import RegistProposeCsvReadRemplateCapsuleDto from "../../../dto/read_csv/registProposeCsvReadRemplateCapsuleDto";
+import TemplateFrameworkResultDto from "../../../dto/template/templateFrameworkResultDto";
 
 //props,emit
 const props = defineProps<{ csvData: [CsvCellInterface[]], }>();
@@ -89,7 +90,9 @@ async function recieveGeneralCsvDataInterface(sendDto: SendCsvAndStragedShoshouD
     const url = "http://localhost:8080/csv-read-template/select-template-by-number";
     await axios.post(url, csvReadTemplateCapsuleDto)
         .then((response) => {
+            
             listCsvReadTemplate.value = response.data;
+
         })
         .catch((error) => showErrorMessage(error.status));
 
@@ -292,12 +295,13 @@ async function onPromoteTemplate() {
         const url = "http://localhost:8080/propose-csv-read-template/regist";
         await axios.post(url, registProposeCsvReadRemplateCapsuleDto)
             .then((response) => {
-                const result: boolean = response.data;
-                if (result) {
-                    alert("利用申請登録が完了しました");
-                } else {
-                    //TODO 仕様が決定次第修正する
-                    alert("利用申請登録ができませんでした");
+                const resultDto: TemplateFrameworkResultDto = response.data;
+                if(response.status === 200){
+                    alert(resultDto.message);
+                }
+                //TODO no contentに修正
+                if(response.status === 204){
+                    alert(resultDto.message);
                 }
             })
             .catch((error) => showErrorMessage(error.status));

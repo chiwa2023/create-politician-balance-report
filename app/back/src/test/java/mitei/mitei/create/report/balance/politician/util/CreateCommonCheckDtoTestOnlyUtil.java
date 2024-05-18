@@ -1,9 +1,9 @@
 package mitei.mitei.create.report.balance.politician.util;
 
+import mitei.mitei.create.report.balance.politician.dto.AbstractCapsuleDto;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckSecurityDto;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckTransactionDto;
-import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkCapsuleDto;
 
 /**
  * テスト時のみ共通チェックDtoを落ちないように設定するDto
@@ -19,7 +19,7 @@ public final class CreateCommonCheckDtoTestOnlyUtil {
      *
      * @param capsuleDto 共通チェックを必要とするカプセルDo
      */
-    public static void practice(final TemplateFrameworkCapsuleDto capsuleDto) {
+    public static void practice(final AbstractCapsuleDto capsuleDto) {
         
         CheckSecurityDto checkSecurityDto = new CheckSecurityDto();
         checkSecurityDto.setIsResult(true);

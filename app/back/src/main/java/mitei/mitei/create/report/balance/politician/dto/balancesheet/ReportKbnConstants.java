@@ -4,7 +4,7 @@ package mitei.mitei.create.report.balance.politician.dto.balancesheet;
  * 収支報告区分定数
  * 調査側定数設計書　## X.1 収支報告対象区分定数　を参照
  */
-public class ReportKbnConstants {
+public class ReportKbnConstants { // NOPMD DataClass
 
     /** 報告書に掲載 */
     public static final int PUBLISH_REPORT = 1;

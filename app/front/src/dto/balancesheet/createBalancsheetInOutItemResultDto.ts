@@ -1,8 +1,9 @@
-﻿import CallingItemEntity from "../../entity/callingItemEntity";
-import BalancesheetIncomeDto from "../balancesheetIncomeDto";
+﻿import BalancesheetIncomeDto from "../balancesheetIncomeDto";
 import BalancesheetOutcomeDto from "../balancesheetOutcomeDto";
+import CallingItemDto from "../calling_item/callingItemDto";
+import TemplateFrameworkResultDto from "../template/templateFrameworkResultDto";
 
-export default class CreateBalancsheetInOutItemResultDto {
+export default class CreateBalancsheetInOutItemResultDto extends TemplateFrameworkResultDto{
 
     /** 収入項目リスト */
     listIncome: BalancesheetIncomeDto[];
@@ -11,9 +12,10 @@ export default class CreateBalancsheetInOutItemResultDto {
     listOutcome: BalancesheetOutcomeDto[];
 
     /** 検索紐づけ候補マップ */
-    listCallingItem: CallingItemEntity[];
+    listCallingItem: CallingItemDto[];
 
     constructor() {
+        super();
         this.listIncome = [];
         this.listOutcome = [];
         this.listCallingItem = [];

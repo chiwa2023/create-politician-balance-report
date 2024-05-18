@@ -15,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import org.springframework.transaction.annotation.Transactional;
 
 import mitei.mitei.create.report.balance.politician.constants.GetCurrentResourcePath;
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.CreateBalancesheetInOutDataCapsuleDto;
@@ -44,6 +45,7 @@ class RegistBalancesheetInOutServiceTest {
     private CreateBalancesheetInOutByCsvService createBalancesheetInOutByCsvService;
 
     @Test
+    @Transactional
     void testPractice()throws Exception {
         
         CreateBalancesheetInOutDataCapsuleDto createBalancesheetInOutDataCapsuleDto = new CreateBalancesheetInOutDataCapsuleDto();
@@ -57,6 +59,8 @@ class RegistBalancesheetInOutServiceTest {
         ReadCsvReadByFileService ReadCsvReadByFileService = new ReadCsvReadByFileService();
         List<List<CsvCellDto>> listCsv = ReadCsvReadByFileService.practice(fileContent);
 
+        listCsv.remove(0);
+        
         SaveStorageResultDto saveStorageResultDto = new SaveStorageResultDto();
         String shoshouId = "/96325/zrgzrgaskda/20221212123456888";
         saveStorageResultDto.setShoshouId(shoshouId);

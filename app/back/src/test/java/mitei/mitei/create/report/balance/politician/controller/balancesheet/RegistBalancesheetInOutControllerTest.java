@@ -27,8 +27,10 @@ import mitei.mitei.create.report.balance.politician.constants.GetCurrentResource
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.CreateBalancesheetInOutDataCapsuleDto;
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.CreateBalancsheetInOutItemResultDto;
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.RegistBalancesheetInOutCapsuleDto;
+import mitei.mitei.create.report.balance.politician.dto.balancesheet.ReportKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.CsvCellDto;
 import mitei.mitei.create.report.balance.politician.dto.storage.SaveStorageResultDto;
+import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
 import mitei.mitei.create.report.balance.politician.service.balancesheet.CreateBalancesheetInOutByCsvService;
 import mitei.mitei.create.report.balance.politician.service.read_csv.ReadCsvReadByFileService;
 import mitei.mitei.create.report.balance.politician.util.CreateCommonCheckDtoTestOnlyUtil;
@@ -66,6 +68,9 @@ class RegistBalancesheetInOutControllerTest {
         ReadCsvReadByFileService ReadCsvReadByFileService = new ReadCsvReadByFileService();
         List<List<CsvCellDto>> listCsv = ReadCsvReadByFileService.practice(fileContent);
 
+        //サンプルデータは1行目がヘッダなので削除する
+        listCsv.remove(0);
+        
         SaveStorageResultDto saveStorageResultDto = new SaveStorageResultDto();
         String shoshouId = "/96325/zrgzrgaskda/20221212123456888";
         saveStorageResultDto.setShoshouId(shoshouId);
@@ -88,15 +93,23 @@ class RegistBalancesheetInOutControllerTest {
         capsuleDto.setCheckSecurityDto(createBalancesheetInOutDataCapsuleDto.getCheckSecurityDto());
         capsuleDto.setCheckTransactionDto(createBalancesheetInOutDataCapsuleDto.getCheckTransactionDto());
 
+        //支出、収入とも各先頭1行は前例と異なる処理
+        capsuleDto.getListOutcome().get(0).setIsDifferPrecedent(true);
+        capsuleDto.getListIncome().get(0).setIsDifferPrecedent(true);
+
+        //支出、収入とも各先頭2行目はタスク計上
+        capsuleDto.getListOutcome().get(1).setReportKbn(ReportKbnConstants.PLAN_TASK);
+        capsuleDto.getListIncome().get(1).setReportKbn(ReportKbnConstants.PLAN_TASK);
+        
         ObjectMapper objectMapper = GetObjectMapperWithTimeModuleUtil.practice();
 
         String responseContent = mockMvc // NOPMD LawOfDemeter
                 .perform(post("/create-balancesheet-in-out/regist").content(objectMapper.writeValueAsString(capsuleDto)) // リクエストボディを指定
                         .contentType(MediaType.APPLICATION_JSON_VALUE)) // Content Typeを指定
                 .andExpect(status().isOk()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
-
-        // 6件取得
-        assertThat(Integer.parseInt(responseContent)).isEqualTo(6);
+        
+        TemplateFrameworkResultDto templateResultDto =  objectMapper.readValue(responseContent, TemplateFrameworkResultDto.class);
+        assertThat(templateResultDto.getSuccessCount()).isEqualTo(6);
     }
 
 }

@@ -2,12 +2,12 @@ package mitei.mitei.create.report.balance.politician.dto.zengin_financial_org;
 
 import java.io.Serializable;
 
-import mitei.mitei.create.report.balance.politician.dto.AbstactCapsuleDto;
+import mitei.mitei.create.report.balance.politician.dto.AbstractCapsuleDto;
 
 /**
  * 各種Payのfront側とBack側の通信用のDto
  */
-public class ZenginFinancialOrgCapsuleDto extends AbstactCapsuleDto implements Serializable {
+public class ZenginFinancialOrgCapsuleDto extends AbstractCapsuleDto implements Serializable { // NOPMD DataClass
 
     /** serialId */
     private static final long serialVersionUID = 1L;

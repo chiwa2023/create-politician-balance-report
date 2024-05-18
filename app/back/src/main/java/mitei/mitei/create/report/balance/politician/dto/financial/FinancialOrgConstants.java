@@ -3,7 +3,7 @@ package mitei.mitei.create.report.balance.politician.dto.financial;
 /**
  * 金融機関区分定数
  */
-public class FinancialOrgConstants {
+public class FinancialOrgConstants { // NOPMD DataClass
 
     /**　各種Pay */
     public static final int VARIOUS = 1;
