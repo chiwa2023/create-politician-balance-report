@@ -661,14 +661,6 @@
             <ruleset>Code Style</ruleset>
         </rule>
         <rule>
-            <name>FieldDeclarationsShouldBeAtStart</name>
-            <ruleset>Code Style</ruleset>
-        </rule>
-        <rule>
-            <name>FieldDeclarationsShouldBeAtStartOfClass</name>
-            <ruleset>Code Style</ruleset>
-        </rule>
-        <rule>
             <name>FieldNamingConventions</name>
             <ruleset>Code Style</ruleset>
         </rule>

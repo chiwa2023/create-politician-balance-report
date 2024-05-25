@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * HTMLにおけるSelectボタンのOption項目を表すDto
  */
-public class SelectOptionDto implements Serializable { // NOPMD DataClass
+public class SelectOptionDto implements Serializable, SelectOptionInterface { // NOPMD DataClass
 
     /** Serialize id */
     private static final long serialVersionUID = 1L;
@@ -25,6 +25,7 @@ public class SelectOptionDto implements Serializable { // NOPMD DataClass
      *
      * @return オプション項目の値
      */
+    @Override
     public String getValue() {
         return value;
     }
@@ -34,6 +35,7 @@ public class SelectOptionDto implements Serializable { // NOPMD DataClass
      *
      * @param value オプション項目の値
      */
+    @Override
     public void setValue(final String value) {
         this.value = value;
     }
@@ -43,6 +45,7 @@ public class SelectOptionDto implements Serializable { // NOPMD DataClass
      *
      * @return オプション項目のテキスト
      */
+    @Override
     public String getText() {
         return text;
     }
@@ -52,6 +55,7 @@ public class SelectOptionDto implements Serializable { // NOPMD DataClass
      *
      * @param text オプション項目のテキスト
      */
+    @Override
     public void setText(final String text) {
         this.text = text;
     }

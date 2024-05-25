@@ -3,7 +3,7 @@ package mitei.mitei.create.report.balance.politician.dto.report_item;
 /**
  * 全銀フォーマットcsv格納位置定数
  */
-public final class ZenginFormatRecordPosConstants {
+public final class ZenginFormatRecordPosConstants { // NOPMD
 
     private ZenginFormatRecordPosConstants() {
         
@@ -12,7 +12,8 @@ public final class ZenginFormatRecordPosConstants {
     /**
      * 入出金明細のヘッダレのcsvレコードの格納位置
      */
-    public class PosTransactionDetailHeader{
+    public class PosTransactionDetailHeader{ // NOPMD DataClass
+
         /** データ区分の格納位置 */
         public static final int  DATA_KBN = 0;
         
@@ -72,7 +73,7 @@ public final class ZenginFormatRecordPosConstants {
     /**
      * 入出金明細のgroup1(普通預金)csvレコードの格納位置
      */
-    public class PosTransactionDetailGroup1Ordinaly{
+    public class PosTransactionDetailGroup1Ordinaly{ // NOPMD DataClass
         /** データ区分の格納位置 */
         public static final int DATA_KBN = 0;
         
@@ -138,7 +139,7 @@ public final class ZenginFormatRecordPosConstants {
     /**
      * 入出金明細のgroup2(通知預金など)csvレコードの格納位置
      */
-    public class PosTransactionDetailGroup2Notice{
+    public class PosTransactionDetailGroup2Notice{ // NOPMD DataClass
         /** データ区分の格納位置 */
         public static final int DATA_KBN = 0;
         
@@ -240,7 +241,7 @@ public final class ZenginFormatRecordPosConstants {
     /**
      * 入出金明細のトレーラcsvレコードの格納位置
      */
-    public class PosTransactionDetailTrailer{
+    public class PosTransactionDetailTrailer{ //NOPMD DataClass
      
         /** データ区分の格納位置 */
         public static final int DATA_KBN = 0;
@@ -274,7 +275,7 @@ public final class ZenginFormatRecordPosConstants {
     /**
      * 入出金明細のエンドcsvレコードの格納位置
      */
-    public class PosTransactionDetailEnd{
+    public class PosTransactionDetailEnd{ // NOPMD DataClass
         /** データ区分の格納位置 */
         public static final int DATA_KBN = 0;
         
