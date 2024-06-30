@@ -1,4 +1,4 @@
-package mitei.mitei.create.report.balance.politician.controller.csv_read_template;
+package mitei.mitei.create.report.balance.politician.controller.read_csv;
 
 import org.apache.tomcat.websocket.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,16 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.transaction.Transactional;
 import mitei.mitei.create.report.balance.politician.controller.AbstractTemplateCheckController;
+import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
 import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
-import mitei.mitei.create.report.balance.politician.service.csv_read_template.RegistProposeCsvReadTemplateService;
+import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
+import mitei.mitei.create.report.balance.politician.service.read_csv.RegistProposeReadCsvAcceptService;
 
 /**
- * csv結びつけ項目申請登録Contoroll
+ * CSV読み取り仕様申請を許可する
  */
 @Controller
-@RequestMapping("/propose-csv-read-template")
-public class RegistProposeCsvReadTemplateController extends AbstractTemplateCheckController {
+@RequestMapping("/propose-csv-read-accept")
+public class RegistProposeReadCsvAcceptController extends AbstractTemplateCheckController {
 
     /** セキュリティチェック不可定数 */
     private static final int SECURITY_CHECK_FALSE = AbstractTemplateCheckController.SECURITY_CHECK_FALSE;
@@ -32,15 +34,15 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
     /** ビジネス処理続行定数 */
     private static final int CHECK_TRUE = AbstractTemplateCheckController.CHECK_TRUE;
 
-    /** propose_csv_read_templateテーブルService */
+    /** csv読み取り仕様申請許可Service */
     @Autowired
-    private RegistProposeCsvReadTemplateService registProposeCsvReadTemplateService;
+    private RegistProposeReadCsvAcceptService registProposeReadCsvAcceptService;
 
     /**
-     * 各種Payテーブルの検索を行う
+     * 登録作業を行う
      *
-     * @param registProposeCsvReadRemplateCapsuleDto csv読み取り仕様利用登録申請統合Dto
-     * @return 各種Payエンティティリスト
+     * @param registProposeCsvReadRemplateCapsuleDto 編集中の申請CSV読み取り仕様Entityを含むCapsuleDto
+     * @return 登録結果
      * @throws SecurityException                  セキュリティ例外
      * @throws AuthenticationException            権限例外
      * @throws PessimisticLockingFailureException トランザクション例外
@@ -78,9 +80,32 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
             /*
              * ここに固有のビジネス処理を記載する
              */
-            return ResponseEntity.ok(registProposeCsvReadTemplateService.practice(
-                    registProposeCsvReadRemplateCapsuleDto.getProposeCsvReadTemplateEntity(),
-                    registProposeCsvReadRemplateCapsuleDto.getCheckPrivilegeDto()));
+            
+            //ユーザ設定を行う
+            CheckPrivilegeDto privilegeDto = registProposeCsvReadRemplateCapsuleDto.getCheckPrivilegeDto();
+            ProposeCsvReadTemplateEntity proposeCsvReadTemplateEntity = registProposeCsvReadRemplateCapsuleDto
+                    .getProposeCsvReadTemplateEntity();
+            proposeCsvReadTemplateEntity.setLoginUserId(privilegeDto.getLoginUserId());
+            proposeCsvReadTemplateEntity.setLoginUserCode(privilegeDto.getLoginUserCode());
+            proposeCsvReadTemplateEntity.setLoginUserName(privilegeDto.getLoginUserName());
+            
+            //登録
+            long newId = registProposeReadCsvAcceptService
+                    .practice(registProposeCsvReadRemplateCapsuleDto.getProposeCsvReadTemplateEntity());
+
+            final long initId = 0L;
+            TemplateFrameworkResultDto resultDto = new TemplateFrameworkResultDto();
+            if (initId == newId) {
+                resultDto.setFailureCount(0);
+                resultDto.setMessage("登録できませんでした");
+            } else {
+                resultDto.setIsOk(true);
+                resultDto.setSuccessCount(1);
+                resultDto.setMessage("登録できました");
+            }
+
+            return ResponseEntity.ok(resultDto);
+
             /* ここまで */
 
         } catch (AuthenticationException authenticationException) { // NOPMD
@@ -93,7 +118,10 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
             // 排他の対象
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         } catch (Exception exception) { // NOPMD
+
+            // TODO 例外をデータベースに記録するようになったら削除する
             super.showError(exception);
+
             // その他のビジネスロジック処理例外はInternalServerError
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }

@@ -64,7 +64,7 @@ public class RegistBalancesheetInOutController extends AbstractTemplateCheckCont
      * @throws AuthenticationException            権限例外
      * @throws PessimisticLockingFailureException トランザクション例外
      */
-    @Transactional // CHECKSTYLE:OFF
+    @Transactional
     @PostMapping("/regist")
     public ResponseEntity<TemplateFrameworkResultDto> selectTemplateByNumber(
             final @RequestBody RegistBalancesheetInOutCapsuleDto registBalancesheetInOutCapsuleDto)
@@ -75,23 +75,23 @@ public class RegistBalancesheetInOutController extends AbstractTemplateCheckCont
             switch (super.allCheck(registBalancesheetInOutCapsuleDto.getCheckSecurityDto(),
                     registBalancesheetInOutCapsuleDto.getCheckPrivilegeDto(),
                     registBalancesheetInOutCapsuleDto.getCheckTransactionDto())) {
-            // セキュリティチェック不可
-            case SECURITY_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
-            // 権限チェック不可
-            case PRIVIKEGE_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-            // 排他制御チェック不可
-            case TRANSACION_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.CONFLICT).build();
+                // セキュリティチェック不可
+                case SECURITY_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
+                // 権限チェック不可
+                case PRIVIKEGE_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+                // 排他制御チェック不可
+                case TRANSACION_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.CONFLICT).build();
 
-            // ビジネス処理続行
-            case CHECK_TRUE:
-                break;
+                // ビジネス処理続行
+                case CHECK_TRUE:
+                    break;
 
-            // 想定外の値(実装ミス?)
-            default:
-                throw new IllegalArgumentException("共通チェック処理で発生しえない値が挿入されています");
+                // 想定外の値(実装ミス?)
+                default:
+                    throw new IllegalArgumentException(OTHER_EXCEPTION_MESSAGE);
             }
 
             /*
@@ -102,7 +102,7 @@ public class RegistBalancesheetInOutController extends AbstractTemplateCheckCont
 
             TemplateFrameworkResultDto resultDto;
 
-            //収支報告書項目が登録できていない
+            // 収支報告書項目が登録できていない
             if (result != (registBalancesheetInOutCapsuleDto.getListIncome().size()
                     + registBalancesheetInOutCapsuleDto.getListOutcome().size())) {
 
@@ -125,11 +125,10 @@ public class RegistBalancesheetInOutController extends AbstractTemplateCheckCont
 
             resultDto = registTaskPlanAllPortalService.practice(listTask);
 
-            if(resultDto.getIsOk()) {
+            if (resultDto.getIsOk()) {
                 resultDto.setIsOk(true);
                 resultDto.setSuccessCount(result);
-            }
-            else{
+            } else {
                 resultDto.setIsOk(false);
                 resultDto.setMessage("タスクが登録できませんでした");
                 return new ResponseEntity<>(resultDto, HttpStatus.NO_CONTENT);

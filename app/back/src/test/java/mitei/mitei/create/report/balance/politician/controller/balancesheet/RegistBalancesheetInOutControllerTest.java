@@ -1,4 +1,4 @@
-package mitei.mitei.create.report.balance.politician.controller.balancesheet;
+package mitei.mitei.create.report.balance.politician.controller.balancesheet; //NOPMD
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;

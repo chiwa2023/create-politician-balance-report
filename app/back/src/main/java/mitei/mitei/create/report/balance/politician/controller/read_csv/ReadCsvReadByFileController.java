@@ -46,11 +46,11 @@ public class ReadCsvReadByFileController extends AbstractTemplateCheckController
      *
      * @param readCsvByFileCapsuleDto CSV読み取りカプセルDto
      * @return 各種Payエンティティリスト
-     * @throws SecurityException       セキュリティ例外
-     * @throws AuthenticationException 権限例外
-     * @throws PessimisticLockingFailureException   トランザクション例外
+     * @throws SecurityException                  セキュリティ例外
+     * @throws AuthenticationException            権限例外
+     * @throws PessimisticLockingFailureException トランザクション例外
      */
-    @Transactional // CHECKSTYLE:OFF
+    @Transactional
     @PostMapping("/practice")
     public ResponseEntity<SendCsvAndStragedShoshouDto> practice(
             final @RequestBody ReadCsvByFileCapsuleDto readCsvByFileCapsuleDto)
@@ -60,23 +60,23 @@ public class ReadCsvReadByFileController extends AbstractTemplateCheckController
         try {
             switch (super.allCheck(readCsvByFileCapsuleDto.getCheckSecurityDto(),
                     readCsvByFileCapsuleDto.getCheckPrivilegeDto(), readCsvByFileCapsuleDto.getCheckTransactionDto())) {
-            // セキュリティチェック不可
-            case SECURITY_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
-            // 権限チェック不可
-            case PRIVIKEGE_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-            // 排他制御チェック不可
-            case TRANSACION_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.CONFLICT).build();
+                // セキュリティチェック不可
+                case SECURITY_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
+                // 権限チェック不可
+                case PRIVIKEGE_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+                // 排他制御チェック不可
+                case TRANSACION_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.CONFLICT).build();
 
-            // ビジネス処理続行
-            case CHECK_TRUE:
-                break;
+                // ビジネス処理続行
+                case CHECK_TRUE:
+                    break;
 
-            // 想定外の値(実装ミス?)
-            default:
-                throw new IllegalArgumentException("共通チェック処理で発生しえない値が挿入されています");
+                // 想定外の値(実装ミス?)
+                default:
+                    throw new IllegalArgumentException(OTHER_EXCEPTION_MESSAGE);
             }
 
             /*
@@ -86,12 +86,9 @@ public class ReadCsvReadByFileController extends AbstractTemplateCheckController
 
             csvDto.setListAllCsv(readCsvReadByFileService.practice(readCsvByFileCapsuleDto.getFileContent()));
 
-            csvDto.setSaveStorageResultDto(
-                    saveShoshouStrageService.practice(
-                            readCsvByFileCapsuleDto.getFileName(),
-                            readCsvByFileCapsuleDto.getCheckPrivilegeDto().getLoginUserId())
-                    );
-            
+            csvDto.setSaveStorageResultDto(saveShoshouStrageService.practice(readCsvByFileCapsuleDto.getFileName(),
+                    readCsvByFileCapsuleDto.getCheckPrivilegeDto().getLoginUserId()));
+
             return ResponseEntity.ok(csvDto);
 
             /* ここまで */
@@ -106,10 +103,10 @@ public class ReadCsvReadByFileController extends AbstractTemplateCheckController
             // 排他の対象
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         } catch (Exception exception) { // NOPMD
-            
-            //TODO 例外をデータベースに記録するようになったら削除する
+
+            // TODO 例外をデータベースに記録するようになったら削除する
             super.showError(exception);
-            
+
             // その他のビジネスロジック処理例外はInternalServerError
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }

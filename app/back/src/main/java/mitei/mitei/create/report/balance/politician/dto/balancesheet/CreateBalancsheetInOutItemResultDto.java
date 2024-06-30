@@ -3,15 +3,15 @@ package mitei.mitei.create.report.balance.politician.dto.balancesheet;
 import java.io.Serializable;
 import java.util.List;
 
+import mitei.mitei.create.report.balance.politician.dto.AbstractResultDto;
 import mitei.mitei.create.report.balance.politician.dto.calling_item.CallingItemDto;
-import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
 import mitei.mitei.create.report.balance.politician.entity.BalancesheetIncome2025Entity;
 import mitei.mitei.create.report.balance.politician.entity.BalancesheetOutcome2025Entity;
 
 /**
  * 生成した政治資金収支報告書収入・支出項目リストDto
  */
-public class CreateBalancsheetInOutItemResultDto extends TemplateFrameworkResultDto implements Serializable{ // NOPMD DataClass
+public class CreateBalancsheetInOutItemResultDto  extends AbstractResultDto implements Serializable{ // NOPMD DataClass
 
     /** SerializableId */
     private static final long serialVersionUID = 1L;
@@ -24,6 +24,29 @@ public class CreateBalancsheetInOutItemResultDto extends TemplateFrameworkResult
 
     /** 結びつけ項目検索結果リスト */
     private List<CallingItemDto> listCallingItem;
+
+    /** 表示メッセージ */
+    private String message = "[実装必要]";
+
+    /**
+     * 表示メッセージを取得する
+     *
+     * @return 表示メッセージ
+     */
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    /**
+     * 表示メッセージを設定する
+     *
+     * @param message 表示メッセージ
+     */
+    @Override
+    public void setMessage(final String message) {
+        this.message = message;
+    }
     
     /**
      * 収入項目リストを取得する

@@ -41,4 +41,13 @@ public interface ProposeCsvReadTemplateRepository  extends JpaRepository<Propose
      */
     @Query(value = "SELECT * FROM propose_csv_read_template WHERE saishin_kbn= 1 AND MATCH(table_all_search_text) AGAINST (?1 IN NATURAL LANGUAGE MODE WITH QUERY EXPANSION)", nativeQuery = true)
     List<ProposeCsvReadTemplateEntity> findFullText(String searchWords);
+    
+    /**
+     * 検索キーである最新区分に該当するデータを抽出する(基本的には最新データをすべて)
+     *
+     * @param saishinKbn 最新区分
+     * @return 検索結果
+     */
+    List<ProposeCsvReadTemplateEntity> findBySaishinKbn(Integer saishinKbn);
+    
 }

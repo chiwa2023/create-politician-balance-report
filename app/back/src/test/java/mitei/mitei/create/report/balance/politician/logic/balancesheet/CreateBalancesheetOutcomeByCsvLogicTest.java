@@ -22,7 +22,7 @@ class CreateBalancesheetOutcomeByCsvLogicTest {
     // CHECKSTYLE:OFF
 
     @Test
-    void testPractice() {
+    void testPractice() { // NOPMD
 
         CreateBalancesheetOutcomeByCsvLogic createBalancesheetOutcomeByCsvLogic = new CreateBalancesheetOutcomeByCsvLogic();
         

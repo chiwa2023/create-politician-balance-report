@@ -123,7 +123,7 @@ public class CreateBalancesheetInOutByCsvService {
                             index + 1,listCallingItem));
                 }
 
-            } else {
+            } else { // NOPMD
                 // TODO なんの設定もない場合はエラーとする
             }
         }

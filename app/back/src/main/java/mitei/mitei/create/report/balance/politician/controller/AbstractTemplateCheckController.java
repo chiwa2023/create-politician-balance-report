@@ -29,7 +29,12 @@ public class AbstractTemplateCheckController {
 
     /** 共通チェック不可なし */
     public static final int CHECK_TRUE = 4;
+    
+    /** その他の例外が発生し場合のメッセージ */
+    public static final String OTHER_EXCEPTION_MESSAGE = "共通チェック処理で発生しえない値が挿入されています";
 
+    
+    
     /** セキュリティチェックService */
     @Autowired
     private CheckSecurityService checkSecurityService;

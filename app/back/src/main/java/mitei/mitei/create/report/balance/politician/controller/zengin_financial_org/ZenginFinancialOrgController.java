@@ -34,20 +34,20 @@ public class ZenginFinancialOrgController extends AbstractTemplateCheckControlle
     /** ビジネス処理続行定数 */
     private static final int CHECK_TRUE = AbstractTemplateCheckController.CHECK_TRUE;
 
-    /**　全銀金融機関Service */
+    /** 全銀金融機関Service */
     @Autowired
     private ZenginFinancialOrgService zenginFinancialOrgService;
-    
+
     /**
      * 各種Payテーブルの検索を行う
      *
      * @param zenginFinancialOrgCapsuleDto 各種Pay統合Dto
      * @return 各種Payエンティティリスト
-     * @throws SecurityException       セキュリティ例外
-     * @throws AuthenticationException 権限例外
-     * @throws PessimisticLockingFailureException   トランザクション例外
+     * @throws SecurityException                  セキュリティ例外
+     * @throws AuthenticationException            権限例外
+     * @throws PessimisticLockingFailureException トランザクション例外
      */
-    @Transactional // CHECKSTYLE:OFF
+    @Transactional
     @PostMapping("/search-table")
     public ResponseEntity<List<ZenginFinancialOrgEntity>> searchTable(
             final @RequestBody ZenginFinancialOrgCapsuleDto zenginFinancialOrgCapsuleDto)
@@ -58,32 +58,33 @@ public class ZenginFinancialOrgController extends AbstractTemplateCheckControlle
             switch (super.allCheck(zenginFinancialOrgCapsuleDto.getCheckSecurityDto(),
                     zenginFinancialOrgCapsuleDto.getCheckPrivilegeDto(),
                     zenginFinancialOrgCapsuleDto.getCheckTransactionDto())) {
-            // セキュリティチェック不可
-            case SECURITY_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
-            // 権限チェック不可
-            case PRIVIKEGE_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-            // 排他制御チェック不可
-            case TRANSACION_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.CONFLICT).build();
+                // セキュリティチェック不可
+                case SECURITY_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
+                // 権限チェック不可
+                case PRIVIKEGE_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+                // 排他制御チェック不可
+                case TRANSACION_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.CONFLICT).build();
 
-            // ビジネス処理続行
-            case CHECK_TRUE:
-                break;
+                // ビジネス処理続行
+                case CHECK_TRUE:
+                    break;
 
-            // 想定外の値(実装ミス?)
-            default:
-                throw new IllegalArgumentException("共通チェック処理で発生しえない値が挿入されています");
+                // 想定外の値(実装ミス?)
+                default:
+                    throw new IllegalArgumentException(OTHER_EXCEPTION_MESSAGE);
             }
 
             /*
              * ここに固有のビジネス処理を記載する
              * 
              */
-            return ResponseEntity.ok(zenginFinancialOrgService.searchTable(zenginFinancialOrgCapsuleDto.getSearchWords()));
+            return ResponseEntity
+                    .ok(zenginFinancialOrgService.searchTable(zenginFinancialOrgCapsuleDto.getSearchWords()));
             /* ここまで */
-            
+
         } catch (AuthenticationException authenticationException) { // NOPMD
             // 権限不足
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();

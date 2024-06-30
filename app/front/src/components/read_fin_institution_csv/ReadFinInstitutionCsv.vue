@@ -40,7 +40,7 @@ const listCallingItem: Ref<CallingItemDto[]> = ref([]);
  * @param listPointArray 列と指定項目の組み合わせ
  * @param saveStorageResultDto 読み取りした書証情報
  */
-async function recieveSelectOptionsArrayInterface(listPointArray: string[], saveStorageResultDto: SaveStorageResultDto) {
+async function recieveSelectOptionsArrayInterface(listPointArray: string[], saveStorageResultDto: SaveStorageResultDto,data:[CsvCellInterface[]]) {
 
     //接続情報を準備する0
     const createBalancesheetInOutDataByCsvCapsuleDto: CreateBalancesheetInOutDataByCsvCapsuleDto = new CreateBalancesheetInOutDataByCsvCapsuleDto();
@@ -53,7 +53,7 @@ async function recieveSelectOptionsArrayInterface(listPointArray: string[], save
     //createBalancesheetInOutDataByCsvCapsuleDto.hasHeader = hasHeader;
     createBalancesheetInOutDataByCsvCapsuleDto.saveStorageResultDto = saveStorageResultDto;
     createBalancesheetInOutDataByCsvCapsuleDto.listPointer = listPointArray;
-    createBalancesheetInOutDataByCsvCapsuleDto.listCsvData = viewCsvReadData.value;
+    createBalancesheetInOutDataByCsvCapsuleDto.listCsvData = data;
 
     //csvデータ、列項目指定、書証情報からcsv設定データに変換
     const url = "http://localhost:8080/create-balancesheet-in-out/by-csv";
@@ -61,7 +61,6 @@ async function recieveSelectOptionsArrayInterface(listPointArray: string[], save
         .then((response) => {
             //データを取得
             const resultDto: CreateBalancsheetInOutItemResultDto = response.data;
-
             if (200 === response.status) {
                 listCallingItem.value = resultDto.listCallingItem;
 
@@ -82,7 +81,7 @@ async function recieveSelectOptionsArrayInterface(listPointArray: string[], save
             }
             //正常にデータが取得できなかった
             if (204 === response.status) {
-                alert(resultDto.message);
+                alert("データ変換できませんでした");
             }
 
         })

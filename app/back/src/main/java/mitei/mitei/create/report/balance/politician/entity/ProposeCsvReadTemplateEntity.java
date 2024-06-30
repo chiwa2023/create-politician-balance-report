@@ -358,4 +358,82 @@ public class ProposeCsvReadTemplateEntity implements Serializable { // NOPMD Dat
         this.loginUserCode = loginUserCode;
     }
 
+    /** 書証Id */
+    private String shoshouId;
+
+    /** 書証同一識別コード */
+    private Long shoshouCode;
+
+    /** 書証同一識別コード */
+    private Integer shoshouKbn;
+
+    public String getShoshouId() {
+        return shoshouId;
+    }
+
+    public void setShoshouId(final String shoshouId) {
+        this.shoshouId = shoshouId;
+    }
+
+    public Long getShoshouCode() {
+        return shoshouCode;
+    }
+
+    public void setShoshouCode(final Long shoshouCode) {
+        this.shoshouCode = shoshouCode;
+    }
+
+    public Integer getShoshouKbn() {
+        return shoshouKbn;
+    }
+
+    public void setShoshouKbn(final Integer shoshouKbn) {
+        this.shoshouKbn = shoshouKbn;
+    }
+
+    
+    /** 申請元Id(新規は0) */
+    private Long editId;
+    
+    /** 申請中該当非該当 */
+    private Boolean inProsessing;
+    
+    /** 申請諾否 */
+    private Boolean isAccepted;
+    
+    /** 判定理由 */
+    private String judgeReason;
+
+    public Boolean getInProsessing() {
+        return inProsessing;
+    }
+
+    public void setInProsessing(final Boolean inProsessing) {
+        this.inProsessing = inProsessing;
+    }
+
+    public Boolean getIsAccepted() {
+        return isAccepted;
+    }
+
+    public void setIsAccepted(final Boolean isAccepted) {
+        this.isAccepted = isAccepted;
+    }
+
+    public String getJudgeReason() {
+        return judgeReason;
+    }
+
+    public void setJudgeReason(final String judgeReason) {
+        this.judgeReason = judgeReason;
+    }
+
+    public Long getEditId() {
+        return editId;
+    }
+
+    public void setEditId(final Long editId) {
+        this.editId = editId;
+    }
+    
 }

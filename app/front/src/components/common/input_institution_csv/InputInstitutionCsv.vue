@@ -1,5 +1,5 @@
 ﻿<script setup lang="ts">
-import { ref, Ref, watch, computed, WritableComputedRef } from "vue";
+import { ref, Ref, watch, computed, WritableComputedRef, toRaw } from "vue";
 import CsvCellInterface from "../../../dto/read_csv/csvCell";
 import SelectOptionsArrayInterface from "../../../dto/selectOptionsArrayDto";
 import SelectOptionsArrayDto from "../../../dto/selectOptionsArrayDto";
@@ -63,7 +63,7 @@ async function recieveGeneralCsvDataInterface(sendDto: SendCsvAndStragedShoshouD
 
     //データを受信する
     sendCsvAndStragedShoshouDto.value = sendDto;
-    backCsvReadData.value = sendDto.listAllCsv;
+    backCsvReadData.value = structuredClone(toRaw(sendDto.listAllCsv));
     saveStorageResultDto.value = sendDto.saveStorageResultDto;
 
     //csvデータを受信したら初期化して表示
@@ -90,7 +90,7 @@ async function recieveGeneralCsvDataInterface(sendDto: SendCsvAndStragedShoshouD
     const url = "http://localhost:8080/csv-read-template/select-template-by-number";
     await axios.post(url, csvReadTemplateCapsuleDto)
         .then((response) => {
-            
+
             listCsvReadTemplate.value = response.data;
 
         })
@@ -108,15 +108,17 @@ async function recieveGeneralCsvDataInterface(sendDto: SendCsvAndStragedShoshouD
     isReadData.value = true;
 }
 
-//ヘッダ有無の変更監視
-watch(hasHeader, () => {
-    if (hasHeader.value) {
+/**
+ * ヘッダ設定による編集データ変形
+ * @param hasHeader ヘッダ有無
+ */
+function createDataByHasHeader(hasHeader: boolean) {
+    if (hasHeader) {
         viewCsvReadData.value.shift();
-    }
-    else {
+    } else {
         viewCsvReadData.value.unshift(backCsvReadData.value[0]);
     }
-});
+}
 
 //読み取り形式変更監視
 const isSelectTemplate: Ref<boolean> = ref(true);
@@ -138,16 +140,20 @@ watch(selectedCsvReadTemplate, () => {
             listPointItems.value[index].selectedOption = list[index];
         }
 
-        selectedDto.hasHeader = true;
-
         hasHeader.value = selectedDto.hasHeader;
+        createDataByHasHeader(selectedDto.hasHeader);
 
+        propseCsvReadTemplateDto.value.financialOrgKbn = selectedDto.financialOrgKbn;
+        propseCsvReadTemplateDto.value.financialOrgId = selectedDto.financialOrgId;
         propseCsvReadTemplateDto.value.financialOrgCode = selectedDto.financialOrgCode;
         propseCsvReadTemplateDto.value.financialOrgName = selectedDto.financialOrgName;
+        propseCsvReadTemplateDto.value.csvReadTemplateName = selectedDto.csvReadTemplateName;
+        propseCsvReadTemplateDto.value.editId = selectedDto.csvReadTemplateId;
+
         isSelectTemplate.value = false;
 
         //呼びだした選択項目の指定内容をそのまま投げる
-        emits("sendSelectOptionsArrayInterface", list, saveStorageResultDto.value);
+        emits("sendSelectOptionsArrayInterface", list, saveStorageResultDto.value, viewCsvReadData.value);
     }
     else {
         for (const pointItem of listPointItems.value) {
@@ -171,14 +177,15 @@ function refreshBalanceSheet() {
     for (const item of listPointItems.value) {
         selectedList.push(item.selectedOption);
     }
-    emits("sendSelectOptionsArrayInterface", selectedList, hasHeader.value, saveStorageResultDto.value);
+
+    emits("sendSelectOptionsArrayInterface", selectedList, saveStorageResultDto.value, viewCsvReadData.value);
 }
 
 //申請モード定数
 const templateNew: number = 1;
 const templateChange: number = 2;
 
-const proposeMode: Ref<number> = ref(0);
+const proposeMode: Ref<number> = ref(templateChange);
 const isNameEditDisable: Ref<boolean> = ref(false);
 
 /**
@@ -187,11 +194,10 @@ const isNameEditDisable: Ref<boolean> = ref(false);
 function onProposeMode() {
     if (templateChange === proposeMode.value) {
         isNameEditDisable.value = false;
+        propseCsvReadTemplateDto.value.csvReadTemplateName = "";
     }
     if (templateNew === proposeMode.value) {
         isNameEditDisable.value = true;
-        //選択された値からDto呼び出し、設定が必要
-        propseCsvReadTemplateDto.value.csvReadTemplateName = selectedCsvReadTemplate.value;
     }
 }
 
@@ -281,6 +287,17 @@ async function onPromoteTemplate() {
     propseCsvReadTemplateEntity.financialOrgCode = propseCsvReadTemplateDto.value.financialOrgCode;
     propseCsvReadTemplateEntity.financialOrgName = propseCsvReadTemplateDto.value.financialOrgName;
     propseCsvReadTemplateEntity.hasHeader = hasHeader.value;
+    propseCsvReadTemplateEntity.shoshouId = saveStorageResultDto.value.shoshouId;
+    propseCsvReadTemplateEntity.shoshouKbn = saveStorageResultDto.value.shoshouKbn;
+
+    if (proposeMode.value === templateChange) {
+        //変更時には編集元Idを保持しておく
+        propseCsvReadTemplateEntity.editId = propseCsvReadTemplateDto.value.editId;
+    }
+    else {
+        //新規時は編集元Idは0
+        propseCsvReadTemplateEntity.editId = 0;
+    }
 
     const registProposeCsvReadRemplateCapsuleDto: RegistProposeCsvReadRemplateCapsuleDto = new RegistProposeCsvReadRemplateCapsuleDto();
 
@@ -290,29 +307,20 @@ async function onPromoteTemplate() {
     //独自変数設定
     registProposeCsvReadRemplateCapsuleDto.proposeCsvReadTemplateEntity = propseCsvReadTemplateEntity;
 
-    if (proposeMode.value === templateNew) {
-        //登録
-        const url = "http://localhost:8080/propose-csv-read-template/regist";
-        await axios.post(url, registProposeCsvReadRemplateCapsuleDto)
-            .then((response) => {
-                const resultDto: TemplateFrameworkResultDto = response.data;
-                if(response.status === 200){
-                    alert(resultDto.message);
-                }
-                //TODO no contentに修正
-                if(response.status === 204){
-                    alert(resultDto.message);
-                }
-            })
-            .catch((error) => showErrorMessage(error.status));
-
-    }
-
-    //TODO 変更更新部分は追加修正とする
-    if (proposeMode.value === templateChange) {
-        alert("未実装です");
-    }
-
+    //登録
+    const url = "http://localhost:8080/propose-csv-read-template/regist";
+    await axios.post(url, registProposeCsvReadRemplateCapsuleDto)
+        .then((response) => {
+            const resultDto: TemplateFrameworkResultDto = response.data;
+            if (response.status === 200) {
+                alert(resultDto.message);
+            }
+            //TODO no contentに修正
+            if (response.status === 204) {
+                alert(resultDto.message);
+            }
+        })
+        .catch((error) => showErrorMessage(error.status));
 }
 </script>
 <template>
@@ -330,7 +338,7 @@ async function onPromoteTemplate() {
         <select v-model="selectedCsvReadTemplate" :disabled="!isReadData">
             <option v-for="option in listCsvReadTemplate" v-bind:value="option.value" v-bind:key="option.value">{{
                 option.text
-                }}
+            }}
             </option>
         </select><br>
     </div>
@@ -338,7 +346,7 @@ async function onPromoteTemplate() {
         ヘッダの有無
     </div>
     <div class="right-area">
-        <input type="checkbox" v-model="hasHeader">1行目はヘッダなので取り込まない
+        <input type="checkbox" v-model="hasHeader" @change="createDataByHasHeader(hasHeader)">1行目はヘッダなので取り込まない
     </div>
     <br>
     <div class="one-line" style="overflow: scroll;">

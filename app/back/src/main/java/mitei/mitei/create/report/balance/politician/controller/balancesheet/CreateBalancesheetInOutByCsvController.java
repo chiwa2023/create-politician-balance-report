@@ -43,11 +43,11 @@ public class CreateBalancesheetInOutByCsvController extends AbstractTemplateChec
      *
      * @param createBalancesheetInOutDataCapsuleDto 収支報告書収入・支出リスト生成統合Dto
      * @return 各種Payエンティティリスト
-     * @throws SecurityException       セキュリティ例外
-     * @throws AuthenticationException 権限例外
-     * @throws PessimisticLockingFailureException   トランザクション例外
+     * @throws SecurityException                  セキュリティ例外
+     * @throws AuthenticationException            権限例外
+     * @throws PessimisticLockingFailureException トランザクション例外
      */
-    @Transactional // CHECKSTYLE:OFF
+    @Transactional
     @PostMapping("/by-csv")
     public ResponseEntity<CreateBalancsheetInOutItemResultDto> selectTemplateByNumber(
             final @RequestBody CreateBalancesheetInOutDataCapsuleDto createBalancesheetInOutDataCapsuleDto)
@@ -58,45 +58,44 @@ public class CreateBalancesheetInOutByCsvController extends AbstractTemplateChec
             switch (super.allCheck(createBalancesheetInOutDataCapsuleDto.getCheckSecurityDto(),
                     createBalancesheetInOutDataCapsuleDto.getCheckPrivilegeDto(),
                     createBalancesheetInOutDataCapsuleDto.getCheckTransactionDto())) {
-            // セキュリティチェック不可
-            case SECURITY_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
-            // 権限チェック不可
-            case PRIVIKEGE_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-            // 排他制御チェック不可
-            case TRANSACION_CHECK_FALSE:
-                return ResponseEntity.status(HttpStatus.CONFLICT).build();
+                // セキュリティチェック不可
+                case SECURITY_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
+                // 権限チェック不可
+                case PRIVIKEGE_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+                // 排他制御チェック不可
+                case TRANSACION_CHECK_FALSE:
+                    return ResponseEntity.status(HttpStatus.CONFLICT).build();
 
-            // ビジネス処理続行
-            case CHECK_TRUE:
-                break;
+                // ビジネス処理続行
+                case CHECK_TRUE:
+                    break;
 
-            // 想定外の値(実装ミス?)
-            default:
-                return this.createIllegalExceptionResult("共通チェック処理で発生しえない値が挿入されています");
+                // 想定外の値(実装ミス?)
+                default:
+                    return this.createIllegalExceptionResult(OTHER_EXCEPTION_MESSAGE);
             }
-            
+
             /*
              * ここに固有のビジネス処理を記載する
              */
-            
+
             CreateBalancsheetInOutItemResultDto resultDto = createBalancesheetInOutByCsvService.practice(
-                            createBalancesheetInOutDataCapsuleDto.getListCsvData(),
-                            createBalancesheetInOutDataCapsuleDto.getSaveStorageResultDto(),   
-                            createBalancesheetInOutDataCapsuleDto.getCheckPrivilegeDto(),
-                            createBalancesheetInOutDataCapsuleDto.getListPointer()
-                            );
-            
-            if(resultDto.getIsOk()) {
+                    createBalancesheetInOutDataCapsuleDto.getListCsvData(),
+                    createBalancesheetInOutDataCapsuleDto.getSaveStorageResultDto(),
+                    createBalancesheetInOutDataCapsuleDto.getCheckPrivilegeDto(),
+                    createBalancesheetInOutDataCapsuleDto.getListPointer());
+
+            if (resultDto.getIsOk()) {
                 return ResponseEntity.ok().body(resultDto);
-            }else {
-                //ユーザさん操作起因の例外はno_contentで返す
-                return new ResponseEntity<>(resultDto,HttpStatus.NO_CONTENT);
+            } else {
+                // ユーザさん操作起因の例外はno_contentで返す
+                return new ResponseEntity<>(resultDto, HttpStatus.NO_CONTENT);
             }
-            
+
             /* ここまで */
-            
+
         } catch (AuthenticationException authenticationException) { // NOPMD
             // 権限不足
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
@@ -106,36 +105,36 @@ public class CreateBalancesheetInOutByCsvController extends AbstractTemplateChec
         } catch (PessimisticLockingFailureException pessimisticLockingFailureException) {
             // 排他の対象
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
-            
-        } catch(NumberFormatException ne) {
-            //数値変換不可
+
+        } catch (NumberFormatException ne) {
+            // 数値変換不可
             CreateBalancsheetInOutItemResultDto resultDto = new CreateBalancsheetInOutItemResultDto();
             resultDto.setIsOk(false);
             resultDto.setMessage("金額指定の中に数字変換できない値があります");
-            return new ResponseEntity<>(resultDto,HttpStatus.NO_CONTENT);
-            
-        } catch(DateTimeParseException de) {
-            //日付変換不可
+            return new ResponseEntity<>(resultDto, HttpStatus.NO_CONTENT);
+
+        } catch (DateTimeParseException de) {
+            // 日付変換不可
             CreateBalancsheetInOutItemResultDto resultDto = new CreateBalancsheetInOutItemResultDto();
             resultDto.setIsOk(false);
             resultDto.setMessage("日付指定の中に日付変換できない値があります");
-            return new ResponseEntity<>(resultDto,HttpStatus.NO_CONTENT);
-            
-        } catch(IllegalArgumentException ie) {
+            return new ResponseEntity<>(resultDto, HttpStatus.NO_CONTENT);
+
+        } catch (IllegalArgumentException ie) {
             return this.createIllegalExceptionResult(ie.getMessage());
-            
+
         } catch (Exception exception) { // NOPMD
-            super.showError(exception); //TODO log処理が確定した段階で修正する
+            super.showError(exception); // TODO log処理が確定した段階で修正する
             // その他のビジネスロジック処理例外はInternalServerError
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
-    private ResponseEntity<CreateBalancsheetInOutItemResultDto> createIllegalExceptionResult(final String message){
-        //csvの紐づけまたは行設定が不正
+    private ResponseEntity<CreateBalancsheetInOutItemResultDto> createIllegalExceptionResult(final String message) {
+        // csvの紐づけまたは行設定が不正
         CreateBalancsheetInOutItemResultDto resultDto = new CreateBalancsheetInOutItemResultDto();
         resultDto.setIsOk(false);
         resultDto.setMessage(message);
-        return new ResponseEntity<>(resultDto,HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(resultDto, HttpStatus.NO_CONTENT);
     }
 }

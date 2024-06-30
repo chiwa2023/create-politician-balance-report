@@ -1,11 +1,14 @@
 package mitei.mitei.create.report.balance.politician.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import jakarta.persistence.LockModeType;
 import mitei.mitei.create.report.balance.politician.entity.CsvReadTemplateEntity;
 
 /**
@@ -13,6 +16,14 @@ import mitei.mitei.create.report.balance.politician.entity.CsvReadTemplateEntity
  */
 @Repository
 public interface CsvReadTemplateRepository  extends JpaRepository<CsvReadTemplateEntity, Long>{
+
+    /**
+     * テーブル同一識別コードがテーブルで最大行を取得する
+     *
+     * @return 最大値のOptional
+     */
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    Optional<CsvReadTemplateEntity> findFirstByOrderByCsvReadTemplateCodeDesc();
 
     /**
      * 項目件数を条件として該当するcsv読み取り仕様を取得する

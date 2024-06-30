@@ -1,4 +1,6 @@
-package mitei.mitei.create.report.balance.politician.controller.csv_read_template;
+package mitei.mitei.create.report.balance.politician.controller.read_csv;
+
+import java.util.List;
 
 import org.apache.tomcat.websocket.AuthenticationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.transaction.Transactional;
 import mitei.mitei.create.report.balance.politician.controller.AbstractTemplateCheckController;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
-import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
-import mitei.mitei.create.report.balance.politician.service.csv_read_template.RegistProposeCsvReadTemplateService;
+import mitei.mitei.create.report.balance.politician.service.read_csv.SearchSimilarDataListService;
 
 /**
- * csv結びつけ項目申請登録Contoroll
+ * 編集中の申請データの類似データを一覧する
  */
 @Controller
-@RequestMapping("/propose-csv-read-template")
-public class RegistProposeCsvReadTemplateController extends AbstractTemplateCheckController {
+@RequestMapping("/propose-csv-read")
+public class SearchSimilarDataListContoller extends AbstractTemplateCheckController {
 
     /** セキュリティチェック不可定数 */
     private static final int SECURITY_CHECK_FALSE = AbstractTemplateCheckController.SECURITY_CHECK_FALSE;
@@ -32,22 +33,22 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
     /** ビジネス処理続行定数 */
     private static final int CHECK_TRUE = AbstractTemplateCheckController.CHECK_TRUE;
 
-    /** propose_csv_read_templateテーブルService */
+    /** 編集中申請CSV読み取り仕様類似データ抽出Service */
     @Autowired
-    private RegistProposeCsvReadTemplateService registProposeCsvReadTemplateService;
+    private SearchSimilarDataListService searchSimilarDataListService;
 
     /**
-     * 各種Payテーブルの検索を行う
+     * 検索作業を行う
      *
-     * @param registProposeCsvReadRemplateCapsuleDto csv読み取り仕様利用登録申請統合Dto
-     * @return 各種Payエンティティリスト
+     * @param registProposeCsvReadRemplateCapsuleDto 編集中の申請CSV読み取り仕様Entityを含むCapsuleDto
+     * @return 検索結果
      * @throws SecurityException                  セキュリティ例外
      * @throws AuthenticationException            権限例外
      * @throws PessimisticLockingFailureException トランザクション例外
      */
     @Transactional
-    @PostMapping("/regist")
-    public ResponseEntity<TemplateFrameworkResultDto> practice(
+    @PostMapping("/search-similar")
+    public ResponseEntity<List<List<String>>> practice(
             final @RequestBody RegistProposeCsvReadRemplateCapsuleDto registProposeCsvReadRemplateCapsuleDto)
             throws SecurityException, AuthenticationException, PessimisticLockingFailureException { // NOPMD
 
@@ -78,9 +79,10 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
             /*
              * ここに固有のビジネス処理を記載する
              */
-            return ResponseEntity.ok(registProposeCsvReadTemplateService.practice(
-                    registProposeCsvReadRemplateCapsuleDto.getProposeCsvReadTemplateEntity(),
-                    registProposeCsvReadRemplateCapsuleDto.getCheckPrivilegeDto()));
+
+            return ResponseEntity.ok(searchSimilarDataListService
+                    .practice(registProposeCsvReadRemplateCapsuleDto.getProposeCsvReadTemplateEntity()));
+
             /* ここまで */
 
         } catch (AuthenticationException authenticationException) { // NOPMD
@@ -93,10 +95,12 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
             // 排他の対象
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         } catch (Exception exception) { // NOPMD
+
+            // TODO 例外をデータベースに記録するようになったら削除する
             super.showError(exception);
+
             // その他のビジネスロジック処理例外はInternalServerError
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
 }

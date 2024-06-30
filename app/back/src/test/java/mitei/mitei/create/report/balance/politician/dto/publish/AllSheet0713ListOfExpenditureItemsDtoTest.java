@@ -19,7 +19,7 @@ import mitei.mitei.create.report.balance.politician.constants.GetCurrentResource
  */
 @SuppressWarnings("PMD.AvoidDuplicateLiterals")
 class AllSheet0713ListOfExpenditureItemsDtoTest {
-    // CHECKSTYLE:OFF MagicNumber
+    // CHECKSTYLE:OFF
 
     @Test
     void testConvretXml() throws Exception { // NOPMD

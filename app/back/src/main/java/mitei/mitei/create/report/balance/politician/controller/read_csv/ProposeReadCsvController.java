@@ -1,6 +1,7 @@
-package mitei.mitei.create.report.balance.politician.controller.csv_read_template;
+package mitei.mitei.create.report.balance.politician.controller.read_csv;
 
 import org.apache.tomcat.websocket.AuthenticationException;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.PessimisticLockingFailureException;
 import org.springframework.http.HttpStatus;
@@ -12,16 +13,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.transaction.Transactional;
 import mitei.mitei.create.report.balance.politician.controller.AbstractTemplateCheckController;
-import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
-import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
-import mitei.mitei.create.report.balance.politician.service.csv_read_template.RegistProposeCsvReadTemplateService;
+import mitei.mitei.create.report.balance.politician.dto.read_csv.ReadCsvByEntityCapsuleDto;
+import mitei.mitei.create.report.balance.politician.dto.read_csv.SendCsvAndStragedShoshouDto;
+import mitei.mitei.create.report.balance.politician.dto.storage.SaveStorageResultDto;
+import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
+import mitei.mitei.create.report.balance.politician.logic.storage.mock.MockCallStorageShoshouDataLogic;
+import mitei.mitei.create.report.balance.politician.service.read_csv.ReadCsvReadByFileService;
 
 /**
- * csv結びつけ項目申請登録Contoroll
+ * CSV読み取り仕様申請のために、申請時のデータを復元する
  */
 @Controller
-@RequestMapping("/propose-csv-read-template")
-public class RegistProposeCsvReadTemplateController extends AbstractTemplateCheckController {
+@RequestMapping("/read-csv-by-entity")
+public class ProposeReadCsvController extends AbstractTemplateCheckController {
 
     /** セキュリティチェック不可定数 */
     private static final int SECURITY_CHECK_FALSE = AbstractTemplateCheckController.SECURITY_CHECK_FALSE;
@@ -32,30 +36,30 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
     /** ビジネス処理続行定数 */
     private static final int CHECK_TRUE = AbstractTemplateCheckController.CHECK_TRUE;
 
-    /** propose_csv_read_templateテーブルService */
+    /** csv変換Service */
     @Autowired
-    private RegistProposeCsvReadTemplateService registProposeCsvReadTemplateService;
+    private ReadCsvReadByFileService readCsvReadByFileService;
 
     /**
-     * 各種Payテーブルの検索を行う
+     * 申請時データを復元する
      *
-     * @param registProposeCsvReadRemplateCapsuleDto csv読み取り仕様利用登録申請統合Dto
-     * @return 各種Payエンティティリスト
+     * @param readCsvByEntityCapsuleDto 呼び出された申請データ
+     * @return 書証と申請時データ
      * @throws SecurityException                  セキュリティ例外
      * @throws AuthenticationException            権限例外
      * @throws PessimisticLockingFailureException トランザクション例外
      */
     @Transactional
-    @PostMapping("/regist")
-    public ResponseEntity<TemplateFrameworkResultDto> practice(
-            final @RequestBody RegistProposeCsvReadRemplateCapsuleDto registProposeCsvReadRemplateCapsuleDto)
+    @PostMapping("/practice")
+    public ResponseEntity<SendCsvAndStragedShoshouDto> practice(
+            final @RequestBody ReadCsvByEntityCapsuleDto readCsvByEntityCapsuleDto)
             throws SecurityException, AuthenticationException, PessimisticLockingFailureException { // NOPMD
 
         // NOTE:共通処理を行ったのちビジネス処理を行うフレームワークのため、ビジネス処理以外は丸コピすること
         try {
-            switch (super.allCheck(registProposeCsvReadRemplateCapsuleDto.getCheckSecurityDto(),
-                    registProposeCsvReadRemplateCapsuleDto.getCheckPrivilegeDto(),
-                    registProposeCsvReadRemplateCapsuleDto.getCheckTransactionDto())) {
+            switch (super.allCheck(readCsvByEntityCapsuleDto.getCheckSecurityDto(),
+                    readCsvByEntityCapsuleDto.getCheckPrivilegeDto(),
+                    readCsvByEntityCapsuleDto.getCheckTransactionDto())) {
                 // セキュリティチェック不可
                 case SECURITY_CHECK_FALSE:
                     return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
@@ -78,9 +82,23 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
             /*
              * ここに固有のビジネス処理を記載する
              */
-            return ResponseEntity.ok(registProposeCsvReadTemplateService.practice(
-                    registProposeCsvReadRemplateCapsuleDto.getProposeCsvReadTemplateEntity(),
-                    registProposeCsvReadRemplateCapsuleDto.getCheckPrivilegeDto()));
+            SendCsvAndStragedShoshouDto csvDto = new SendCsvAndStragedShoshouDto();
+
+            ProposeCsvReadTemplateEntity proposeCsvReadTemplateEntity = readCsvByEntityCapsuleDto
+                    .getProposeCsvReadTemplateEntity();
+
+            // すでにデータ保持は終わっているので呼び出したデータをコピーするだけ
+            SaveStorageResultDto saveStorageResultDto = new SaveStorageResultDto();
+            BeanUtils.copyProperties(proposeCsvReadTemplateEntity, saveStorageResultDto);
+            csvDto.setSaveStorageResultDto(saveStorageResultDto);
+
+            // 書証保存からデータを呼び出し
+            MockCallStorageShoshouDataLogic callStorageShoshouDataLogic = new MockCallStorageShoshouDataLogic();
+            csvDto.setListAllCsv(
+                    readCsvReadByFileService.practice(callStorageShoshouDataLogic.practice(saveStorageResultDto)));
+
+            return ResponseEntity.ok(csvDto);
+
             /* ここまで */
 
         } catch (AuthenticationException authenticationException) { // NOPMD
@@ -93,7 +111,10 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
             // 排他の対象
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         } catch (Exception exception) { // NOPMD
+
+            // TODO 例外をデータベースに記録するようになったら削除する
             super.showError(exception);
+
             // その他のビジネスロジック処理例外はInternalServerError
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }

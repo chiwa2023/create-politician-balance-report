@@ -13,7 +13,7 @@ public class TemplateFrameworkResultDto extends AbstractResultDto implements Ser
     private static final long serialVersionUID = 1L;
 
     /** 表示メッセージ */
-    private String message;
+    private String message = "[実装必要]";
 
     /**
      * 表示メッセージを取得する

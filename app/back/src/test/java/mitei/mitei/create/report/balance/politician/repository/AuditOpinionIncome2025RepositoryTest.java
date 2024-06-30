@@ -1,8 +1,12 @@
 package mitei.mitei.create.report.balance.politician.repository;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * AuditOpinionIncome2025Repository単体テスト
@@ -16,4 +20,10 @@ class AuditOpinionIncome2025RepositoryTest {
     @Autowired
     private AuditOpinionIncome2025Repository auditOpinionIncome2025Repository;
 
+    
+    @Test
+    @Transactional
+    void testFindFullText() {
+        fail("not yet implments");
+    }
 }

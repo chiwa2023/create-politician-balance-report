@@ -73,6 +73,7 @@ public class RegistProposeCsvReadTemplateService {
         // auto incrementで新たに値が採番された
         if (0 != result.getProposeCsvReadTemplateId()) {
             resultDto.setIsOk(true);
+            resultDto.setMessage("正常に申請できました");
         }
 
         return resultDto;

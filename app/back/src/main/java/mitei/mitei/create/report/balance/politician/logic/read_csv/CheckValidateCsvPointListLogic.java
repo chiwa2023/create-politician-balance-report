@@ -29,12 +29,15 @@ public class CheckValidateCsvPointListLogic {
     /** 摘要 */
     private static final int DIGEST = CsvTradingRowConstants.DIGEST;
 
+    /** 取り引き相手 */
+    private static final int PERSON = CsvTradingRowConstants.TRADING_PERSON;
+
     // TODO 仕様決定次第修正する
     /// ** 取引相手名称 */
     // private static final int TRADING_PERSON =
     /// CsvTradingRowConstants.TRADING_PERSON;
 
-    /**　1(回指定)を表す定数 */
+    /** 1(回指定)を表す定数 */
     private final static int leastTime = 1;
 
     /** 正常時に指定する空メッセージ */
@@ -86,7 +89,12 @@ public class CheckValidateCsvPointListLogic {
                 case DIGEST:
                     counterDigest++;
                     break;
-                    
+
+                // 取引相手
+                case PERSON:
+                    // TODO 仕様決定次第修正する(現段階ではなにもしない)
+                    break;
+
                 // 定数以外の値が紛れていたら即アウト(front側で制御しているので実装ミス、あるいはデータベース直接押し込み)
                 default:
                     throw new IllegalArgumentException("CsvTradingRowConstants以外の定数が指定されています");
@@ -99,40 +107,40 @@ public class CheckValidateCsvPointListLogic {
         }
 
         // 摘要の指定は0,1回だけで指定なしを許容します
-        if (leastTime< counterDigest) {
+        if (leastTime < counterDigest) {
             return this.createFailuerState("摘要はは2回以上指定しないでください");
         }
 
-        //増減条件検証
-        String checkInOut = this.checkInOut(counterInOut,counterIncome,counterOutcome);
-        if(!blank.equals(checkInOut)) {
+        // 増減条件検証
+        String checkInOut = this.checkInOut(counterInOut, counterIncome, counterOutcome);
+        if (!blank.equals(checkInOut)) {
             return this.createFailuerState(checkInOut);
         }
-        
-        //収入と支出条件を検証
-        String checkAmount = this.checkAmount(counterIncome,counterOutcome);
-        if(!blank.equals(checkAmount)) {
+
+        // 収入と支出条件を検証
+        String checkAmount = this.checkAmount(counterIncome, counterOutcome);
+        if (!blank.equals(checkAmount)) {
             return this.createFailuerState(checkAmount);
         }
 
-        //すべてのチェックをパスしたら正常
+        // すべてのチェックをパスしたら正常
         TemplateFrameworkResultDto resultDto = new TemplateFrameworkResultDto();
         resultDto.setIsOk(true);
 
         return resultDto;
     }
 
-    private String checkInOut(final int counterInOut,final int counterIncome,final int counterOutcome) {
+    private String checkInOut(final int counterInOut, final int counterIncome, final int counterOutcome) {
 
-        //増減条件
+        // 増減条件
         if (leastTime == counterInOut) {
             if (counterIncome != 0 || counterOutcome != 0) {
                 // 増減兼用を含んだら収入・支出ともリストに含んではいけません
                 return "増減兼用を指定したら支出・収入を指定しないでください";
             }
         } else {
-            //1または0でなく重複を許容しません
-            if(0 != counterInOut) {
+            // 1または0でなく重複を許容しません
+            if (0 != counterInOut) {
                 return "2回以上増減兼用を指定しないでください";
             }
         }
@@ -140,29 +148,28 @@ public class CheckValidateCsvPointListLogic {
         return blank;
     }
 
-    private String checkAmount(final int counterIncome,final int counterOutcome) {
+    private String checkAmount(final int counterIncome, final int counterOutcome) {
 
         // 収入の指定は0,1回だけで指定なしを許容します
-        if (leastTime< counterIncome) {
+        if (leastTime < counterIncome) {
             return "2回以上収入を指定しないでください";
         }
 
-
         // 支出の指定は0,1回だけで指定なしを許容します
-        if (leastTime< counterOutcome) {
+        if (leastTime < counterOutcome) {
             return "2回以上支出を指定しないでください";
         }
 
         // 支出が1回指定されたら収入も1回指定
         if (leastTime == counterOutcome) {
-            if(leastTime != counterIncome) { // NOPMD
+            if (leastTime != counterIncome) { // NOPMD
                 return "支出を指定したら収入を1回指定してください";
             }
         }
 
         // 収入が1回指定されたら支出も1回指定
         if (leastTime == counterIncome) {
-            if(leastTime != counterOutcome) { // NOPMD
+            if (leastTime != counterOutcome) { // NOPMD
                 return "収入を指定したら支出を1回指定してください";
             }
         }
@@ -171,13 +178,11 @@ public class CheckValidateCsvPointListLogic {
     }
 
     private TemplateFrameworkResultDto createFailuerState(final String message) {
-        //不正時のResultDtoを生成します
+        // 不正時のResultDtoを生成します
         TemplateFrameworkResultDto dto = new TemplateFrameworkResultDto();
         dto.setIsOk(false);
         dto.setMessage(message);
         return dto;
     }
-
-
 
 }

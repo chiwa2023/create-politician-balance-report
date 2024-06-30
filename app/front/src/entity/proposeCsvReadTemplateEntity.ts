@@ -1,4 +1,4 @@
-﻿export default class PropseCsvReadTemplateEntity {
+﻿export default class ProposeCsvReadTemplateEntity {
 
     /** CSV読取り仕様同一識別コード */
     proposeCsvReadTemplateCode: number;
@@ -39,6 +39,27 @@
     /** ヘッダの有無 */
     hasHeader: boolean;
 
+    /** 書証Id */
+    shoshouId: string;
+
+    /** 書証同一識別コード */
+    shoshouCode: number;
+
+    /** 書証区分 */
+    shoshouKbn: number;
+
+    /** 申請過程該否 */
+    inProsessing: boolean;
+
+    /** 申請諾否 */
+    isAccepted: boolean;
+
+    /** 編集元Id */
+    editId: number;
+
+    /** 判定理由 */
+    judgeReason: string;
+
     /** ログインユーザId */
     loginUserId: number;
 
@@ -66,7 +87,13 @@
         this.loginUserId = 0;
         this.loginUserCode = 0;
         this.loginUserName = "";
-
+        this.shoshouId = "";
+        this.shoshouCode = 0;
+        this.shoshouKbn = 0;
+        this.inProsessing = false;
+        this.isAccepted = false;
+        this.editId = 0;
+        this.judgeReason = "";
     }
 
 }

@@ -24,7 +24,6 @@ export default interface ProposeCsvReadTemplateInterface {
     /** 金融機関Id  */
     financialOrgId: number;
 
-
     /** 金融機関同一識別コード  */
     financialOrgCode: number;
 
@@ -66,6 +65,9 @@ export default class ProposeCsvReadTemplateDto implements ProposeCsvReadTemplate
     /** 金融機関名称  */
     financialOrgName: string;
 
+    /** 編集元Id  */
+    editId: number;
+
     /**
      * Creates an instance of CsvReadTemplateDto.
      */
@@ -79,5 +81,6 @@ export default class ProposeCsvReadTemplateDto implements ProposeCsvReadTemplate
         this.financialOrgKbn = 0;
         this.financialOrgCode = 0;
         this.financialOrgName = "";
+        this.editId = 0;
     }
 }
