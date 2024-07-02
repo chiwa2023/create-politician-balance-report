@@ -94,7 +94,7 @@ async function recieveGeneralCsvDataInterface(sendDto: SendCsvAndStragedShoshouD
             listCsvReadTemplate.value = response.data;
 
         })
-        .catch((error) => showErrorMessage(error.status));
+        .catch((error) => showErrorMessage(error));
 
     selectedCsvReadTemplate.value = "0";//選択解除
 
@@ -320,7 +320,7 @@ async function onPromoteTemplate() {
                 alert(resultDto.message);
             }
         })
-        .catch((error) => showErrorMessage(error.status));
+        .catch((error) => { showErrorMessage(error)});
 }
 </script>
 <template>

@@ -85,7 +85,7 @@ async function recieveSelectOptionsArrayInterface(listPointArray: string[], save
             }
 
         })
-        .catch((error) => showErrorMessage(error.status));
+        .catch((error) => showErrorMessage(error));
 }
 
 /**
@@ -136,7 +136,7 @@ async function onSave() {
             }
 
         })
-        .catch((error) => showErrorMessage(error.status));
+        .catch((error) => showErrorMessage(error));
 }
 /**  
  * 入力内容を破棄する

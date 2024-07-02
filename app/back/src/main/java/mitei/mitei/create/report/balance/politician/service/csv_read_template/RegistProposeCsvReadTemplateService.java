@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.PessimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 
 import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
@@ -13,6 +14,7 @@ import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivil
 import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.logic.read_csv.CheckValidateCsvPointListLogic;
+import mitei.mitei.create.report.balance.politician.logic.trunsaction.CheckTrunsactionProposeCsvReadLogic;
 import mitei.mitei.create.report.balance.politician.repository.ProposeCsvReadTemplateRepository;
 
 /**
@@ -29,6 +31,11 @@ public class RegistProposeCsvReadTemplateService {
     @Autowired
     private CheckValidateCsvPointListLogic checkValidateCsvPointListLogic;
 
+    /** 排他制御確認Logic */
+    @Autowired
+    private CheckTrunsactionProposeCsvReadLogic checkTrunsactionProposeCsvReadLogic;
+    
+    
     /**
      * csv読み取りテンプレート登録提案を行う
      *
@@ -36,7 +43,7 @@ public class RegistProposeCsvReadTemplateService {
      * @return 登録結果
      */
     public TemplateFrameworkResultDto practice(final ProposeCsvReadTemplateEntity proposeCsvReadTemplateEntity,
-            final CheckPrivilegeDto checkPrivilegeDto) {
+            final CheckPrivilegeDto checkPrivilegeDto)throws PessimisticLockingFailureException {
 
         //指定リストの妥当性のチェック
         TemplateFrameworkResultDto resultDto = checkValidateCsvPointListLogic
@@ -45,6 +52,11 @@ public class RegistProposeCsvReadTemplateService {
             return resultDto;
         }
 
+        //排他制御
+        if(checkTrunsactionProposeCsvReadLogic.practice(proposeCsvReadTemplateEntity.getEditId())) {
+            throw new PessimisticLockingFailureException("ほかのユーザが同じデータの編集申請をしています");
+        }
+        
         // 全文検索対象は名称
         proposeCsvReadTemplateEntity
                 .setTableAllSearchText(proposeCsvReadTemplateEntity.getProposeCsvReadTemplateName());

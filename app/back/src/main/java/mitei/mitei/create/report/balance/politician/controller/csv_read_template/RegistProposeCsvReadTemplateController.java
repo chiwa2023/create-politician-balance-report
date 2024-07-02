@@ -90,8 +90,9 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
             // セキュリティ事故
             return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
         } catch (PessimisticLockingFailureException pessimisticLockingFailureException) {
-            // 排他の対象
-            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+            TemplateFrameworkResultDto resultDto = new TemplateFrameworkResultDto();
+            resultDto.setMessage("同じデータの変更をほかのユーザさんが申請しています。申請完了まで数日お待ちください");
+            return new ResponseEntity<>(resultDto,HttpStatus.CONFLICT);
         } catch (Exception exception) { // NOPMD
             super.showError(exception);
             // その他のビジネスロジック処理例外はInternalServerError

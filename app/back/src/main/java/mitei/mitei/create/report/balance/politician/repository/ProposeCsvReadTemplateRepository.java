@@ -49,5 +49,14 @@ public interface ProposeCsvReadTemplateRepository  extends JpaRepository<Propose
      * @return 検索結果
      */
     List<ProposeCsvReadTemplateEntity> findBySaishinKbn(Integer saishinKbn);
-    
+
+    /**
+     * すでに同じ編集Idを持つデータが存在しないか確認する
+     *
+     * @param saishinKbn 最新区分
+     * @param editId 編集対象Id
+     * @return 該当リスト(1か0)
+     */
+    List<ProposeCsvReadTemplateEntity> findBySaishinKbnAndEditId(Integer saishinKbn,Long editId);
+
 }

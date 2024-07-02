@@ -62,7 +62,7 @@ async function readTextFile() {
                                 readData.value = sendCsvAndStragedShoshouDto.value.listAllCsv;
                                 emits("sendGeneralCsvDataInterface", sendCsvAndStragedShoshouDto.value);
                             })
-                            .catch((error) => showErrorMessage(error.status));
+                            .catch((error) => showErrorMessage(error));
                     }
                 };
             }

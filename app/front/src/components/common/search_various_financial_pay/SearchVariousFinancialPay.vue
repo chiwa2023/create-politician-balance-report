@@ -97,7 +97,7 @@ async function onSearch() {
         .then((response) => {
             list.value = response.data;
         })
-        .catch((error) => showErrorMessage(error.status));
+        .catch((error) => showErrorMessage(error));
 }
 </script>
 <template>
