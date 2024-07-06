@@ -62,9 +62,9 @@
 
 仕訳区分
 
- |      論理名      | 区分(様式) |
- | ---------------- | ---------- |
- | 資産の内訳       | その18     |
+ |   論理名   | 区分(様式) |
+ | ---------- | ---------- |
+ | 資産の内訳 | その18     |
 
 仕訳枝項目区分(資産小分類)
 
@@ -112,18 +112,18 @@ b.ア、イ、ウ(不動産関連)が以外が選択された場合、編集_不
 
 BalancesheetEsateInterface
 
-|       論理名       |        論理名        |                  型                   |                    説明(例)                    |
-| ------------------ | -------------------- | ------------------------------------- | ---------------------------------------------- |
-| 資産Id             | balancesheetEstateId | String                                | データを一意に識別するId                       |
-| 資産同一識別コード | estateCode           | String                                | データを一意に識別するId                       |
-| 前年同一確認       | isSameData           | Boolean                               | 前年のデータと同一であることを確認したら`true` |
-| 様式仕訳区分       | yoshikiKbn           | String                                | 様式仕訳区分。固定値`18`                       |
-| 様式仕訳枝項目区分 | yoshikiEdaKbn        | String                                | 仕訳枝項目区分(資産小分類)                     |
-| 摘要               | itemName             | String                                | 摘要                                           |
-| 取引金額           | amount               | String                                | 取引金額(取得当時)                             |
-| 発生年月日         | accrualDate          | String                                | 取引成立日付                                   |
-| 備考               | biko                 | String                                | 備考                                           |
-| 不動産詳細リスト   | biko                 | List<BalancesheetRealEstateInterface> | 不動産詳細項目データリスト                     |
+|       論理名       |        論理名        |                   型                    |                    説明(例)                    |
+| ------------------ | -------------------- | --------------------------------------- | ---------------------------------------------- |
+| 資産Id             | balancesheetEstateId | String                                  | データを一意に識別するId                       |
+| 資産同一識別コード | estateCode           | String                                  | データを一意に識別するId                       |
+| 前年同一確認       | isSameData           | Boolean                                 | 前年のデータと同一であることを確認したら`true` |
+| 様式仕訳区分       | yoshikiKbn           | String                                  | 様式仕訳区分。固定値`18`                       |
+| 様式仕訳枝項目区分 | yoshikiEdaKbn        | String                                  | 仕訳枝項目区分(資産小分類)                     |
+| 摘要               | itemName             | String                                  | 摘要                                           |
+| 取引金額           | amount               | String                                  | 取引金額(取得当時)                             |
+| 発生年月日         | accrualDate          | String                                  | 取引成立日付                                   |
+| 備考               | biko                 | String                                  | 備考                                           |
+| 不動産詳細リスト   | biko                 | List\<BalancesheetRealEstateInterface\> | 不動産詳細項目データリスト                     |
 
 BalancesheetRealEstateInterfaceは[不動産入力コンポーネント](../../common/front/realestate_input/realestimate_input.md)を参照
 
