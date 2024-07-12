@@ -1,13 +1,13 @@
 package mitei.mitei.create.report.balance.politician.service.read_csv;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
+import mitei.mitei.create.report.balance.politician.dto.balancesheet.CsvTradingRowConstants;
 import mitei.mitei.create.report.balance.politician.entity.CsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.repository.CsvReadTemplateRepository;
@@ -46,8 +46,12 @@ public class SearchSimilarDataListService {
             List<String> line = new ArrayList<>();// NOPMD
             line.add(String.valueOf(entity.getProposeCsvReadTemplateCode()));
             line.add(entity.getProposeCsvReadTemplateName());
+            
             String[] setting = entity.getArrayText().split(",");
-            line.addAll(Arrays.asList(setting));
+            //値で格納しているのを定数(表示テキストに変換)
+            for(String settingValue : setting) {
+                line.add(CsvTradingRowConstants.convertValueToText(settingValue));
+            }
 
             listAll.add(line);
         }
@@ -63,8 +67,12 @@ public class SearchSimilarDataListService {
 
             line.add(String.valueOf(entity.getCsvReadTemplateCode()));
             line.add(entity.getCsvReadTemplateName());
+            
             String[] setting = entity.getArrayText().split(",");
-            line.addAll(Arrays.asList(setting));
+            //値で格納しているのを定数(表示テキストに変換)
+            for(String settingValue : setting) {
+                line.add(CsvTradingRowConstants.convertValueToText(settingValue));
+            }
  
             listAll.add(line);
         }
