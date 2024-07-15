@@ -1,6 +1,6 @@
-﻿import CheckSendBalancesheetInterface from "../../../dto/checkSendBalancesheetDto";
-import CheckSendBalancesheetDto from "../../../dto/checkSendBalancesheetDto";
-import convertTimestampText from "../../util/convertTimestampText";
+﻿import CheckSendBalancesheetInterface from "../../../../dto/checkSendBalancesheetDto";
+import CheckSendBalancesheetDto from "../../../../dto/checkSendBalancesheetDto";
+import convertTimestampText from "../../../util/convertTimestampText";
 
 export default function mockGetCheckSendBalancesheetDto():CheckSendBalancesheetInterface{
 

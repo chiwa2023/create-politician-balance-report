@@ -1,7 +1,7 @@
 ﻿<script setup lang="ts">
 import { ref, Ref, onBeforeMount } from "vue";
-import CheckSendBalancesheetInterface from "../../dto/checkSendBalancesheetDto";
-import CheckSendBalancesheetDto from "../../dto/checkSendBalancesheetDto";
+import CheckSendBalancesheetInterface from "../../../dto/checkSendBalancesheetDto";
+import CheckSendBalancesheetDto from "../../../dto/checkSendBalancesheetDto";
 import mockGetCheckSendBalancesheetDto from "./mock/mockGetCheckSendBalancesheetDto";
 
 const checkSendDto: Ref<CheckSendBalancesheetInterface> = ref(new CheckSendBalancesheetDto());
