@@ -6,6 +6,7 @@ import PersonWorkerInterface from "../../../dto/person_worker/personWorkerDto";
 import PersonWorkerDto from "../../../dto/person_worker/personWorkerDto";
 import SearchPersonWorkerCapsuleDto from "../../../dto/person_worker/searchPersonWorkerCapsuleDto";
 import mockGetPersonWorker from "./mock/mockGetPersonWorker";
+import getRoleKbnDisplayText from "../../../dto/person_worker/getRoleKbnDisplayText";
 
 //props,emit
 const props = defineProps<{ isEditable: boolean,callIndex: number }>();
@@ -95,8 +96,8 @@ async function onSearch() {
 }
 </script>
 <template>
-    <h3>選挙管理員会検索</h3>
-    <div class="online">
+    <h3>作業員検索</h3>
+    <div class="one-line">
         検索条件の指定
     </div>
     <div class="left-area-component">
@@ -106,13 +107,14 @@ async function onSearch() {
         <input type="text" v-model="searchWords" style="margin-right:2%;"><button @click="onSearch">検索</button>
     </div>
     <br>
-    <div class="online">
+    <div class="one-line">
         検索結果の表示
 
         <table style="width:45%;">
             <tr>
                 <th style="width:10%;">&nbsp;</th>
                 <th style="width:30%;">コード</th>
+                <th>役割</th>
                 <th>名前</th>
                 <th v-if="props.isEditable" style="width:20%;">&nbsp;</th>
             </tr>
@@ -120,7 +122,8 @@ async function onSearch() {
                 <td style="text-align: center;"><input type="radio" id="searchedDto.personWorkerId"
                         :value="searchedDto.personWorkerId" v-model="selectedRow"
                         @click="onSelectChange(searchedDto.personWorkerId)" /></td>
-                <td style="text-align: right;">{{ searchedDto.personWorkerId }}</td>
+                <td style="text-align: right;">{{ searchedDto.personWorkerCode }}</td>
+                <td>{{ getRoleKbnDisplayText(searchedDto.roleKbn, false) }}</td>
                 <td>{{ searchedDto.personWorkerName }}</td>
                 <td v-if="props.isEditable" style="text-align: center;"><button
                         @click="deleteRow(searchedDto.personWorkerId)">削除</button></td>

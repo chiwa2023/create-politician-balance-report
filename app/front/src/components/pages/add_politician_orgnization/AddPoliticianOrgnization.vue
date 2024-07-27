@@ -4,8 +4,8 @@ import PersonManager from "../../common/person_managaer/PersonManager.vue";
 import PersonWorker from "../../common/person_worker/PersonWorker.vue";
 import SearchElectionCommission from "../../common/search_election_commission/SearchElectionCommission.vue";
 import SelectPoliticalOrgnizationKbn from "../../common/select_political_orgnization_kbn/SelectPoliticalOrgnizationKbn.vue";
-import SerachPersonManager from "../../common/serach_person_manager/SerachPersonManager.vue";
-import SerachPersonWorker from "../../common/serach_person_worker/SerachPersonWorker.vue";
+import SearchPersonManager from "../../common/search_person_manager/SearchPersonManager.vue";
+import SearchPersonWorker from "../../common/search_person_worker/SearchPersonWorker.vue";
 import ElectionCommissionLeastInterface from "../../../dto/election_commission/electionCommissionDto";
 import InputAddress from "../../common/input_address/InputAddress.vue";
 import ViewInputAddress from "../../common/input_address/ViewInputAddress.vue";
@@ -16,6 +16,7 @@ import PersonManagerDto from "../../../dto/person_manager/personManager";
 import PersonWorkerDto from "../../../dto/person_worker/personWorkerDto";
 import PersonWorkerInterface from "../../../dto/person_worker/personWorkerDto";
 import SelectPoliticalOrganizationKbnDto from "../../../dto/select_political_organization_kbn/SelectPoliticalOrganizationKbn";
+import inputSelectDisplayBold from "../../../util/display/inputSelectDisplayBold";
 
 /** 一括入力未使用 */
 const isUseInput: Ref<boolean> = ref(true);
@@ -179,6 +180,7 @@ function recieveSearchPersonManagerInterface(sendDto: PersonManagerInterface, in
     switch (index) {
         case 1:
             personManagerDelegate.value = sendDto;
+
             //代表者の場合のみ署名欄も記入する
             signatureDelegateName.value = sendDto.personManagerName;
             break;
@@ -452,15 +454,14 @@ function recieveSelectPoliticalOrgnizationKbnInterface(sendDto: SelectPoliticalO
                 giinName6 = sendDto.politicianAllName;
             }
 
-            let gikaiName6: string = "";
-            if (sendDto.isNotFindParliamentOrganization) {
-                //議会名に編集があった場合
-                gikaiName6 = sendDto.parliamentOrganizationAlternativeText;
-
-            } else {
-                //議会名に編集がない場合
-                gikaiName6 = sendDto.parliamentOrganizationName;
-            }
+            //let gikaiName6: string = "";
+            //if (sendDto.isNotFindParliamentOrganization) {
+            //    //議会名に編集があった場合
+            //    gikaiName6 = sendDto.parliamentOrganizationAlternativeText;
+            //} else {
+            //    //議会名に編集がない場合
+            //    gikaiName6 = sendDto.parliamentOrganizationName;
+            //}
 
             // TODO 議会が手入力修正された場合、衆議院／参議院の別の入力を受け付ける必要がある
             // TODO 議員名が手入力修正されていた場合、姓名ふりがなの入力を受け付ける必要がある
@@ -694,10 +695,10 @@ const personWorkser2: Ref<PersonWorkerInterface> = ref(new PersonWorkerDto);
 const personWorkser3: Ref<PersonWorkerInterface> = ref(new PersonWorkerDto);
 
 //設立年月日
-const foundingNengappi:Ref<string> = ref("1980-01-01");
+const foundingNengappi: Ref<string> = ref("1980-01-01");
 
 //新設政治団体名称
-const politicalOrgnozationName:Ref<string> = ref("");
+const politicalOrgnozationName: Ref<string> = ref("");
 
 /** 保存 */
 function onSave() {
@@ -729,7 +730,7 @@ function onSave() {
     </div>
     <div class="right-area">
         <input type="number" v-model="electionComitteeCode" disabled="true" class="code-input">
-        <input type="text" v-model="electionComitteeName" disabled="true" class="left-space text-input">
+        <input type="text" v-model="electionComitteeName" disabled="true" class="left-space name-input">
         <button class="left-space" @click="onSearchElectionCommition">選挙管理委員会検索</button>
     </div>
     <div class="clear-both"><br></div>
@@ -746,7 +747,7 @@ function onSave() {
         政治団体名称ふりがな
     </div>
     <div class="right-area">
-        <input type="text" class="text-input" placeholder="政治団体ふりがな"><br>
+        <input type="text" class="name-input" placeholder="政治団体ふりがな"><br>
     </div>
     <div class="clear-both"></div>
 
@@ -754,7 +755,7 @@ function onSave() {
         政治団体の名称
     </div>
     <div class="right-area">
-        <input type="text" v-model="politicalOrgnozationName" class="text-input" placeholder="政治団体名称">
+        <input type="text" v-model="politicalOrgnozationName" class="name-input" placeholder="政治団体名称">
     </div>
     <div class="clear-both"><br></div>
 
@@ -770,7 +771,7 @@ function onSave() {
         代表者名(署名)
     </div>
     <div class="right-area">
-        <input type="text" v-model="signatureDelegateName" disabled="true" class="text-input"><button
+        <input type="text" v-model="signatureDelegateName" disabled="true" class="name-input"><button
             class="left-space">設定</button>
     </div>
     <div class="clear-both"><br></div>
@@ -784,15 +785,15 @@ function onSave() {
         <div class="left-area-in">
             ユーザ
         </div>
-        <input type="number" disabled="true" class="code-input">
-        <input type="text" disabled="true" class="left-space text-input">
+        <input type="number" v-model="personManagerDelegate.personManagerCode"  disabled="true" class="code-input">
+        <input type="text" v-model="personManagerDelegate.personManagerName" disabled="true" class="left-space name-input">
         <button class="left-space" @click="onSearchPersonManager(1)">ユーザ検索</button><br>
-        <PersonManager :edit-dto="personManagerDelegate"></PersonManager>
+        <PersonManager :edit-dto="personManagerDelegate" :is-editable="false" :is-in-parts="true"></PersonManager>
         <div class="left-area-in">
             選任年月日
         </div>
         <div>
-            <input type="date" class="text-input">
+            <input type="date" class="name-input">
         </div>
     </div>
     <div class="clear-both"><br></div>
@@ -804,15 +805,15 @@ function onSave() {
         <div class="left-area-in">
             ユーザ
         </div>
-        <input type="number" disabled="true" class="code-input">
-        <input type="text" disabled="true" class="left-space text-input">
+        <input type="number" v-model="personManagerAccountManager.personManagerCode"  disabled="true" class="code-input">
+        <input type="text" v-model="personManagerAccountManager.personManagerName" disabled="true" class="left-space name-input">
         <button class="left-space" @click="onSearchPersonManager(2)">ユーザ検索</button><br>
-        <PersonManager :edit-dto="personManagerAccountManager"></PersonManager>
+        <PersonManager :edit-dto="personManagerAccountManager" :is-editable="false" :is-in-parts="true"></PersonManager>
         <div class="left-area-in">
             選任年月日
         </div>
         <div>
-            <input type="date" class="text-input">
+            <input type="date" class="name-input">
         </div>
     </div>
     <div class="clear-both"><br></div>
@@ -824,15 +825,15 @@ function onSave() {
         <div class="left-area-in">
             ユーザ
         </div>
-        <input type="number" disabled="true" class="code-input">
-        <input type="text" disabled="true" class="left-space text-input">
+        <input type="number" v-model="personManagerAccountSupport.personManagerCode" disabled="true" class="code-input">
+        <input type="text"  v-model="personManagerAccountSupport.personManagerName" disabled="true" class="left-space name-input">
         <button class="left-space" @click="onSearchPersonManager(3)">ユーザ検索</button><br>
-        <PersonManager :edit-dto="personManagerAccountSupport"></PersonManager>
+        <PersonManager :edit-dto="personManagerAccountSupport" :is-editable="false" :is-in-parts="true"></PersonManager>
         <div class="left-area-in">
             選任年月日
         </div>
         <div>
-            <input type="date" class="text-input">
+            <input type="date" class="name-input">
         </div>
     </div>
     <div class="clear-both"><br></div>
@@ -844,15 +845,15 @@ function onSave() {
         <div class="left-area-in">
             ユーザ
         </div>
-        <input type="number" disabled="true" class="code-input">
-        <input type="text" disabled="true" class="left-space text-input">
+        <input type="number" v-model="personWorkser2.personWorkerCode" disabled="true" class="code-input">
+        <input type="text" v-model="personWorkser2.personWorkerName" disabled="true" class="left-space name-input">
         <button class="left-space" @click="onSearchPersonWorker(1)">ユーザ検索</button><br>
-        <PersonWorker :edit-dto="personWorkser2"></PersonWorker>
+        <PersonWorker :edit-dto="personWorkser2" :is-editable="false" :is-in-parts="true"></PersonWorker>
         <div class="left-area-in">
             選任年月日
         </div>
         <div>
-            <input type="date" class="text-input">
+            <input type="date" class="name-input">
         </div>
     </div>
     <div class="clear-both"><br></div>
@@ -864,15 +865,15 @@ function onSave() {
         <div class="left-area-in">
             ユーザ
         </div>
-        <input type="number" disabled="true" class="code-input">
-        <input type="text" disabled="true" class="left-space text-input">
+        <input type="number" v-model="personWorkser3.personWorkerCode"  disabled="true" class="code-input">
+        <input type="text"  v-model="personWorkser3.personWorkerName" disabled="true" class="left-space name-input">
         <button class="left-space">ユーザ検索</button><br>
-        <PersonWorker :edit-dto="personWorkser3" @click="onSearchPersonWorker(2)"></PersonWorker>
+        <PersonWorker :edit-dto="personWorkser3" :is-editable="false" :is-in-parts="true" @click="onSearchPersonWorker(2)"></PersonWorker>
         <div class="left-area-in">
             選任年月日
         </div>
         <div>
-            <input type="date" class="text-input">
+            <input type="date" class="name-input">
         </div>
     </div>
     <div class="clear-both"><br></div>
@@ -912,15 +913,23 @@ function onSave() {
     <div class="right-area">
         <button @click="onSelectPoliticalOrgnizationKbn">政治団体区分関係一括処理(推奨)</button> <input type="checkbox"
             class="left-space " v-model="isUseInput">一括処理を使用しない<br>
-        <input type="radio" v-model="organizationKbn" :value="1" :disabled="isUseInput">政党要件を満たす政党<br>
-        <input type="radio" v-model="organizationKbn" :value="2" :disabled="isUseInput">政党の支部<br>
-        <input type="radio" v-model="organizationKbn" :value="3" :disabled="isUseInput">政治資金団体<br>
-        <input type="radio" v-model="organizationKbn" :value="4" :disabled="isUseInput">政治資金規正法第18条の2第1項の規定による政治団体<br>
-        <input type="radio" v-model="organizationKbn" :value="5" :disabled="isUseInput">その他の政治団体<br>
-        <input type="radio" v-model="organizationKbn" :value="6" :disabled="isUseInput">その他の政治団体の支部<br>
+        <input type="radio" v-model="organizationKbn" :value="1" :disabled="isUseInput"><span
+            :class="inputSelectDisplayBold(organizationKbn === '1')">政党要件を満たす政党</span><br>
+        <input type="radio" v-model="organizationKbn" :value="2" :disabled="isUseInput"><span
+            :class="inputSelectDisplayBold(organizationKbn === '2')">政党の支部</span><br>
+        <input type="radio" v-model="organizationKbn" :value="3" :disabled="isUseInput"><span
+            :class="inputSelectDisplayBold(organizationKbn === '3')">政治資金団体</span><br>
+        <input type="radio" v-model="organizationKbn" :value="4" :disabled="isUseInput"><span
+            :class="inputSelectDisplayBold(organizationKbn === '4')">政治資金規正法第18条の2第1項の規定による政治団体</span><br>
+        <input type="radio" v-model="organizationKbn" :value="5" :disabled="isUseInput"><span
+            :class="inputSelectDisplayBold(organizationKbn === '5')">その他の政治団体</span><br>
+        <input type="radio" v-model="organizationKbn" :value="6" :disabled="isUseInput"><span
+            :class="inputSelectDisplayBold(organizationKbn === '6')">その他の政治団体の支部</span><br>
         <input type="checkbox" v-model="isKokkaiGiinHonninKouhosha"
-            :disabled="isUseInput">政治資金規正法第19条の7第1項第1号に係る国会議員関係政治団体<br>
-        <input type="checkbox" v-model="isKokkaiGiinSuisen" :disabled="isUseInput">政治資金規正法第19条の7第1項第2号に係る国会議員関係政治団体<br>
+            :disabled="isUseInput"><span
+            :class="inputSelectDisplayBold(isKokkaiGiinHonninKouhosha)">政治資金規正法第19条の7第1項第1号に係る国会議員関係政治団体</span><br>
+        <input type="checkbox" v-model="isKokkaiGiinSuisen" :disabled="isUseInput"><span
+        :class="inputSelectDisplayBold(isKokkaiGiinSuisen)">政治資金規正法第19条の7第1項第2号に係る国会議員関係政治団体</span><br>
     </div>
     <div class="clear-both"><br></div>
 
@@ -928,9 +937,11 @@ function onSave() {
         主たる活動地域
     </div>
     <div class="right-area">
-        <input type="radio" :disabled="isUseInput" v-model="activityArea" :value="1">2以上の地域で活動する団体<br>
-        <input type="radio" :disabled="isUseInput" v-model="activityArea" :value="2">同一の都道府県(提出選挙管理委員会管区内)
-    </div>
+        <input type="radio" :disabled="isUseInput" v-model="activityArea" :value="1"><span
+        :class="inputSelectDisplayBold(activityArea === '1')">2以上の地域で活動する団体</span><br>
+        <input type="radio" :disabled="isUseInput" v-model="activityArea" :value="2"><span
+        :class="inputSelectDisplayBold(activityArea === '2')">同一の都道府県(提出選挙管理委員会管区内)
+    </span></div>
     <div class="clear-both"><br></div>
 
     <div class="left-area">
@@ -938,7 +949,7 @@ function onSave() {
     </div>
     <div class="right-area">
         <input type="number" v-model="acceptOrgnizationCode" disabled="true" class="code-input">
-        <input type="text" v-model="acceptOrgnizationName" disabled="true" class="left-space text-input">
+        <input type="text" v-model="acceptOrgnizationName" disabled="true" class="left-space name-input">
     </div>
     <div class="clear-both"><br></div>
 
@@ -946,8 +957,10 @@ function onSave() {
         国会議員関係団体
     </div>
     <div class="right-area">
-        <input type="radio" :disabled="isUseInput" :value="1" v-model="selectedCountryParliament">衆議院<input type="radio"
-            disabled="true" :value="2" v-model="selectedCountryParliament" class="left-space">参議院<br>
+        <input type="radio" :disabled="isUseInput" :value="1" v-model="selectedCountryParliament"><span
+        :class="inputSelectDisplayBold(selectedCountryParliament === '1')">衆議院</span><input type="radio"
+            disabled="true" :value="2" v-model="selectedCountryParliament" class="left-space"><span
+            :class="inputSelectDisplayBold(selectedCountryParliament === '2')">参議院</span><br>
         <input type="text" v-model="kokkaGinNameKana" placeholder="国会議員姓名ふりがな" :disabled="isUseInput"><br>
         <input type="text" v-model="kokkaGinName" placeholder="国会議員姓名" :disabled="isUseInput">
     </div>
@@ -957,10 +970,13 @@ function onSave() {
         資金管理団体
     </div>
     <div class="right-area">
-        <input type="checkbox" v-model="isFundsManageOrg" :disabled="isUseInput">資金管理団体である<br>
-        <input type="radio" v-model="selectParliamentOrCandidate" :disabled="isUseInput" :value="1">現職
+        <input type="checkbox" v-model="isFundsManageOrg" :disabled="isUseInput"><span
+        :class="inputSelectDisplayBold(isFundsManageOrg)">資金管理団体である</span><br>
+        <input type="radio" v-model="selectParliamentOrCandidate" :disabled="isUseInput" :value="1"><span
+        :class="inputSelectDisplayBold(selectParliamentOrCandidate === '1')">現職</span>
         <input type="radio" v-model="selectParliamentOrCandidate" :disabled="isUseInput" :value="2"
-            class="left-space">候補者<br>
+            class="left-space"><span
+            :class="inputSelectDisplayBold(selectParliamentOrCandidate === '2')">候補者</span><br>
 
         <div class="left-area-in">
             公職の種類
@@ -1010,7 +1026,7 @@ function onSave() {
     </div>
     <div class="right-area">
         第１条：本会は、{{ politicalOrgnozationName }}と称し、主たる事務所を下記住所ににおく。<br>
-        {{ signatureAddress }} 
+        {{ signatureAddress }}
     </div>
     <div class="clear-both"><br></div>
 
@@ -1145,10 +1161,10 @@ function onSave() {
     <div v-if="isVisibleSearchPersonManager" class="overBackground"></div>
     <div v-if="isVisibleSearchPersonManager">
         <div class="overComponent">
-            <SerachPersonManager :isEditable="false" :call-index="callManagerIndex"
+            <SearchPersonManager :isEditable="false" :call-index="callManagerIndex"
                 @send-cancel-search-person-manager="recieveCancelSearchPersonManager"
                 @send-person-manager-interface="recieveSearchPersonManagerInterface">
-            </SerachPersonManager>
+            </SearchPersonManager>
         </div>
     </div>
 
@@ -1156,10 +1172,10 @@ function onSave() {
     <div v-if="isVisibleSearchPersonWorker" class="overBackground"></div>
     <div v-if="isVisibleSearchPersonWorker">
         <div class="overComponent">
-            <SerachPersonWorker :isEditable="false" :call-index="callWorkerIndex"
+            <SearchPersonWorker :isEditable="false" :call-index="callWorkerIndex"
                 @send-cancel-search-person-worker="recieveCancelSearchPersonWorker"
                 @send-person-worker-interface="recieveSearchPersonWorkerInterface">
-            </SerachPersonWorker>
+            </SearchPersonWorker>
         </div>
     </div>
 
@@ -1184,9 +1200,4 @@ function onSave() {
 </template>
 
 <style scoped>
-textarea {
-    font-size: 1.25em;
-    width: 75%;
-    font-weight: bold;
-}
 </style>

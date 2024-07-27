@@ -1,5 +1,5 @@
 ﻿<script setup lang="ts">
-import { Ref, ref } from "vue";
+import { Ref, ref, toRaw } from "vue";
 import createCheckTransactionDto from "../../../dto/common_check/createCheckTransactionDto";
 import SessionStorageCommonCheck from "../../../dto/common_check/sessionStorageCommonCheck";
 import PoliticalOrganizationInterface from "../../../dto/political_organization/politicalOrganizationDto";
@@ -8,7 +8,7 @@ import SearchPoliticalOrganizationCapsuleDto from "../../../dto/political_organi
 import mockGetPoliticalOrganization from "./mock/mockGetPoliticalOrganization";
 
 //props,emit
-const props = defineProps<{ isEditable: boolean }>();
+const props = defineProps<{ isEditable: boolean ,searchDto:SearchPoliticalOrganizationCapsuleDto}>();
 const emits = defineEmits(["sendCancelSearchPoliticalOrganization", "sendPoliticalOrganizationInterface"]);
 
 /** 表示行 */
@@ -81,7 +81,7 @@ async function onSearch() {
 
     //実接続
     //セッションストレージ取得
-    const searchPoliticalOrganizationCapsuleDto: SearchPoliticalOrganizationCapsuleDto = new SearchPoliticalOrganizationCapsuleDto();
+    const searchPoliticalOrganizationCapsuleDto: SearchPoliticalOrganizationCapsuleDto = structuredClone(toRaw(props.searchDto));
     searchPoliticalOrganizationCapsuleDto.checkSecurityDto = SessionStorageCommonCheck.getSecurity();
     searchPoliticalOrganizationCapsuleDto.checkPrivilegeDto = SessionStorageCommonCheck.getPrivilege();
     //編集フラグがある場合は、そのフラグ(の反転した値)を照会フラグに設定する
@@ -96,7 +96,7 @@ async function onSearch() {
 </script>
 <template>
     <h3>政治団体検索</h3>
-    <div class="online">
+    <div class="one-line">
         検索条件の指定
     </div>
     <div class="left-area-component">
@@ -106,7 +106,7 @@ async function onSearch() {
         <input type="text" v-model="searchWords" style="margin-right:2%;"><button @click="onSearch">検索</button>
     </div>
     <br>
-    <div class="online">
+    <div class="one-line">
         検索結果の表示
 
         <table style="width:45%;">

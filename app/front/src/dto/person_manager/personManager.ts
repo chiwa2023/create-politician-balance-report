@@ -17,6 +17,10 @@ export default interface PersonManagerInterface extends PersonWorkerInterface {
     lastName: string;
     /** 姓名の名かな */
     lastNameKana: string;
+    /** ミドルネーム */
+    middleName: string;
+    /** ミドルネームふりがな */
+    middleNameKana: string;
 
     /** 電話番号市外局番 */
     tel1: string;
@@ -58,6 +62,10 @@ export default class PersonManagerDto implements PersonManagerInterface {
     lastName: string;
     /** 姓名の名かな */
     lastNameKana: string;
+    /** ミドルネーム */
+    middleName: string;
+    /** ミドルネームふりがな */
+    middleNameKana: string;
 
     /** 電話番号市外局番 */
     tel1: string;
@@ -93,6 +101,8 @@ export default class PersonManagerDto implements PersonManagerInterface {
             this.firstNameKana = impl.firstNameKana;
             this.lastName = impl.lastName;
             this.lastNameKana = impl.lastNameKana;
+            this.middleName = impl.lastName;
+            this.middleNameKana = impl.lastNameKana;
             this.tel1 = impl.tel1;
             this.tel2 = impl.tel2;
             this.tel3 = impl.tel3;
@@ -111,6 +121,8 @@ export default class PersonManagerDto implements PersonManagerInterface {
             this.firstNameKana = intString;
             this.lastName = intString;
             this.lastNameKana = intString;
+            this.middleName = intString;
+            this.middleNameKana = intString;
             this.tel1 = intString;
             this.tel2 = intString;
             this.tel3 = intString;
@@ -123,3 +135,4 @@ export default class PersonManagerDto implements PersonManagerInterface {
         }
     }
 }
+

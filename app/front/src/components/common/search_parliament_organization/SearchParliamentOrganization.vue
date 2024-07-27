@@ -96,7 +96,7 @@ async function onSearch() {
 </script>
 <template>
     <h3>議会検索</h3>
-    <div class="online">
+    <div class="one-line">
         検索条件の指定
     </div>
     <div class="left-area-component">
@@ -106,7 +106,7 @@ async function onSearch() {
         <input type="text" v-model="searchWords" style="margin-right:2%;"><button @click="onSearch">検索</button>
     </div>
     <br>
-    <div class="online">
+    <div class="one-line">
         検索結果の表示
 
         <table style="width:45%;">

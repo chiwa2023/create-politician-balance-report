@@ -29,12 +29,21 @@ function createDto(index: number): PersonWorkerInterface {
     dto.firstNameKana = "作業者姓かな" + index;
     dto.lastName = "作業者姓名" + index;
     dto.lastNameKana = "作業者名かな" + index;
+
+    if(index%2 === 1){
+        dto.roleKbn = 1;
+    }else{
+        dto.roleKbn = 22;
+    }
+    
     dto.tel1 = "00" + index;
     dto.tel2 = "001" + index;
     dto.tel3 = "002" + index;
     dto.personWorkerId = index + 30;
     dto.personWorkerCode = index;
     dto.personWorkerName = dto.firstName + "　" + dto.lastName;
+
+    dto.mailAddress = index+"_abc@hohoge.net";
 
     return dto;
 }

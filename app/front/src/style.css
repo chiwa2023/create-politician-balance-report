@@ -40,15 +40,29 @@ div.clear-both {
 .left-space {
   margin-left: 2%;
 }
+.left-space-narrow {
+  margin-left: 1%;
+}
 
 input.code-input {
   width: 10%;
   text-align: right;
 }
 input.name-input {
-  width: 20%;
+  width: 30%;
   text-align: left;
 }
+
+input.one-char-input {
+  width: 3%;
+  text-align: right;
+}
+
+span.input-selected-true-display{
+  font-weight: 150%;
+  font-weight: bold;
+}
+
 
 div.footer {
   float: left;
@@ -68,15 +82,20 @@ button.footer-button {
   
 input {
   font-size: 1.25em;
+  font-weight: bold;
 }
 select {
   font-size: 1.15em;
+  font-weight: bold;
 }
 option {
   font-size: 1.1em;
+  font-weight: bold;
 }
 textarea {
-  font-size: 1.25em;
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 75%;
 }
 
 .overComponent {
@@ -85,8 +104,8 @@ textarea {
   left: 50%;
   transform: translate(-50%, -25%);
   z-index: 10;
-  width: 60%;
-  height: 75%;
+  width: 85%;
+  height: 80%;
   padding: 2%;
   background-color: white;
   overflow: auto;

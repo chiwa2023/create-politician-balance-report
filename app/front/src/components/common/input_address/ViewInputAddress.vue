@@ -55,8 +55,4 @@ const inputAddressDto: WritableComputedRef<InputAddressDto> = computed(() => {re
 
 </template>
 <style scoped>
-textarea {
-    font-size: 1.25em;
-    width: 75%;
-}
 </style>
