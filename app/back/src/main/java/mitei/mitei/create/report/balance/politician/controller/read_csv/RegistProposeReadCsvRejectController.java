@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.transaction.Transactional;
 import mitei.mitei.create.report.balance.politician.controller.AbstractTemplateCheckController;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
 import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
+import mitei.mitei.create.report.balance.politician.logic.common.SetTableDataHistoryLogic;
 import mitei.mitei.create.report.balance.politician.service.read_csv.RegistProposeReadCsvRejectService;
 
 /**
@@ -37,6 +39,10 @@ public class RegistProposeReadCsvRejectController extends AbstractTemplateCheckC
     /** csv読み取り仕様申請却下Service */
     @Autowired
     private RegistProposeReadCsvRejectService registProposeReadCsvRejectService;
+
+    /** テーブル履歴設定Logic */
+    @Autowired
+    private SetTableDataHistoryLogic setTableDataHistoryLogic;
 
     /**
      * 登録作業を行う
@@ -86,11 +92,9 @@ public class RegistProposeReadCsvRejectController extends AbstractTemplateCheckC
 
             ProposeCsvReadTemplateEntity proposeCsvReadTemplateEntity = registProposeCsvReadRemplateCapsuleDto
                     .getProposeCsvReadTemplateEntity();
-            proposeCsvReadTemplateEntity.setLoginUserId(privilegeDto.getLoginUserId());
-            proposeCsvReadTemplateEntity.setLoginUserCode(privilegeDto.getLoginUserCode());
-            proposeCsvReadTemplateEntity.setLoginUserName(privilegeDto.getLoginUserName());
+            setTableDataHistoryLogic.practice(privilegeDto, proposeCsvReadTemplateEntity, DataHistoryStatusConstants.INSERT);
 
-            //登録をお行う
+            //登録を行う
             long newId = registProposeReadCsvRejectService.practice(proposeCsvReadTemplateEntity);
 
             final long initId = 0L;

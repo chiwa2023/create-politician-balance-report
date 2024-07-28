@@ -8,7 +8,10 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
+import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.entity.TaskPlan2025Entity;
+import mitei.mitei.create.report.balance.politician.logic.common.SetTableDataHistoryLogic;
 
 /**
  * TaskPlan2025Repository単体テスト
@@ -22,6 +25,10 @@ class TaskPlan2025RepositoryTest {
     @Autowired
     private TaskPlan2025Repository taskPlan2025Repository;
 
+    /** テーブル履歴セット */
+    @Autowired
+    private SetTableDataHistoryLogic setTableDataHistoryLogic;
+    
     @Test
     void testSave() {
 
@@ -43,9 +50,13 @@ class TaskPlan2025RepositoryTest {
         plan2025Entity.setIsAccountOfficerFor(true);
         plan2025Entity.setIsAccountStaffFor(true);
 
-        plan2025Entity.setLoginUserId(991L);
-        plan2025Entity.setLoginUserCode(845);
-        plan2025Entity.setLoginUserName("会計責任者　正夫");
+        CheckPrivilegeDto checkPrivilegeDto = new CheckPrivilegeDto();
+        checkPrivilegeDto.setLoginUserId(991L);
+        checkPrivilegeDto.setLoginUserCode(845);
+        checkPrivilegeDto.setLoginUserName("会計責任者　正夫");
+        
+        setTableDataHistoryLogic.practice(checkPrivilegeDto, plan2025Entity, DataHistoryStatusConstants.INSERT);
+        
 
         TaskPlan2025Entity recorded = taskPlan2025Repository.save(plan2025Entity);
 

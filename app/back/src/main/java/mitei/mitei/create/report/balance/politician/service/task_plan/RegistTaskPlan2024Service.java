@@ -44,7 +44,7 @@ public class RegistTaskPlan2024Service {
         for(TaskPlanInterface entity : listTaskPlan) {
             entity.setTaskPlanId(0L);
             entity.setTaskPlanCode(code);
-            entity.setUpdateTime(now);
+            entity.setInsertTimestamp(now);
             code++;
         }
  

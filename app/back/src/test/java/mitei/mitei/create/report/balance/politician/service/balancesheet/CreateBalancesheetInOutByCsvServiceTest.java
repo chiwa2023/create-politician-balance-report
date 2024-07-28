@@ -211,10 +211,10 @@ class CreateBalancesheetInOutByCsvServiceTest {
         // assertThat(incomeEntity1.getStoragedDocumentIdList().length()).isEqualTo(0);
 
         // 'ログインユーザId',
-        assertThat(incomeEntity1.getLoginUserId()).isEqualTo(checkPrivilegeDto.getLoginUserId());
+        assertThat(incomeEntity1.getInsertUserId()).isEqualTo(checkPrivilegeDto.getLoginUserId());
 
         // 'ログインユーザ同一識別コード',
-        assertThat(incomeEntity1.getLoginUserCode()).isEqualTo(checkPrivilegeDto.getLoginUserCode());
+        assertThat(incomeEntity1.getInsertUserId()).isEqualTo(checkPrivilegeDto.getLoginUserCode());
 
         // '更新時間'::登録直前にセット,
         // assertThat(incomeEntity1.getUpdtateTime()).isEqualTo();
@@ -346,10 +346,10 @@ class CreateBalancesheetInOutByCsvServiceTest {
         //assertThat(outcomeEntity1.getStoragedDocumentIdList()).isEqualTo(outcomeEntity1);
 
         // 'ログインユーザId'::設定値,
-        assertThat(outcomeEntity1.getLoginUserId()).isEqualTo(checkPrivilegeDto.getLoginUserId());
+        assertThat(outcomeEntity1.getInsertUserId()).isEqualTo(checkPrivilegeDto.getLoginUserId());
 
         // 'ログインユーザ同一識別コード'::設定値,
-        assertThat(outcomeEntity1.getLoginUserCode()).isEqualTo(checkPrivilegeDto.getLoginUserCode());
+        assertThat(outcomeEntity1.getInsertUserId()).isEqualTo(checkPrivilegeDto.getLoginUserCode());
 
         // '更新時間'テーブル直前に投入,
         //assertThat(outcomeEntity1.getUpdateTime()).isEqualTo(outcomeEntity1);

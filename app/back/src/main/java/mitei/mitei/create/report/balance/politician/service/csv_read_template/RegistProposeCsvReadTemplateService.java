@@ -1,7 +1,5 @@
 package mitei.mitei.create.report.balance.politician.service.csv_read_template;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
@@ -11,8 +9,10 @@ import org.springframework.stereotype.Service;
 
 import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
+import mitei.mitei.create.report.balance.politician.logic.common.SetTableDataHistoryLogic;
 import mitei.mitei.create.report.balance.politician.logic.read_csv.CheckValidateCsvPointListLogic;
 import mitei.mitei.create.report.balance.politician.logic.trunsaction.CheckTrunsactionProposeCsvReadLogic;
 import mitei.mitei.create.report.balance.politician.repository.ProposeCsvReadTemplateRepository;
@@ -34,8 +34,11 @@ public class RegistProposeCsvReadTemplateService {
     /** 排他制御確認Logic */
     @Autowired
     private CheckTrunsactionProposeCsvReadLogic checkTrunsactionProposeCsvReadLogic;
-    
-    
+
+    /** テーブル履歴設定Logic */
+    @Autowired
+    private SetTableDataHistoryLogic setTableDataHistoryLogic;
+
     /**
      * csv読み取りテンプレート登録提案を行う
      *
@@ -43,20 +46,20 @@ public class RegistProposeCsvReadTemplateService {
      * @return 登録結果
      */
     public TemplateFrameworkResultDto practice(final ProposeCsvReadTemplateEntity proposeCsvReadTemplateEntity,
-            final CheckPrivilegeDto checkPrivilegeDto)throws PessimisticLockingFailureException {
+            final CheckPrivilegeDto checkPrivilegeDto) throws PessimisticLockingFailureException { // NOPMD
 
-        //指定リストの妥当性のチェック
+        // 指定リストの妥当性のチェック
         TemplateFrameworkResultDto resultDto = checkValidateCsvPointListLogic
                 .practice(proposeCsvReadTemplateEntity.getArrayText().split(","));
         if (!resultDto.getIsOk()) {
             return resultDto;
         }
 
-        //排他制御
-        if(checkTrunsactionProposeCsvReadLogic.practice(proposeCsvReadTemplateEntity.getEditId())) {
+        // 排他制御
+        if (checkTrunsactionProposeCsvReadLogic.practice(proposeCsvReadTemplateEntity.getEditId())) {
             throw new PessimisticLockingFailureException("ほかのユーザが同じデータの編集申請をしています");
         }
-        
+
         // 全文検索対象は名称
         proposeCsvReadTemplateEntity
                 .setTableAllSearchText(proposeCsvReadTemplateEntity.getProposeCsvReadTemplateName());
@@ -77,8 +80,8 @@ public class RegistProposeCsvReadTemplateService {
 
         // ログインユーザ設定と更新時間
         BeanUtils.copyProperties(checkPrivilegeDto, proposeCsvReadTemplateEntity);
-        Timestamp timestampNow = Timestamp.valueOf(LocalDateTime.now());
-        proposeCsvReadTemplateEntity.setUpdateTime(timestampNow);
+        setTableDataHistoryLogic.practice(checkPrivilegeDto, proposeCsvReadTemplateEntity,
+                DataHistoryStatusConstants.INSERT);
 
         ProposeCsvReadTemplateEntity result = proposeCsvReadTemplateRepository.save(proposeCsvReadTemplateEntity);
 

@@ -1,1 +1,1 @@
-DELETE FROM `balancesheet_income_2025`;
+TRUNCATE TABLE `balancesheet_income_2025`;

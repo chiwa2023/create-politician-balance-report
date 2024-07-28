@@ -39,12 +39,12 @@ class CreateTaskByReportKbnTaskLogicTest {
         BalancesheetIncome2025Entity income1 = new BalancesheetIncome2025Entity();
         income1.setReportKbn(ReportKbnConstants.PLAN_TASK);// タスク計上
         income1.setPoliticalOrganizationId(3355L);
-        income1.setLoginUserId(7799L);
+        income1.setInsertUserId(7799L);
 
         BalancesheetIncome2025Entity income2 = new BalancesheetIncome2025Entity();
         income2.setReportKbn(ReportKbnConstants.ABPLITION);// タスク計上しない
         income2.setPoliticalOrganizationId(13355L);
-        income2.setLoginUserId(17799L);
+        income2.setInsertUserId(17799L);
 
         listIncome.add(income1);
         listIncome.add(income2);
@@ -54,12 +54,12 @@ class CreateTaskByReportKbnTaskLogicTest {
         BalancesheetOutcome2025Entity outcome1 = new BalancesheetOutcome2025Entity();
         outcome1.setReportKbn(ReportKbnConstants.PLAN_TASK);// タスク計上
         outcome1.setPoliticalOrganizationId(2244L);
-        outcome1.setLoginUserId(6688L);
+        outcome1.setInsertUserId(6688L);
 
         BalancesheetOutcome2025Entity outcome2 = new BalancesheetOutcome2025Entity();
         outcome2.setReportKbn(ReportKbnConstants.LIVING_COST);// タスク計上しない
         outcome2.setPoliticalOrganizationId(12244L);
-        outcome2.setLoginUserId(16688L);
+        outcome2.setInsertUserId(16688L);
 
         listOutcome.add(outcome1);
         listOutcome.add(outcome2);
@@ -81,7 +81,7 @@ class CreateTaskByReportKbnTaskLogicTest {
         assertThat(task1.getPoliticalOrganizationId()).isEqualTo(income1.getPoliticalOrganizationId());
 
         // 操作ユーザがコピーされています
-        assertThat(task1.getLoginUserId()).isEqualTo(income1.getLoginUserId());
+        assertThat(task1.getInsertUserId()).isEqualTo(income1.getInsertUserId());
 
         // 代表者だけのタスクです
         assertThat(task1.getIsDelegateFor()).isFalse();
@@ -97,7 +97,7 @@ class CreateTaskByReportKbnTaskLogicTest {
         assertThat(task2.getPoliticalOrganizationId()).isEqualTo(outcome1.getPoliticalOrganizationId());
 
         // 操作ユーザがコピーされています
-        assertThat(task2.getLoginUserId()).isEqualTo(outcome1.getLoginUserId());
+        assertThat(task2.getInsertUserId()).isEqualTo(outcome1.getInsertUserId());
 
         // 代表者だけのタスクです
         assertThat(task2.getIsDelegateFor()).isFalse();
@@ -126,12 +126,12 @@ class CreateTaskByReportKbnTaskLogicTest {
         BalancesheetIncome2025Entity income1 = new BalancesheetIncome2025Entity();
         income1.setReportKbn(ReportKbnConstants.LIVING_COST);// タスク計上しない
         income1.setPoliticalOrganizationId(3355L);
-        income1.setLoginUserId(7799L);
+        income1.setInsertUserId(7799L);
 
         BalancesheetIncome2025Entity income2 = new BalancesheetIncome2025Entity();
         income2.setReportKbn(ReportKbnConstants.ABPLITION);// タスク計上しない
         income2.setPoliticalOrganizationId(13355L);
-        income2.setLoginUserId(17799L);
+        income2.setInsertUserId(17799L);
 
         listIncome.add(income1);
         listIncome.add(income2);
@@ -141,12 +141,12 @@ class CreateTaskByReportKbnTaskLogicTest {
         BalancesheetOutcome2025Entity outcome1 = new BalancesheetOutcome2025Entity();
         outcome1.setReportKbn(ReportKbnConstants.LIVING_COST);// タスク計上しない
         outcome1.setPoliticalOrganizationId(2244L);
-        outcome1.setLoginUserId(6688L);
+        outcome1.setInsertUserId(6688L);
 
         BalancesheetOutcome2025Entity outcome2 = new BalancesheetOutcome2025Entity();
         outcome2.setReportKbn(ReportKbnConstants.LIVING_COST);// タスク計上しない
         outcome2.setPoliticalOrganizationId(12244L);
-        outcome2.setLoginUserId(16688L);
+        outcome2.setInsertUserId(16688L);
 
         listOutcome.add(outcome1);
         listOutcome.add(outcome2);

@@ -33,7 +33,7 @@ class ConvertAuditToTaskLogicTest {
         AuditOpinionIncome2025Entity entityIncome = new AuditOpinionIncome2025Entity();
 
         entityIncome.setPoliticalOrganizationId(13579L);
-        entityIncome.setLoginUserId(999888L);
+        entityIncome.setInsertUserId(999888L);
         
         list.add(entityIncome);
         
@@ -50,7 +50,7 @@ class ConvertAuditToTaskLogicTest {
         assertThat(entity.getPoliticalOrganizationId()).isEqualTo(entityIncome.getPoliticalOrganizationId());
 
         //操作ユーザがコピーされています
-        assertThat(entity.getLoginUserId()).isEqualTo(entityIncome.getLoginUserId());
+        assertThat(entity.getInsertUserId()).isEqualTo(entityIncome.getInsertUserId());
         
         //代表者だけのタスクです
         assertThat(entity.getIsDelegateFor()).isTrue();
@@ -77,7 +77,7 @@ class ConvertAuditToTaskLogicTest {
         AuditOpinionOutcome2025Entity entityOutcome = new AuditOpinionOutcome2025Entity();
 
         entityOutcome.setPoliticalOrganizationId(13579L);
-        entityOutcome.setLoginUserId(999888L);
+        entityOutcome.setInsertUserId(999888L);
         
         list.add(entityOutcome);
         
@@ -94,7 +94,7 @@ class ConvertAuditToTaskLogicTest {
         assertThat(entity.getPoliticalOrganizationId()).isEqualTo(entityOutcome.getPoliticalOrganizationId());
 
         //操作ユーザがコピーされています
-        assertThat(entity.getLoginUserId()).isEqualTo(entityOutcome.getLoginUserId());
+        assertThat(entity.getInsertUserId()).isEqualTo(entityOutcome.getInsertUserId());
         
         //代表者だけのタスクです
         assertThat(entity.getIsDelegateFor()).isTrue();

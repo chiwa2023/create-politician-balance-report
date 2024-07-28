@@ -78,7 +78,7 @@ class ProposeCsvReadTemplateRepositoryTest {
         assertThat(entity2.getFinancialOrgName()).isEqualTo("木の葉のポイントざくざくPay");
         assertThat(entity2.getArrayNumber()).isEqualTo(3);
         assertThat(entity2.getArrayText()).isEqualTo("15,1,2");
-        assertThat(entity2.getUpdateTime()).isEqualTo(Timestamp.valueOf("2012-12-15 00:00:00"));
+        assertThat(entity2.getInsertTimestamp()).isEqualTo(Timestamp.valueOf("2012-12-15 00:00:00"));
 
         ProposeCsvReadTemplateEntity entity1 = listCondition.get(1);
         assertThat(entity1.getProposeCsvReadTemplateId()).isEqualTo(2);
@@ -91,7 +91,7 @@ class ProposeCsvReadTemplateRepositoryTest {
         assertThat(entity1.getFinancialOrgName()).isEqualTo("きつねが木の葉で払うPay");
         assertThat(entity1.getArrayNumber()).isEqualTo(7);
         assertThat(entity1.getArrayText()).isEqualTo("15,1,2,16,0,0,0");
-        assertThat(entity1.getUpdateTime()).isEqualTo(Timestamp.valueOf("2012-12-13 00:00:00"));
+        assertThat(entity1.getInsertTimestamp()).isEqualTo(Timestamp.valueOf("2012-12-13 00:00:00"));
         
         //名称で存在しない検索語で検索した場合は0件
         List<ProposeCsvReadTemplateEntity> listZero = proposeCsvReadTemplateRepository.findFullText("あかさたな");

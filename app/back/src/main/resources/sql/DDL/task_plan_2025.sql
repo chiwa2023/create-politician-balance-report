@@ -11,9 +11,13 @@ CREATE TABLE `task_plan_2025` (
   `is_delegate_for` tinyint(1) DEFAULT NULL COMMENT '代表者用タスクフラグ',
   `is_account_officer_for` tinyint(1) DEFAULT NULL COMMENT '会計責任者用タスクフラグ',
   `is_account_staff_for` tinyint(1) DEFAULT NULL COMMENT '事務担当者用タスクフラグ',
-  `login_user_id` bigint DEFAULT NULL COMMENT 'ログインユーザId',
-  `login_user_code` int DEFAULT NULL COMMENT 'ログインユーザ同一識別コード',
-  `login_user_name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT 'ログインユーザ名',
-  `update_time` timestamp NULL DEFAULT NULL COMMENT '更新時間',
+  `insert_user_id` bigint DEFAULT NULL COMMENT '挿入ユーザId',
+  `insert_user_code` int DEFAULT NULL COMMENT '挿入ユーザ同一識別コード',
+  `insert_user_name` varchar(300) DEFAULT NULL COMMENT '挿入ユーザ姓名',
+  `insert_timestamp` timestamp NULL DEFAULT NULL COMMENT '挿入タイムスタンプ',
+  `update_user_id` bigint DEFAULT NULL COMMENT '更新ユーザId',
+  `update_user_code` int DEFAULT NULL COMMENT '更新ユーザ同一識別コード',
+  `update_user_name` varchar(300) DEFAULT NULL COMMENT '更新ユーザ姓名',
+  `update_timestamp` timestamp NULL DEFAULT NULL COMMENT '更新タイムスタンプ',
   PRIMARY KEY (`task_plan_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;

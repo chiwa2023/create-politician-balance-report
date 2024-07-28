@@ -1,10 +1,9 @@
 package mitei.mitei.create.report.balance.politician.controller.read_csv;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
@@ -12,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
@@ -45,7 +45,7 @@ class RegistProposeReadCsvRejectControllerTest {
     private ProposeCsvReadTemplateRepository proposeCsvReadTemplateRepository;
 
     @Test
-    void testPractice() throws Exception{
+    void testPractice() throws Exception {
         RegistProposeCsvReadRemplateCapsuleDto registProposeCsvReadRemplateCapsuleDto = new RegistProposeCsvReadRemplateCapsuleDto();
         CreateCommonCheckDtoTestOnlyUtil.practice(registProposeCsvReadRemplateCapsuleDto);
 
@@ -53,15 +53,19 @@ class RegistProposeReadCsvRejectControllerTest {
         registProposeCsvReadRemplateCapsuleDto.setProposeCsvReadTemplateEntity(optional.get());
 
         ObjectMapper objectMapper = GetObjectMapperWithTimeModuleUtil.practice();
-        String responseContent = mockMvc // NOPMD LawOfDemeter
+        // String responseContent = mockMvc // NOPMD LawOfDemeter
+        // .perform(post("/propose-csv-read-reject/regist")
+        // .content(objectMapper.writeValueAsString(registProposeCsvReadRemplateCapsuleDto))
+        // // リクエストボディを指定
+        // .contentType(MediaType.APPLICATION_JSON_VALUE)) // Content Typeを指定
+        // .andExpect(status().isOk()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
+        // System.out.println(responseContent);
+
+        assertThat(mockMvc // NOPMD LawOfDemeter
                 .perform(post("/propose-csv-read-reject/regist")
                         .content(objectMapper.writeValueAsString(registProposeCsvReadRemplateCapsuleDto)) // リクエストボディを指定
                         .contentType(MediaType.APPLICATION_JSON_VALUE)) // Content Typeを指定
-                .andExpect(status().isOk()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
-
-        System.out.println(responseContent);
-
-        fail("Not yet implemented");
+                .andExpect(status().isOk()).andReturn().getResponse().getStatus()).isEqualTo(HttpStatus.OK.value());
     }
 
 }

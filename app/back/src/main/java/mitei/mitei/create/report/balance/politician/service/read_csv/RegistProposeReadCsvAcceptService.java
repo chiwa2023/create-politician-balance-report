@@ -1,7 +1,5 @@
 package mitei.mitei.create.report.balance.politician.service.read_csv;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -10,8 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
+import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
+import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
 import mitei.mitei.create.report.balance.politician.entity.CsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
+import mitei.mitei.create.report.balance.politician.logic.common.SetTableDataHistoryLogic;
 import mitei.mitei.create.report.balance.politician.repository.CsvReadTemplateRepository;
 import mitei.mitei.create.report.balance.politician.repository.ProposeCsvReadTemplateRepository;
 
@@ -29,18 +31,25 @@ public class RegistProposeReadCsvAcceptService {
     @Autowired
     private CsvReadTemplateRepository csvReadTemplateRepository;
 
+    /** テーブル履歴設定Logic */
+    @Autowired
+    private SetTableDataHistoryLogic setTableDataHistoryLogic;
+
     /**
      * 承認登録を行う
      *
-     * @param proposeCsvReadTemplateEntity 承認されたEntity
+     * @param registProposeCsvReadRemplateCapsuleDto 承認されたEntityを含むDto
      * @return データベース登録結果
      */
-    public long practice(final ProposeCsvReadTemplateEntity proposeCsvReadTemplateEntity) {
+    public long practice(final RegistProposeCsvReadRemplateCapsuleDto registProposeCsvReadRemplateCapsuleDto) {
 
+        
+        ProposeCsvReadTemplateEntity proposeCsvReadTemplateEntity = registProposeCsvReadRemplateCapsuleDto.getProposeCsvReadTemplateEntity();
+        
+        CheckPrivilegeDto checkPrivilegeDto = registProposeCsvReadRemplateCapsuleDto.getCheckPrivilegeDto();
+        
         /* 本番テーブルに情報をコピー */
         CsvReadTemplateEntity csvReadTemplateEntity = new CsvReadTemplateEntity();
-
-        Timestamp timestampNow = Timestamp.valueOf(LocalDateTime.now());
 
         final long initId = 0L;
         // 編集元Idが0の時は新規登録とする
@@ -64,7 +73,7 @@ public class RegistProposeReadCsvAcceptService {
                 // 履歴に変更
                 CsvReadTemplateEntity csvEntityEdit = optionalEdit.get();
                 csvEntityEdit.setSaishinKbn(SaishinKbnConstants.HISOTRY);
-                csvEntityEdit.setUpdateTime(timestampNow);
+                setTableDataHistoryLogic.practice(checkPrivilegeDto, csvReadTemplateEntity, DataHistoryStatusConstants.UPDATE);
                 csvReadTemplateRepository.saveAndFlush(csvEntityEdit);
 
                 // 編集時には同一識別コードを引き継ぐ
@@ -78,25 +87,24 @@ public class RegistProposeReadCsvAcceptService {
         csvReadTemplateEntity.setCsvReadTemplateName(proposeCsvReadTemplateEntity.getProposeCsvReadTemplateName());
 
         // 変更でも新規でも行追加
-        csvReadTemplateEntity.setUpdateTime(timestampNow);
+        setTableDataHistoryLogic.practice(checkPrivilegeDto, proposeCsvReadTemplateEntity, DataHistoryStatusConstants.INSERT);        
         csvReadTemplateRepository.saveAndFlush(csvReadTemplateEntity);
 
         /* 申請データは両方履歴にして申請中一覧に出ないようにする */
         // 古いデータを履歴に
         proposeCsvReadTemplateEntity.setSaishinKbn(SaishinKbnConstants.HISOTRY);
-        proposeCsvReadTemplateEntity.setUpdateTime(timestampNow);
+        setTableDataHistoryLogic.practice(checkPrivilegeDto, proposeCsvReadTemplateEntity, DataHistoryStatusConstants.UPDATE);        
         proposeCsvReadTemplateRepository.saveAndFlush(proposeCsvReadTemplateEntity);
 
         // 申請完了したデータも履歴で登録
         ProposeCsvReadTemplateEntity entityNew = new ProposeCsvReadTemplateEntity();
-        BeanUtils.copyProperties(proposeCsvReadTemplateEntity, entityNew);
         entityNew.setProposeCsvReadTemplateId(0L);
         entityNew.setSaishinKbn(SaishinKbnConstants.HISOTRY);
         entityNew.setJudgeReason("正常登録");
         entityNew.setInProsessing(false);
         entityNew.setIsAccepted(true);
+        setTableDataHistoryLogic.practice(checkPrivilegeDto, entityNew, DataHistoryStatusConstants.UPDATE);        
 
-        entityNew.setUpdateTime(timestampNow);
         ProposeCsvReadTemplateEntity entityResult = proposeCsvReadTemplateRepository.saveAndFlush(entityNew);
 
         long newId = 0L;

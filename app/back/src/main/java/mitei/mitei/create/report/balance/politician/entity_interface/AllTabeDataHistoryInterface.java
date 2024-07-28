@@ -1,4 +1,4 @@
-package mitei.mitei.create.report.balance.politician.entity;
+package mitei.mitei.create.report.balance.politician.entity_interface;
 
 import java.sql.Timestamp;
 
@@ -8,9 +8,9 @@ import java.sql.Timestamp;
 public interface AllTabeDataHistoryInterface {
     
     /** INSERT時ログインユーザIdを取得する */
-    long getInsertUserId();
+    Long getInsertUserId();
     /** INSERT時ログインユーザIdを設定する */
-    void setInsertUserId(long insertUserId);
+    void setInsertUserId(Long insertUserId);
     
     /** INSERT時ログインユーザCodeを取得する */
     Integer getInsertUserCode();
@@ -28,9 +28,9 @@ public interface AllTabeDataHistoryInterface {
     void setInsertTimestamp(Timestamp insertTimetamp);
     
     /** UPDATEt時ログインユーザIdを取得する */
-    long getUpdateUserId();
+    Long getUpdateUserId();
     /** UPDATEt時ログインユーザIdを設定する */
-    void setUpdateUserId(long updatetUserId);
+    void setUpdateUserId(Long updatetUserId);
     
     /** UPDATE時ログインユーザCodeを取得する */
     Integer getUpdateUserCode();

@@ -1,30 +1,44 @@
 package mitei.mitei.create.report.balance.politician.entity;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
-
-import java.sql.Timestamp;
-
+import mitei.mitei.create.report.balance.politician.entity_interface.AllTabeDataHistoryInterface;
 
 /**
  * political_organization接続用Entity
  */
 @Entity
 @Table(name = "political_organization")
-public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD DataClass
+public class PoliticalOrganizationEntity  implements Serializable,AllTabeDataHistoryInterface{ // NOPMD DataClass
 
     /** Serialize id */
     private static final long serialVersionUID = 1L;
 
+    /** 初期データ(String) */
+    private static final String INIT_STRING = "";
+
+    /** 初期データ(Integer) */
+    private static final Integer INIT_INTEGER = 0;
+    
+    /** 初期データ(Long) */
+    private static final Long INIT_LONG = 0L;
+
+    /** 初期データ(LocalcDate) */
+    private static final LocalDate INIT_LOCALDATE = LocalDate.of(1980,1,1);
+
+    /** 初期データ(Timestamp) */
+    private static final Timestamp INIT_TIMESTAMP  = Timestamp.valueOf(INIT_LOCALDATE.atTime(0, 0, 0));
+
     /** 政治団体Id */
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long politicalOrganizationId;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long politicalOrganizationId = INIT_LONG;
 
     /**
      * 政治団体Idを取得する
@@ -45,7 +59,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 政治団体同一識別コード */
-    private Integer politicalOrganizationCode;
+    private Integer politicalOrganizationCode = INIT_INTEGER;
 
     /**
      * 政治団体同一識別コードを取得する
@@ -66,7 +80,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 政治団体名称 */
-    private String politicalOrganizationName;
+    private String politicalOrganizationName = INIT_STRING;
 
     /**
      * 政治団体名称を取得する
@@ -87,7 +101,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 最新区分 */
-    private Integer saishinKbn;
+    private Integer saishinKbn = INIT_INTEGER;
 
     /**
      * 最新区分を取得する
@@ -108,7 +122,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 代表者Id */
-    private Long delegateId;
+    private Long delegateId = INIT_LONG;
 
     /**
      * 代表者Idを取得する
@@ -129,7 +143,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 代表者同一識別コード */
-    private Integer delegateCode;
+    private Integer delegateCode = INIT_INTEGER;
 
     /**
      * 代表者同一識別コードを取得する
@@ -149,29 +163,29 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
         this.delegateCode = delegateCode;
     }
 
-    /** 代表者名称 */
-    private String delegateName;
+    /** 代表者姓名 */
+    private String delegateName = INIT_STRING;
 
     /**
-     * 代表者名称を取得する
+     * 代表者姓名を取得する
      *
-     * @return 代表者名称
+     * @return 代表者姓名
      */
     public String getDelegateName() {
         return delegateName;
     }
 
     /**
-     * 代表者名称を設定する
+     * 代表者姓名を設定する
      *
-     * @param delegateName 代表者名称
+     * @param delegateName 代表者姓名
      */
     public void setDelegateName(final String delegateName) {
         this.delegateName = delegateName;
     }
 
     /** 会計責任者Id */
-    private Long accountOfficerId;
+    private Long accountOfficerId = INIT_LONG;
 
     /**
      * 会計責任者Idを取得する
@@ -192,7 +206,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 会計責任者同一識別コード */
-    private Integer accountOfficerCode;
+    private Integer accountOfficerCode = INIT_INTEGER;
 
     /**
      * 会計責任者同一識別コードを取得する
@@ -212,29 +226,29 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
         this.accountOfficerCode = accountOfficerCode;
     }
 
-    /** 会計責任者名称 */
-    private String accountOfficerName;
+    /** 会計責任者姓名 */
+    private String accountOfficerName = INIT_STRING;
 
     /**
-     * 会計責任者名称を取得する
+     * 会計責任者姓名を取得する
      *
-     * @return 会計責任者名称
+     * @return 会計責任者姓名
      */
     public String getAccountOfficerName() {
         return accountOfficerName;
     }
 
     /**
-     * 会計責任者名称を設定する
+     * 会計責任者姓名を設定する
      *
-     * @param accountOfficerName 会計責任者名称
+     * @param accountOfficerName 会計責任者姓名
      */
     public void setAccountOfficerName(final String accountOfficerName) {
         this.accountOfficerName = accountOfficerName;
     }
 
     /** 事務担当者1Id */
-    private Long accountStaff1Id;
+    private Long accountStaff1Id = INIT_LONG;
 
     /**
      * 事務担当者1Idを取得する
@@ -255,7 +269,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 事務担当者1同一識別コード */
-    private Integer accountStaff1Code;
+    private Integer accountStaff1Code = INIT_INTEGER;
 
     /**
      * 事務担当者1同一識別コードを取得する
@@ -276,7 +290,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 事務担当者1名称 */
-    private String accountStaff1Name;
+    private String accountStaff1Name = INIT_STRING;
 
     /**
      * 事務担当者1名称を取得する
@@ -297,7 +311,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 事務担当者2Id */
-    private Long accountStaff2Id;
+    private Long accountStaff2Id = INIT_LONG;
 
     /**
      * 事務担当者2Idを取得する
@@ -318,7 +332,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 事務担当者2同一識別コード */
-    private Integer accountStaff2Code;
+    private Integer accountStaff2Code = INIT_INTEGER;
 
     /**
      * 事務担当者2同一識別コードを取得する
@@ -339,7 +353,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 事務担当者2名称 */
-    private String accountStaff2Name;
+    private String accountStaff2Name = INIT_STRING;
 
     /**
      * 事務担当者2名称を取得する
@@ -360,7 +374,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 事務担当者3Id */
-    private Long accountStaff3Id;
+    private Long accountStaff3Id = INIT_LONG;
 
     /**
      * 事務担当者3Idを取得する
@@ -381,7 +395,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 事務担当者3同一識別コード */
-    private Integer accountStaff3Code;
+    private Integer accountStaff3Code = INIT_INTEGER;
 
     /**
      * 事務担当者3同一識別コードを取得する
@@ -402,7 +416,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** 事務担当者3名称 */
-    private String accountStaff3Name;
+    private String accountStaff3Name = INIT_STRING;
 
     /**
      * 事務担当者3名称を取得する
@@ -423,7 +437,7 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
     }
 
     /** テーブル全文検索カラム */
-    private String tableAllSearchText;
+    private String tableAllSearchText = INIT_STRING;
 
     /**
      * テーブル全文検索カラムを取得する
@@ -443,88 +457,188 @@ public class PoliticalOrganizationEntity  implements Serializable{ // NOPMD Data
         this.tableAllSearchText = tableAllSearchText;
     }
 
-    /** ログインユーザId */
-    private Long loginUserId;
+    /** 挿入ユーザId */
+    private Long insertUserId = INIT_LONG;
 
     /**
-     * ログインユーザIdを取得する
+     * 挿入ユーザIdを取得する
      *
-     * @return ログインユーザId
+     * @return 挿入ユーザId
      */
-    public Long getLoginUserId() {
-        return loginUserId;
+    @Override
+    public Long getInsertUserId() {
+        return insertUserId;
     }
 
     /**
-     * ログインユーザIdを設定する
+     * 挿入ユーザIdを設定する
      *
-     * @param loginUserId ログインユーザId
+     * @param insertUserId 挿入ユーザId
      */
-    public void setLoginUserId(final Long loginUserId) {
-        this.loginUserId = loginUserId;
+    @Override
+    public void setInsertUserId(final Long insertUserId) {
+        this.insertUserId = insertUserId;
     }
 
-    /** ログインユーザ同一識別コード */
-    private Integer loginUserCode;
+    /** 挿入ユーザ同一識別コード */
+    private Integer insertUserCode = INIT_INTEGER;
 
     /**
-     * ログインユーザ同一識別コードを取得する
+     * 挿入ユーザ同一識別コードを取得する
      *
-     * @return ログインユーザ同一識別コード
+     * @return 挿入ユーザ同一識別コード
      */
-    public Integer getLoginUserCode() {
-        return loginUserCode;
-    }
-
-    /**
-     * ログインユーザ同一識別コードを設定する
-     *
-     * @param loginUserCode ログインユーザ同一識別コード
-     */
-    public void setLoginUserCode(final Integer loginUserCode) {
-        this.loginUserCode = loginUserCode;
-    }
-
-    /** ログインユーザ */
-    private String loginUserName;
-
-    /**
-     * ログインユーザを取得する
-     *
-     * @return ログインユーザ
-     */
-    public String getLoginUserName() {
-        return loginUserName;
+    @Override
+    public Integer getInsertUserCode() {
+        return insertUserCode;
     }
 
     /**
-     * ログインユーザを設定する
+     * 挿入ユーザ同一識別コードを設定する
      *
-     * @param loginUserName ログインユーザ
+     * @param insertUserCode 挿入ユーザ同一識別コード
      */
-    public void setLoginUserName(final String loginUserName) {
-        this.loginUserName = loginUserName;
+    @Override
+    public void setInsertUserCode(final Integer insertUserCode) {
+        this.insertUserCode = insertUserCode;
     }
 
-    /** 更新時間 */
-    private Timestamp updateTime;
+    /** 挿入ユーザ姓名 */
+    private String insertUserName = INIT_STRING;
 
     /**
-     * 更新時間を取得する
+     * 挿入ユーザ姓名を取得する
      *
-     * @return 更新時間
+     * @return 挿入ユーザ姓名
      */
-    public Timestamp getUpdateTime() {
-        return updateTime;
+    @Override
+    public String getInsertUserName() {
+        return insertUserName;
     }
 
     /**
-     * 更新時間を設定する
+     * 挿入ユーザ姓名を設定する
      *
-     * @param updateTime 更新時間
+     * @param insertUserName 挿入ユーザ姓名
      */
-    public void setUpdateTime(final Timestamp updateTime) {
-        this.updateTime = updateTime;
+    @Override
+    public void setInsertUserName(final String insertUserName) {
+        this.insertUserName = insertUserName;
+    }
+
+    /** 挿入タイムスタンプ */
+    private Timestamp insertTimestamp = INIT_TIMESTAMP ;
+
+    /**
+     * 挿入タイムスタンプを取得する
+     *
+     * @return 挿入タイムスタンプ
+     */
+    @Override
+    public Timestamp getInsertTimestamp() {
+        return insertTimestamp;
+    }
+
+    /**
+     * 挿入タイムスタンプを設定する
+     *
+     * @param insertTimestamp 挿入タイムスタンプ
+     */
+    @Override
+    public void setInsertTimestamp(final Timestamp insertTimestamp) {
+        this.insertTimestamp = insertTimestamp;
+    }
+
+    /** 更新ユーザId */
+    private Long updateUserId = INIT_LONG;
+
+    /**
+     * 更新ユーザIdを取得する
+     *
+     * @return 更新ユーザId
+     */
+    @Override
+    public Long getUpdateUserId() {
+        return updateUserId;
+    }
+
+    /**
+     * 更新ユーザIdを設定する
+     *
+     * @param updateUserId 更新ユーザId
+     */
+    @Override
+    public void setUpdateUserId(final Long updateUserId) {
+        this.updateUserId = updateUserId;
+    }
+
+    /** 更新ユーザ同一識別コード */
+    private Integer updateUserCode = INIT_INTEGER;
+
+    /**
+     * 更新ユーザ同一識別コードを取得する
+     *
+     * @return 更新ユーザ同一識別コード
+     */
+    @Override
+    public Integer getUpdateUserCode() {
+        return updateUserCode;
+    }
+
+    /**
+     * 更新ユーザ同一識別コードを設定する
+     *
+     * @param updateUserCode 更新ユーザ同一識別コード
+     */
+    @Override
+    public void setUpdateUserCode(final Integer updateUserCode) {
+        this.updateUserCode = updateUserCode;
+    }
+
+    /** 更新ユーザ姓名 */
+    private String updateUserName = INIT_STRING;
+
+    /**
+     * 更新ユーザ姓名を取得する
+     *
+     * @return 更新ユーザ姓名
+     */
+    @Override
+    public String getUpdateUserName() {
+        return updateUserName;
+    }
+
+    /**
+     * 更新ユーザ姓名を設定する
+     *
+     * @param updateUserName 更新ユーザ姓名
+     */
+    @Override
+    public void setUpdateUserName(final String updateUserName) {
+        this.updateUserName = updateUserName;
+    }
+
+    /** 更新タイムスタンプ */
+    private Timestamp updateTimestamp = INIT_TIMESTAMP ;
+
+    /**
+     * 更新タイムスタンプを取得する
+     *
+     * @return 更新タイムスタンプ
+     */
+    @Override
+    public Timestamp getUpdateTimestamp() {
+        return updateTimestamp;
+    }
+
+    /**
+     * 更新タイムスタンプを設定する
+     *
+     * @param updateTimestamp 更新タイムスタンプ
+     */
+    @Override
+    public void setUpdateTimestamp(final Timestamp updateTimestamp) {
+        this.updateTimestamp = updateTimestamp;
     }
 
 }

@@ -49,7 +49,7 @@ public class RegistAuditOpinionService {
     private ConvertAuditToTaskLogic convertAuditToTaskLogic;
 
     /** 空文字 */
-    private final static String blankChar = "";
+    private final static String BLANK_CHAR = "";
 
     /**
      * 意見付記リストにに該当データを追加し、タスク登録をするためのリストを返す
@@ -70,7 +70,7 @@ public class RegistAuditOpinionService {
             BalancesheetIncome2025Entity incomeEntity = listIncome.get(0);
             PoliticalOrganizationEntity politicalOrganizationEntity = politicalOrganizationRepository
                     .getReferenceById(incomeEntity.getPoliticalOrganizationId());
-            String role = getRoleInPolitialOrganizationLogic.practice(politicalOrganizationEntity, incomeEntity.getLoginUserCode());
+            String role = getRoleInPolitialOrganizationLogic.practice(politicalOrganizationEntity, incomeEntity.getInsertUserCode());
 
             for (BalancesheetIncome2025Entity entityIncome : listIncome) {
                 // 前例と異なる処理が選択されている時
@@ -93,7 +93,7 @@ public class RegistAuditOpinionService {
 
             PoliticalOrganizationEntity politicalOrganizationEntity = politicalOrganizationRepository
                     .getReferenceById(outcomeEntity.getPoliticalOrganizationId());
-            String role = getRoleInPolitialOrganizationLogic.practice(politicalOrganizationEntity, outcomeEntity.getLoginUserCode());
+            String role = getRoleInPolitialOrganizationLogic.practice(politicalOrganizationEntity, outcomeEntity.getInsertUserCode());
 
             for (BalancesheetOutcome2025Entity entityOutcome : listOutcome) {
                 // 前例と異なる処理が選択されている時
@@ -131,12 +131,12 @@ public class RegistAuditOpinionService {
 
         // 調査側の値はすべて初期値
         entityAuditIncome.setResearcherAmount(0);
-        entityAuditIncome.setAuditAgreeItemValue(blankChar);
-        entityAuditIncome.setAuditAgreeItemText(blankChar);
-        entityAuditIncome.setLoginUserRole(role);
+        entityAuditIncome.setAuditAgreeItemValue(BLANK_CHAR);
+        entityAuditIncome.setAuditAgreeItemText(BLANK_CHAR);
+        entityAuditIncome.setInsertUserRole(role);
 
         // 更新時間は現在時間
-        entityAuditIncome.setUpdateTime(now);
+        entityAuditIncome.setInsertTimestamp(now);
 
         return entityAuditIncome;
     }
@@ -153,12 +153,12 @@ public class RegistAuditOpinionService {
 
         // 調査側の値はすべて初期値
         entityAuditOutcome.setResearcherAmount(0);
-        entityAuditOutcome.setAuditAgreeItemValue(blankChar);
-        entityAuditOutcome.setAuditAgreeItemText(blankChar);
-        entityAuditOutcome.setLoginUserRole(role);
+        entityAuditOutcome.setAuditAgreeItemValue(BLANK_CHAR);
+        entityAuditOutcome.setAuditAgreeItemText(BLANK_CHAR);
+        entityAuditOutcome.setInsertUserRole(role);
 
         // 更新時間は現在時間
-        entityAuditOutcome.setUpdateTime(now);
+        entityAuditOutcome.setInsertTimestamp(now);
 
         return entityAuditOutcome;
     }

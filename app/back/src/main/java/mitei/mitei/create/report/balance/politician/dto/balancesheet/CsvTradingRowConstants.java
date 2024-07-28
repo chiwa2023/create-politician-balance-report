@@ -32,7 +32,7 @@ public class CsvTradingRowConstants { // NOPMD DataClass
      * @param value 定数値
      * @return 定数値に紐づく表示
      */
-    public static final String convertValueToText(final String value)throws IllegalArgumentException,NumberFormatException {
+    public static final String convertValueToText(final String value)throws IllegalArgumentException,NumberFormatException { // NOPMD
         
         switch (Integer.parseInt(value)) {
             

@@ -1,15 +1,15 @@
 package mitei.mitei.create.report.balance.politician.entity;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
-
-import java.time.LocalDate;
-import java.sql.Timestamp;
+import mitei.mitei.create.report.balance.politician.entity_interface.AllTabeDataHistoryInterface;
 
 
 /**
@@ -17,15 +17,32 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "audit_opinion_outcome_2025")
-public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD DataClass
+public class AuditOpinionOutcome2025Entity  implements Serializable,AllTabeDataHistoryInterface{ // NOPMD DataClass
 
     /** Serialize id */
     private static final long serialVersionUID = 1L;
 
+    /** 初期データ(String) */
+    private static final String INIT_STRING = "";
+
+    /** 初期データ(Integer) */
+    private static final Integer INIT_INTEGER = 0;
+    
+    /** 初期データ(Long) */
+    private static final Long INIT_LONG = 0L;
+
+    /** 初期データ(Boolean) */
+    private static final Boolean INIT_Boolean = false;
+
+    /** 初期データ(LocalcDate) */
+    private static final LocalDate INIT_LOCALDATE = LocalDate.of(1980,1,1);
+
+    /** 初期データ(Timestamp) */
+    private static final Timestamp INIT_TIMESTAMP  = Timestamp.valueOf(INIT_LOCALDATE.atTime(0, 0, 0));
+
     /** 収支報告書収入意見付記項目Id */
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long auditOpinionOutcomeId;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long auditOpinionOutcomeId = INIT_LONG;
 
     /**
      * 収支報告書収入意見付記項目Idを取得する
@@ -46,7 +63,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** データ作成が調査側フラグ */
-    private Boolean isCreatedItemByInvest;
+    private Boolean isCreatedItemByInvest = INIT_Boolean;
 
     /**
      * データ作成が調査側フラグを取得する
@@ -67,7 +84,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 政治資金収支報告書主出項目Id */
-    private Long balancesheetOutcomeId;
+    private Long balancesheetOutcomeId = INIT_LONG;
 
     /**
      * 政治資金収支報告書主出項目Idを取得する
@@ -88,7 +105,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 政治資金収支報告書支出項目同一識別コード */
-    private Long balancesheetOutcomeCode;
+    private Long balancesheetOutcomeCode = INIT_LONG;
 
     /**
      * 政治資金収支報告書支出項目同一識別コードを取得する
@@ -109,7 +126,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 最新区分 */
-    private Integer saishinKbn;
+    private Integer saishinKbn = INIT_INTEGER;
 
     /**
      * 最新区分を取得する
@@ -130,7 +147,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 政治資金団体Id */
-    private Long politicalOrganizationId;
+    private Long politicalOrganizationId = INIT_LONG;
 
     /**
      * 政治資金団体Idを取得する
@@ -151,7 +168,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 政治資金団体同一識別コード */
-    private Integer politicalOrganizationCode;
+    private Integer politicalOrganizationCode = INIT_INTEGER;
 
     /**
      * 政治資金団体同一識別コードを取得する
@@ -172,7 +189,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 政治資金団体名称 */
-    private String politicalOrganizationName;
+    private String politicalOrganizationName = INIT_STRING;
 
     /**
      * 政治資金団体名称を取得する
@@ -193,7 +210,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 書証Id */
-    private String shoshouId;
+    private String shoshouId = INIT_STRING;
 
     /**
      * 書証Idを取得する
@@ -214,7 +231,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 書証識別コード */
-    private Long shoshouHistoryCode;
+    private Long shoshouHistoryCode = INIT_LONG;
 
     /**
      * 書証識別コードを取得する
@@ -235,7 +252,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 書証区分 */
-    private Integer shoshouKbn;
+    private Integer shoshouKbn = INIT_INTEGER;
 
     /**
      * 書証区分を取得する
@@ -256,7 +273,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 書証読み取り行 */
-    private Integer readingLine;
+    private Integer readingLine = INIT_INTEGER;
 
     /**
      * 書証読み取り行を取得する
@@ -276,29 +293,29 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
         this.readingLine = readingLine;
     }
 
-    /** 参照した摘要 */
-    private String referDigest;
+    /** 参照摘要 */
+    private String referDigest = INIT_STRING;
 
     /**
-     * 参照した摘要を取得する
+     * 参照摘要を取得する
      *
-     * @return 参照した摘要
+     * @return 参照摘要
      */
     public String getReferDigest() {
         return referDigest;
     }
 
     /**
-     * 参照した摘要を設定する
+     * 参照摘要を設定する
      *
-     * @param referDigest 参照した摘要
+     * @param referDigest 参照摘要
      */
     public void setReferDigest(final String referDigest) {
         this.referDigest = referDigest;
     }
 
     /** 取引金額 */
-    private Long amount;
+    private Long amount = INIT_LONG;
 
     /**
      * 取引金額を取得する
@@ -319,7 +336,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 発生日 */
-    private LocalDate accrualDate;
+    private LocalDate accrualDate = INIT_LOCALDATE;
 
     /**
      * 発生日を取得する
@@ -339,29 +356,29 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
         this.accrualDate = accrualDate;
     }
 
-    /** 自動入力編集フラグ */
-    private Boolean isEditAutoInput;
+    /** 自動変更該否 */
+    private Boolean isEditAutoInput = INIT_Boolean;
 
     /**
-     * 自動入力編集フラグを取得する
+     * 自動変更該否を取得する
      *
-     * @return 自動入力編集フラグ
+     * @return 自動変更該否
      */
     public Boolean getIsEditAutoInput() {
         return isEditAutoInput;
     }
 
     /**
-     * 自動入力編集フラグを設定する
+     * 自動変更該否を設定する
      *
-     * @param isEditAutoInput 自動入力編集フラグ
+     * @param isEditAutoInput 自動変更該否
      */
     public void setIsEditAutoInput(final Boolean isEditAutoInput) {
         this.isEditAutoInput = isEditAutoInput;
     }
 
     /** 収支報告区分 */
-    private Integer reportKbn;
+    private Integer reportKbn = INIT_INTEGER;
 
     /**
      * 収支報告区分を取得する
@@ -382,7 +399,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 様式仕訳区分 */
-    private Integer youshikiKbn;
+    private Integer youshikiKbn = INIT_INTEGER;
 
     /**
      * 様式仕訳区分を取得する
@@ -403,7 +420,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 様式仕訳枝項目区分 */
-    private Integer youshikiEdaKbn;
+    private Integer youshikiEdaKbn = INIT_INTEGER;
 
     /**
      * 様式仕訳枝項目区分を取得する
@@ -423,29 +440,29 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
         this.youshikiEdaKbn = youshikiEdaKbn;
     }
 
-    /** 支出大項目 */
-    private String categorizeGroup;
+    /** categorizeGroup */
+    private String categorizeGroup = INIT_STRING;
 
     /**
-     * 支出大項目を取得する
+     * categorizeGroupを取得する
      *
-     * @return 支出大項目
+     * @return categorizeGroup
      */
     public String getCategorizeGroup() {
         return categorizeGroup;
     }
 
     /**
-     * 支出大項目を設定する
+     * categorizeGroupを設定する
      *
-     * @param categorizeGroup 支出大項目
+     * @param categorizeGroup categorizeGroup
      */
     public void setCategorizeGroup(final String categorizeGroup) {
         this.categorizeGroup = categorizeGroup;
     }
 
     /** 項目名称 */
-    private String itemName;
+    private String itemName = INIT_STRING;
 
     /**
      * 項目名称を取得する
@@ -466,7 +483,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 項目名称Id区分 */
-    private Integer itemIdKbn;
+    private Integer itemIdKbn = INIT_INTEGER;
 
     /**
      * 項目名称Id区分を取得する
@@ -487,7 +504,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 一般項目名称Id */
-    private Long generalItemId;
+    private Long generalItemId = INIT_LONG;
 
     /**
      * 一般項目名称Idを取得する
@@ -508,7 +525,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 一般名称同一識別コード */
-    private Integer generalItemCode;
+    private Integer generalItemCode = INIT_INTEGER;
 
     /**
      * 一般名称同一識別コードを取得する
@@ -529,7 +546,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 継続事業Id */
-    private Long continueBuissinessId;
+    private Long continueBuissinessId = INIT_LONG;
 
     /**
      * 継続事業Idを取得する
@@ -550,7 +567,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 継続事業同一識別コード */
-    private Integer continueBuissinessCode;
+    private Integer continueBuissinessCode = INIT_INTEGER;
 
     /**
      * 継続事業同一識別コードを取得する
@@ -571,7 +588,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 関連者区分 */
-    private Integer relationKbn;
+    private Integer relationKbn = INIT_INTEGER;
 
     /**
      * 関連者区分を取得する
@@ -592,7 +609,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 関連者個人Id */
-    private Long relationPersonId;
+    private Long relationPersonId = INIT_LONG;
 
     /**
      * 関連者個人Idを取得する
@@ -613,7 +630,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 関連者個人同一識別コード */
-    private Integer relationPersonCode;
+    private Integer relationPersonCode = INIT_INTEGER;
 
     /**
      * 関連者個人同一識別コードを取得する
@@ -634,7 +651,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 関連者法人Id */
-    private Long relationCorporationId;
+    private Long relationCorporationId = INIT_LONG;
 
     /**
      * 関連者法人Idを取得する
@@ -655,7 +672,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 関連者法人同一識別コード */
-    private Integer relationCorporationCode;
+    private Integer relationCorporationCode = INIT_INTEGER;
 
     /**
      * 関連者法人同一識別コードを取得する
@@ -676,7 +693,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 関連者政治団体Id */
-    private Long relationPoliticsOrganizationId;
+    private Long relationPoliticsOrganizationId = INIT_LONG;
 
     /**
      * 関連者政治団体Idを取得する
@@ -697,7 +714,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 関連者政治団体同一識別コード */
-    private Integer relationPoliticsOrganizationCode;
+    private Integer relationPoliticsOrganizationCode = INIT_INTEGER;
 
     /**
      * 関連者政治団体同一識別コードを取得する
@@ -717,50 +734,50 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
         this.relationPoliticsOrganizationCode = relationPoliticsOrganizationCode;
     }
 
-    /** 個人・団体住所 */
-    private String orgnizationAddress;
+    /** 関連者政治団体住所 */
+    private String orgnizationAddress = INIT_STRING;
 
     /**
-     * 個人・団体住所を取得する
+     * 関連者政治団体住所を取得する
      *
-     * @return 個人・団体住所
+     * @return 関連者政治団体住所
      */
     public String getOrgnizationAddress() {
         return orgnizationAddress;
     }
 
     /**
-     * 個人・団体住所を設定する
+     * 関連者政治団体住所を設定する
      *
-     * @param orgnizationAddress 個人・団体住所
+     * @param orgnizationAddress 関連者政治団体住所
      */
     public void setOrgnizationAddress(final String orgnizationAddress) {
         this.orgnizationAddress = orgnizationAddress;
     }
 
-    /** 団体代表者・職業 */
-    private String professionOrgnizationName;
+    /** 関連者政治団体名称 */
+    private String professionOrgnizationName = INIT_STRING;
 
     /**
-     * 団体代表者・職業を取得する
+     * 関連者政治団体名称を取得する
      *
-     * @return 団体代表者・職業
+     * @return 関連者政治団体名称
      */
     public String getProfessionOrgnizationName() {
         return professionOrgnizationName;
     }
 
     /**
-     * 団体代表者・職業を設定する
+     * 関連者政治団体名称を設定する
      *
-     * @param professionOrgnizationName 団体代表者・職業
+     * @param professionOrgnizationName 関連者政治団体名称
      */
     public void setProfessionOrgnizationName(final String professionOrgnizationName) {
         this.professionOrgnizationName = professionOrgnizationName;
     }
 
     /** 備考 */
-    private String biko;
+    private String biko = INIT_STRING;
 
     /**
      * 備考を取得する
@@ -781,7 +798,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 交付金に係る支出 */
-    private Boolean isExpendituresRelatedGrants;
+    private Boolean isExpendituresRelatedGrants = INIT_Boolean;
 
     /**
      * 交付金に係る支出を取得する
@@ -802,7 +819,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 領収書を徴しがたかったもの */
-    private Integer notCollectReciptKbn;
+    private Integer notCollectReciptKbn = INIT_INTEGER;
 
     /**
      * 領収書を徴しがたかったものを取得する
@@ -823,7 +840,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 意見付記 */
-    private String note;
+    private String note = INIT_STRING;
 
     /**
      * 意見付記を取得する
@@ -844,7 +861,7 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
     }
 
     /** 前例と異なる処理フラグ */
-    private Boolean isDifferPrecedent;
+    private Boolean isDifferPrecedent = INIT_Boolean;
 
     /**
      * 前例と異なる処理フラグを取得する
@@ -864,29 +881,29 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
         this.isDifferPrecedent = isDifferPrecedent;
     }
 
-    /** 保全証票リスト */
-    private String storagedDocumentIdList;
+    /** 書証Idリスト */
+    private String storagedDocumentIdList = INIT_STRING;
 
     /**
-     * 保全証票リストを取得する
+     * 書証Idリストを取得する
      *
-     * @return 保全証票リスト
+     * @return 書証Idリスト
      */
     public String getStoragedDocumentIdList() {
         return storagedDocumentIdList;
     }
 
     /**
-     * 保全証票リストを設定する
+     * 書証Idリストを設定する
      *
-     * @param storagedDocumentIdList 保全証票リスト
+     * @param storagedDocumentIdList 書証Idリスト
      */
     public void setStoragedDocumentIdList(final String storagedDocumentIdList) {
         this.storagedDocumentIdList = storagedDocumentIdList;
     }
 
     /** 調査側意見ユーザ人数 */
-    private Integer researcherAmount;
+    private Integer researcherAmount = INIT_INTEGER;
 
     /**
      * 調査側意見ユーザ人数を取得する
@@ -906,151 +923,272 @@ public class AuditOpinionOutcome2025Entity  implements Serializable{ // NOPMD Da
         this.researcherAmount = researcherAmount;
     }
 
-    /** 監査意見支持意見の値 */
-    private String auditAgreeItemValue;
+    /** 選択された意見付記セレクトボックスの値 */
+    private String auditAgreeItemValue = INIT_STRING;
 
     /**
-     * 監査意見支持意見の値を取得する
+     * 選択された意見付記セレクトボックスの値を取得する
      *
-     * @return 監査意見支持意見の値
+     * @return 選択された意見付記セレクトボックスの値
      */
     public String getAuditAgreeItemValue() {
         return auditAgreeItemValue;
     }
 
     /**
-     * 監査意見支持意見の値を設定する
+     * 選択された意見付記セレクトボックスの値を設定する
      *
-     * @param auditAgreeItemValue 監査意見支持意見の値
+     * @param auditAgreeItemValue 選択された意見付記セレクトボックスの値
      */
     public void setAuditAgreeItemValue(final String auditAgreeItemValue) {
         this.auditAgreeItemValue = auditAgreeItemValue;
     }
 
-    /** 監査意見支持意見の表示テキスト */
-    private String auditAgreeItemText;
+    /** 選択された意見付記セレクトボックスの表示テキスト */
+    private String auditAgreeItemText = INIT_STRING;
 
     /**
-     * 監査意見支持意見の表示テキストを取得する
+     * 選択された意見付記セレクトボックスの表示テキストを取得する
      *
-     * @return 監査意見支持意見の表示テキスト
+     * @return 選択された意見付記セレクトボックスの表示テキスト
      */
     public String getAuditAgreeItemText() {
         return auditAgreeItemText;
     }
 
     /**
-     * 監査意見支持意見の表示テキストを設定する
+     * 選択された意見付記セレクトボックスの表示テキストを設定する
      *
-     * @param auditAgreeItemText 監査意見支持意見の表示テキスト
+     * @param auditAgreeItemText 選択された意見付記セレクトボックスの表示テキスト
      */
     public void setAuditAgreeItemText(final String auditAgreeItemText) {
         this.auditAgreeItemText = auditAgreeItemText;
     }
 
-    /** ログインユーザId */
-    private Long loginUserId;
+    /** 挿入ユーザId */
+    private Long insertUserId = INIT_LONG;
 
     /**
-     * ログインユーザIdを取得する
+     * 挿入ユーザIdを取得する
      *
-     * @return ログインユーザId
+     * @return 挿入ユーザId
      */
-    public Long getLoginUserId() {
-        return loginUserId;
+    @Override
+    public Long getInsertUserId() {
+        return insertUserId;
     }
 
     /**
-     * ログインユーザIdを設定する
+     * 挿入ユーザIdを設定する
      *
-     * @param loginUserId ログインユーザId
+     * @param insertUserId 挿入ユーザId
      */
-    public void setLoginUserId(final Long loginUserId) {
-        this.loginUserId = loginUserId;
+    @Override
+    public void setInsertUserId(final Long insertUserId) {
+        this.insertUserId = insertUserId;
     }
 
-    /** ログインユーザ同一識別コード */
-    private Integer loginUserCode;
+    /** 挿入ユーザ同一識別コード */
+    private Integer insertUserCode = INIT_INTEGER;
 
     /**
-     * ログインユーザ同一識別コードを取得する
+     * 挿入ユーザ同一識別コードを取得する
      *
-     * @return ログインユーザ同一識別コード
+     * @return 挿入ユーザ同一識別コード
      */
-    public Integer getLoginUserCode() {
-        return loginUserCode;
-    }
-
-    /**
-     * ログインユーザ同一識別コードを設定する
-     *
-     * @param loginUserCode ログインユーザ同一識別コード
-     */
-    public void setLoginUserCode(final Integer loginUserCode) {
-        this.loginUserCode = loginUserCode;
-    }
-
-    /** ログインユーザ名 */
-    private String loginUserName;
-
-    /**
-     * ログインユーザ名を取得する
-     *
-     * @return ログインユーザ名
-     */
-    public String getLoginUserName() {
-        return loginUserName;
+    @Override
+    public Integer getInsertUserCode() {
+        return insertUserCode;
     }
 
     /**
-     * ログインユーザ名を設定する
+     * 挿入ユーザ同一識別コードを設定する
      *
-     * @param loginUserName ログインユーザ名
+     * @param insertUserCode 挿入ユーザ同一識別コード
      */
-    public void setLoginUserName(final String loginUserName) {
-        this.loginUserName = loginUserName;
+    @Override
+    public void setInsertUserCode(final Integer insertUserCode) {
+        this.insertUserCode = insertUserCode;
+    }
+
+    /** 挿入ユーザ姓名 */
+    private String insertUserName = INIT_STRING;
+
+    /**
+     * 挿入ユーザ姓名を取得する
+     *
+     * @return 挿入ユーザ姓名
+     */
+    @Override
+    public String getInsertUserName() {
+        return insertUserName;
+    }
+
+    /**
+     * 挿入ユーザ姓名を設定する
+     *
+     * @param insertUserName 挿入ユーザ姓名
+     */
+    @Override
+    public void setInsertUserName(final String insertUserName) {
+        this.insertUserName = insertUserName;
     }
 
     /** ログインユーザ役割 */
-    private String loginUserRole;
+    private String insertUserRole = INIT_STRING;
 
     /**
      * ログインユーザ役割を取得する
      *
      * @return ログインユーザ役割
      */
-    public String getLoginUserRole() {
-        return loginUserRole;
+    public String getInsertUserRole() {
+        return insertUserRole;
     }
 
     /**
      * ログインユーザ役割を設定する
      *
-     * @param loginUserRole ログインユーザ役割
+     * @param insertUserRole ログインユーザ役割
      */
-    public void setLoginUserRole(final String loginUserRole) {
-        this.loginUserRole = loginUserRole;
+    public void setInsertUserRole(final String insertUserRole) {
+        this.insertUserRole = insertUserRole;
     }
 
-    /** 更新時間 */
-    private Timestamp updateTime;
+    /** 挿入タイムスタンプ */
+    private Timestamp insertTimestamp = INIT_TIMESTAMP ;
 
     /**
-     * 更新時間を取得する
+     * 挿入タイムスタンプを取得する
      *
-     * @return 更新時間
+     * @return 挿入タイムスタンプ
      */
-    public Timestamp getUpdateTime() {
-        return updateTime;
+    @Override
+    public Timestamp getInsertTimestamp() {
+        return insertTimestamp;
     }
 
     /**
-     * 更新時間を設定する
+     * 挿入タイムスタンプを設定する
      *
-     * @param updateTime 更新時間
+     * @param insertTimestamp 挿入タイムスタンプ
      */
-    public void setUpdateTime(final Timestamp updateTime) {
-        this.updateTime = updateTime;
+    @Override
+    public void setInsertTimestamp(final Timestamp insertTimestamp) {
+        this.insertTimestamp = insertTimestamp;
+    }
+
+    /** 更新ユーザId */
+    private Long updateUserId = INIT_LONG;
+
+    /**
+     * 更新ユーザIdを取得する
+     *
+     * @return 更新ユーザId
+     */
+    @Override
+    public Long getUpdateUserId() {
+        return updateUserId;
+    }
+
+    /**
+     * 更新ユーザIdを設定する
+     *
+     * @param updateUserId 更新ユーザId
+     */
+    @Override
+    public void setUpdateUserId(final Long updateUserId) {
+        this.updateUserId = updateUserId;
+    }
+
+    /** 更新ユーザ同一識別コード */
+    private Integer updateUserCode = INIT_INTEGER;
+
+    /**
+     * 更新ユーザ同一識別コードを取得する
+     *
+     * @return 更新ユーザ同一識別コード
+     */
+    @Override
+    public Integer getUpdateUserCode() {
+        return updateUserCode;
+    }
+
+    /**
+     * 更新ユーザ同一識別コードを設定する
+     *
+     * @param updateUserCode 更新ユーザ同一識別コード
+     */
+    @Override
+    public void setUpdateUserCode(final Integer updateUserCode) {
+        this.updateUserCode = updateUserCode;
+    }
+
+    /** 更新ユーザ姓名 */
+    private String updateUserName = INIT_STRING;
+
+    /**
+     * 更新ユーザ姓名を取得する
+     *
+     * @return 更新ユーザ姓名
+     */
+    @Override
+    public String getUpdateUserName() {
+        return updateUserName;
+    }
+
+    /**
+     * 更新ユーザ姓名を設定する
+     *
+     * @param updateUserName 更新ユーザ姓名
+     */
+    @Override
+    public void setUpdateUserName(final String updateUserName) {
+        this.updateUserName = updateUserName;
+    }
+
+    /** ログインユーザ役割 */
+    private String updateUserRole = INIT_STRING;
+
+    /**
+     * ログインユーザ役割を取得する
+     *
+     * @return ログインユーザ役割
+     */
+    public String getUpdateUserRole() {
+        return updateUserRole;
+    }
+
+    /**
+     * ログインユーザ役割を設定する
+     *
+     * @param updateUserRole ログインユーザ役割
+     */
+    public void setUpdateUserRole(final String updateUserRole) {
+        this.updateUserRole = updateUserRole;
+    }
+
+    /** 更新タイムスタンプ */
+    private Timestamp updateTimestamp = INIT_TIMESTAMP ;
+
+    /**
+     * 更新タイムスタンプを取得する
+     *
+     * @return 更新タイムスタンプ
+     */
+    @Override
+    public Timestamp getUpdateTimestamp() {
+        return updateTimestamp;
+    }
+
+    /**
+     * 更新タイムスタンプを設定する
+     *
+     * @param updateTimestamp 更新タイムスタンプ
+     */
+    @Override
+    public void setUpdateTimestamp(final Timestamp updateTimestamp) {
+        this.updateTimestamp = updateTimestamp;
     }
 
 }

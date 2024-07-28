@@ -19,6 +19,8 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.transaction.annotation.Transactional;
 
 import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
+import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
+import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
 import mitei.mitei.create.report.balance.politician.entity.CsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.repository.CsvReadTemplateRepository;
@@ -60,8 +62,16 @@ class RegistProposeReadCsvAcceptServiceTest {
         long editId = 15L;
         
         ProposeCsvReadTemplateEntity entityEdit = proposeCsvReadTemplateRepository.getReferenceById(editId);
-
-        long newId = registProposeReadCsvAcceptService.practice(entityEdit);
+        CheckPrivilegeDto checkPrivilegeDto = new CheckPrivilegeDto();
+        checkPrivilegeDto.setLoginUserId(12345L);
+        checkPrivilegeDto.setLoginUserCode(1230);
+        checkPrivilegeDto.setLoginUserName("会計責任者　正夫");
+        
+        RegistProposeCsvReadRemplateCapsuleDto registProposeCsvReadRemplateCapsuleDto = new RegistProposeCsvReadRemplateCapsuleDto();
+        registProposeCsvReadRemplateCapsuleDto.setProposeCsvReadTemplateEntity(entityEdit);
+        registProposeCsvReadRemplateCapsuleDto.setCheckPrivilegeDto(checkPrivilegeDto);
+        
+        long newId = registProposeReadCsvAcceptService.practice(registProposeCsvReadRemplateCapsuleDto);
         
         // 追加された行
         assertTrue(newId != 0L,"初期Id=未登録でない");

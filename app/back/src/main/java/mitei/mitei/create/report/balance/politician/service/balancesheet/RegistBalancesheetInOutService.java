@@ -1,7 +1,5 @@
 package mitei.mitei.create.report.balance.politician.service.balancesheet;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.RegistBalancesheetInOutCapsuleDto;
+import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.entity.BalancesheetIncome2025Entity;
 import mitei.mitei.create.report.balance.politician.entity.BalancesheetOutcome2025Entity;
+import mitei.mitei.create.report.balance.politician.logic.common.SetTableDataHistoryLogic;
 import mitei.mitei.create.report.balance.politician.repository.BalancesheetIncome2025Repository;
 import mitei.mitei.create.report.balance.politician.repository.BalancesheetOutcome2025Repository;
 
@@ -28,6 +29,10 @@ public class RegistBalancesheetInOutService {
     @Autowired
     private BalancesheetOutcome2025Repository balancesheetOutcome2025Repository;
 
+    /** テーブル履歴設定Logic */
+    @Autowired
+    private SetTableDataHistoryLogic setTableDataHistoryLogic;
+
     /**
      * 収支項目リストと支出項目リストを一括新規登録する
      *
@@ -36,13 +41,13 @@ public class RegistBalancesheetInOutService {
      */
     public int practice(final RegistBalancesheetInOutCapsuleDto capsuleDto) {
 
-        Timestamp timestampNow = Timestamp.valueOf(LocalDateTime.now());
-
-        return this.registIncome(capsuleDto.getListIncome(), timestampNow)
-                + this.registOutcome(capsuleDto.getListOutcome(), timestampNow);
+        CheckPrivilegeDto checkPrivilegeDto = capsuleDto.getCheckPrivilegeDto();
+        
+        return this.registIncome(capsuleDto.getListIncome(), checkPrivilegeDto)
+                + this.registOutcome(capsuleDto.getListOutcome(), checkPrivilegeDto);
     }
 
-    private int registIncome(final List<BalancesheetIncome2025Entity> listIncome, final Timestamp timestamp) {
+    private int registIncome(final List<BalancesheetIncome2025Entity> listIncome, final CheckPrivilegeDto checkPrivilegeDto) {
 
         //同一識別コード最大値を取得
         Long code = 0L;
@@ -57,13 +62,13 @@ public class RegistBalancesheetInOutService {
             code++;
             entity.setBalancesheetIncomeId(0L);
             entity.setBalancesheetIncomeCode(code);
-            entity.setUpdateTime(timestamp);
+            setTableDataHistoryLogic.practice(checkPrivilegeDto, entity, DataHistoryStatusConstants.INSERT);
         }
 
         return balancesheetIncome2025Repository.saveAll(listIncome).size();
     }
 
-    private int registOutcome(final List<BalancesheetOutcome2025Entity> listOutcome, final Timestamp timestamp) {
+    private int registOutcome(final List<BalancesheetOutcome2025Entity> listOutcome, final CheckPrivilegeDto checkPrivilegeDto) {
 
         //同一識別コード最大値を取得
         Long code = 0L;
@@ -78,7 +83,7 @@ public class RegistBalancesheetInOutService {
             code++;
             entity.setBalancesheetOutcomeId(0L);
             entity.setBalancesheetOutcomeCode(code);
-            entity.setUpdateTime(timestamp);
+            setTableDataHistoryLogic.practice(checkPrivilegeDto, entity, DataHistoryStatusConstants.INSERT);
         }
 
         return balancesheetOutcome2025Repository.saveAll(listOutcome).size();

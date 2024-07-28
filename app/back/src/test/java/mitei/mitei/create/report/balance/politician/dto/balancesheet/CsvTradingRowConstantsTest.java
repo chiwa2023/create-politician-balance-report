@@ -12,25 +12,25 @@ class CsvTradingRowConstantsTest {
     // CHECKSTYLE:OFF MagicNumber
 
     /** 指定なし */
-    private final int NO_POINT = 0;
+    private static final int NO_POINT = 0;
 
     /** 取引金額支出 */
-    private final int OUTCOME_AMOUNT = 1;
+    private static final int OUTCOME_AMOUNT = 1;
 
     /** 取引金額収入 */
-    private final int INCOME_AMOUNT = 2;
+    private static final int INCOME_AMOUNT = 2;
 
     /** 取引金額増減兼用 */
-    private final int AMOUNT_IN_OUT = 3;
+    private static final int AMOUNT_IN_OUT = 3;
 
     /** 発生日 */
-    private final int ACCURAL_DATE = 15;
+    private static final int ACCURAL_DATE = 15;
 
     /** 摘要 */
-    private final int DIGEST = 16;
+    private static final int DIGEST = 16;
 
     /** 取引相手名称 */
-    private final int TRADING_PERSON = 17;
+    private static final int TRADING_PERSON = 17;
 
     @Test
     void testConvertValueToText() {

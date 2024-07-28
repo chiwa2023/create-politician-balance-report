@@ -49,7 +49,7 @@ class ZenginFinancialOrgRepositoryTest {
         assertThat(entity1.getZenginFinancialOrgCode()).isEqualTo(1);
         assertThat(entity1.getZenginFinancialOrgName()).isEqualTo("首都圏信用金庫");
         assertThat(entity1.getSaishinKbn()).isEqualTo(1);
-        assertThat(entity1.getUpdateTime()).isEqualTo(Timestamp.valueOf("2012-12-12 00:00:00"));
+        assertThat(entity1.getInsertTimestamp()).isEqualTo(Timestamp.valueOf("2012-12-12 00:00:00"));
         
         //検出内容を確認します。
         ZenginFinancialOrgEntity entity2 = listCondition.get(1);
@@ -57,7 +57,7 @@ class ZenginFinancialOrgRepositoryTest {
         assertThat(entity2.getZenginFinancialOrgCode()).isEqualTo(3);
         assertThat(entity2.getZenginFinancialOrgName()).isEqualTo("東北圏信用金庫");
         assertThat(entity2.getSaishinKbn()).isEqualTo(1);
-        assertThat(entity2.getUpdateTime()).isEqualTo(Timestamp.valueOf("2012-12-15 00:00:00"));
+        assertThat(entity2.getInsertTimestamp()).isEqualTo(Timestamp.valueOf("2012-12-15 00:00:00"));
         
         //名称で存在しない検索語で検索した場合は0件
         List<ZenginFinancialOrgEntity> listZero = zenginFinancialOrgRepository.findFullText("あかさたな");

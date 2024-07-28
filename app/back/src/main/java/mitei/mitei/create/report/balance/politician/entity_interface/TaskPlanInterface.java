@@ -1,11 +1,9 @@
 package mitei.mitei.create.report.balance.politician.entity_interface;
 
-import java.sql.Timestamp;
-
 /**
  * タスク予定共通Interface
  */
-public interface TaskPlanInterface {
+public interface TaskPlanInterface extends AllTabeDataHistoryInterface{
 
     /**
      * タスク予定Idを取得する
@@ -174,61 +172,5 @@ public interface TaskPlanInterface {
      * @param isAccountStaffFor 事務担当者用タスクフラグ
      */
     void setIsAccountStaffFor(Boolean isAccountStaffFor);
-
-    /**
-     * ログインユーザIdを取得する
-     *
-     * @return ログインユーザId
-     */
-    Long getLoginUserId();
-
-    /**
-     * ログインユーザIdを設定する
-     *
-     * @param loginUserId ログインユーザId
-     */
-    void setLoginUserId(Long loginUserId);
-
-    /**
-     * ログインユーザ同一識別コードを取得する
-     *
-     * @return ログインユーザ同一識別コード
-     */
-    Integer getLoginUserCode();
-
-    /**
-     * ログインユーザ同一識別コードを設定する
-     *
-     * @param loginUserCode ログインユーザ同一識別コード
-     */
-    void setLoginUserCode(Integer loginUserCode);
-
-    /**
-     * ログインユーザ名を取得する
-     *
-     * @return ログインユーザ名
-     */
-    String getLoginUserName();
-
-    /**
-     * ログインユーザ名を設定する
-     *
-     * @param loginUserName ログインユーザ名
-     */
-    void setLoginUserName(String loginUserName);
-
-    /**
-     * 更新時間を取得する
-     *
-     * @return 更新時間
-     */
-    Timestamp getUpdateTime();
-
-    /**
-     * 更新時間を設定する
-     *
-     * @param updateTime 更新時間
-     */
-    void setUpdateTime(Timestamp updateTime);
 
 }

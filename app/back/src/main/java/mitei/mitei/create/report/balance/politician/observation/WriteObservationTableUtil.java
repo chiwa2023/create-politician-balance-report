@@ -14,10 +14,9 @@ public class WriteObservationTableUtil {
      * @return 記録行数
      */
     public int practice() {
-        int affectedRow = 0 ;
         //TODO Daoを使用して書込み
         
 
-        return affectedRow;
+        return 0;
     }
 }

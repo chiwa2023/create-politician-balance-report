@@ -23,26 +23,26 @@ public class TaskPlan2024Entity  implements Serializable,TaskPlanInterface{ // N
     private static final long serialVersionUID = 1L;
 
     /** 初期データ(String) */
-    private static final String INIT_String = "";
+    private static final String INIT_STRING = "";
 
     /** 初期データ(Integer) */
-    private static final Integer INIT_Integer = 0;
+    private static final Integer INIT_INTEGER = 0;
     
     /** 初期データ(Long) */
-    private static final Long INIT_Long = 0L;
+    private static final Long INIT_LONG = 0L;
 
     /** 初期データ(Boolean) */
     private static final Boolean INIT_Boolean = false;
 
     /** 初期データ(LocalcDate) */
-    private static final LocalDate INIT_LocalDate = LocalDate.of(1980,1,1);
+    private static final LocalDate INIT_LOCALDATE = LocalDate.of(1980,1,1);
 
     /** 初期データ(Timestamp) */
-    private static final Timestamp INIT_Timestamp = Timestamp.valueOf(INIT_LocalDate.atTime(0, 0, 0));
+    private static final Timestamp INIT_TIMESTAMP  = Timestamp.valueOf(INIT_LOCALDATE.atTime(0, 0, 0));
 
     /** タスク予定Id */
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long taskPlanId = INIT_Long;
+    private Long taskPlanId = INIT_LONG;
 
     /**
      * タスク予定Idを取得する
@@ -65,7 +65,7 @@ public class TaskPlan2024Entity  implements Serializable,TaskPlanInterface{ // N
     }
 
     /** タスク予定同一識別コード */
-    private Long taskPlanCode = INIT_Long;
+    private Long taskPlanCode = INIT_LONG;
 
     /**
      * タスク予定同一識別コードを取得する
@@ -87,8 +87,8 @@ public class TaskPlan2024Entity  implements Serializable,TaskPlanInterface{ // N
         this.taskPlanCode = taskPlanCode;
     }
 
-    /** タスク予定名称 */
-    private String taskPlanName = INIT_String;
+    /** タスク予定名称  */
+    private String taskPlanName = INIT_STRING;
 
     /**
      * タスク予定名称を取得する
@@ -111,7 +111,7 @@ public class TaskPlan2024Entity  implements Serializable,TaskPlanInterface{ // N
     }
 
     /** 最新区分 */
-    private Integer saishinKbn = INIT_Integer;
+    private Integer saishinKbn = INIT_INTEGER;
 
     /**
      * 最新区分を取得する
@@ -134,7 +134,7 @@ public class TaskPlan2024Entity  implements Serializable,TaskPlanInterface{ // N
     }
 
     /** 政治団体Id */
-    private Long politicalOrganizationId = INIT_Long;
+    private Long politicalOrganizationId = INIT_LONG;
 
     /**
      * 政治団体Idを取得する
@@ -157,7 +157,7 @@ public class TaskPlan2024Entity  implements Serializable,TaskPlanInterface{ // N
     }
 
     /** 政治団体同一識別コード */
-    private Integer politicalOrganizationCode = INIT_Integer;
+    private Integer politicalOrganizationCode = INIT_INTEGER;
 
     /**
      * 政治団体同一識別コードを取得する
@@ -180,7 +180,7 @@ public class TaskPlan2024Entity  implements Serializable,TaskPlanInterface{ // N
     }
 
     /** 政治団体名称 */
-    private String politicalOrganizationName = INIT_String;
+    private String politicalOrganizationName = INIT_STRING;
 
     /**
      * 政治団体名称を取得する
@@ -195,7 +195,7 @@ public class TaskPlan2024Entity  implements Serializable,TaskPlanInterface{ // N
     /**
      * 政治団体名称を設定する
      *
-     * @param politicalOrganizationName 政治団体名称
+     * @param politicalOrganizationName 政治団体名称 
      */
     @Override
     public void setPoliticalOrganizationName(final String politicalOrganizationName) {
@@ -247,6 +247,7 @@ public class TaskPlan2024Entity  implements Serializable,TaskPlanInterface{ // N
     public void setIsNoticsAlert(final Boolean isNoticsAlert) {
         this.isNoticsAlert = isNoticsAlert;
     }
+
     /** 代表者用タスクフラグ */
     private Boolean isDelegateFor = INIT_Boolean;
 
@@ -316,96 +317,187 @@ public class TaskPlan2024Entity  implements Serializable,TaskPlanInterface{ // N
         this.isAccountStaffFor = isAccountStaffFor;
     }
 
-    /** ログインユーザId */
-    private Long loginUserId = INIT_Long;
+    /** 挿入ユーザId */
+    private Long insertUserId = INIT_LONG;
 
     /**
-     * ログインユーザIdを取得する
+     * 挿入ユーザIdを取得する
      *
-     * @return ログインユーザId
+     * @return 挿入ユーザId
      */
     @Override
-    public Long getLoginUserId() {
-        return loginUserId;
+    public Long getInsertUserId() {
+        return insertUserId;
     }
 
     /**
-     * ログインユーザIdを設定する
+     * 挿入ユーザIdを設定する
      *
-     * @param loginUserId ログインユーザId
+     * @param insertUserId 挿入ユーザId
      */
     @Override
-    public void setLoginUserId(final Long loginUserId) {
-        this.loginUserId = loginUserId;
+    public void setInsertUserId(final Long insertUserId) {
+        this.insertUserId = insertUserId;
     }
 
-    /** ログインユーザ同一識別コード */
-    private Integer loginUserCode = INIT_Integer;
+    /** 挿入ユーザ同一識別コード */
+    private Integer insertUserCode = INIT_INTEGER;
 
     /**
-     * ログインユーザ同一識別コードを取得する
+     * 挿入ユーザ同一識別コードを取得する
      *
-     * @return ログインユーザ同一識別コード
+     * @return 挿入ユーザ同一識別コード
      */
     @Override
-    public Integer getLoginUserCode() {
-        return loginUserCode;
-    }
-
-    /**
-     * ログインユーザ同一識別コードを設定する
-     *
-     * @param loginUserCode ログインユーザ同一識別コード
-     */
-    @Override
-    public void setLoginUserCode(final Integer loginUserCode) {
-        this.loginUserCode = loginUserCode;
-    }
-
-    /** ログインユーザ名 */
-    private String loginUserName = INIT_String;
-
-    /**
-     * ログインユーザ名を取得する
-     *
-     * @return ログインユーザ名
-     */
-    @Override
-    public String getLoginUserName() {
-        return loginUserName;
+    public Integer getInsertUserCode() {
+        return insertUserCode;
     }
 
     /**
-     * ログインユーザ名を設定する
+     * 挿入ユーザ同一識別コードを設定する
      *
-     * @param loginUserName ログインユーザ名
+     * @param insertUserCode 挿入ユーザ同一識別コード
      */
     @Override
-    public void setLoginUserName(final String loginUserName) {
-        this.loginUserName = loginUserName;
+    public void setInsertUserCode(final Integer insertUserCode) {
+        this.insertUserCode = insertUserCode;
     }
 
-    /** 更新時間 */
-    private Timestamp updateTime = INIT_Timestamp;
+    /** 挿入ユーザ姓名 */
+    private String insertUserName = INIT_STRING;
 
     /**
-     * 更新時間を取得する
+     * 挿入ユーザ姓名を取得する
      *
-     * @return 更新時間
+     * @return 挿入ユーザ姓名
      */
     @Override
-    public Timestamp getUpdateTime() {
-        return updateTime;
+    public String getInsertUserName() {
+        return insertUserName;
     }
 
     /**
-     * 更新時間を設定する
+     * 挿入ユーザ姓名を設定する
      *
-     * @param updateTime 更新時間
+     * @param insertUserName 挿入ユーザ姓名
      */
     @Override
-    public void setUpdateTime(final Timestamp updateTime) {
-        this.updateTime = updateTime;
+    public void setInsertUserName(final String insertUserName) {
+        this.insertUserName = insertUserName;
     }
 
+    /** 挿入タイムスタンプ */
+    private Timestamp insertTimestamp = INIT_TIMESTAMP ;
+
+    /**
+     * 挿入タイムスタンプを取得する
+     *
+     * @return 挿入タイムスタンプ
+     */
+    @Override
+    public Timestamp getInsertTimestamp() {
+        return insertTimestamp;
+    }
+
+    /**
+     * 挿入タイムスタンプを設定する
+     *
+     * @param insertTimestamp 挿入タイムスタンプ
+     */
+    @Override
+    public void setInsertTimestamp(final Timestamp insertTimestamp) {
+        this.insertTimestamp = insertTimestamp;
+    }
+
+    /** 更新ユーザId */
+    private Long updateUserId = INIT_LONG;
+
+    /**
+     * 更新ユーザIdを取得する
+     *
+     * @return 更新ユーザId
+     */
+    @Override
+    public Long getUpdateUserId() {
+        return updateUserId;
+    }
+
+    /**
+     * 更新ユーザIdを設定する
+     *
+     * @param updateUserId 更新ユーザId
+     */
+    @Override
+    public void setUpdateUserId(final Long updateUserId) {
+        this.updateUserId = updateUserId;
+    }
+
+    /** 更新ユーザ同一識別コード */
+    private Integer updateUserCode = INIT_INTEGER;
+
+    /**
+     * 更新ユーザ同一識別コードを取得する
+     *
+     * @return 更新ユーザ同一識別コード
+     */
+    @Override
+    public Integer getUpdateUserCode() {
+        return updateUserCode;
+    }
+
+    /**
+     * 更新ユーザ同一識別コードを設定する
+     *
+     * @param updateUserCode 更新ユーザ同一識別コード
+     */
+    @Override
+    public void setUpdateUserCode(final Integer updateUserCode) {
+        this.updateUserCode = updateUserCode;
+    }
+
+    /** 更新ユーザ姓名 */
+    private String updateUserName = INIT_STRING;
+
+    /**
+     * 更新ユーザ姓名を取得する
+     *
+     * @return 更新ユーザ姓名
+     */
+    @Override
+    public String getUpdateUserName() {
+        return updateUserName;
+    }
+
+    /**
+     * 更新ユーザ姓名を設定する
+     *
+     * @param updateUserName 更新ユーザ姓名
+     */
+    @Override
+    public void setUpdateUserName(final String updateUserName) {
+        this.updateUserName = updateUserName;
+    }
+
+    /** 更新タイムスタンプ */
+    private Timestamp updateTimestamp = INIT_TIMESTAMP ;
+
+    /**
+     * 更新タイムスタンプを取得する
+     *
+     * @return 更新タイムスタンプ
+     */
+    @Override
+    public Timestamp getUpdateTimestamp() {
+        return updateTimestamp;
+    }
+
+    /**
+     * 更新タイムスタンプを設定する
+     *
+     * @param updateTimestamp 更新タイムスタンプ
+     */
+    @Override
+    public void setUpdateTimestamp(final Timestamp updateTimestamp) {
+        this.updateTimestamp = updateTimestamp;
+    }
 }
