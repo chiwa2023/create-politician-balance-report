@@ -1,0 +1,540 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="ページ1" id="LE8fIzdrHe0wcv1LTvfw">
+    <mxGraphModel dx="1050" dy="621" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="cFaB45KztUIKXS-_cTrr-4" value="背景" style="locked=1;" parent="0" visible="0" />
+        <mxCell id="cFaB45KztUIKXS-_cTrr-5" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-4" vertex="1">
+          <mxGeometry x="1" y="1" width="1595" height="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B3B3B3;fontColor=#333333;strokeColor=#666666;" parent="cFaB45KztUIKXS-_cTrr-4" vertex="1">
+          <mxGeometry width="1595" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-7" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;×&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="cFaB45KztUIKXS-_cTrr-4" vertex="1">
+          <mxGeometry x="1550" y="10" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="cFaB45KztUIKXS-_cTrr-4" vertex="1">
+          <mxGeometry x="830" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-9" value="ウインドウ" style="locked=1;" parent="0" />
+        <mxCell id="cFaB45KztUIKXS-_cTrr-10" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-9" vertex="1">
+          <mxGeometry x="1" y="1" width="1595" height="5109" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B3B3B3;fontColor=#333333;strokeColor=#666666;" parent="cFaB45KztUIKXS-_cTrr-9" vertex="1">
+          <mxGeometry width="1595" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-12" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;×&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="cFaB45KztUIKXS-_cTrr-9" vertex="1">
+          <mxGeometry x="1550" y="10" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-14" value="名称未設定レイヤ" style="" parent="0" />
+        <mxCell id="Fa45Nr03g6_gKb-Np0pS-1" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;&lt;b&gt;政治団体区分入力補助&lt;/b&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="40" y="87" width="520" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="Fa45Nr03g6_gKb-Np0pS-8" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢01.&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 30px;&quot;&gt;政党要件を満たす政党である&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="147" width="700" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-0" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="53" y="149" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-1" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;●&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=48;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="53" y="151" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-2" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="52" y="549" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-3" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="52" y="273" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-4" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="52" y="829" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-5" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="53" y="1459" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-6" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="51" y="2079" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-8" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="52" y="3289" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-9" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="52" y="2653" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-10" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="52" y="3919" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-11" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="53" y="4480" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-12" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="51" y="4609" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-13" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="51" y="4739" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-14" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢02.(各議員でなく、政党への唯一の資金提供窓口である)政治資金団体である&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="270" width="1370" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-15" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢03.政党要件を満たす政党の支部である&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="550" width="700" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-16" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢04.代表者は国会議員の現職である&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="822" width="700" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-17" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢05.代表者は国会議員の候補者である&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1453" width="700" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-18" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢06.国会議員の現職または候補者を後援または推薦している&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2083" width="1010" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-19" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢07.代表者は地方の首長または地方議会議員の現職である&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2652" width="1030" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-20" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢08.代表者は地方の首長または地方議会議員の候補者である&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3282" width="1040" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-21" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢09.地方の首長または地方議会議員の現職または候補者を後援または推薦している&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3912" width="1420" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-22" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢10.パーティの収益(の一部)が政治活動に使われ、かつ収入が10,000,000円以上である団体である&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="4473" width="1420" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-23" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢11.議員の後援・推薦はしていないが、政治的主張活動を継続的に行っている&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="4611" width="1420" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-24" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選択肢12.政治団体の支部である&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="4741" width="700" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-25" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="4806" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-26" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;ちゃらんぽらん政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="4808" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-27" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1111333&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="4808" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-28" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="4808" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-30" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="108" y="4948" width="302" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-31" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑政治団体が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="4881" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-32" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;あやふや政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="4878" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-33" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;キャンセル&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1304" y="5031" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-34" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="98" y="4668" width="302" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-35" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="98" y="4536" width="302" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-36" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治家&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3976" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-37" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治家　由美&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="3978" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-38" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1111333&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="3978" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-39" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="3978" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-40" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑政治家が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="4051" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-41" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;あやふや政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="4048" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-42" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会選挙区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="4116" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-43" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会３区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="4118" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-44" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2244&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="4118" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-45" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="4118" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-46" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議会選挙区が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="4191" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-47" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町全区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="4188" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-48" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="4266" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-49" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="4268" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-50" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;3355&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="4268" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-51" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="4268" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-52" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑政治団体が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="4341" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-53" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町町議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="4338" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-54" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="108" y="4408" width="302" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-55" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治家&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3346" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-56" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治家　由美&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="3348" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-57" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1111333&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="3348" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-58" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="3348" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-59" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑政治家が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3421" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-60" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;あやふや政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="3418" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-61" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会選挙区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3486" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-62" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会３区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="3488" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-63" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2244&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="3488" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-64" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="3488" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-65" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議会選挙区が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3561" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-66" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町全区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="3558" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-67" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3636" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-68" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="3638" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-69" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;3355&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="3638" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-70" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="3638" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-71" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議会が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3711" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-72" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町町議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="3708" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-73" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑候補者が1団体だけ保持できる資金管理団体である&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3781" width="950" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-75" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="108" y="3848" width="302" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-77" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治家&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2716" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-78" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治家　由美&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="2718" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-79" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1111333&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="2718" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-80" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="2718" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-81" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑政治家が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2791" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-82" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;あやふや政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="2788" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-83" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会選挙区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2856" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-84" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会３区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="2858" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-85" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2244&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="2858" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-86" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="2858" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-87" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議会選挙区が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2931" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-88" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町全区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="2928" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-89" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3006" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-90" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="3008" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-91" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;3355&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="3008" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-92" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="3008" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-93" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議会が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3081" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-94" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町町議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="3078" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-95" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑現職が1団体だけ保持できる資金管理団体である&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="3151" width="950" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-96" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="108" y="3218" width="302" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-97" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治家&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2146" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-98" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治家　由美&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="2148" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-99" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1111333&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="2148" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-100" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="2148" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-101" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑政治家が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2221" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-102" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;あやふや政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="2218" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-103" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会選挙区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2286" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-104" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会３区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="2288" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-105" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2244&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="2288" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-106" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="2288" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-107" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議会選挙区が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2361" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-108" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町全区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="2358" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-109" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2436" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-110" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="2438" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-111" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;3355&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="2438" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-112" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="2438" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-113" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議会が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="2511" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-114" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町町議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="2508" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-115" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="108" y="2578" width="302" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-116" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治家&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1516" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-117" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治家　由美&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="1518" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-118" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1111333&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="1518" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-119" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="1518" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-120" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑政治家が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1591" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-121" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;あやふや政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="1588" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-122" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会選挙区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1656" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-123" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会３区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="1658" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-124" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2244&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="1658" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-125" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="1658" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-126" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議会選挙区が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1731" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-127" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町全区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="1728" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-128" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1806" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-129" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="1808" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-130" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;3355&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="1808" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-131" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="1808" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-132" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議会が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1881" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-133" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町町議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="1878" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-134" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑候補者が1団体だけ保持できる資金管理団体である&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1951" width="950" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-135" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="108" y="2018" width="302" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-136" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議員&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="886" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-137" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治家　由美&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="888" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-138" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1111333&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="888" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-139" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="888" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-140" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議員が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="961" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-141" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;あやふや政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="958" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-142" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会選挙区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1026" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-143" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会３区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="1028" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-144" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2244&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="1028" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-145" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="1028" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-146" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議会選挙区が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1101" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-147" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町全区&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="1098" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-148" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1176" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-149" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;架空市市議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="1178" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-150" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;3355&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="1178" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-151" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="1178" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-152" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑議会が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1251" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-153" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;実在町町議会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="1248" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-154" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑現職が1団体だけ保持できる資金管理団体である&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="1321" width="950" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-155" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="108" y="1388" width="302" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-156" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政党&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="616" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-157" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;ファジー政党&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="618" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-158" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;111&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="618" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-159" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="618" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-160" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="108" y="758" width="302" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-161" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑政党が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="691" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-162" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;頭がかちこちな政党&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="688" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-163" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政党&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="336" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-164" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;ファジー政党&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="469" y="338" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-165" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;111&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="301" y="338" width="139" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-166" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1018" y="338" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-167" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="108" y="478" width="302" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-168" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑政党が見つけられない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="110" y="411" width="430" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-169" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;頭がかちこちな政党&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="569" y="408" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8CouymdvwrCj4sgRSDE8-170" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分決定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="108" y="208" width="302" height="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

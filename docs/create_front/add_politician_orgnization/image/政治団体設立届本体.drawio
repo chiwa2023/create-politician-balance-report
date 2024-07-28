@@ -1,0 +1,675 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="ページ1" id="LE8fIzdrHe0wcv1LTvfw">
+    <mxGraphModel dx="1050" dy="621" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="cFaB45KztUIKXS-_cTrr-4" value="背景" style="locked=1;" parent="0" visible="0" />
+        <mxCell id="cFaB45KztUIKXS-_cTrr-5" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-4" vertex="1">
+          <mxGeometry x="1" y="1" width="1595" height="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B3B3B3;fontColor=#333333;strokeColor=#666666;" parent="cFaB45KztUIKXS-_cTrr-4" vertex="1">
+          <mxGeometry width="1595" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-7" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;×&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="cFaB45KztUIKXS-_cTrr-4" vertex="1">
+          <mxGeometry x="1550" y="10" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="cFaB45KztUIKXS-_cTrr-4" vertex="1">
+          <mxGeometry x="830" y="670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-9" value="ウインドウ" style="" parent="0" />
+        <mxCell id="cFaB45KztUIKXS-_cTrr-10" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-9" vertex="1">
+          <mxGeometry x="15" y="10" width="1584" height="6680" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B3B3B3;fontColor=#333333;strokeColor=#666666;" parent="cFaB45KztUIKXS-_cTrr-9" vertex="1">
+          <mxGeometry x="16" y="12" width="1579" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-12" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;×&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="cFaB45KztUIKXS-_cTrr-9" vertex="1">
+          <mxGeometry x="1554" y="20" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cFaB45KztUIKXS-_cTrr-14" value="名称未設定レイヤ" style="" parent="0" />
+        <mxCell id="8Hxk6lD6Y1Y_H0gw2qUc-4" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;申請日&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="230" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8Hxk6lD6Y1Y_H0gw2qUc-5" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;2022/12/01&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="414" y="228" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8Hxk6lD6Y1Y_H0gw2qUc-6" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;目的&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="94" y="4778" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8Hxk6lD6Y1Y_H0gw2qUc-8" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;国会議員関係団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="79" y="5828" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8Hxk6lD6Y1Y_H0gw2qUc-9" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;こっかいぎいん　ゆうこ&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="411" y="5893" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="8Hxk6lD6Y1Y_H0gw2qUc-10" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;資金管理団体である&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="74" y="6038" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8Hxk6lD6Y1Y_H0gw2qUc-11" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;国会議員　裕子&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="411" y="5963" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="m5rQLSsZGB3rXxp2ildc-1" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体の住所(署名)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="437" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="m5rQLSsZGB3rXxp2ildc-2" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;東京都千代田区霞が関xxxx番地zzzビルディングqqq号室&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="414" y="435" width="946" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="g7l7Ze3qlmc8qRdJsH5r-4" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選挙管理委員会&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="101" y="156" width="290" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="g7l7Ze3qlmc8qRdJsH5r-5" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;ちゃらんぽらん政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="600" y="159" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="g7l7Ze3qlmc8qRdJsH5r-6" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1111333&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="411" y="158" width="169" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="g7l7Ze3qlmc8qRdJsH5r-7" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1158" y="160" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-0" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体設立届&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="54" y="90" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-1" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体めいふりがな&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="298" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-2" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;ちゃらんぽらんせいじだんたい&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="414" y="296" width="646" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-3" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体名称&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="368" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-4" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;ちゃらんぽらん政治団体&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="414" y="366" width="646" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-5" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;代表者名(署名)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="578" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-6" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;代表者　太郎&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="414" y="576" width="646" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-7" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;設定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1378" y="440" width="132" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-8" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;設定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1097" y="573" width="132" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-9" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" parent="cFaB45KztUIKXS-_cTrr-14" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="710" as="sourcePoint" />
+            <mxPoint x="1560.800048828125" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-10" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;ユーザ名&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="420" y="800" width="144" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-11" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1234&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="798" width="156" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-12" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;代表者名&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="390" y="868" width="174" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-13" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;せいじだんたい&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="866" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-14" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;電話番号&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="390" y="1005" width="174" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-15" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;090&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="1004" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-16" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;郵便番号&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="370" y="1087" width="194" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-17" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;政治団体　太郎&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="798" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-18" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1258" y="800" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-19" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;たろう&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="894" y="866" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-20" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;政治団体&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="936" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-21" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;太郎&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="894" y="936" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-22" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;0090&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="1004" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-23" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;xxxx&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="994" y="1004" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-24" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="703" y="1006" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-25" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="903" y="1006" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-26" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;123&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="1084" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-27" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;4567&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="1084" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-28" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="703" y="1086" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-29" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;住所&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="400" y="1160" width="164" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-30" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;宮崎県架空市実在町&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="583" y="1158" width="957" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-31" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;1967番地&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="1276" width="956" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-32" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;八角形ビル&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="1396" width="956" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-33" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;生年月日&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="370" y="1508" width="194" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-34" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;1986/03/21&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="1506" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-35" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;代表者&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="800" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-36" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;ユーザ名&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="420" y="1670" width="144" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-37" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1234&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="1668" width="156" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-38" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;代表者名&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="400" y="1738" width="164" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-39" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;せいじだんたい&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="1736" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-40" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;電話番号&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="370" y="1875" width="194" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-41" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;090&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="1874" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-42" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;郵便番号&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="360" y="1957" width="204" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-43" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;政治団体　太郎&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="1668" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-44" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1258" y="1670" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-45" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;たろう&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="894" y="1736" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-46" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;政治団体&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="1806" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-47" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;太郎&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="894" y="1806" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-48" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;0090&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="1874" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-49" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;xxxx&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="994" y="1874" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-50" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="703" y="1876" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-51" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="903" y="1876" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-52" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;123&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="1954" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-53" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;4567&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="1954" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-54" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="703" y="1956" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-55" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;住所&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="430" y="2028" width="134" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-56" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;宮崎県架空市実在町&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="583" y="2028" width="957" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-57" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;1967番地&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="2146" width="956" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-58" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;八角形ビル&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="2266" width="956" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-59" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;生年月日&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="380" y="2378" width="184" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-60" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;1986/03/21&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="2376" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-61" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;会計責任者&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="1670" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-62" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;ユーザ名&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="420" y="2550" width="144" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-63" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1234&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="2548" width="156" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-64" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;代表者名&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="400" y="2618" width="164" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-65" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;かいけいせきにん&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="2616" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-66" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;電話番号&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="370" y="2755" width="194" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-67" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;090&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="2754" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-68" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;郵便番号&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="390" y="2837" width="174" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-69" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;会計責任者　正夫&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="2548" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-70" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1258" y="2550" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-71" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;まさお&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="894" y="2616" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-72" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;会見責任者&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="2686" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-73" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;太郎&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="894" y="2686" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-74" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;0090&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="2754" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-75" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;xxxx&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="994" y="2754" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-76" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="703" y="2756" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-77" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="903" y="2756" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-78" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;123&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="2834" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-79" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;4567&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="2834" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-80" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="703" y="2836" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-81" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;住所&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="400" y="2908" width="164" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-82" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;宮崎県架空市実在町&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="583" y="2908" width="957" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-83" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;1967番地&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="3026" width="956" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-84" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;八角形ビル&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="3146" width="956" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-85" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;生年月日&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="410" y="3258" width="154" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-86" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;1986/03/21&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="3256" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-87" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;会計責任者職務代行者&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="2550" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-88" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選任年月日&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="360" y="1578" width="204" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-89" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2022/10/29&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#FFFFFF;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="1576" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-90" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選任年月日&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="370" y="2448" width="194" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-91" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2022/10/29&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#FFFFFF;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="2446" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-92" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選任年月日&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="350" y="3323" width="211" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-93" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2022/10/29&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#FFFFFF;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="581" y="3321" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-95" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;主たる事務所の所在地&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="4150" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-96" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;住所入力&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="408" y="4150" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-97" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;郵便番号&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="360" y="4227" width="204" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-98" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;123&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="4224" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-99" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;4567&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="4224" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-100" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="703" y="4226" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-101" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;住所&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="430" y="4298" width="134" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-102" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;宮崎県架空市実在町&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="583" y="4298" width="957" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-103" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;1967番地&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="4416" width="956" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-104" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;八角形ビル&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="4536" width="956" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-105" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;番地&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="430" y="4408" width="134" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-106" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;建物&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="430" y="4528" width="134" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-107" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;電話番号&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="390" y="4645" width="174" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-108" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;090&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="4644" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-109" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;0090&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="4644" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-110" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;xxxx&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="994" y="4644" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-111" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="703" y="4646" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-112" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="903" y="4646" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-113" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;ユーザ名&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="420" y="3420" width="144" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-114" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1234&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="3418" width="156" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-115" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;代表者名&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="400" y="3488" width="164" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-116" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;しょくむだいこう&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="3486" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-117" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;電話番号&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="370" y="3625" width="194" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-118" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;090&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="3624" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-119" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;職務代行者　花子&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="3418" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-120" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1258" y="3420" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-121" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;はなこ&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="894" y="3486" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-122" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;職務代行者&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="3556" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-123" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;花子&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="894" y="3556" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-124" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;0090&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="3624" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-125" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;xxxx&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="994" y="3624" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-126" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="703" y="3626" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-127" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="903" y="3626" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-128" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;事務担当者2&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="3420" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-129" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選任年月日&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="350" y="3693" width="211" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-130" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2022/10/29&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#FFFFFF;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="581" y="3691" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-131" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;ユーザ名&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="420" y="3790" width="144" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-132" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;1234&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="3788" width="156" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-133" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;代表者名&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="400" y="3858" width="164" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-134" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;せいじだんたい&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="3856" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-135" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;電話番号&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="370" y="3995" width="194" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-136" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;090&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="3994" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-137" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;政治団体　太郎&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="3788" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-138" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;検索&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="1258" y="3790" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-139" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;たろう&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="894" y="3856" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-140" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;政治団体&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="584" y="3926" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-141" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;太郎&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="894" y="3926" width="266" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-142" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;0090&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="774" y="3994" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-143" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;xxxx&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="994" y="3994" width="106" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-144" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="703" y="3996" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-145" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;－&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="903" y="3996" width="66" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-146" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;事務担当者3&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="3790" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-147" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;選任年月日&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="350" y="4063" width="211" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-148" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2022/10/29&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#FFFFFF;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="581" y="4061" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-149" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" parent="cFaB45KztUIKXS-_cTrr-14" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="4740" as="sourcePoint" />
+            <mxPoint x="1560.800048828125" y="4740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-150" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;別紙のとおり&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="422" y="4778" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-151" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;設定&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="758" y="4775" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-152" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;組織年月日&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="84" y="4860" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-153" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;2022/12/01&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="414" y="4858" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-154" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="88" y="4938" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-155" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑一括処理を使用しない&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="932" y="4939" width="388" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1gyps3GzyAnBNSKxaA-156" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治団体区分関連一括処理(推奨)&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeWidth=3;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="411" y="4945" width="482" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-0" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑政治資金規正法第19条の7第1項第2号に係る国会議員関係政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="412" y="5529" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-1" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑政治資金規正法第19条の7第1項第1号に係る国会議員関係政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="412" y="5459" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-2" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;その他の政治団体の支部&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="455" y="5379" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-3" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="403" y="5019" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-4" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;●&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=48;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="404" y="5022" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-5" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;その他の政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="458" y="5309" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-6" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政治資金規正法第18条の2第1項の規定による政治団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="461" y="5239" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-7" value="&lt;div&gt;&lt;span style=&quot;font-size: 30px;&quot;&gt;政治資金団体&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="459" y="5166" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-8" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政党の支部&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="461" y="5092" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-9" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;政党&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="462" y="5019" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-10" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="400" y="5169" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-12" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="402" y="5093" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-13" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="397" y="5239" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-15" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="398" y="5309" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-16" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="395" y="5379" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-18" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;主たる活動地域&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="78" y="5608" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-19" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="403" y="5610" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-20" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;●&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=48;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="403" y="5613" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-21" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;同一の都道府県(提出選挙管理委員会管区内)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="461" y="5683" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-22" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;2以上の地域で活動する団体&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="462" y="5610" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-23" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="402" y="5684" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-24" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;収納・管理先&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=top;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="99" y="5756" width="290" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-25" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;総務大臣(総務省)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="600" y="5759" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-26" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;１&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="411" y="5758" width="169" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-28" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="403" y="5830" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-29" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;●&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=48;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="403" y="5833" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-30" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="842" y="5834" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-31" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;衆議院&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="457" y="5828" width="272" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-32" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;参議院&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="898" y="5829" width="272" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-33" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑資金管理団体である&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="410" y="6039" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-35" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="403" y="6100" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-36" value="&lt;font style=&quot;font-size: 48px;&quot;&gt;●&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=48;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="403" y="6103" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-37" value="&lt;font style=&quot;font-size: 84px;&quot;&gt;○&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=60;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="782" y="6104" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-38" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;現職&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="457" y="6098" width="272" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-39" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;候補者&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="838" y="6099" width="272" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-40" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;架空市市議会議員&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="661" y="6173" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-41" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;市議会議員　陽子&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#CCCCCC;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="661" y="6243" width="450" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-42" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;公職の種類&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="400" y="6178" width="224" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-43" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;届出者姓名&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="410" y="6245" width="214" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-44" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;課税上の優遇措置の&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 30px;&quot;&gt;適用の有無&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="74" y="6328" width="310" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-45" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑適用あり&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="410" y="6329" width="988" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-46" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;支部の有無&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=right;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="74" y="6428" width="310" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="cndS-ENHL7bzMoWb1iKQ-47" value="&lt;span style=&quot;font-size: 30px;&quot;&gt;☑支部あり&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;dashed=1;dashPattern=8 8;verticalAlign=bottom;" parent="cFaB45KztUIKXS-_cTrr-14" vertex="1">
+          <mxGeometry x="410" y="6428" width="988" height="46" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
