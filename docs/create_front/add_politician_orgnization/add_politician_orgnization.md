@@ -194,7 +194,7 @@
     - 政治団体区分を1.政党とすること
     - 活動地域を2地域以上とする(自動的に収納・管理先は総務省となる)こと
     - その他の項目を初期化すること
-    - 規約の目的を「政党活動」とし、(規約)政治団体の目的 を非活性とすること
+    - 規約の目的を「法の基準を満たす政党としての政治活動」とし、(規約)政治団体の目的 を非活性とすること
 
 2. 選択肢 02.(各議員でなく、政党への唯一の資金提供窓口である)政治資金団体である
 
@@ -306,15 +306,52 @@
     - その他の項目を初期化すること
     - 規約の目的を「`政治団体名称`の支部活動である」とし、(規約)政治団体の目的 を非活性とすること
 
-## 6. サンプルテンプレートインターフェイス
+## 6. 政治団体設立届インターフェイス
 
-TODO Dto化を行って記述を行うこと
+AddPoliticianOrgnizationInterface
 
-SampleTemplateInterface
-
- |  論理名  |  論理名  |  型  |         説明(例)         |
- | -------- | -------- | ---- | ------------------------ |
- | サンプル | sampleId | Long | 政治家を識別する一意のId |
+ |                  論理名                  |                  論理名                  |           型           |                 説明(例)                 |
+ | ---------------------------------------- | ---------------------------------------- | ---------------------- | ---------------------------------------- |
+ | 提出選挙管理委員会Id                     | electionComitteeId                       | Long                   | 提出選挙管理委員会Id                     |
+ | 提出選挙管理委員会同一識別コード         | electionComitteeCode                     | Integer                | 提出選挙管理委員会同一識別コード         |
+ | 提出選挙管理委員会名称                   | electionComitteeName                     | String                 | 提出選挙管理委員会名称                   |
+ | 住所情報受け取り                         | inputAddressDto                          | InputAddressDto        | 住所情報受け取り                         |
+ | 団体区分                                 | organizationKbn                          | String                 | 団体区分                                 |
+ | 主たる活動地域                           | activityArea                             | String                 | 主たる活動地域                           |
+ | 国会議員条項(代表者が現職または候補者)   | isKokkaiGiinHonninKouhosha               | Boolean                | 国会議員条項(代表者が現職または候補者)   |
+ | 国会議員条項(後援・支援)                 | isKokkaiGiinSuisen                       | Boolean                | 国会議員条項(後援・支援)                 |
+ | 衆議院・参議院の別                       | selectedCountryParliament                | String                 | 衆議院・参議院の別                       |
+ | 国会議員の本人または候補者の姓名         | kokkaGinName                             | String                 | 国会議員の本人または候補者の姓名         |
+ | 国会議員の本人または候補者の姓名ふりがな | kokkaGinNameKana                         | String                 | 国会議員の本人または候補者の姓名ふりがな |
+ | 受領先Id                                 | acceptOrgnizationId                      | Long                   | 受領先Id                                 |
+ | 受領先同一識別コード                     | acceptOrgnizationCode                    | Integer                | 受領先同一識別コード                     |
+ | 受領先名称                               | acceptOrgnizationName                    | String                 | 受領先名称                               |
+ | 資金管理団体指定                         | isFundsManageOrg                         | Boolean                | 資金管理団体指定                         |
+ | 資金管理団体 現職候補者の別              | selectParliamentOrCandidate              | String                 | 資金管理団体 現職候補者の別              |
+ | 資金管理団体 届出者                      | fundsManageOrgDelegateName               | String                 | 資金管理団体 届出者                      |
+ | 資金管理団体 役職                        | parliamentName                           | String                 | 資金管理団体 役職                        |
+ | 代表者                                   | personManagerDelegate                    | PersonManagerInterface | 代表者                                   |
+ | 会計責任者                               | personManagerAccountManager              | PersonManagerInterface | 会計責任者                               |
+ | 会計職務代行者                           | personManagerAccountSupport              | PersonManagerInterface | 会計職務代行者                           |
+ | 事務事務担当者2                          | personWorkser2                           | PersonWorkerInterface  | 事務事務担当者2                          |
+ | 事務事務担当者3                          | personWorkser3                           | PersonWorkerInterface  | 事務事務担当者3                          |
+ | 設立年月日                               | foundingNengappi                         | String                 | 設立年月日                               |
+ | 申請日                                   | applicationNengappi                      | String                 | 申請日                                   |
+ | 新設政治団体名称                         | politicalOrgnozationName                 | String                 | 新設政治団体名称                         |
+ | 新設政治団体名称かな                     | politicalOrgnozationNameKana             | String                 | 新設政治団体名称かな                     |
+ | 設立の目的                               | orgnozationPurpose                       | String                 | 設立の目的                               |
+ | 課税優遇あり                             | hasTaxBenefits                           | Boolean                | 課税優遇あり                             |
+ | 支部あり                                 | hasBranch                                | Boolean                | 支部あり                                 |
+ | 法定以外の役職自由記述                   | irregularPosts                           | String                 | 法定以外の役職自由記述                   |
+ | 会費支払いサイクル                       | paymentCycleKbn                          | String                 | 会費支払いサイクル                       |
+ | 会費1回あたり金額                        | membershipFee                            | Integer                | 会費1回あたり金額                        |
+ | 選任年月日(代表者)                       | appointmentNengappiDelegate              | LocalDate              | 選任年月日(代表者)                       |
+ | 選任年月日(会計責任者)                   | appointmentNengappiAccountManager        | LocalDate              | 選任年月日(会計責任者)                   |
+ | 選任年月日(会計責任者職務代行者)         | appointmentNengappiAccountManagerSupport | LocalDate              | 選任年月日(会計責任者職務代行者)         |
+ | 選任年月日(作業者2)                      | appointmentNengappiWorker2               | LocalDate              | 選任年月日(作業者2)                      |
+ | 選任年月日(作業者3)                      | appointmentNengappiWorker3               | LocalDate              | 選任年月日(作業者3)                      |
+ | 追加条文                                 | addArticleContent                        | String                 | 追加条文                                 |
+ | 事業内容列挙                             | businessText                             | String                 | 事業内容列挙                             |
 
 ## 7. 連携
 
