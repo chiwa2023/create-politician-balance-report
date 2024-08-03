@@ -171,6 +171,13 @@ function restoreOutcomeReadData(index: number) {
 function onSave() {
     alert(temp.value);
 }
+/**  
+ * 入力内容を保存する
+ */
+ function onCancel() {
+    alert(temp.value);
+}
+
 </script>
 <template>
     <h2>csvを読み取りして仕訳する</h2>
@@ -225,8 +232,8 @@ function onSave() {
         @restoreIncomeReadData="restoreIncomeReadData" @restoreOutcomeReadData="restoreOutcomeReadData">
     </BalancesheetInput>
     <div class="footer">
-        <button>キャンセル</button>
-        <button @click="onSave">保存</button>
+        <button @click="onCancel" class="footer-button">キャンセル</button>
+        <button @click="onSave" class="footer-button">保存</button>
     </div>
 </template>
 <style scoped>

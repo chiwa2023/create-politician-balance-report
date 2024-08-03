@@ -121,8 +121,8 @@ function previewPublish() {
     <div class="right-area"><input type="password" v-model="checkSendDto.userPasswordSubmissionOrg" /><br></div>
     <br>
     <div class="footer">
-        <button @click="onCancel">キャンセル</button>
-        <button @click="onExecute">保存</button>
+        <button @click="onCancel" class="footer-button">キャンセル</button>
+        <button @click="onExecute" class="footer-button">保存</button>
     </div>
 </template>
 <style scoped></style>

@@ -155,8 +155,8 @@ function onSave() {
     </div>
 
     <div class="footer">
-        <button @click="onCancel">キャンセル</button>
-        <button @click="onSave">選択</button>
+        <button @click="onCancel" class="footer-button">キャンセル</button>
+        <button @click="onSave" class="footer-button">選択</button>
     </div>
 
 </template>

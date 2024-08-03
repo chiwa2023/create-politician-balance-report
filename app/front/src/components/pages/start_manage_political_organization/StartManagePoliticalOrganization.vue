@@ -172,8 +172,8 @@ function onSave() {
     <div class="clear-both"><br></div>
 
     <div class="footer">
-        <button @click="onCancel">キャンセル</button>
-        <button @click="onSave">保存</button>
+        <button @click="onCancel" class="footer-button">キャンセル</button>
+        <button @click="onSave" class="footer-button">保存</button>
     </div>
 
     <!-- 責任者検索コンポーネント -->

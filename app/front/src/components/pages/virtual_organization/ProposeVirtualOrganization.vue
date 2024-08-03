@@ -52,7 +52,7 @@ function onSave() {
     </div>
     <br>
     <div class="footer">
-        <button @click="onCancel">キャンセル</button>
+        <button @click="onCancel" class="footer-button">キャンセル</button>
     </div>
 
 </template>

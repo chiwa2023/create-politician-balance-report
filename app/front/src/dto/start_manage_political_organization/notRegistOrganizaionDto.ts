@@ -2,7 +2,20 @@ import ElectionCommissionLeastInterface from "../election_commission/electionCom
 import ElectionCommissionLeastDto from "../election_commission/electionCommissionDto";
 import SaveStorageResultDto from "../storage/saveStorageResultDto";
 
-export default class NotRegistOrganizaionDto {
+export default interface NotRegistOrganizaionInterface {
+
+        /** 選挙管理委員会最小限情報 */
+        electionCommissionLeastDto: ElectionCommissionLeastInterface;
+
+        /** 書証情報 */
+        saveStorageResultDto: SaveStorageResultDto;
+    
+        /** 政治団体名称 */
+        politicalOrganizationName: string;
+    
+}
+
+export default class NotRegistOrganizaionDto implements NotRegistOrganizaionInterface {
 
     /** 選挙管理委員会最小限情報 */
     electionCommissionLeastDto: ElectionCommissionLeastInterface;
@@ -12,7 +25,6 @@ export default class NotRegistOrganizaionDto {
 
     /** 政治団体名称 */
     politicalOrganizationName: string;
-
 
     constructor() {
 

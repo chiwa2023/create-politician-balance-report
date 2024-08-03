@@ -6,8 +6,8 @@ import UploadFile from "../../common/upload_file/UploadFile.vue";
 import SaveStorageResultDto from "../../../dto/storage/saveStorageResultDto";
 import NotRegistOrganizaionDto from "../../../dto/start_manage_political_organization/notRegistOrganizaionDto";
 
-
-const editDto:Ref<NotRegistOrganizaionDto> = ref(new NotRegistOrganizaionDto());
+//編集用Dto
+const editDto: Ref<NotRegistOrganizaionDto> = ref(new NotRegistOrganizaionDto());
 
 //選挙管理委員会表示フラグ
 const isVisibleSearchElectionCommision: Ref<boolean> = ref(false);
@@ -67,8 +67,10 @@ function onSave() {
         提出選挙管理委員会
     </div>
     <div class="right-area">
-        <input type="number" v-model="editDto.electionCommissionLeastDto.electionCommissionCode" disabled="true" class="code-input">
-        <input type="text" v-model="editDto.electionCommissionLeastDto.electionCommissionName" disabled="true" class="left-space name-input">
+        <input type="number" v-model="editDto.electionCommissionLeastDto.electionCommissionCode" disabled="true"
+            class="code-input">
+        <input type="text" v-model="editDto.electionCommissionLeastDto.electionCommissionName" disabled="true"
+            class="left-space name-input">
         <button class="left-space" @click="onSearchElectionCommition">選挙管理委員会検索</button>
     </div>
     <div class="clear-both"><br></div>
@@ -88,8 +90,8 @@ function onSave() {
     <UploadFile @send-file-data-interface="recieveFileDataInterfacel"></UploadFile>
 
     <div class="footer">
-        <button @click="onCancel">キャンセル</button>
-        <button @click="onSave">保存</button>
+        <button @click="onCancel" class="footer-button">キャンセル</button>
+        <button @click="onSave" class="footer-button">保存</button>
     </div>
 
     <!-- 選挙管理委員会検索コンポーネント -->

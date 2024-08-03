@@ -50,7 +50,7 @@ function onClose() {
     <div class="clear-both"></div>
 
     <div class="footer">
-        <button @click="onClose">閉じる</button>
+        <button @click="onClose" class="footer-button">閉じる</button>
     </div>
 
 </template>

@@ -562,13 +562,13 @@ function onSave() {
 
     <h2>政党区分入力補助</h2>
 
-    Q1.<input type="radio" v-model="selectedOrganizationKbn" value="1"><span
+    選択肢01.<input type="radio" v-model="selectedOrganizationKbn" value="1"><span
     :class="inputSelectDisplayBold(selectedOrganizationKbn === '1')">政党要件を満たす政党である</span><br>
     <span v-show="isParty">
         <button @click="onSave">政治団体区分決定</button><br>
     </span>
 
-    Q2.<input type="radio" v-model="selectedOrganizationKbn" value="2"><span
+    選択肢02.<input type="radio" v-model="selectedOrganizationKbn" value="2"><span
     :class="inputSelectDisplayBold(selectedOrganizationKbn === '2')">(各議員でなく、政党への唯一の資金提供窓口である)政治資金団体である</span><br>
     <span v-show="isPartyManageFunds">
         <input type="number" v-model="editDto.politicalPartyCode" disabled="true" class="code-input">
@@ -580,7 +580,7 @@ function onSave() {
         <button @click="onSave">政治団体区分決定</button><br>
     </span>
 
-    Q3.<input type="radio" v-model="selectedOrganizationKbn" value="3"><span
+    選択肢03.<input type="radio" v-model="selectedOrganizationKbn" value="3"><span
     :class="inputSelectDisplayBold(selectedOrganizationKbn === '3')">政党要件を満たす政党の支部である</span><br>
     <span v-show="isPartyBranch">
         <input type="number" v-model="editDto.politicalPartyCode" disabled="true" class="code-input">
@@ -592,7 +592,7 @@ function onSave() {
         <button @click="onSave">政治団体区分決定</button><br>
     </span>
 
-    Q4.<input type="radio" v-model="selectedOrganizationKbn" value="4"><span
+    選択肢04.<input type="radio" v-model="selectedOrganizationKbn" value="4"><span
     :class="inputSelectDisplayBold(selectedOrganizationKbn === '4')">代表者は国会議員の現職である</span><br>
     <span v-show="isCountryParliament">
         <input type="number" v-model="editDto.parliamentMemberCode" disabled="true" class="code-input">
@@ -617,7 +617,7 @@ function onSave() {
         <button @click="onSave">政治団体区分決定</button><br>
     </span>
 
-    Q5.<input type="radio" v-model="selectedOrganizationKbn" value="5"><span
+    選択肢05.<input type="radio" v-model="selectedOrganizationKbn" value="5"><span
     :class="inputSelectDisplayBold(selectedOrganizationKbn === '5')">代表者は国会議員の候補者である</span><br>
     <span v-show="isCountryParliamentCandidate">
         <input type="number" v-model="editDto.politicianAllCode" disabled="true" class="code-input">
@@ -642,7 +642,7 @@ function onSave() {
         <button @click="onSave">政治団体区分決定</button><br>
     </span>
 
-    Q6.<input type="radio" v-model="selectedOrganizationKbn" value="6"><span
+    選択肢06.<input type="radio" v-model="selectedOrganizationKbn" value="6"><span
     :class="inputSelectDisplayBold(selectedOrganizationKbn === '6')">国会議員の現職または候補者を後援または推薦している</span><br>
     <span v-show="isCountryParliamentSupport">
         <input type="number" v-model="editDto.politicianAllCode" disabled="true" class="code-input">
@@ -666,7 +666,7 @@ function onSave() {
         <button @click="onSave">政治団体区分決定</button><br>
     </span>
 
-    Q7.<input type="radio" v-model="selectedOrganizationKbn" value="7"><span
+    選択肢07.<input type="radio" v-model="selectedOrganizationKbn" value="7"><span
     :class="inputSelectDisplayBold(selectedOrganizationKbn === '7')">代表者は地方の首長または地方議会議員の現職である</span><br>
     <span v-show="isLocalityParliament">
         <input type="number" v-model="editDto.parliamentMemberCode" disabled="true" class="code-input">
@@ -691,7 +691,7 @@ function onSave() {
         <button @click="onSave">政治団体区分決定</button><br>
     </span>
 
-    Q8.<input type="radio" v-model="selectedOrganizationKbn" value="8"><span
+    選択肢08.<input type="radio" v-model="selectedOrganizationKbn" value="8"><span
     :class="inputSelectDisplayBold(selectedOrganizationKbn === '8')">代表者は地方の首長または地方議会議員の候補者である</span><br>
     <span v-show="isLocalityParliamentCandidate">
         <input type="number" v-model="editDto.politicianAllCode" disabled="true" class="code-input">
@@ -716,7 +716,7 @@ function onSave() {
         <button @click="onSave">政治団体区分決定</button><br>
     </span>
 
-    Q9.<input type="radio" v-model="selectedOrganizationKbn" value="9"><span
+    選択肢09.<input type="radio" v-model="selectedOrganizationKbn" value="9"><span
     :class="inputSelectDisplayBold(selectedOrganizationKbn === '9')">地方の首長または地方議会議員の現職または候補者を後援または推薦している</span><br>
     <span v-show="isLocalityParliamentSupport">
         <input type="number" v-model="editDto.politicianAllCode" disabled="true" class="code-input">
@@ -740,20 +740,20 @@ function onSave() {
         <button @click="onSave">政治団体区分決定</button><br>
     </span>
 
-    Q10.<input type="radio" v-model="selectedOrganizationKbn"
+    選択肢10.<input type="radio" v-model="selectedOrganizationKbn"
         value="10"><span
         :class="inputSelectDisplayBold(selectedOrganizationKbn === '10')">パーティの収益(の一部)が政治活動に使われ、かつ収入が10,000,000円以上である団体である</span><br>
     <span v-show="isSpecialPartyOrgnization">
         <button @click="onSave">政治団体区分決定</button><br>
     </span>
 
-    Q11.<input type="radio" v-model="selectedOrganizationKbn" value="11"><span
+    選択肢11.<input type="radio" v-model="selectedOrganizationKbn" value="11"><span
     :class="inputSelectDisplayBold(selectedOrganizationKbn === '11')">議員の後援・推薦はしていないが、政治的主張活動を継続的に行っている</span><br>
     <span v-show="isPurposeOrganization">
         <button @click="onSave">政治団体区分決定</button><br>
     </span>
 
-    Q12.<input type="radio" v-model="selectedOrganizationKbn" value="12"><span
+    選択肢12.<input type="radio" v-model="selectedOrganizationKbn" value="12"><span
     :class="inputSelectDisplayBold(selectedOrganizationKbn === '12')">政治団体の支部である</span><br>
     <span v-show="isOrganizationBranch">
         <input type="number" v-model="editDto.politicalOrganizationCode" disabled="true" class="code-input">
@@ -832,7 +832,7 @@ function onSave() {
     </div>
 
     <div class="footer">
-        <button @click="onCancel">キャンセル</button>
+        <button @click="onCancel" class="footer-button">キャンセル</button>
     </div>
 
 </template>
