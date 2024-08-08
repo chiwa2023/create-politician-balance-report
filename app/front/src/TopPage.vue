@@ -48,6 +48,8 @@ if (0 === securityDto.loginUserId) {
 </script>
 <template>
     <h1>(仮)Top Page</h1>
+    <RouterLink to="/edit-estate">収支報告書資産編集</RouterLink><br>
+    <br>
     <RouterLink to="/add_politician_orgnization">政治団体設立届</RouterLink><br>
     <RouterLink to="/show_group_member">グループメンバー一覧</RouterLink><br>
     <RouterLink to="/start_manage_political_organization">既存団体管理開始</RouterLink><br>

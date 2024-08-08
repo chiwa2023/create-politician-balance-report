@@ -8,6 +8,8 @@ const routes = [
     { path: '/start_manage_political_organization/accept', name: 'AcceptPersonManager', component: () => import("./components/pages/start_manage_political_organization/AcceptPersonManager.vue") },
     { path: '/propose_not_regist_organization', name: 'ProposeNotRegistOrganization', component: () => import("./components/pages/propose_not_regist_organization/ProposeNotRegistOrganization.vue") },
 
+    { path: '/edit-estate', name: 'EditEstate', component: () => import("./components/pages/edit_estate/EditEstate.vue") },
+
     { path: '/read_fin_institution_csv', name: 'ReadFinInstitutionCsv', component: () => import("./components/read_fin_institution_csv/ReadFinInstitutionCsv.vue") },
     { path: '/login_user', name: 'LoginUser', component: () => import("./components/pages/login_user/LoginUser.vue") },
     { path: '/publish_submisson', name: 'PublishSubmission', component: () => import("./components/pages/publish_submisson/PublishSubmission.vue") },
