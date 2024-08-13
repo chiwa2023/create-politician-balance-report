@@ -15,7 +15,7 @@ import mitei.mitei.create.report.balance.politician.dto.report_item.zengin.recor
 class ConvertTradingDetailDataGroup2FromCsvLogicTest {
     // CHECKSTYLE:OFF
     @Test
-    void testPractice() {
+    void testPractice() { // NOPMD
         ConvertTradingDetailDataGroup2FromCsvLogic convertTradingDetailDataGroup2FromCsvLogic = new ConvertTradingDetailDataGroup2FromCsvLogic();
 
         final String data = "2,00123,031201,031210,1,10,0000098765,000333,040205,040209,1,000246,456,040301,0.22,100101,0110022,00135,1.12,2,012,0.33,00129,0035798,2,0.23,009753,006654,ﾃｷﾖｳ,1212,1,ｴﾝﾄﾞ";
@@ -130,7 +130,7 @@ class ConvertTradingDetailDataGroup2FromCsvLogicTest {
         assertThat(dto2.getDataKbn()).isEqualTo(2);
 
         // 識別番号の格納位置
-        assertNull(dto2.getIdentificationNo());
+        assertNull(dto2.getIdentificationNo(),"");
 
         // 勘定日の格納位置
         assertThat(dto2.getAccountingDate()).isEqualTo(LocalDate.of(2021, 12, 1));
@@ -142,7 +142,7 @@ class ConvertTradingDetailDataGroup2FromCsvLogicTest {
         assertThat(dto2.getDeWdKbn()).isEqualTo(1);
 
         // 取引区分の格納位置
-        assertNull(dto2.getTradingKbn());
+        assertNull(dto2.getTradingKbn(),"");
 
         // 取引金額の格納位置
         assertThat(dto2.getTransactionAmount()).isEqualTo(98765L);
@@ -151,73 +151,73 @@ class ConvertTradingDetailDataGroup2FromCsvLogicTest {
         assertThat(dto2.getOtherStoreTicketAmount()).isEqualTo(333);
 
         // 交換呈示日の格納位置
-        assertNull(dto2.getExchangePresentationDate());
+        assertNull(dto2.getExchangePresentationDate(),"");
 
         // 不渡返還日の格納位置
-        assertNull(dto2.getDishonoredReturnDate());
+        assertNull(dto2.getDishonoredReturnDate(),"");
 
         // 手形・小切手区分の格納位置
-        assertNull(dto2.getBillCheckKbn());
+        assertNull(dto2.getBillCheckKbn(),"");
 
         // 手形・小切手番号の格納位置
-        assertNull(dto2.getBillCheckNo());
+        assertNull(dto2.getBillCheckNo(),"");
 
         // 僚店番号の格納位置
-        assertNull(dto2.getBranchNo());
+        assertNull(dto2.getBranchNo(),"");
 
         // 当初預入日の格納位置
-        assertNull(dto2.getOrginalDate());
+        assertNull(dto2.getOrginalDate(),"");
 
         // 利率の格納位置
         assertThat(dto2.getInterestRate()).isEqualTo(0.22F);
 
         // 満期日の格納位置
-        assertNull(dto2.getMaturityDate());
+        assertNull(dto2.getMaturityDate(),"");
 
         // 期間(1)の格納位置
-        assertNull(dto2.getPeriod1());
+        assertNull(dto2.getPeriod1(),"");
 
         // 期間利息の格納位置
-        assertNull(dto2.getPeriodInterest());
+        assertNull(dto2.getPeriodInterest(),"");
 
         // 中間払利率の格納位置
-        assertNull(dto2.getIntermediateInterestRate());
+        assertNull(dto2.getIntermediateInterestRate(),"");
 
         // 中間払区分の格納位置
-        assertNull(dto2.getInterimPaymentKbn());
+        assertNull(dto2.getInterimPaymentKbn(),"");
 
         // 期後期間の格納位置
-        assertNull(dto2.getPostPeriod());
+        assertNull(dto2.getPostPeriod(),"");
 
         // 期後利率の格納位置
-        assertNull(dto2.getPostPeriodInterestRate());
+        assertNull(dto2.getPostPeriodInterestRate(),"");
 
         // 期後利息の格納位置
-        assertNull(dto2.getPostPeriodInterest());
+        assertNull(dto2.getPostPeriodInterest(),"");
 
         // 合計利息の格納位置
-        assertNull(dto2.getTotalInterest());
+        assertNull(dto2.getTotalInterest(),"");
 
         // 税区分の格納位置
-        assertNull(dto2.getTaxKbn());
+        assertNull(dto2.getTaxKbn(),"");
 
         // 税率の格納位置
-        assertNull(dto2.getTaxRate());
+        assertNull(dto2.getTaxRate(),"");
 
         // 税額の格納位置
-        assertNull(dto2.getTaxAmount());
+        assertNull(dto2.getTaxAmount(),"");
 
         // 税引後利息の格納位置
-        assertNull(dto2.getAfterTaxInterest());
+        assertNull(dto2.getAfterTaxInterest(),"");
 
         // 摘要内容の格納位置
-        assertNull(dto2.getAbstractContent());
+        assertNull(dto2.getAbstractContent(),"");
 
         // 期間（2）の格納位置
-        assertNull(dto2.getPeriod2());
+        assertNull(dto2.getPeriod2(),"");
 
         // 期間利息正負表示の格納位置
-        assertNull(dto2.getPeriodicInterestKbn());
+        assertNull(dto2.getPeriodicInterestKbn(),"");
 
         // ダミーの格納位置
         assertThat(dto2.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");

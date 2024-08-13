@@ -1,6 +1,6 @@
 package mitei.mitei.create.report.balance.politician.zz_address2_support.util.create;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -32,17 +32,18 @@ class ZzAddressInsertPostalTableUtilTest {
             ZzAddress2PostalcodeEntity entity;
             for (int i = 0; i < 500; i++) {
                 entity = listEntity.get(i);
-                System.out.println(entity.getPostalcode() + "::" + entity.getAddressName() + "::" + entity.getNamePlus());
+                assertTrue(entity.getAddressName().startsWith("広島県"),"");
+                //System.out.println(entity.getPostalcode() + "::" + entity.getAddressName() + "::" + entity.getNamePlus());
             }
 
             int length = listEntity.size();
             for (int i = length - 1; i > length - 500; i--) {
                 entity = listEntity.get(i);
-                System.out.println(entity.getPostalcode() + "::" + entity.getAddressName() + "::" + entity.getNamePlus());
+                assertTrue(entity.getAddressName().startsWith("熊本県"),"");
+                //System.out.println(entity.getPostalcode() + "::" + entity.getAddressName() + "::" + entity.getNamePlus());
             }
         }
 
-        fail("Not yet implemented");
     }
 
 }

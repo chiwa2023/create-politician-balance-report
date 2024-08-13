@@ -124,46 +124,58 @@ public class ZzAddressInsertBlockTableUtil {
     }
 
     private String convertChoume(final String data) {
-        // CHECKSTYLE:OFF
+
         if (blankChar.equals(data)) {
             return blankChar;
         }
         String numText = data.replaceAll("丁目", blankChar);
-        int num = 9999999;
+        int num = 9999999; // SUPPRESS CHECKSTYLE MagicNumber
+
+        final int INT1 = 1;
+        final int INT2 = 2;
+        final int INT3 = 3;
+        final int INT4 = 4;
+        final int INT5 = 5;
+        final int INT6 = 6;
+        final int INT7 = 7;
+        final int INT8 = 8;
+        final int INT9 = 9;
+        final int INT10 = 10;
+
         switch (numText) {
-        case "一":
-            num = 1;
-            break;
-        case "二":
-            num = 2;
-            break;
-        case "三":
-            num = 3;
-            break;
-        case "四":
-            num = 4;
-            break;
-        case "五":
-            num = 5;
-            break;
-        case "六":
-            num = 6;
-            break;
-        case "七":
-            num = 7;
-            break;
-        case "八":
-            num = 8;
-            break;
-        case "九":
-            num = 9;
-            break;
-        case "十":
-            num = 10;
-            break;
-        default:
-            num = 9999999;
-            break;
+            case "一":
+                num = INT1;
+                break;
+            case "二":
+                num = INT2;
+                break;
+            case "三":
+                num = INT3;
+                break;
+            case "四":
+                num = INT4;
+                break;
+            case "五":
+                num = INT5;
+                break;
+            case "六":
+                num = INT6;
+                break;
+            case "七":
+                num = INT7;
+                break;
+            case "八":
+                num = INT8;
+                break;
+            case "九":
+                num = INT9;
+                break;
+            case "十":
+                num = INT10;
+                break;
+            default:
+                // 何もしない
+                break;
         }
 
         return num + "丁目";

@@ -17,7 +17,7 @@ public class Validate072000AllSheetLogic {
      */
     public int practice(final AllSheet0720OathDto allSheet0720) {
         // TODO 実装待ち
-        return -99; // CHECKSTYLE:OFF
+        return -99; //  SUPPRESS CHECKSTYLE MagicNumber
     }
 
 }

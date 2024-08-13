@@ -14,13 +14,16 @@ import mitei.mitei.create.report.balance.politician.util.ConvertWarekiToSeirekiU
 @Component
 public class ConvertTradingDetailDataGroup1FromCsvLogic {
 
+    /** 半角スペース */
+    private static final String BLANK =" ";
+    
     /**
      * データレコードに変換する
      *
      * @param cell csvの各セル
      * @return データレコード
      */
-    public TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto practice(final String[] cell) {
+    public TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto practice(final String[] cell) { // NOPMD
 
         TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto dto = new TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto();
 
@@ -93,7 +96,7 @@ public class ConvertTradingDetailDataGroup1FromCsvLogic {
 
     private Integer parseInt(final String data) {
         // 半角スペースは入力省略
-        if (" ".equals(data)) {
+        if (BLANK.equals(data)) {
             return null;
         }
 
@@ -102,7 +105,7 @@ public class ConvertTradingDetailDataGroup1FromCsvLogic {
 
     private String parseText(final String data) {
         // 半角スペースは入力省略
-        if (" ".equals(data)) {
+        if (BLANK.equals(data)) {
             return null;
         }
 
@@ -111,7 +114,7 @@ public class ConvertTradingDetailDataGroup1FromCsvLogic {
 
     private LocalDate parseDate(final String data) {
         // 半角スペースは入力省略
-        if (" ".equals(data)) {
+        if (BLANK.equals(data)) {
             return null;
         }
 

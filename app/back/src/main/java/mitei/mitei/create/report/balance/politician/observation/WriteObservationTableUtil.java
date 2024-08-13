@@ -14,7 +14,7 @@ public class WriteObservationTableUtil {
      * @return 記録行数
      */
     public int practice() {
-        int affectedRow = 0 ;
+        int affectedRow = 0 ; // NOPMD
         //TODO Daoを使用して書込み
         
 

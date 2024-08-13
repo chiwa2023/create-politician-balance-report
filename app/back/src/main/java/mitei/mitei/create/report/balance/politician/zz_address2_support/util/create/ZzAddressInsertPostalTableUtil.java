@@ -61,7 +61,7 @@ public class ZzAddressInsertPostalTableUtil {
         return listEntity;
     }
 
-    private String formatAddress3(final String data) { // CHECKSTYLE:OFF
+    private String formatAddress3(final String data) { //  SUPPRESS CHECKSTYLE
         
         //以下に掲載がない場合は空文字
         if(data.startsWith("以下に掲載がない場合")) {
@@ -76,7 +76,7 @@ public class ZzAddressInsertPostalTableUtil {
         return data;
     }
 
-    private String getAfter(final String data) { // CHECKSTYLE:OFF
+    private String getAfter(final String data) {  // SUPPRESS CHECKSTYLE
 
         //（による注釈がある場合は内容を見て修正するので内容を残す
         if(data.indexOf("（")!= -1) {

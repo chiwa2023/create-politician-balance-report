@@ -1,7 +1,6 @@
 package mitei.mitei.create.report.balance.politician.zz_address2_support.repository;
 
-
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
@@ -35,10 +34,8 @@ class ZzAddress2BlockRepositoryTest2 {
         List<ZzAddress2BlockEntity> list = zzAddress2BlockRepository.findByPostalCode(code);
         
         for(ZzAddress2BlockEntity entiy : list) {
-            System.out.println(entiy.getAllAddress());
+            assertTrue(entiy.getAllAddress().startsWith("広島県神石郡神石高原町花済"),"取得した住所は指定語で始まる");
         }
-        
-        fail("Not yet implemented");
     }
 
 }

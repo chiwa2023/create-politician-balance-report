@@ -28,14 +28,14 @@ public final class ConvertWarekiToSeirekiUtil {
         }
 
         // 年月日がそろっていないと処理できません
-        if (wareki.length() != 6) { // CHECKSTYLE:OFF
+        if ("yyMMdd".length() != wareki.length()) { // SUPPRESS CHECKSTYLE Magic Number
             throw new IllegalArgumentException("和暦文字列がYYMMDD形式(6文字)ではありません");
         }    
 
         // 年月日を揃える
-        int year = Integer.parseInt(wareki.substring(0,2)); // CHECKSTYLE:OFF
-        int month = Integer.parseInt(wareki.substring(2,4)); // CHECKSTYLE:OFF
-        int date = Integer.parseInt(wareki.substring(4,6)); // CHECKSTYLE:OFF
+        int year = Integer.parseInt(wareki.substring(0,2)); //  SUPPRESS CHECKSTYLE MagicNumber
+        int month = Integer.parseInt(wareki.substring(2,4)); //  SUPPRESS CHECKSTYLE MagicNumber
+        int date = Integer.parseInt(wareki.substring(4,6)); //  SUPPRESS CHECKSTYLE MagicNumber
 
         JapaneseEra[] eraGroup = JapaneseEra.values();
 

@@ -13,7 +13,7 @@ public class MockValidate070900AllSheetLogic extends Validate070900AllSheetLogic
      */
     @Override
     public int practice(final AllSheet0709AnonymousInPoliticalPartyDto allSheet0709) {
-        return 70900; // CHECKSTYLE:OFF
+        return 70900; //  SUPPRESS CHECKSTYLE MagicNumber
     }
 
 }

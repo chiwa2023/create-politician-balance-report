@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 郵便番号と紐づく番地リスト
  */
-public class PostalAddressBlockDto {
+public class PostalAddressBlockDto { // NOPMD DataClass
 
     /** 郵便番号リスト */
     private List<ZzAddress2PostalcodeEntity> listPostalcode;

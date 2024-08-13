@@ -15,7 +15,7 @@ public final class ZenginFormatConstants {
      * @param type 口座種目(数字1桁)
      * @return 口座種目名称
      */
-    public static String getDepositTypeLabel(final int type) { // CHECKSTYLE:OFF
+    public static String getDepositTypeLabel(final int type) { //  SUPPRESS CHECKSTYLE
 
         switch (type) {
             // 1:普通預金

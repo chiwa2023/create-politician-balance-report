@@ -1,7 +1,6 @@
 package mitei.mitei.create.report.balance.politician.zz_address.service;
 
-
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
@@ -34,11 +33,12 @@ class GetAddressServiceTest {
         String postalCode = "7201521";
         List<SelectOptionInterface> list = getAddressService.practice(postalCode);
 
-        for (SelectOptionInterface dto : list) {
-            System.out.println(dto.getText());
-        }
+        // for (SelectOptionInterface dto : list) {
+        // System.out.println(dto.getText());
+        // }
 
-        fail("Not yet implemented");
+        // 取得できるのは2907行
+        assertThat(list.size()).isEqualTo(2907); // SUPPRESS CHECKSTYLE MagicNumber
     }
 
 }

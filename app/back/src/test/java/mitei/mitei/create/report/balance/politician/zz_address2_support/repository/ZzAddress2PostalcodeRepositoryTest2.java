@@ -1,6 +1,6 @@
 package mitei.mitei.create.report.balance.politician.zz_address2_support.repository;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
@@ -27,26 +27,23 @@ class ZzAddress2PostalcodeRepositoryTest2 {
     /** 単体テスト */
     @Autowired
     private ZzAddress2PostalcodeRepository zzAddress2PostalcodeRepository;
-    
+
     @Test
     void testFindByAddressNameStartingWith() throws Exception {
         String jichitai = "熊本県熊本市中央区";
-        List<ZzAddress2PostalcodeEntity> listEntity = zzAddress2PostalcodeRepository.findByAddressNameStartingWith(jichitai);
-        for(ZzAddress2PostalcodeEntity entity : listEntity) {
-            System.out.println(entity.getAddressName());
+        List<ZzAddress2PostalcodeEntity> listEntity = zzAddress2PostalcodeRepository
+                .findByAddressNameStartingWith(jichitai);
+        for (ZzAddress2PostalcodeEntity entity : listEntity) {
+            assertTrue(entity.getAddressName().startsWith(jichitai), "取得リストの住所はすべて検索キーワードで始まる");
         }
-        
-        fail("Not yet implemented");
     }
 
     @Test
     void testFindByPostalcode() throws Exception {
         String postalcode = "7201623";
         List<ZzAddress2PostalcodeEntity> listEntity = zzAddress2PostalcodeRepository.findByPostalcode(postalcode);
-        for(ZzAddress2PostalcodeEntity entity : listEntity) {
-            System.out.println(entity.getAddressName());
+        for (ZzAddress2PostalcodeEntity entity : listEntity) {
+            assertTrue(entity.getAddressName().startsWith("広島県神石郡神石高原町花済"), "取得リスト住所はすべて該当郵便番号の住所で始まる");
         }
-        
-        fail("Not yet implemented");
     }
 }

@@ -22,8 +22,8 @@ public class PersonLineMapper implements LineMapper<PersonDto> {
         dto.setFirstName(this.removeQuote(cell[0]));
         dto.setLastName(this.removeQuote(cell[1]));
         dto.setExamResult(Integer.parseInt(this.removeQuote(cell[2])));
-        dto.setYearOfJoining(Integer.parseInt(this.removeQuote(this.removeQuote(cell[3])))); // CHECKSTYLE:OFF
-        dto.setTrainingAmount(Integer.parseInt(this.removeQuote(this.removeQuote(cell[4])))); // CHECKSTYLE:OFF
+        dto.setYearOfJoining(Integer.parseInt(this.removeQuote(this.removeQuote(cell[3])))); // SUPPRESS CHECKSTYLE MagicNumber
+        dto.setTrainingAmount(Integer.parseInt(this.removeQuote(this.removeQuote(cell[4])))); // SUPPRESS CHECKSTYLE MagicNumber
 
         return dto;
     }

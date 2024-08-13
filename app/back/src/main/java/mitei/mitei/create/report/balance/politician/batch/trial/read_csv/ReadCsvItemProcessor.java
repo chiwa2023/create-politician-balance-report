@@ -24,11 +24,11 @@ public class ReadCsvItemProcessor implements ItemProcessor<PersonDto, ReportDto>
         reportDto.setLastName(item.getLastName());
 
         // 簡単なグレード分け
-        if (item.getExamResult() > 50) { // CHECKSTYLE:OFF NOPMD
+        if (item.getExamResult() > 50) { //  SUPPRESS CHECKSTYLE MagicNumber NOPMD
             reportDto.setGradeName("グレードA");
 
         } else {
-            if (item.getYearOfJoining() < 3) { // CHECKSTYLE:OFF NOPMD
+            if (item.getYearOfJoining() < 3) { //  SUPPRESS CHECKSTYLE MagicNumber NOPMD
                 reportDto.setGradeName("グレードB");
             } else {
                 reportDto.setGradeName("グレードC");

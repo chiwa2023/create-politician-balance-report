@@ -18,7 +18,7 @@ public class ConvertTradingDetailHeaderFromCsvLogic {
      * @param cell csvの各セル
      * @return ヘッダレコード
      */
-    public TradingZenginFormatTransactionDetailHeaderRecordDto practice(final String[] cell) {
+    public TradingZenginFormatTransactionDetailHeaderRecordDto practice(final String[] cell) { // NOPMD
 
         TradingZenginFormatTransactionDetailHeaderRecordDto dto = new TradingZenginFormatTransactionDetailHeaderRecordDto();
 
@@ -81,7 +81,8 @@ public class ConvertTradingDetailHeaderFromCsvLogic {
 
     private Long parseLong(final String data) {
         //半角スペースは入力省略
-        if(" ".equals(data)) {
+        final String blank = " ";
+        if(blank.equals(data)) {
             return null; // データ未設定
         }
         return Long.parseLong(data);

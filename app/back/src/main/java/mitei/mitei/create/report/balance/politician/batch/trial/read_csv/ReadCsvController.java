@@ -47,7 +47,7 @@ public class ReadCsvController {
      * @throws JobRestartException                 再スタート例外
      * @throws JobExecutionAlreadyRunningException 実行中ジョブが存在する
      */
-    @GetMapping("/trial-batch") // CHECKSTYLE:OFF
+    @GetMapping("/trial-batch") //  SUPPRESS CHECKSTYLE
     public ResponseEntity<String> practice(final @RequestParam(name = "readPath") String readPathText,
             final @RequestParam(name = "writePath") String writePathText) throws JobParametersInvalidException,
             JobInstanceAlreadyCompleteException, JobRestartException, JobExecutionAlreadyRunningException {
@@ -79,7 +79,7 @@ public class ReadCsvController {
             jobLauncher.run(readCsvJob, jobParameters);
 
             return ResponseEntity.ok("成功!");
-        } catch (Exception e) {
+        } catch (Exception e) { // NOPMD
             return ResponseEntity.internalServerError().build();
         }
     }

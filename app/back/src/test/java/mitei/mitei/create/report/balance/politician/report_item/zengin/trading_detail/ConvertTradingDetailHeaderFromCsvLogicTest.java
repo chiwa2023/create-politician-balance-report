@@ -131,10 +131,9 @@ class ConvertTradingDetailHeaderFromCsvLogicTest {
         assertThat(dto2.getOverdraftKbn()).isEqualTo(1);
 
         // 通帳・証書区分の格納位置
-        assertNull(dto2.getPassbookKbn());
-
+        assertNull(dto2.getPassbookKbn(),"");
         // 取引前残高の格納位置
-        assertNull(dto2.getPreTransactionBalance());
+        assertNull(dto2.getPreTransactionBalance(),"");
 
         // ダミーの格納位置
         assertThat(dto2.getDummyEnd()).isEqualTo("");

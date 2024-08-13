@@ -11,5 +11,11 @@ import mitei.mitei.create.report.balance.politician.zz_address.entity.ZzAddressB
  */
 public interface ZzAddressBlockRepository  extends JpaRepository<ZzAddressBlockEntity, Long>{
 
-    public List<ZzAddressBlockEntity> findByPostalCode(String postalCode);
+    /**
+     * 郵便番号から番地情報を取得する
+     *
+     * @param postalCode 郵便番号
+     * @return 番地情報リスト
+     */
+    List<ZzAddressBlockEntity> findByPostalCode(String postalCode);
 }

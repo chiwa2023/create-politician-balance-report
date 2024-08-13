@@ -13,7 +13,7 @@ public class MockValidate071402SheetLogic extends Validate071402SheetLogic{
      */
     @Override
     public int practice(final AllSheetKbn071402Dto kbnSheet071402) {
-        return 71402; // CHECKSTYLE:OFF
+        return 71402; //  SUPPRESS CHECKSTYLE MagicNumber
     }
 
 }

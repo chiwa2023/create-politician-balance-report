@@ -13,7 +13,7 @@ public class MockValidate080000AllSheetLogic extends Validate080000AllSheetLogic
      */
     @Override
     public int practice(final AllSheet0800DifficultCollectReceiptDto allSheet0800) {
-        return 80000; // CHECKSTYLE:OFF
+        return 80000; //  SUPPRESS CHECKSTYLE MagicNumber
     }
 
 }

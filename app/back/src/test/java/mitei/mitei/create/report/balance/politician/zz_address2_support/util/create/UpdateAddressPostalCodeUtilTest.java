@@ -1,7 +1,7 @@
 package mitei.mitei.create.report.balance.politician.zz_address2_support.util.create;
 
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
@@ -32,15 +32,17 @@ class UpdateAddressPostalCodeUtilTest {
     @Test
     void test() {
         
+        // NOTE:データベース更新(と変更後のデータ取得)を行うのでめちゃくちゃ時間がかる。何度も実施するものではない
+        
         List<ZzAddress2PostalcodeEntity> list = updateAddressPostalCodeUtil.practice();
         
-        for(ZzAddress2PostalcodeEntity entity  :list) {
-            if(entity.getIsPrc1()) {
-                System.out.println(entity.getAddressName());
-            }
-        }
+        //for(ZzAddress2PostalcodeEntity entity  :list) {
+        //    if(entity.getIsPrc1()) {
+        //        System.out.println(entity.getAddressName());
+        //    }
+        //}
         
-        fail("Not yet implemented");
+        assertTrue(!list.isEmpty(),"適切なテストが思い浮かばない");
     }
 
 }

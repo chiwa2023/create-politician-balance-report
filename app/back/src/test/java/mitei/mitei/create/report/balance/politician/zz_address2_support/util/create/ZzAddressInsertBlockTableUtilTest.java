@@ -1,6 +1,6 @@
 package mitei.mitei.create.report.balance.politician.zz_address2_support.util.create;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -53,11 +53,12 @@ class ZzAddressInsertBlockTableUtilTest {
             List<ZzAddress2BlockEntity> listEntity = zzAddressInsertBlockTableUtil.practice(listAll, jichitai);
 
             for (ZzAddress2BlockEntity entity : listEntity) {
-                System.out.println(entity.getAllAddress() + "::" + entity.getText() + "::" + entity.getChoume());
+                // System.out.println(entity.getAllAddress() + "::" + entity.getText() + "::" +
+                // entity.getChoume());
+                assertTrue(entity.getAllAddress().startsWith(jichitai), "取得した住所はすべて検索キーワードで始まる");
             }
-        }
 
-        fail("Not yet implemented");
+        }
     }
 
 }

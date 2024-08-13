@@ -28,30 +28,30 @@ import mitei.mitei.create.report.balance.politician.dto.report_item.zengin.recor
 /**
  * ConvertTradingDetailAllFromCsvLogic単体テスト
  */
+@SuppressWarnings("PMD.AvoidDuplicateLiterals")
 class ConvertTradingDetailAllFromCsvLogicTest {
     // CHECKSTYLE:OFF
 
     @Test
-    void testPractice()throws Exception {
+    void testPractice() throws Exception { // NOPMD
         ConvertTradingDetailAllFromCsvLogic convertTradingDetailAllFromCsvLogic = new ConvertTradingDetailAllFromCsvLogic();
-        
+
         Path path = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "report_item/zegin_csv_format.csv");
-        
-        MultipartFile file = new MockMultipartFile("zegin_csv_format", new FileInputStream(path.toFile())); //NOPMD
-        
-        try(
-                Reader reader = new InputStreamReader(file.getInputStream());
-                ){
-            
-            TradingZenginFormatTransactionDetailDto detailDto =convertTradingDetailAllFromCsvLogic.practice(reader);
-            
+
+        MultipartFile file = new MockMultipartFile("zegin_csv_format", new FileInputStream(path.toFile())); // NOPMD
+
+        try (Reader reader = new InputStreamReader(file.getInputStream());) {
+
+            TradingZenginFormatTransactionDetailDto detailDto = convertTradingDetailAllFromCsvLogic.practice(reader);
+
             List<TradingZenginFormatTransactionDetailGroup1OrdinalyDto> listGroup1 = detailDto.getListGroup1();
 
-            //1組データが入っている
+            // 1組データが入っている
             assertThat(listGroup1.size()).isEqualTo(1);
-            
+
             /* ヘッダレコード */
-            TradingZenginFormatTransactionDetailHeaderRecordDto headerDto1 = listGroup1.get(0).getTradingZenginFormatTransactionDetailHeaderRecordDto();
+            TradingZenginFormatTransactionDetailHeaderRecordDto headerDto1 = listGroup1.get(0) // NOPMD
+                    .getTradingZenginFormatTransactionDetailHeaderRecordDto();
             assertThat(headerDto1.getDataKbn()).isEqualTo(1);
             assertThat(headerDto1.getBusinessType()).isEqualTo("03");
             assertThat(headerDto1.getCodeKbn()).isEqualTo(0);
@@ -70,9 +70,10 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(headerDto1.getPassbookKbn()).isEqualTo(1);
             assertThat(headerDto1.getPreTransactionBalance()).isEqualTo(24680L);
             assertThat(headerDto1.getDummyEnd()).isEqualTo("ｻｲｼｭｳ");
-            
+
             /* トレーラレコード */
-            TradingZenginFormatTransactionDetailTrailerRecordDto trailerDto1 = listGroup1.get(0).getTradingZenginFormatTransactionDetailTrailerRecordDto();
+            TradingZenginFormatTransactionDetailTrailerRecordDto trailerDto1 = listGroup1.get(0) // NOPMD
+                    .getTradingZenginFormatTransactionDetailTrailerRecordDto();
             assertThat(trailerDto1.getDataKbn()).isEqualTo(8);
             assertThat(trailerDto1.getCountIncome()).isEqualTo(1);
             assertThat(trailerDto1.getSumIncome()).isEqualTo(35791L);
@@ -82,13 +83,14 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(trailerDto1.getBalanceAfterTransaction()).isEqualTo(97531L);
             assertThat(trailerDto1.getCountData()).isEqualTo(2);
             assertThat(trailerDto1.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");
-            
-            List<TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto> listData1 = listGroup1.get(0).getListData();
-            
-            //データレコードは2件
+
+            List<TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto> listData1 = listGroup1.get(0) // NOPMD
+                    .getListData();
+
+            // データレコードは2件
             assertThat(listData1.size()).isEqualTo(2);
-            
-            TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto dto11 =listData1.get(0);
+
+            TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto dto11 = listData1.get(0);
             assertThat(dto11.getDataKbn()).isEqualTo(2);
             assertThat(dto11.getReferNo()).isEqualTo("12345");
             assertThat(dto11.getAccountingDate()).isEqualTo(LocalDate.of(2021, 12, 1));
@@ -110,7 +112,7 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(dto11.getEdiInfo()).isEqualTo("edi");
             assertThat(dto11.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");
 
-            TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto dto12 =listData1.get(1);
+            TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto dto12 = listData1.get(1);
             assertThat(dto12.getDataKbn()).isEqualTo(2);
             assertThat(dto12.getReferNo()).isEqualTo("12345");
             assertThat(dto12.getAccountingDate()).isEqualTo(LocalDate.of(2021, 12, 1));
@@ -131,14 +133,15 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(dto12.getAbstractContent()).isEqualTo("取引詳細");
             assertThat(dto12.getEdiInfo()).isEqualTo("edi");
             assertThat(dto12.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");
-            
+
             List<TradingZenginFormatTransactionDetailGroup2NoticeDto> listGroup2 = detailDto.getListGroup2();
-            
-            //1組データが入っている
+
+            // 1組データが入っている
             assertThat(listGroup2.size()).isEqualTo(1);
 
             /* ヘッダレコード */
-            TradingZenginFormatTransactionDetailHeaderRecordDto headerDto2 = listGroup2.get(0).getTradingZenginFormatTransactionDetailHeaderRecordDto();
+            TradingZenginFormatTransactionDetailHeaderRecordDto headerDto2 = listGroup2.get(0) // NOPMD
+                    .getTradingZenginFormatTransactionDetailHeaderRecordDto();
             assertThat(headerDto2.getDataKbn()).isEqualTo(1);
             assertThat(headerDto2.getBusinessType()).isEqualTo("03");
             assertThat(headerDto2.getCodeKbn()).isEqualTo(0);
@@ -157,9 +160,10 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(headerDto2.getPassbookKbn()).isEqualTo(1);
             assertThat(headerDto2.getPreTransactionBalance()).isEqualTo(24680L);
             assertThat(headerDto2.getDummyEnd()).isEqualTo("ｻｲｼｭｳ");
-            
+
             /* トレーラレコード */
-            TradingZenginFormatTransactionDetailTrailerRecordDto trailerDto2 = listGroup2.get(0).getTradingZenginFormatTransactionDetailTrailerRecordDto();
+            TradingZenginFormatTransactionDetailTrailerRecordDto trailerDto2 = listGroup2.get(0) // NOPMD
+                    .getTradingZenginFormatTransactionDetailTrailerRecordDto();
             assertThat(trailerDto2.getDataKbn()).isEqualTo(8);
             assertThat(trailerDto2.getCountIncome()).isEqualTo(1);
             assertThat(trailerDto2.getSumIncome()).isEqualTo(35791L);
@@ -170,13 +174,13 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(trailerDto2.getCountData()).isEqualTo(2);
             assertThat(trailerDto2.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");
 
+            List<TradingZenginFormatTransactionDetailDataRecordGroup2NoticeDto> listData2 = listGroup2.get(0)
+                    .getListData();
 
-            List<TradingZenginFormatTransactionDetailDataRecordGroup2NoticeDto> listData2 = listGroup2.get(0).getListData();
-
-            //データレコードは2件
+            // データレコードは2件
             assertThat(listData2.size()).isEqualTo(2);
-            
-            TradingZenginFormatTransactionDetailDataRecordGroup2NoticeDto dto21 =listData2.get(0);
+
+            TradingZenginFormatTransactionDetailDataRecordGroup2NoticeDto dto21 = listData2.get(0);
             assertThat(dto21.getDataKbn()).isEqualTo(2);
             assertThat(dto21.getIdentificationNo()).isEqualTo("00123");
             assertThat(dto21.getAccountingDate()).isEqualTo(LocalDate.of(2021, 12, 1));
@@ -209,8 +213,8 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(dto21.getPeriod2()).isEqualTo("1212");
             assertThat(dto21.getPeriodicInterestKbn()).isEqualTo(1);
             assertThat(dto21.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");
-            
-            TradingZenginFormatTransactionDetailDataRecordGroup2NoticeDto dto22 =listData2.get(1);
+
+            TradingZenginFormatTransactionDetailDataRecordGroup2NoticeDto dto22 = listData2.get(1);
             assertThat(dto22.getDataKbn()).isEqualTo(2);
             assertThat(dto22.getIdentificationNo()).isEqualTo("00123");
             assertThat(dto22.getAccountingDate()).isEqualTo(LocalDate.of(2021, 12, 1));
@@ -244,44 +248,41 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(dto22.getPeriodicInterestKbn()).isEqualTo(1);
             assertThat(dto22.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");
 
-            
-            //エンドレコード
-            TradingZenginFormatTransactionDetailEndRecordDto endDto = detailDto.getTradingZenginFormatTransactionDetailEndRecordDto();
+            // エンドレコード
+            TradingZenginFormatTransactionDetailEndRecordDto endDto = detailDto // NOPMD
+                    .getTradingZenginFormatTransactionDetailEndRecordDto();
             assertThat(endDto.getDataKbn()).isEqualTo(9);
             assertThat(endDto.getCountRecord()).isEqualTo(11);
             assertThat(endDto.getCountAccount()).isEqualTo(2);
             assertThat(endDto.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");
-            
+
         }
 
-        Path pathNot = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "report_item/zegin_csv_format_not_detail.csv");
-        
-        MultipartFile fileNot = new MockMultipartFile("zegin_csv_format_not_detail", new FileInputStream(pathNot.toFile())); //NOPMD
+        Path pathNot = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(),
+                "report_item/zegin_csv_format_not_detail.csv");
 
-        try(
-                Reader readerNot = new InputStreamReader(fileNot.getInputStream());
-                ){
+        MultipartFile fileNot = new MockMultipartFile("zegin_csv_format_not_detail",
+                new FileInputStream(pathNot.toFile())); // NOPMD
+
+        try (Reader readerNot = new InputStreamReader(fileNot.getInputStream());) {
             assertThrows(IllegalArgumentException.class, () -> convertTradingDetailAllFromCsvLogic.practice(readerNot));
         }
 
-        
-        Path pathAllDeposit = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "report_item/zegin_csv_format_deposit.csv");
-        
-        MultipartFile fileAllDeposit = new MockMultipartFile("zegin_csv_format_not_detail", new FileInputStream(pathAllDeposit.toFile())); //NOPMD
+        Path pathAllDeposit = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(),
+                "report_item/zegin_csv_format_deposit.csv");
 
-        try(
-                Reader readerAllDeposit = new InputStreamReader(fileAllDeposit.getInputStream());
-                ){
-            //分岐すべてをテストで流す
-            TradingZenginFormatTransactionDetailDto allDepositDto =convertTradingDetailAllFromCsvLogic.practice(readerAllDeposit);
+        MultipartFile fileAllDeposit = new MockMultipartFile("zegin_csv_format_not_detail",
+                new FileInputStream(pathAllDeposit.toFile())); // NOPMD
+
+        try (Reader readerAllDeposit = new InputStreamReader(fileAllDeposit.getInputStream());) {
+            // 分岐すべてをテストで流す
+            TradingZenginFormatTransactionDetailDto allDepositDto = convertTradingDetailAllFromCsvLogic
+                    .practice(readerAllDeposit);
             assertThat(allDepositDto.getListGroup1().size()).isEqualTo(3);
             assertThat(allDepositDto.getListGroup2().size()).isEqualTo(1);
-            
+
         }
-        
-        
-        
-        
+
     }
 
 }

@@ -13,7 +13,7 @@ public class MockValidate080200AllSheetLogic extends Validate080200AllSheetLogic
      */
     @Override
     public int practice(final AllSheet0802WithdrawalItemsByTransferDto allSheet0802) {
-        return 80200; // CHECKSTYLE:OFF
+        return 80200; //  SUPPRESS CHECKSTYLE MagicNumber
     }
 
 }

@@ -14,13 +14,16 @@ import mitei.mitei.create.report.balance.politician.util.ConvertWarekiToSeirekiU
 @Component
 public class ConvertTradingDetailDataGroup2FromCsvLogic {
 
+    /** 半角スペース */
+    private static final String BLANK=" ";
+    
     /**
      * データレコードに変換する
      *
      * @param cell csvの各セル
      * @return データレコード
      */
-    public TradingZenginFormatTransactionDetailDataRecordGroup2NoticeDto practice(final String[] cell) {
+    public TradingZenginFormatTransactionDetailDataRecordGroup2NoticeDto practice(final String[] cell) { // NOPMD
 
         TradingZenginFormatTransactionDetailDataRecordGroup2NoticeDto dto = new TradingZenginFormatTransactionDetailDataRecordGroup2NoticeDto();
 
@@ -130,7 +133,7 @@ public class ConvertTradingDetailDataGroup2FromCsvLogic {
 
     private Integer parseInt(final String data) {
         // 半角スペースは入力省略
-        if(" ".equals(data)) {
+        if(BLANK.equals(data)) {
             return null;
         }
         
@@ -139,7 +142,7 @@ public class ConvertTradingDetailDataGroup2FromCsvLogic {
 
     private Long parseLong(final String data) {
         // 半角スペースは入力省略
-        if(" ".equals(data)) {
+        if(BLANK.equals(data)) {
             return null;
         }
         
@@ -148,7 +151,7 @@ public class ConvertTradingDetailDataGroup2FromCsvLogic {
 
     private String parseText(final String data) {
         // 半角スペースは入力省略
-        if(" ".equals(data)) {
+        if(BLANK.equals(data)) {
             return null;
         }
         
@@ -158,7 +161,7 @@ public class ConvertTradingDetailDataGroup2FromCsvLogic {
 
     private Float parseFloat(final String data) {
         // 半角スペースは入力省略
-        if(" ".equals(data)) {
+        if(BLANK.equals(data)) {
             return null;
         }
         
@@ -167,7 +170,7 @@ public class ConvertTradingDetailDataGroup2FromCsvLogic {
 
     private LocalDate parseDate(final String data) {
         // 半角スペースは入力省略
-        if(" ".equals(data)) {
+        if(BLANK.equals(data)) {
             return null;
         }
         

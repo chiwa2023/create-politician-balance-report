@@ -19,7 +19,7 @@ public class MockValidate070300AllSheetLogic extends Validate070300AllSheetLogic
             BalanceReportDoesNotMatchSumException, BalanceReportIchirenNoNotOrderException {
 
 
-        return 70300; // CHECKSTYLE:OFF
+        return 70300; //  SUPPRESS CHECKSTYLE MagicNumber
     }
 
 }

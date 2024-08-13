@@ -15,7 +15,7 @@ public class MockValidate070100AllSheetLogic extends Validate070100AllSheetLogic
     @Override
     public int practice(final AllSheet0701CoverAndOrganizationDetailsDto allSheet0701)throws BalanceReportRequiredInputException {
 
-        return 70100;// CHECKSTYLE:OFF
+        return 70100;//  SUPPRESS CHECKSTYLE MagicNumber
         
     }
 }
