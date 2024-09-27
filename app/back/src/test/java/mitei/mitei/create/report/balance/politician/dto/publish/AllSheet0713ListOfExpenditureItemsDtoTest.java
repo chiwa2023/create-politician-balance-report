@@ -17,7 +17,6 @@ import mitei.mitei.create.report.balance.politician.constants.GetCurrentResource
 /**
  * AllSheet0713ListOfExpenditureItemsDto単体テスト
  */
-@SuppressWarnings("PMD.AvoidDuplicateLiterals")
 class AllSheet0713ListOfExpenditureItemsDtoTest {
     // CHECKSTYLE:OFF MagicNumber
 
@@ -29,9 +28,9 @@ class AllSheet0713ListOfExpenditureItemsDtoTest {
         // 一種類のみ
         Sheet071300ListOfExpenditureItemsDto sheet0 = new Sheet071300ListOfExpenditureItemsDto();
         /// ** 人件費項目の合計 */
-        sheet0.setGoukeiJinkenhi("3000");
+        sheet0.setGoukeiJinkenhi("3_000");
         /// ** 人件費の供与した交付金に係る支出 */
-        sheet0.setKohfuJinkenhi("400");
+        sheet0.setKohfuJinkenhi("400"); // NOPMD
         /// ** 人件費の備考 */
         sheet0.setBikouJinkenhi("備考");
         /// ** 光熱費項目の合計 */
@@ -43,7 +42,7 @@ class AllSheet0713ListOfExpenditureItemsDtoTest {
         /// ** 備品項目の合計 */
         sheet0.setGoukeiBihinhi("3000");
         /// ** 備品の供与した交付金に係る支出 */
-        sheet0.setKohfuBihinhi("400");
+        sheet0.setKohfuBihinhi("400"); // NOPMD
         /// ** 備品の備考 */
         sheet0.setBikouBihinhi("備考");
         /// ** 事務所項目の合計 */

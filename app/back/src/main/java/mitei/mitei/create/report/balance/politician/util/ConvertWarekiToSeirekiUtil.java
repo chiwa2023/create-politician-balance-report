@@ -28,7 +28,8 @@ public final class ConvertWarekiToSeirekiUtil {
         }
 
         // 年月日がそろっていないと処理できません
-        if (wareki.length() != 6) { // CHECKSTYLE:OFF
+        final int warekiDigit = 6;
+        if (warekiDigit !=  wareki.length()) {
             throw new IllegalArgumentException("和暦文字列がYYMMDD形式(6文字)ではありません");
         }    
 

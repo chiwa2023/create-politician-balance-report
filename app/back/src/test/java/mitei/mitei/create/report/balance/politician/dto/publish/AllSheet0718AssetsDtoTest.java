@@ -17,7 +17,6 @@ import mitei.mitei.create.report.balance.politician.constants.GetCurrentResource
 /**
  * AllSheet0718AssetsDto単体テスト
  */
-@SuppressWarnings("PMD.AvoidDuplicateLiterals")
 class AllSheet0718AssetsDtoTest {
     // CHECKSTYLE:OFF MagicNumber
 

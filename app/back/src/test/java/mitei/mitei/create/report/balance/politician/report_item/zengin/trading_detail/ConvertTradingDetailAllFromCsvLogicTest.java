@@ -32,7 +32,7 @@ class ConvertTradingDetailAllFromCsvLogicTest {
     // CHECKSTYLE:OFF
 
     @Test
-    void testPractice()throws Exception {
+    void testPractice()throws Exception { // NOPMD
         ConvertTradingDetailAllFromCsvLogic convertTradingDetailAllFromCsvLogic = new ConvertTradingDetailAllFromCsvLogic();
         
         Path path = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "report_item/zegin_csv_format.csv");
