@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.CsvTradingRowConstants;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.entity.CsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.repository.CsvReadTemplateRepository;
@@ -39,7 +39,7 @@ public class SearchSimilarDataListService {
         // TODO 類似度の高いリストの条件は検討後決定する
         List<ProposeCsvReadTemplateEntity> listPropose = proposeCsvReadTemplateRepository.findAll();
         List<ProposeCsvReadTemplateEntity> listProposeFilter = listPropose.stream().filter(entity -> {
-            return SaishinKbnConstants.SAISHIN == entity.getSaishinKbn();
+            return DataHistoryStatusConstants.INSERT.value() == entity.getSaishinKbn();
         }).toList();
 
         for (ProposeCsvReadTemplateEntity entity : listProposeFilter) {
@@ -59,7 +59,7 @@ public class SearchSimilarDataListService {
         // TODO 類似度の高いリストの条件は検討後決定する
         List<CsvReadTemplateEntity> listCsv = csvReadTemplateRepository.findAll();
         List<CsvReadTemplateEntity> listCsvFilter = listCsv.stream().filter(entity -> {
-            return SaishinKbnConstants.SAISHIN == entity.getSaishinKbn();
+            return DataHistoryStatusConstants.INSERT.value() == entity.getSaishinKbn();
         }).toList();
 
         for (CsvReadTemplateEntity entity : listCsvFilter) {

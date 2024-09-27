@@ -51,11 +51,11 @@ CREATE TABLE `audit_opinion_income_2025` (
   `insert_user_code` int DEFAULT NULL COMMENT '挿入ユーザ同一識別コード',
   `insert_user_name` varchar(300) DEFAULT NULL COMMENT '挿入ユーザ姓名',
   `insert_user_role` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT 'ログインユーザ役割',
-  `insert_timestamp` timestamp NULL DEFAULT NULL COMMENT '挿入タイムスタンプ',
+  `insert_timestamp` datetime NULL DEFAULT NULL COMMENT '挿入タイムスタンプ',
   `update_user_id` bigint DEFAULT NULL COMMENT '更新ユーザId',
   `update_user_code` int DEFAULT NULL COMMENT '更新ユーザ同一識別コード',
   `update_user_name` varchar(300) DEFAULT NULL COMMENT '更新ユーザ姓名',
   `update_user_role` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT 'ログインユーザ役割',
-  `update_timestamp` timestamp NULL DEFAULT NULL COMMENT '更新タイムスタンプ',
+  `update_timestamp` datetime NULL DEFAULT NULL COMMENT '更新タイムスタンプ',
   PRIMARY KEY (`audit_opinion_income_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;

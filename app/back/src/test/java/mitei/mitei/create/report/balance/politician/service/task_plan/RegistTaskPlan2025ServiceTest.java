@@ -15,7 +15,6 @@ import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.transaction.annotation.Transactional;
 
-import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
 import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.entity.TaskPlan2025Entity;
@@ -49,7 +48,7 @@ class RegistTaskPlan2025ServiceTest {
         plan2025Entity.setTaskPlanCode(null);// 最終的には上書き
         plan2025Entity.setTaskPlanName("登録データ仕訳未処理");
 
-        plan2025Entity.setSaishinKbn(SaishinKbnConstants.SAISHIN);
+        plan2025Entity.setSaishinKbn(DataHistoryStatusConstants.INSERT.value());
         plan2025Entity.setIsFinished(false);
         plan2025Entity.setIsNoticsAlert(false);
 

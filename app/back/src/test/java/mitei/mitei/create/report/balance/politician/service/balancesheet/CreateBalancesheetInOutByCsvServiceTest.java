@@ -19,10 +19,10 @@ import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import mitei.mitei.create.report.balance.politician.constants.GetCurrentResourcePath;
-import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.CreateBalancsheetInOutItemResultDto;
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.ReportKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.CsvCellDto;
 import mitei.mitei.create.report.balance.politician.dto.storage.SaveStorageResultDto;
 import mitei.mitei.create.report.balance.politician.entity.BalancesheetIncome2025Entity;
@@ -85,7 +85,7 @@ class CreateBalancesheetInOutByCsvServiceTest {
         assertThat(incomeEntity1.getBalancesheetIncomeCode()).isEqualTo(-1L);
 
         // '最新区分'::最新データ,
-        assertThat(incomeEntity1.getSaishinKbn()).isEqualTo(SaishinKbnConstants.SAISHIN);
+        assertThat(incomeEntity1.getSaishinKbn()).isEqualTo(DataHistoryStatusConstants.INSERT.value());
 
         // '政治資金団体Id'::値設定,
         assertThat(incomeEntity1.getPoliticalOrganizationId())
@@ -235,7 +235,7 @@ class CreateBalancesheetInOutByCsvServiceTest {
         assertThat(outcomeEntity1.getBalancesheetOutcomeCode()).isEqualTo(-1);
 
         // '最新区分',最新データです
-        assertThat(outcomeEntity1.getSaishinKbn()).isEqualTo(SaishinKbnConstants.SAISHIN);
+        assertThat(outcomeEntity1.getSaishinKbn()).isEqualTo(DataHistoryStatusConstants.INSERT.value());
 
         // '政治資金団体Id'::設定値,
         assertThat(outcomeEntity1.getPoliticalOrganizationId()).isEqualTo(checkPrivilegeDto.getPoliticalOrganizationId());

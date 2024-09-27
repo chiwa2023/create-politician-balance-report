@@ -1,6 +1,6 @@
 package mitei.mitei.create.report.balance.politician.trial;
 
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.io.FileInputStream;
@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.http.HttpStatus;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
@@ -39,15 +40,14 @@ class UploadControllerTest {
     void testUpload() throws Exception {
 
         Path path = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "report_item/zegin_csv_format.csv");
-        
-        MockMultipartFile sampleFile = new MockMultipartFile("uploaded-file",new FileInputStream(path.toFile())); // NOPMD
-        
-        MockMultipartHttpServletRequestBuilder multipartRequest =
-                MockMvcRequestBuilders.multipart("/upload");
 
-        mockMvc.perform(multipartRequest.file(sampleFile)).andExpect(status().isOk());
-     
-        fail("not yet imple");
+        MockMultipartFile sampleFile = new MockMultipartFile("uploaded-file", new FileInputStream(path.toFile())); // NOPMD
+
+        MockMultipartHttpServletRequestBuilder multipartRequest = MockMvcRequestBuilders.multipart("/upload");
+
+        // とりあえずサーバステータスがOK(200)
+        assertThat(mockMvc.perform(multipartRequest.file(sampleFile)).andExpect(status().isOk()).andReturn()
+                .getResponse().getStatus()).isEqualTo(HttpStatus.OK.value());
     }
 
 }

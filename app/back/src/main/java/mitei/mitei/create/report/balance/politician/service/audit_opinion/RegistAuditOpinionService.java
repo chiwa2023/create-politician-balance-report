@@ -1,6 +1,5 @@
 package mitei.mitei.create.report.balance.politician.service.audit_opinion;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +60,7 @@ public class RegistAuditOpinionService {
         List<BalancesheetIncome2025Entity> listIncome = registBalancesheetInOutCapsuleDto.getListIncome();
         List<BalancesheetOutcome2025Entity> listOutcome = registBalancesheetInOutCapsuleDto.getListOutcome();
 
-        Timestamp now = Timestamp.valueOf(LocalDateTime.now());
+        LocalDateTime now = LocalDateTime.now();
         // 支出のうち前例と異なる収入
         List<AuditOpinionIncome2025Entity> listAuditIncome = new ArrayList<>();
         
@@ -117,7 +116,7 @@ public class RegistAuditOpinionService {
     }
 
 
-    private AuditOpinionIncome2025Entity createAuditByIncome(final Timestamp now,final String role, final BalancesheetIncome2025Entity entityIncome) {
+    private AuditOpinionIncome2025Entity createAuditByIncome(final LocalDateTime now,final String role, final BalancesheetIncome2025Entity entityIncome) {
         
         AuditOpinionIncome2025Entity entityAuditIncome = new AuditOpinionIncome2025Entity();
 
@@ -136,12 +135,13 @@ public class RegistAuditOpinionService {
         entityAuditIncome.setInsertUserRole(role);
 
         // 更新時間は現在時間
+        // TODO SetTableDataHistoryUtilに変更
         entityAuditIncome.setInsertTimestamp(now);
 
         return entityAuditIncome;
     }
 
-    private AuditOpinionOutcome2025Entity createAuditByOutcome(final Timestamp now,final String role, final BalancesheetOutcome2025Entity entityOutcome) {
+    private AuditOpinionOutcome2025Entity createAuditByOutcome(final LocalDateTime now,final String role, final BalancesheetOutcome2025Entity entityOutcome) {
 
         AuditOpinionOutcome2025Entity entityAuditOutcome = new AuditOpinionOutcome2025Entity();
         BeanUtils.copyProperties(entityOutcome, entityAuditOutcome);
@@ -158,6 +158,7 @@ public class RegistAuditOpinionService {
         entityAuditOutcome.setInsertUserRole(role);
 
         // 更新時間は現在時間
+        // TODO SetTableDataHistoryUtilに変更
         entityAuditOutcome.setInsertTimestamp(now);
 
         return entityAuditOutcome;

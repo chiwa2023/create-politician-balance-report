@@ -1,4 +1,4 @@
-package mitei.mitei.create.report.balance.politician.logic.common;
+package mitei.mitei.create.report.balance.politician.util;
 
 import java.time.LocalDateTime;
 
@@ -8,54 +8,64 @@ import mitei.mitei.create.report.balance.politician.entity.AllTabeDataHistoryInt
  * テーブル履歴Interfaceテスト専用Entity
  */
 public class AllTabeDataHistoryInterfaceForTestEntity implements AllTabeDataHistoryInterface { // NOPMD DataClass
+    
+    /**　Long初期値 */
+    private static final Long INIT_LONG = 0L;
 
-    /** Long初期値 */
-    private final Long INIT_LONG = 0L; // NOPMD
+    /**　Integer初期値 */
+    private static final Integer INIT_INTEGER = 0;
 
-    /** Integer初期値 */
-    private final Integer INIT_INTEGER = 0; // NOPMD
+    /**　String初期値 */
+    private static final String INIT_STRING = "";
 
-    /** String初期値 */
-    private final String INIT_STRING = ""; // NOPMD
-
-    /** Timestamp初期値 */
+    /**　Timestamp初期値 */
     private final LocalDateTime INIT_TIMESTAMP = LocalDateTime.of(1948, 7, 29, 0, 0, 0);
-
-    /** データ挿入ユーザId */
-    private Integer saishinKbn = INIT_INTEGER;
-
-    /** データ挿入ユーザId */
+    
+    /**　データ挿入ユーザId */
     private Long insertUserId = INIT_LONG;
-    /** データ挿入ユーザ同一識別コード */
+    /**　データ挿入ユーザ同一識別コード */
     private Integer insertUserCode = INIT_INTEGER;
-    /** データ挿入ユーザ名称 */
+    /**　データ挿入ユーザ名称 */
     private String insertUserName = INIT_STRING;
-    /** データ挿入時間 */
+    /**　データ挿入時間 */
     private LocalDateTime insertTimestamp = INIT_TIMESTAMP;
 
-    /** データ挿入ユーザId */
+    /**　データ挿入ユーザId */
     private Long updateUserId = INIT_LONG;
-    /** データ挿入ユーザ同一識別コード */
+    /**　データ挿入ユーザ同一識別コード */
     private Integer updateUserCode = INIT_INTEGER;
-    /** データ挿入ユーザ名称 */
+    /**　データ挿入ユーザ名称 */
     private String updateUserName = INIT_STRING;
-    /** データ挿入時間 */
+    /**　データ挿入時間 */
     private LocalDateTime updateTimestamp = INIT_TIMESTAMP;
+
+    
+    /** 最新区分 */
+    private Integer saishinKbn = INIT_INTEGER;
 
     /**
      * 最新区分を取得する
+     *
+     * @return 最新区分
      */
+    @Override
     public Integer getSaishinKbn() {
         return saishinKbn;
     }
 
     /**
      * 最新区分を設定する
+     *
+     * @param saishinKbn 最新区分
      */
+    @Override
     public void setSaishinKbn(final Integer saishinKbn) {
         this.saishinKbn = saishinKbn;
     }
 
+
+    
+    
     /** INSERT時ログインユーザIdを取得する */
     @Override
     public Long getInsertUserId() {
@@ -67,7 +77,7 @@ public class AllTabeDataHistoryInterfaceForTestEntity implements AllTabeDataHist
     public void setInsertUserId(final Long insertUserId) {
         this.insertUserId = insertUserId;
     }
-
+    
     /** INSERT時ログインユーザCodeを取得する */
     @Override
     public Integer getInsertUserCode() {
@@ -91,13 +101,13 @@ public class AllTabeDataHistoryInterfaceForTestEntity implements AllTabeDataHist
     public void setInsertUserName(final String insertUserName) {
         this.insertUserName = insertUserName;
     }
-
+    
     /** INSERT時ログインユーザNameを取得する */
     @Override
     public LocalDateTime getInsertTimestamp() {
         return insertTimestamp;
     }
-
+    
     /** INSERT時挿入時間を設定する */
     @Override
     public void setInsertTimestamp(final LocalDateTime insertTimestamp) {
@@ -109,7 +119,7 @@ public class AllTabeDataHistoryInterfaceForTestEntity implements AllTabeDataHist
     public Long getUpdateUserId() {
         return updateUserId;
     }
-
+    
     /** UPDATEt時ログインユーザIdを設定する */
     @Override
     public void setUpdateUserId(final Long updateUserId) {
@@ -139,17 +149,17 @@ public class AllTabeDataHistoryInterfaceForTestEntity implements AllTabeDataHist
     public void setUpdateUserName(final String updateUserName) {
         this.updateUserName = updateUserName;
     }
-
+    
     /** UPDATE時更新時間を取得する */
     @Override
     public LocalDateTime getUpdateTimestamp() {
         return updateTimestamp;
     }
-
+    
     /** UPDATE時更新時間を設定する */
     @Override
     public void setUpdateTimestamp(final LocalDateTime updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
     }
-
+   
 }

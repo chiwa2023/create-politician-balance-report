@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
-import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
 import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.entity.TaskPlan2025Entity;
@@ -38,7 +37,7 @@ class TaskPlan2025RepositoryTest {
         plan2025Entity.setTaskPlanCode(499L);
         plan2025Entity.setTaskPlanName("登録データ仕訳未処理");
 
-        plan2025Entity.setSaishinKbn(SaishinKbnConstants.SAISHIN);
+        plan2025Entity.setSaishinKbn(DataHistoryStatusConstants.INSERT.value());
         plan2025Entity.setIsFinished(false);
         plan2025Entity.setIsNoticsAlert(false);
 

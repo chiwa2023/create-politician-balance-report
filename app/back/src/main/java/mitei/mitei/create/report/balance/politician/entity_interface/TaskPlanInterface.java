@@ -1,5 +1,7 @@
 package mitei.mitei.create.report.balance.politician.entity_interface;
 
+import mitei.mitei.create.report.balance.politician.entity.AllTabeDataHistoryInterface;
+
 /**
  * タスク予定共通Interface
  */

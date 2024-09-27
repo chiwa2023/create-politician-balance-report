@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.repository.ProposeCsvReadTemplateRepository;
 
@@ -26,6 +26,6 @@ public class CsvReadTemplateSearchAllSaishinService {
      */
     public List<ProposeCsvReadTemplateEntity> practice(){
         
-        return proposeCsvReadTemplateRepository.findBySaishinKbn(SaishinKbnConstants.SAISHIN);
+        return proposeCsvReadTemplateRepository.findBySaishinKbn(DataHistoryStatusConstants.INSERT.value());
     }
 }

@@ -4,7 +4,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.repository.ProposeCsvReadTemplateRepository;
 
@@ -30,7 +30,7 @@ public class RegistProposeReadCsvRejectService {
         ProposeCsvReadTemplateEntity oldEntity = proposeCsvReadTemplateRepository
                 .getReferenceById(proposeCsvReadTemplateEntity.getProposeCsvReadTemplateId());
         // 古いデータを履歴に変更
-        oldEntity.setSaishinKbn(SaishinKbnConstants.HISOTRY);
+        oldEntity.setSaishinKbn(DataHistoryStatusConstants.UPDATE.value());
 
         proposeCsvReadTemplateRepository.saveAndFlush(oldEntity);
 
@@ -39,7 +39,7 @@ public class RegistProposeReadCsvRejectService {
         BeanUtils.copyProperties(proposeCsvReadTemplateEntity, newEntity);
         // 申請完了したデータも履歴で登録
         newEntity.setProposeCsvReadTemplateId(0L);// 行追加
-        newEntity.setSaishinKbn(SaishinKbnConstants.SAISHIN);// 最新データのはずだがダメ押し
+        newEntity.setSaishinKbn(DataHistoryStatusConstants.INSERT.value());// 最新データのはずだがダメ押し
         // 申請過程継続
         newEntity.setInProsessing(true);
         // 申請不可

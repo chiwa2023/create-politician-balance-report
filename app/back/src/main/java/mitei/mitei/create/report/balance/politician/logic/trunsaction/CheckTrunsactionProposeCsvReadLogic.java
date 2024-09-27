@@ -3,7 +3,7 @@ package mitei.mitei.create.report.balance.politician.logic.trunsaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.repository.ProposeCsvReadTemplateRepository;
 
 /**
@@ -24,7 +24,7 @@ public class CheckTrunsactionProposeCsvReadLogic {
      */
     public boolean practice(final Long editId) {
 
-        return !proposeCsvReadTemplateRepository.findBySaishinKbnAndEditId(SaishinKbnConstants.SAISHIN, editId)
+        return !proposeCsvReadTemplateRepository.findBySaishinKbnAndEditId(DataHistoryStatusConstants.INSERT.value(), editId)
                 .isEmpty();
     }
 }

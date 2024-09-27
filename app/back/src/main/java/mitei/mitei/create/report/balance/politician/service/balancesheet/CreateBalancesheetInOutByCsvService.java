@@ -12,12 +12,12 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.CreateBalancsheetInOutItemResultDto;
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.CsvTradingRowConstants;
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.ReportKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.calling_item.CallingItemDto;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.CsvCellDto;
 import mitei.mitei.create.report.balance.politician.dto.storage.SaveStorageResultDto;
 import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
@@ -171,7 +171,7 @@ public class CreateBalancesheetInOutByCsvService {
         List<CallingItemEntity> listCallingEntity = callingItemRepository
                 .findByUserOrganizationCodeAndSaishinKbnAndCallingReferDigest(
                         entity.getPoliticalOrganizationCode(),
-                        SaishinKbnConstants.SAISHIN, 
+                        DataHistoryStatusConstants.INSERT.value(), 
                         entity.getReferDigest());
 
         List<CallingItemDto> listCallingDto = new ArrayList<>();
@@ -208,7 +208,7 @@ public class CreateBalancesheetInOutByCsvService {
         entity.setShoshouKbn(saveStorageResultDto.getShoshouKbn());
 
         // これから登録しようとしているので最新データ
-        entity.setSaishinKbn(SaishinKbnConstants.SAISHIN);
+        entity.setSaishinKbn(DataHistoryStatusConstants.INSERT.value());
 
         // 入力済項目編集区分はきちんと読み取れていれば編集の必要はないのでfalse
         entity.setIsEditAutoInput(false);
@@ -254,7 +254,7 @@ public class CreateBalancesheetInOutByCsvService {
         List<CallingItemEntity> listCallingEntity = callingItemRepository
                 .findByUserOrganizationCodeAndSaishinKbnAndCallingReferDigest(
                         entity.getPoliticalOrganizationCode(),
-                        SaishinKbnConstants.SAISHIN, 
+                        DataHistoryStatusConstants.INSERT.value(), 
                         entity.getReferDigest());
 
         // なにがしかデータが取れたら取得最初のデータをコピーする
@@ -288,7 +288,7 @@ public class CreateBalancesheetInOutByCsvService {
         entity.setShoshouKbn(saveStorageResultDto.getShoshouKbn());
 
         // これから登録しようとしているので最新データ
-        entity.setSaishinKbn(SaishinKbnConstants.SAISHIN);
+        entity.setSaishinKbn(DataHistoryStatusConstants.INSERT.value());
 
         // 入力済項目編集区分はきちんと読み取れていれば編集の必要はないのでfalse
         entity.setIsEditAutoInput(false);

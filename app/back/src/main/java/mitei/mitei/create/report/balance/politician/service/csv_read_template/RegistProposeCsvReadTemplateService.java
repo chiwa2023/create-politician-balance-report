@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.PessimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 
-import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
 import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
@@ -76,7 +75,7 @@ public class RegistProposeCsvReadTemplateService {
         }
 
         // 新規登録は最新
-        proposeCsvReadTemplateEntity.setSaishinKbn(SaishinKbnConstants.SAISHIN);
+        proposeCsvReadTemplateEntity.setSaishinKbn(DataHistoryStatusConstants.INSERT.value());
 
         // ログインユーザ設定と更新時間
         BeanUtils.copyProperties(checkPrivilegeDto, proposeCsvReadTemplateEntity);

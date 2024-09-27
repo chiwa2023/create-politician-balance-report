@@ -18,8 +18,8 @@ import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.transaction.annotation.Transactional;
 
-import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
 import mitei.mitei.create.report.balance.politician.entity.CsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
@@ -79,7 +79,7 @@ class RegistProposeReadCsvAcceptServiceTest {
         ProposeCsvReadTemplateEntity entityResult = proposeCsvReadTemplateRepository.getReferenceById(newId);
 
         // 最新区分は履歴
-        assertThat(entityResult.getSaishinKbn()).isEqualTo(SaishinKbnConstants.HISOTRY);
+        assertThat(entityResult.getSaishinKbn()).isEqualTo(DataHistoryStatusConstants.UPDATE.value());
 
         // 正常に登録しました、の意
         assertThat(entityResult.getJudgeReason()).isEqualTo("正常登録");
@@ -109,7 +109,7 @@ class RegistProposeReadCsvAcceptServiceTest {
             //仕様名称
             assertThat(entityTemplateNew.getCsvReadTemplateName()).isEqualTo(entityResult.getProposeCsvReadTemplateName());
             //最新区分
-            assertThat(entityTemplateNew.getSaishinKbn()).isEqualTo(SaishinKbnConstants.SAISHIN);
+            assertThat(entityTemplateNew.getSaishinKbn()).isEqualTo(DataHistoryStatusConstants.INSERT.value());
             //金融機関区分
             assertThat(entityTemplateNew.getFinancialOrgKbn()).isEqualTo(entityResult.getFinancialOrgKbn());
             //金融機関Id

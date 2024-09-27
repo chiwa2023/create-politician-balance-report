@@ -1,15 +1,14 @@
 package mitei.mitei.create.report.balance.politician.entity;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
-import mitei.mitei.create.report.balance.politician.entity_interface.AllTabeDataHistoryInterface;
 
 /**
  * various_financial_pay接続用Entity
@@ -31,10 +30,10 @@ public class VariousFinancialPayEntity  implements Serializable,AllTabeDataHisto
     private static final Long INIT_LONG = 0L;
 
     /** 初期データ(LocalcDate) */
-    private static final LocalDate INIT_LOCALDATE = LocalDate.of(1980,1,1);
+    private static final LocalDate INIT_LOCALDATE = LocalDate.of(1948,7,29);
 
     /** 初期データ(Timestamp) */
-    private static final Timestamp INIT_TIMESTAMP  = Timestamp.valueOf(INIT_LOCALDATE.atTime(0, 0, 0));
+    private static final LocalDateTime INIT_TIMESTAMP  = INIT_LOCALDATE.atTime(0, 0, 0);
 
     /** 各種PayId */
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -212,7 +211,7 @@ public class VariousFinancialPayEntity  implements Serializable,AllTabeDataHisto
     }
 
     /** 挿入タイムスタンプ */
-    private Timestamp insertTimestamp = INIT_TIMESTAMP ;
+    private LocalDateTime insertTimestamp = INIT_TIMESTAMP ;
 
     /**
      * 挿入タイムスタンプを取得する
@@ -220,7 +219,7 @@ public class VariousFinancialPayEntity  implements Serializable,AllTabeDataHisto
      * @return 挿入タイムスタンプ
      */
     @Override
-    public Timestamp getInsertTimestamp() {
+    public LocalDateTime getInsertTimestamp() {
         return insertTimestamp;
     }
 
@@ -230,7 +229,7 @@ public class VariousFinancialPayEntity  implements Serializable,AllTabeDataHisto
      * @param insertTimestamp 挿入タイムスタンプ
      */
     @Override
-    public void setInsertTimestamp(final Timestamp insertTimestamp) {
+    public void setInsertTimestamp(final LocalDateTime insertTimestamp) {
         this.insertTimestamp = insertTimestamp;
     }
 
@@ -304,7 +303,7 @@ public class VariousFinancialPayEntity  implements Serializable,AllTabeDataHisto
     }
 
     /** 更新タイムスタンプ */
-    private Timestamp updateTimestamp = INIT_TIMESTAMP ;
+    private LocalDateTime updateTimestamp = INIT_TIMESTAMP ;
 
     /**
      * 更新タイムスタンプを取得する
@@ -312,7 +311,7 @@ public class VariousFinancialPayEntity  implements Serializable,AllTabeDataHisto
      * @return 更新タイムスタンプ
      */
     @Override
-    public Timestamp getUpdateTimestamp() {
+    public LocalDateTime getUpdateTimestamp() {
         return updateTimestamp;
     }
 
@@ -322,7 +321,7 @@ public class VariousFinancialPayEntity  implements Serializable,AllTabeDataHisto
      * @param updateTimestamp 更新タイムスタンプ
      */
     @Override
-    public void setUpdateTimestamp(final Timestamp updateTimestamp) {
+    public void setUpdateTimestamp(final LocalDateTime updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
     }
 

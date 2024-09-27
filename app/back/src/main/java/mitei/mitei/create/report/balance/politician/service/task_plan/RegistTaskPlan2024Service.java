@@ -1,6 +1,5 @@
 package mitei.mitei.create.report.balance.politician.service.task_plan;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -31,7 +30,7 @@ public class RegistTaskPlan2024Service {
      */
     public TemplateFrameworkResultDto practice(final List<TaskPlan2024Entity> listTaskPlan) {
         
-        Timestamp now = Timestamp.valueOf(LocalDateTime.now());
+        LocalDateTime now = LocalDateTime.now();
 
         long code = 1L;
 
@@ -44,6 +43,7 @@ public class RegistTaskPlan2024Service {
         for(TaskPlanInterface entity : listTaskPlan) {
             entity.setTaskPlanId(0L);
             entity.setTaskPlanCode(code);
+            // TODO SetTableDataHistoryUtilに変更
             entity.setInsertTimestamp(now);
             code++;
         }

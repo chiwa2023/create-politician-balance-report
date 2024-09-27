@@ -14,7 +14,7 @@ import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.transaction.annotation.Transactional;
 
-import mitei.mitei.create.report.balance.politician.dto.SaishinKbnConstants;
+import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.repository.ProposeCsvReadTemplateRepository;
 
@@ -54,7 +54,7 @@ class RegistProposeReadCsvRejectServiceTest {
         ProposeCsvReadTemplateEntity entityNew = proposeCsvReadTemplateRepository.getReferenceById(newId);
 
         // 最新データ
-        assertThat(entityNew.getSaishinKbn()).isEqualTo(SaishinKbnConstants.SAISHIN);
+        assertThat(entityNew.getSaishinKbn()).isEqualTo(DataHistoryStatusConstants.INSERT.value());
 
         // 設定した理由
         assertThat(entityNew.getJudgeReason()).isEqualTo(reason);
@@ -68,7 +68,7 @@ class RegistProposeReadCsvRejectServiceTest {
         // 編集対象を再度呼び出し
         ProposeCsvReadTemplateEntity entityUpdate = proposeCsvReadTemplateRepository.getReferenceById(editId);
         // 間違いなく最新区分は履歴
-        assertThat(entityUpdate.getSaishinKbn()).isEqualTo(SaishinKbnConstants.HISOTRY);
+        assertThat(entityUpdate.getSaishinKbn()).isEqualTo(DataHistoryStatusConstants.UPDATE.value());
     }
 
 }
