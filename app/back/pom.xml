@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.2</version>
+		<version>3.3.4</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>mitei.mitei.create.report.balance.politician</groupId>
@@ -105,6 +105,12 @@
 			<version>5.9</version>
 		</dependency>
 
+		<dependency>
+			<groupId>mitei.mitei</groupId>
+			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>publish</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -121,6 +127,33 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			
+			
+			<!-- ローカルjar用設定 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-install-plugin</artifactId>
+				<inherited>false</inherited>
+				<executions>
+					<execution>
+						<id>local-jar-publish</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>install-file</goal>
+						</goals>
+						<configuration>
+							<file>${basedir}/lib/publish-0.0.1-SNAPSHOT.jar</file>
+							<groupId>mitei.mitei</groupId>
+							<artifactId>publish</artifactId>
+							<version>0.0.1-SNAPSHOT</version>
+							<packaging>jar</packaging>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+			
+			
 		</plugins>
 	</build>
 
