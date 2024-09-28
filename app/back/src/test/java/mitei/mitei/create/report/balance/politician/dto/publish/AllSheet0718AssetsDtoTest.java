@@ -17,7 +17,6 @@ import mitei.mitei.create.report.balance.politician.constants.GetCurrentResource
 /**
  * AllSheet0718AssetsDto単体テスト
  */
-@SuppressWarnings("PMD.AvoidDuplicateLiterals")
 class AllSheet0718AssetsDtoTest {
     // CHECKSTYLE:OFF MagicNumber
 
@@ -42,7 +41,7 @@ class AllSheet0718AssetsDtoTest {
         /// ** 金額 */
         row1.setKingaku(30000L);
         /// ** 発生日 */
-        row1.setDate("R4/12/1");
+        row1.setDate("R4/12/1"); // NOPMD
         /// ** 備考 */
         row1.setBiko("備考");
 

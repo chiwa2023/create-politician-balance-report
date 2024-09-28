@@ -28,7 +28,6 @@ import mitei.mitei.create.report.balance.politician.dto.report_item.zengin.recor
 /**
  * ConvertTradingDetailAllFromCsvLogic単体テスト
  */
-@SuppressWarnings("PMD.AvoidDuplicateLiterals")
 class ConvertTradingDetailAllFromCsvLogicTest {
     // CHECKSTYLE:OFF
 
@@ -82,7 +81,7 @@ class ConvertTradingDetailAllFromCsvLogicTest {
             assertThat(trailerDto1.getOverdraftKbn()).isEqualTo(1);
             assertThat(trailerDto1.getBalanceAfterTransaction()).isEqualTo(97531L);
             assertThat(trailerDto1.getCountData()).isEqualTo(2);
-            assertThat(trailerDto1.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ");
+            assertThat(trailerDto1.getDummyEnd()).isEqualTo("ｴﾝﾄﾞ"); // NOPMD
 
             List<TradingZenginFormatTransactionDetailDataRecordGroup1OrdinalyDto> listData1 = listGroup1.get(0) // NOPMD
                     .getListData();

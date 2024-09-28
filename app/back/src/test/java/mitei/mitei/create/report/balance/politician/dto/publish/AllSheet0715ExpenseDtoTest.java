@@ -17,7 +17,6 @@ import mitei.mitei.create.report.balance.politician.constants.GetCurrentResource
 /**
  * AllSheet0715ExpenseDto単体テスト
  */
-@SuppressWarnings("PMD.AvoidDuplicateLiterals")
 class AllSheet0715ExpenseDtoTest {
     // CHECKSTYLE:OFF MagicNumber
 
@@ -44,11 +43,11 @@ class AllSheet0715ExpenseDtoTest {
         /// ** 金額 */
         row1.setKingaku(30000L);
         /// ** 発生日 */
-        row1.setDate("R4/12/1");
+        row1.setDate("R4/12/1"); // NOPMD
         /// ** 支出の相手先名称 */
-        row1.setName("支出の相手先名称");
+        row1.setName("支出の相手先名称"); // NOPMD
         /// ** 支出の相手先住所 */
-        row1.setJusho("東京都千代田区");
+        row1.setJusho("東京都千代田区"); // NOPMD
         /// ** 備考 */
         row1.setBiko("備考");
         /// ** 領収書を徴しがたかったフラグ */

@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * HTMLにおけるSelectボタンのOption項目を表すDto
  */
-public class SelectOptionDto implements Serializable, SelectOptionInterface { // NOPMD DataClass
+public class SelectOptionDto implements Serializable,SelectOptionInterface { // NOPMD DataClass
 
     /** Serialize id */
     private static final long serialVersionUID = 1L;

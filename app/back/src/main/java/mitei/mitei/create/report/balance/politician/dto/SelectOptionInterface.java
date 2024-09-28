@@ -18,7 +18,7 @@ public interface SelectOptionInterface {
      * @param value オプション項目の値
      */
     void setValue(String value);
-
+    
     /**
      * オプション項目のテキストを取得する
      *
