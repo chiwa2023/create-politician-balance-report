@@ -9,7 +9,8 @@ import mitei.mitei.create.report.balance.politician.dto.common_check.CheckTransa
  * テスト時のみ共通チェックDtoを落ちないように設定するDto
  */
 public final class CreateCommonCheckDtoTestOnlyUtil {
-
+    // CHECKSTYLE:OFF
+    
     /* インスタンス作成禁止コンストラクタ*/
     private CreateCommonCheckDtoTestOnlyUtil() {
     }
@@ -28,10 +29,10 @@ public final class CreateCommonCheckDtoTestOnlyUtil {
         CheckPrivilegeDto checkPrivilegeDto = new CheckPrivilegeDto();
         checkPrivilegeDto.setIsResult(true);
         checkPrivilegeDto.setIsRaiseExcception(false);
-        checkPrivilegeDto.setLoginUserId(1007L); // CHECKSTYLE:OFF
-        checkPrivilegeDto.setLoginUserCode(995); // CHECKSTYLE:OFF
-        checkPrivilegeDto.setPoliticalOrganizationId(2345L); // CHECKSTYLE:OFF
-        checkPrivilegeDto.setPoliticalOrganizationCode(2333); // CHECKSTYLE:OFF
+        checkPrivilegeDto.setLoginUserId(1007L);
+        checkPrivilegeDto.setLoginUserCode(995);
+        checkPrivilegeDto.setPoliticalOrganizationId(2345L);
+        checkPrivilegeDto.setPoliticalOrganizationCode(2333);
         checkPrivilegeDto.setPoliticalOrganizationName("サンプル政治団体");
 
         CheckTransactionDto checkTransactionDto = new CheckTransactionDto();

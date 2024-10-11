@@ -11,7 +11,7 @@ public class CheckPrivilegeDto implements Serializable { // NOPMD DataClass
     private static final long serialVersionUID = 1L;
 
     /** 他機能確認用Mock強制例外発生フラグ */
-    private Boolean isRaiseExcception;
+    private Boolean isRaiseExcception = false;
 
     /** 他機能確認用Mock判定結果 */
     private Boolean isResult;

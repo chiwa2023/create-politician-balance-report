@@ -12,6 +12,20 @@ public final class GetCurrentResourcePath {
 
     }
 
+    
+    /**
+     * 配下ディレクトリdirで指定された配備ディレクトリを返却する
+     *
+     * @param dir 配下ディレクトリ名
+     * @return 絶対パス
+     */
+    public static String getBackSrcPath(final String dir) {
+        
+        return FileSystems.getDefault().getPath("src/" + dir).toAbsolutePath().toString();
+    }
+
+    
+    
     /**
      * テストリソースを取得する
      *
