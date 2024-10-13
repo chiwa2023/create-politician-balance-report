@@ -1,4 +1,4 @@
-package mitei.mitei.create.report.balance.politician.repository.mail.y2024;
+package mitei.mitei.create.report.balance.politician.repository.mail;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -6,13 +6,13 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import mitei.mitei.create.report.balance.politician.entity.mail.SendAlertMail2024Entity;
+import mitei.mitei.create.report.balance.politician.entity.mail.SendAlertMail2025Entity;
 
 
 /**
- * send_alert_mail_2024接続用Repository
+ * send_alert_mail_2025接続用Repository
  */
-public interface SendAlertMail2024Repository  extends JpaRepository<SendAlertMail2024Entity, Long>{
+public interface SendAlertMail2025Repository  extends JpaRepository<SendAlertMail2025Entity, Long>{
 
 
     //TODO マスタ系のテーブルでは名称検索が要求されることが多いので、事前に自動生成する。不要な場合は削除する
@@ -22,8 +22,8 @@ public interface SendAlertMail2024Repository  extends JpaRepository<SendAlertMai
      * @param searchWords 検索語
      * @return 検索結果
      */
-    @Query(value = "SELECT * FROM send_alert_mail_2024 WHERE saishin_kbn= 1 AND MATCH(send_alert_mail_2024_name) AGAINST (?1 IN NATURAL LANGUAGE MODE)", nativeQuery = true)
-    List<SendAlertMail2024Entity> findFullText(String searchWords);
+    @Query(value = "SELECT * FROM send_alert_mail_2025 WHERE saishin_kbn= 1 AND MATCH(send_alert_mail_2025_name) AGAINST (?1 IN NATURAL LANGUAGE MODE)", nativeQuery = true)
+    List<SendAlertMail2025Entity> findFullText(String searchWords);
     
     
     
@@ -34,7 +34,7 @@ public interface SendAlertMail2024Repository  extends JpaRepository<SendAlertMai
      * @param sendDatetime 現在時間
      * @return 未送信データリスト
      */
-    List<SendAlertMail2024Entity> findBySaishinKbnAndSendDatetimeBeforeOrderBySendAlertMailId(Integer saishinKbn,LocalDateTime sendDatetime);
+    List<SendAlertMail2025Entity> findBySaishinKbnAndSendDatetimeBeforeOrderBySendAlertMailId(Integer saishinKbn,LocalDateTime sendDatetime);
 
     
     
@@ -45,6 +45,6 @@ public interface SendAlertMail2024Repository  extends JpaRepository<SendAlertMai
      * @param sendAlertMailCode メール送信予定同一識別コード
      * @return メール送信予定Entityリスト
      */
-    List<SendAlertMail2024Entity> findBySaishinKbnAndSendAlertMailCode(Integer saishinKbn,Integer sendAlertMailCode);
+    List<SendAlertMail2025Entity> findBySaishinKbnAndSendAlertMailCode(Integer saishinKbn,Integer sendAlertMailCode);
 
 }

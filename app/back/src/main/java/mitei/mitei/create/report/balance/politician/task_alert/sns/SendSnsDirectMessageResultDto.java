@@ -7,7 +7,7 @@ import mitei.mitei.create.report.balance.politician.dto.AbstractResultDto;
 /**
  * SNSダイレクトメッセージ
  */
-public class SendSnsDirectMessageResultDto extends AbstractResultDto implements Serializable {
+public class SendSnsDirectMessageResultDto extends AbstractResultDto implements Serializable { // NOPMD DataCalss
 
     /** SerialId */
     private static final long serialVersionUID = 1L;

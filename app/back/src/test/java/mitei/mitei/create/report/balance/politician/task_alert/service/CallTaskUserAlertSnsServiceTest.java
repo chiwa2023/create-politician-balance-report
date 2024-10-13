@@ -37,7 +37,7 @@ class CallTaskUserAlertSnsServiceTest {
     @Transactional
     @Sql({ "service_alert_sns_message_2024.sql", "../sns/logic/mock/sample1/sns_dm_setting_mock_sample1.sql",
             "../sns/logic/mock/sample2/sns_dm_setting_mock_sample2.sql" })
-    void testPractice() {
+    void testPractice() { // NOPMD
 
         // 送信予定で存在しないSNS(送信Logic)を指定すると落とせるので、
         // その仕組みを活用する。ただし途中で送信できるようになるわけではない
@@ -68,14 +68,14 @@ class CallTaskUserAlertSnsServiceTest {
         SendSnsDirectMessageAllPlanResultDto resultDto02 = callTaskUserAlertSnsService.practice(datetimeShori02);
         assertThat(resultDto02.getSuccessCount()).isEqualTo(0);
         assertThat(resultDto02.getFailureCount()).isEqualTo(2);
-        assertFalse(resultDto02.getIsOk(), "2件取得して2件失敗");
+        assertFalse(resultDto02.getIsOk(), "2件取得して2件失敗"); // NOPMD
 
         // 第2波
         LocalDateTime datetimeShori12 = LocalDateTime.of(2024, 7, 1, 5, 45, 0);
         SendSnsDirectMessageAllPlanResultDto resultDto12 = callTaskUserAlertSnsService.practice(datetimeShori12);
         assertThat(resultDto12.getSuccessCount()).isEqualTo(0);
         assertThat(resultDto12.getFailureCount()).isEqualTo(23);
-        assertFalse(resultDto12.getIsOk(), "23件取得して23件失敗");
+        assertFalse(resultDto12.getIsOk(), "23件取得して23件失敗"); // NOPMD
 
         /*
          * 3回目
@@ -100,14 +100,14 @@ class CallTaskUserAlertSnsServiceTest {
         SendSnsDirectMessageAllPlanResultDto resultDto04 = callTaskUserAlertSnsService.practice(datetimeShori04);
         assertThat(resultDto04.getSuccessCount()).isEqualTo(0);
         assertThat(resultDto04.getFailureCount()).isEqualTo(2);
-        assertFalse(resultDto04.getIsOk(), "2件取得して2件失敗");
+        assertFalse(resultDto04.getIsOk(), "2件取得して2件失敗"); // NOPMD
 
         // 第2波
         LocalDateTime datetimeShori14 = LocalDateTime.of(2024, 7, 1, 14, 45, 0);
         SendSnsDirectMessageAllPlanResultDto resultDto14 = callTaskUserAlertSnsService.practice(datetimeShori14);
         assertThat(resultDto14.getSuccessCount()).isEqualTo(0);
         assertThat(resultDto14.getFailureCount()).isEqualTo(23);
-        assertFalse(resultDto14.getIsOk(), "23件取得して23件失敗");
+        assertFalse(resultDto14.getIsOk(), "23件取得して23件失敗"); // NOPMD
 
         /*
          * 5回目
@@ -117,14 +117,14 @@ class CallTaskUserAlertSnsServiceTest {
         SendSnsDirectMessageAllPlanResultDto resultDto05 = callTaskUserAlertSnsService.practice(datetimeShori05);
         assertThat(resultDto05.getSuccessCount()).isEqualTo(0);
         assertThat(resultDto05.getFailureCount()).isEqualTo(2);
-        assertFalse(resultDto05.getIsOk(), "2件取得して2件失敗");
+        assertFalse(resultDto05.getIsOk(), "2件取得して2件失敗"); // NOPMD
 
         // 第2波
         LocalDateTime datetimeShori15 = LocalDateTime.of(2024, 7, 2, 2, 45, 0);
         SendSnsDirectMessageAllPlanResultDto resultDto15 = callTaskUserAlertSnsService.practice(datetimeShori15);
         assertThat(resultDto15.getSuccessCount()).isEqualTo(0);
         assertThat(resultDto15.getFailureCount()).isEqualTo(23);
-        assertFalse(resultDto15.getIsOk(), "23件取得して23件失敗");
+        assertFalse(resultDto15.getIsOk(), "23件取得して23件失敗"); // NOPMD
 
         /*
          * 6回目
@@ -134,14 +134,14 @@ class CallTaskUserAlertSnsServiceTest {
         SendSnsDirectMessageAllPlanResultDto resultDto06 = callTaskUserAlertSnsService.practice(datetimeShori06);
         assertThat(resultDto06.getSuccessCount()).isEqualTo(0);
         assertThat(resultDto06.getFailureCount()).isEqualTo(2);
-        assertFalse(resultDto06.getIsOk(), "2件取得して2件失敗");
+        assertFalse(resultDto06.getIsOk(), "2件取得して2件失敗"); // NOPMD
 
         // 第2波
         LocalDateTime datetimeShori16 = LocalDateTime.of(2024, 7, 3, 2, 45, 0);
         SendSnsDirectMessageAllPlanResultDto resultDto16 = callTaskUserAlertSnsService.practice(datetimeShori16);
         assertThat(resultDto16.getSuccessCount()).isEqualTo(0);
         assertThat(resultDto16.getFailureCount()).isEqualTo(23);
-        assertFalse(resultDto16.getIsOk(), "23件取得して23件失敗");
+        assertFalse(resultDto16.getIsOk(), "23件取得して23件失敗"); // NOPMD
 
         /*
          * 7回目

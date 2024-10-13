@@ -3,7 +3,6 @@ package mitei.mitei.create.report.balance.politician.task_alert.sns.logic.y2024;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
-import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +30,9 @@ class InsertSnsDirectMessageSendingInfo2024LogicTest {
     @Test
     void testPractice() {
         
-        LocalDateTime shori  = LocalDateTime.of(2024, 7,1,2,0,0);
+        //LocalDateTime shori  = LocalDateTime.of(2024, 7,1,2,0,0);
         
-        insertSnsDirectMessageSendingInfo2024Logic.practice(shori);
+        //insertSnsDirectMessageSendingInfo2024Logic.practice(shori);
         
         
         fail("Not yet implemented");

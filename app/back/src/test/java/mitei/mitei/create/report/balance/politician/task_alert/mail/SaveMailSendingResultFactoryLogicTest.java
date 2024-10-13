@@ -17,11 +17,14 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import org.springframework.transaction.annotation.Transactional;
 
 import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.entity.mail.SendAlertMail2024Entity;
-import mitei.mitei.create.report.balance.politician.repository.mail.y2024.SendAlertMail2024Repository;
+import mitei.mitei.create.report.balance.politician.repository.mail.SendAlertMail2024Repository;
+import mitei.mitei.create.report.balance.politician.task_alert.mail.y2022.CallMailSendingInfo2022Logic;
 import mitei.mitei.create.report.balance.politician.task_alert.mail.y2024.CallMailSendingInfo2024Logic;
+// import追加指定位置
 
 /**
  * SaveMailSendingResultFactoryLogic単体テスト
@@ -114,5 +117,38 @@ class SaveMailSendingResultFactoryLogicTest {
         assertThat(listRetry02.size()).isEqualTo(0); // 再送に対しては新たな送信データを設定しない
 
     }
+
+    // テンプレート開始位置
+    /** 試行リストpickup用 */
+    @Autowired
+    private CallMailSendingInfo2022Logic callMailSendingInfo2022Logic;
+
+    @Test
+    @Transactional
+    @Sql({"truncate_all_mail_table.sql","y2022/send_alert_mail_2022.sql"})
+    void testPractice2022() {
+
+        // 2022年Logicが呼び出されていることだけを確認する
+        
+        // 少なくとも2024年テーブルにデータがないことを確認
+        assertThat(sendAlertMail2024Repository.findAll().size()).isEqualTo(0);
+
+        LocalDateTime localDateTime = LocalDateTime.of(2022, 11, 1, 0, 0, 0);
+        
+        // 登録されているのは2022年テーブル
+        List<MailDataDto> listPickup = callMailSendingInfo2022Logic.practice(localDateTime).getListMailData();
+        assertThat(listPickup.size()).isEqualTo(4);
+
+        List<MailDataDto> listFailure = new ArrayList<>();
+        listFailure.add(listPickup.get(1));
+
+        SendMailAllPlanResultDto resultDto = saveMailSendingResultFactoryLogic.practice(localDateTime, listPickup,
+                listFailure);
+        assertThat(resultDto.getSuccessCount()).isEqualTo(3);
+        assertThat(resultDto.getFailureCount()).isEqualTo(1);
+        assertFalse(resultDto.getIsOk(), "意図的に1件失敗にもっていったのでステータス失敗");
+    }
+
+    // 追加位置
 
 }

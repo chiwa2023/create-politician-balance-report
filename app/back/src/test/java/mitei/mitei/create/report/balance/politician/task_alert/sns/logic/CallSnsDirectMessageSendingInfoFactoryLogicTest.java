@@ -33,12 +33,12 @@ class CallSnsDirectMessageSendingInfoFactoryLogicTest {
     @Autowired
     private CallSnsDirectMessageSendingInfoFactoryLogic callSnsDirectMessageSendingInfoFactoryLogic;
 
+    // TODO その他の年については追加次第テストを追加する
+
     @Test
     @Transactional
     @Sql("y2024/send_alert_sns_message_2024.sql")
-    void testPractice() {
-
-        // TODO その他の年については追加次第テストを追加する
+    void testPractice2024() {
 
         // 本来はシステム日付の年テーブルの処理
         LocalDateTime shori = LocalDateTime.of(2024, 11, 1, 0, 0, 0);
@@ -68,4 +68,38 @@ class CallSnsDirectMessageSendingInfoFactoryLogicTest {
 
     }
 
+    @Test
+    @Transactional
+    @Sql("y2022/send_alert_sns_message_2022.sql")
+    void testPractice2022() {
+
+        // 本来はシステム日付の年テーブルの処理
+        LocalDateTime shori = LocalDateTime.of(2022, 11, 1, 0, 0, 0);
+
+        SendSnsDirectMessageCapsuleDto capsuleDto = callSnsDirectMessageSendingInfoFactoryLogic.practice(shori);
+
+        List<SnsDirectMessageDto> list = capsuleDto.getListSnsMessageData();
+
+        assertThat(list.size()).isEqualTo(4); // 4件データが取れる
+
+        SnsDirectMessageDto messageDto00 = list.get(0);
+        SnsDirectMessageDto messageDto01 = list.get(1);
+        SnsDirectMessageDto messageDto02 = list.get(2);
+        SnsDirectMessageDto messageDto03 = list.get(3);
+
+        assertThat(messageDto00.getSendAlertSnsMessageId()).isEqualTo(364L);
+        assertThat(messageDto01.getSendAlertSnsMessageId()).isEqualTo(452L);
+        assertThat(messageDto02.getSendAlertSnsMessageId()).isEqualTo(739L);
+        assertThat(messageDto03.getSendAlertSnsMessageId()).isEqualTo(762L);
+
+        assertThat(messageDto00.getSendAlertSnsMessageCode()).isEqualTo(360);
+        assertThat(messageDto00.getSnsLogicId()).isEqualTo(1);
+        assertThat(messageDto00.getBodyMessage()).isEqualTo("ダイレクトメッセージ送信本文");
+        assertThat(messageDto00.getCheckPrivilegeDto().getLoginUserId()).isEqualTo(245L);
+        assertThat(messageDto00.getCheckPrivilegeDto().getLoginUserCode()).isEqualTo(240);
+        assertThat(messageDto00.getCheckPrivilegeDto().getLoginUserName()).isEqualTo("送信ユーザ");
+
+    }
+
+    // Test追加位置
 }

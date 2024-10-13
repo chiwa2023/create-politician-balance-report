@@ -1,6 +1,7 @@
 package mitei.mitei.create.report.balance.politician.constants;
 
 import java.nio.file.FileSystems;
+import java.nio.file.Path;
 
 /**
  * このサービスを配備している各種設定ディレクトリを取得する
@@ -24,7 +25,18 @@ public final class GetCurrentResourcePath {
         return FileSystems.getDefault().getPath("src/" + dir).toAbsolutePath().toString();
     }
 
-    
+
+    /**
+     * 配下ディレクトリdirで指定された配備ディレクトリを返却する
+     *
+     * @param dir 配下ディレクトリ名
+     * @return 絶対パス
+     */
+    public static Path getBackSrcPathObject(final String dir) {
+        
+        return FileSystems.getDefault().getPath("src/" + dir);
+    }
+
     
     /**
      * テストリソースを取得する

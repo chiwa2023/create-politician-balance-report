@@ -34,6 +34,7 @@ class CallSnsDirectMessageSendingInfo2024LogicTest {
     private CallSnsDirectMessageSendingInfo2024Logic callSnsDirectMessageSendingInfo2024Logic;
 
     @Test
+    @Transactional
     @Sql("send_alert_sns_message_2024.sql")
     void testPractice() {
         // 本来はシステム日付の年テーブルの処理

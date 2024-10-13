@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.entity.mail.SendAlertMail2024Entity;
-import mitei.mitei.create.report.balance.politician.repository.mail.y2024.SendAlertMail2024Repository;
+import mitei.mitei.create.report.balance.politician.repository.mail.SendAlertMail2024Repository;
 import mitei.mitei.create.report.balance.politician.task_alert.mail.MailDataDto;
 import mitei.mitei.create.report.balance.politician.task_alert.mail.SendMailAllPlanResultDto;
 import mitei.mitei.create.report.balance.politician.util.SetTableDataHistoryUtil;

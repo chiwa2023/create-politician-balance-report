@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import mitei.mitei.create.report.balance.politician.task_alert.sns.SendSnsDirectMessageAllPlanResultDto;
 import mitei.mitei.create.report.balance.politician.task_alert.sns.SendSnsDirectMessageResultDto;
 import mitei.mitei.create.report.balance.politician.task_alert.sns.logic.y2024.SaveSnsDirectMessageSendingResult2024Logic;
+import mitei.mitei.create.report.balance.politician.task_alert.sns.logic.y2022.SaveSnsDirectMessageSendingResult2022Logic;
+// importを追加
 
 /**
  * SNSダイレクトメッセージ送信予定FactoryLogic
@@ -16,11 +18,21 @@ import mitei.mitei.create.report.balance.politician.task_alert.sns.logic.y2024.S
 @Component
 public class SaveSnsDirectMessageSendingResultFactoryLogic {
 
+    // フィールドテンプレート始まり
+
     /** 2024年 */
     private static final int YEAR_2024 = 2024;
     /** SNSダイレクトメッセージ送信結果保存Logic(2024年) */
-    @Autowired
+    @Autowired // 2024
     private SaveSnsDirectMessageSendingResult2024Logic saveSnsDirectMessageSendingResult2024Logic;
+
+    /** 2022年 */
+    private static final int YEAR_2022 = 2022;
+    /** SNSダイレクトメッセージ送信結果保存Logic(2022年) */
+    @Autowired // 2022
+    private SaveSnsDirectMessageSendingResult2022Logic saveSnsDirectMessageSendingResult2022Logic;
+
+    // フィールドの追加位置
 
     /**
      * 処理を行う
@@ -33,8 +45,18 @@ public class SaveSnsDirectMessageSendingResultFactoryLogic {
             final List<SendSnsDirectMessageResultDto> listResult) {
 
         switch (datetimeShori.getYear()) {
+            // caseテンプレート始まり
+
+            // 2024年
             case YEAR_2024:
                 return saveSnsDirectMessageSendingResult2024Logic.practice(listResult);
+
+            // 2022年
+            case YEAR_2022:
+                return saveSnsDirectMessageSendingResult2022Logic.practice(listResult);
+
+            // caseの追加位置
+
             default:
                 throw new IllegalArgumentException("Unexpected value: " + datetimeShori.getYear());
         }

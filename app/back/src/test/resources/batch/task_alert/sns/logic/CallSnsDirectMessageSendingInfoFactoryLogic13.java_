@@ -1,0 +1,57 @@
+package mitei.mitei.create.report.balance.politician.task_alert.sns.logic;
+
+import java.time.LocalDateTime;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import mitei.mitei.create.report.balance.politician.task_alert.sns.SendSnsDirectMessageCapsuleDto;
+import mitei.mitei.create.report.balance.politician.task_alert.sns.logic.y2022.CallSnsDirectMessageSendingInfo2022Logic;
+import mitei.mitei.create.report.balance.politician.task_alert.sns.logic.y2024.CallSnsDirectMessageSendingInfo2024Logic;
+// importを追加
+
+/**
+ * SNSダイレクトメッセージ送信予定を取得する
+ */
+@Component
+public class CallSnsDirectMessageSendingInfoFactoryLogic {
+
+    /** 2024年 */
+    private static final int YEAR_2024 = 2024;
+    /** SNSダイレクトメッセージ送信予定を取得する(2024年) */
+    @Autowired
+    private CallSnsDirectMessageSendingInfo2024Logic callSnsDirectMessageSendingInfo2024Logic;
+
+    /** 2022年 */
+    private static final int YEAR_2022 = 2022;
+    /** SNSダイレクトメッセージ送信予定を取得する(2022年) */
+    @Autowired
+    private CallSnsDirectMessageSendingInfo2022Logic callSnsDirectMessageSendingInfo2022Logic;
+
+    // フィールドの追加位置
+
+    /**
+     * 予定取得処理を行う
+     *
+     * @return ダイレクトメッセージ送信予定格納Dto
+     */
+    public SendSnsDirectMessageCapsuleDto practice(final LocalDateTime datetimeShori) {
+
+        switch (datetimeShori.getYear()) {
+            // caseテンプレート始まり
+            // 2024年
+            case YEAR_2024:
+                return callSnsDirectMessageSendingInfo2024Logic.practice(datetimeShori);
+
+            // 2022年
+            case YEAR_2022:
+                return callSnsDirectMessageSendingInfo2022Logic.practice(datetimeShori);
+
+            // caseの追加位置
+
+            default:
+                throw new IllegalArgumentException("Unexpected value: " + datetimeShori.getYear());
+        }
+
+    }
+}
