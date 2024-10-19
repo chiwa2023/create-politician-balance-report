@@ -232,7 +232,7 @@ export default function changeIncomeYoushikiKbnState(incomeDto:BalancesheetIncom
         incomeDto.isUseMediation = true;
         break;
     default:
-        alert("switch不可");
+        alert("switch不可"+incomeDto.youshikiKbn);
         break;
     }
 

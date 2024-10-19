@@ -114,14 +114,14 @@ public class RegistBalancesheetInOutController extends AbstractTemplateCheckCont
                 return new ResponseEntity<>(resultDto, HttpStatus.NO_CONTENT);
             }
 
-            // リストと同じだけの登録結果が返っていた時
+            // リストと同じだけの登録結果が返っていた時 TODO タスク処理は新しくしたので書き直し
             List<TaskPlanInterface> listTask = new ArrayList<>();
 
             // 収支区分がタスク計上である場合はタスクに入れる
-            listTask.addAll(createTaskByReportKbnTaskLogic.practice(registBalancesheetInOutCapsuleDto));
+            //listTask.addAll(createTaskByReportKbnTaskLogic.practice(registBalancesheetInOutCapsuleDto));
 
             // 自動登録した段階で、前例と異なる処理と判断され、仕訳調整対象と判断されたら、タスク計上する
-            listTask.addAll(registAuditOpinionService.practice(registBalancesheetInOutCapsuleDto));
+            //listTask.addAll(registAuditOpinionService.practice(registBalancesheetInOutCapsuleDto));
 
             resultDto = registTaskPlanAllPortalService.practice(listTask);
 

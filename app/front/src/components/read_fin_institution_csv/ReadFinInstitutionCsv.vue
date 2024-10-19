@@ -8,15 +8,13 @@ import InputInstitutionCsv from "../common/input_institution_csv/InputInstitutio
 import SaveStorageResultDto from "../../dto/storage/saveStorageResultDto";
 import SessionStorageCommonCheck from "../../dto/common_check/sessionStorageCommonCheck";
 import createCheckTransactionDto from "../../dto/common_check/createCheckTransactionDto";
-import axios from "axios";
 import RegistBalancesheetInOutCapsuleDto from "../../dto/balancesheet/registBalancesheetInOutCapsuleDto";
 import CreateBalancesheetInOutDataByCsvCapsuleDto from "../../dto/balancesheet/createBalancesheetInOutDataByCsvCapsuleDto";
 import CreateBalancsheetInOutItemResultDto from "../../dto/balancesheet/createBalancsheetInOutItemResultDto";
 import viewPrepareIncome from "../../dto/balancesheet/viewPrepareIncome";
 import viewPrepareOutcome from "../../dto/balancesheet/viewPrepareOutcome";
-import showErrorMessage from "../../dto/common_check/showErrorMessage";
 import CallingItemDto from "../../dto/calling_item/callingItemDto";
-import TemplateFrameworkResultDto from "../../dto/template/templateFrameworkResultDto";
+import TemplateFrameworkResultInterface from "../../dto/template/templateFrameworkResultDto";
 
 //CSVデータ解析用
 const viewCsvReadData: Ref<[CsvCellInterface[]]> = ref([[]]);
@@ -40,7 +38,7 @@ const listCallingItem: Ref<CallingItemDto[]> = ref([]);
  * @param listPointArray 列と指定項目の組み合わせ
  * @param saveStorageResultDto 読み取りした書証情報
  */
-async function recieveSelectOptionsArrayInterface(listPointArray: string[], saveStorageResultDto: SaveStorageResultDto,data:[CsvCellInterface[]]) {
+async function recieveSelectOptionsArrayInterface(listPointArray: string[], saveStorageResultDto: SaveStorageResultDto, data: [CsvCellInterface[]]) {
 
     //接続情報を準備する0
     const createBalancesheetInOutDataByCsvCapsuleDto: CreateBalancesheetInOutDataByCsvCapsuleDto = new CreateBalancesheetInOutDataByCsvCapsuleDto();
@@ -57,10 +55,18 @@ async function recieveSelectOptionsArrayInterface(listPointArray: string[], save
 
     //csvデータ、列項目指定、書証情報からcsv設定データに変換
     const url = "http://localhost:8080/create-balancesheet-in-out/by-csv";
-    await axios.post(url, createBalancesheetInOutDataByCsvCapsuleDto)
-        .then((response) => {
+    const method = "POST";
+    const body = JSON.stringify(createBalancesheetInOutDataByCsvCapsuleDto);
+    const headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    };
+
+    fetch(url, { method, headers, body })
+        .then(async (response) => {
+
             //データを取得
-            const resultDto: CreateBalancsheetInOutItemResultDto = response.data;
+            const resultDto: CreateBalancsheetInOutItemResultDto = await response.json();
             if (200 === response.status) {
                 listCallingItem.value = resultDto.listCallingItem;
 
@@ -85,8 +91,11 @@ async function recieveSelectOptionsArrayInterface(listPointArray: string[], save
             }
 
         })
-        .catch((error) => showErrorMessage(error));
+        .catch((error) => { alert(error); });
 }
+
+
+
 
 /**
  * 自動読み込みデータの編集をやめるならデータを復元(収入)
@@ -121,11 +130,18 @@ async function onSave() {
     capsuleDto.listIncome = listBalancesheetIncome.value;
     capsuleDto.listOutcome = listBalancesheetOutcome.value;
 
-    //csvデータ、列項目指定、書証情報からcsv設定データに変換
+    //編集されたデータを登録する
     const url = "http://localhost:8080/create-balancesheet-in-out/regist";
-    await axios.post(url, capsuleDto)
-        .then((response) => {
-            const resultDto: TemplateFrameworkResultDto = response.data;
+    const method = "POST";
+    const body = JSON.stringify(capsuleDto);
+    const headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    };
+
+    fetch(url, { method, headers, body })
+        .then(async (response) => {
+            const resultDto: TemplateFrameworkResultInterface = await response.json();
 
             if (200 === response.status) {
                 alert(resultDto.successCount + "件登録できました");
@@ -136,7 +152,7 @@ async function onSave() {
             }
 
         })
-        .catch((error) => showErrorMessage(error));
+        .catch((error) => { alert(error); });
 }
 /**  
  * 入力内容を破棄する

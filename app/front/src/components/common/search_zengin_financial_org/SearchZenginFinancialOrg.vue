@@ -3,19 +3,17 @@ import { Ref, ref } from "vue";
 import ZenginFinancialOrgInterface from "../../../dto/financial/zenginFinancialOrg";
 import ZenginFinancialOrgDto from "../../../dto/financial/zenginFinancialOrg";
 import SearchZenginFinancialOrgCapsuleDto from "../../../dto/financial/searchZenginFinancialOrgCapsuleDto";
-import axios from "axios";
-import showErrorMessage from "../../../dto/common_check/showErrorMessage";
 import createCheckTransactionDto from "../../../dto/common_check/createCheckTransactionDto";
 import SessionStorageCommonCheck from "../../../dto/common_check/sessionStorageCommonCheck";
 
 //props,emit
 const props = defineProps<{ isEditable: boolean }>();
-const emits = defineEmits(["sendCancelSearchZenginFinancialOrg","sendZenginFinancialOrgInterface"]);
+const emits = defineEmits(["sendCancelSearchZenginFinancialOrg", "sendZenginFinancialOrgInterface"]);
 
 /** 表示行 */
 const list: Ref<ZenginFinancialOrgInterface[]> = ref([]);
 /** ラジオボタン選択 */
-const selectedRow:Ref<number> = ref(0);
+const selectedRow: Ref<number> = ref(0);
 
 /**  
  * 選択行を通知する
@@ -40,8 +38,8 @@ function onSelect() {
  */
 function sendData(rowId: number) {
     //PrimaryIdをKeyにしているので、1件だけに絞られることが保証されている
-    const selectedDto:ZenginFinancialOrgInterface = list.value.filter((dto) => dto.zenginFinancialOrgId == rowId )[0];
-    emits("sendZenginFinancialOrgInterface",selectedDto);
+    const selectedDto: ZenginFinancialOrgInterface = list.value.filter((dto) => dto.zenginFinancialOrgId == rowId)[0];
+    emits("sendZenginFinancialOrgInterface", selectedDto);
 }
 
 /**  
@@ -55,34 +53,32 @@ function onCancel() {
  * 削除ボタンを押下された行を削除する
  * @param rowId その行のDtoのId
  */
-function deleteRow(rowId:number) {
-    const newList:ZenginFinancialOrgInterface[] = list.value.filter((dto) => dto.zenginFinancialOrgId != rowId );
+function deleteRow(rowId: number) {
+    const newList: ZenginFinancialOrgInterface[] = list.value.filter((dto) => dto.zenginFinancialOrgId != rowId);
     list.value = newList;
 }
 
 /**  
  * 最終行のあとに行追加を行う
  */
-function addRow(){
+function addRow() {
     let maxId = 0;
-    for(const dto of list.value){
-        if(maxId<dto.zenginFinancialOrgId){
+    for (const dto of list.value) {
+        if (maxId < dto.zenginFinancialOrgId) {
             maxId = dto.zenginFinancialOrgId;
         }
     }
-    const addDto:ZenginFinancialOrgInterface = new ZenginFinancialOrgDto();
+    const addDto: ZenginFinancialOrgInterface = new ZenginFinancialOrgDto();
     addDto.zenginFinancialOrgId = maxId;
     list.value.push(addDto);
 }
 
-const searchWords:Ref<string> = ref("");
+const searchWords: Ref<string> = ref("");
 /**  
  * 検索条件に基づき検索を行う
  */
-async function onSearch(){
+async function onSearch() {
     //リストを取得する
-    //list.value = mockGetZenginFinancialOrg();
-
     //実接続
     //セッションストレージ取得
     const zenginFinancialOrgCapsuleDto: SearchZenginFinancialOrgCapsuleDto = new SearchZenginFinancialOrgCapsuleDto();
@@ -93,13 +89,20 @@ async function onSearch(){
 
     //独自変数設定
     zenginFinancialOrgCapsuleDto.searchWords = searchWords.value;
-
     const url = "http://localhost:8080/zengin-financial-org/search-table";
-    await axios.post(url, zenginFinancialOrgCapsuleDto)
-        .then((response) => {
-            list.value = response.data;
+    const method = "POST";
+    const body = JSON.stringify(zenginFinancialOrgCapsuleDto);
+    const headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    };
+    fetch(url, { method, headers, body })
+        .then(async (response) => {
+
+            list.value = await response.json();
         })
-        .catch((error) => showErrorMessage(error));
+        .catch((error) => { alert(error); });
+
 }
 </script>
 <template>
@@ -115,22 +118,25 @@ async function onSearch(){
     </div>
     <br>
     <div class="online">
-    検索結果の表示
-    <table style="width:45%;">
-        <tr>
-            <th style="width:10%;">&nbsp;</th>
-            <th style="width:30%;">コード</th>
-            <th>名前</th>
-            <th v-if="props.isEditable" style="width:20%;">&nbsp;</th>
-        </tr>
-        <tr v-for="variousDto in list" :key="variousDto.zenginFinancialOrgId">
-            <td style="text-align: center;"><input type="radio" id="variousDto.ZenginFinancialOrgId" :value="variousDto.zenginFinancialOrgId" v-model="selectedRow" @click="onSelectChange(variousDto.zenginFinancialOrgId)"/></td>
-            <td style="text-align: right;">{{ variousDto.zenginFinancialOrgCode }}</td>
-            <td>{{ variousDto.zenginFinancialOrgName }}</td>
-            <td v-if="props.isEditable" style="text-align: center;"><button @click="deleteRow(variousDto.zenginFinancialOrgId)">削除</button></td>
-        </tr>
-    </table>
-    <button v-if="props.isEditable" @click="addRow">新規行追加</button>
+        検索結果の表示
+        <table style="width:45%;">
+            <tr>
+                <th style="width:10%;">&nbsp;</th>
+                <th style="width:30%;">コード</th>
+                <th>名前</th>
+                <th v-if="props.isEditable" style="width:20%;">&nbsp;</th>
+            </tr>
+            <tr v-for="variousDto in list" :key="variousDto.zenginFinancialOrgId">
+                <td style="text-align: center;"><input type="radio" id="variousDto.ZenginFinancialOrgId"
+                        :value="variousDto.zenginFinancialOrgId" v-model="selectedRow"
+                        @click="onSelectChange(variousDto.zenginFinancialOrgId)" /></td>
+                <td style="text-align: right;">{{ variousDto.zenginFinancialOrgCode }}</td>
+                <td>{{ variousDto.zenginFinancialOrgName }}</td>
+                <td v-if="props.isEditable" style="text-align: center;"><button
+                        @click="deleteRow(variousDto.zenginFinancialOrgId)">削除</button></td>
+            </tr>
+        </table>
+        <button v-if="props.isEditable" @click="addRow">新規行追加</button>
     </div>
     <div class="footer" v-if="!props.isEditable">
         <button @click="onCancel">キャンセル</button>

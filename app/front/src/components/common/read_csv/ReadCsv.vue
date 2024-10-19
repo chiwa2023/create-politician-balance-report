@@ -1,12 +1,10 @@
 ﻿<script setup lang="ts">
 import { ref, Ref } from "vue";
 import CsvCellInterface from "../../../dto/read_csv/csvCell";
-import axios from "axios";
 import ReadCsvFileCapsuleDto from "../../../dto/read_csv/readCsvFileCapsuleDto";
 import SessionStorageCommonCheck from "../../../dto/common_check/sessionStorageCommonCheck";
 import createCheckTransactionDto from "../../../dto/common_check/createCheckTransactionDto";
 import SendCsvAndStragedShoshouDto from "../../../dto/read_csv/sendCsvAndStragedShoshouDto";
-import showErrorMessage from "../../../dto/common_check/showErrorMessage";
 
 //props,emit
 const emits = defineEmits(["sendGeneralCsvDataInterface"]);
@@ -56,13 +54,23 @@ async function readTextFile() {
                         readCsvFileCapsuleDto.fileName = file.name;
                         //csvファイルデータからcsv設定データに変換
                         const url = "http://localhost:8080/read-csv-by-file/practice";
-                        await axios.post(url, readCsvFileCapsuleDto)
-                            .then((response) => {
-                                sendCsvAndStragedShoshouDto.value = response.data;
+
+                        const method = "POST";
+                        const body = JSON.stringify(readCsvFileCapsuleDto);
+                        const headers = {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        };
+
+                        fetch(url, { method, headers, body })
+                            .then(async (response) => {
+
+                                sendCsvAndStragedShoshouDto.value = await response.json();
                                 readData.value = sendCsvAndStragedShoshouDto.value.listAllCsv;
                                 emits("sendGeneralCsvDataInterface", sendCsvAndStragedShoshouDto.value);
+
                             })
-                            .catch((error) => showErrorMessage(error));
+                            .catch((error) => { alert(error); });
                     }
                 };
             }

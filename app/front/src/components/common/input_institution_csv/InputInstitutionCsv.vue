@@ -15,8 +15,6 @@ import VariousFinancialPayInterface from "../../../dto/financial/vairousFinancia
 import CsvReadTemplateCapsuleDto from "../../../dto/read_csv/csvReadTemplateCapsuleDto";
 import SessionStorageCommonCheck from "../../../dto/common_check/sessionStorageCommonCheck";
 import createCheckTransactionDto from "../../../dto/common_check/createCheckTransactionDto";
-import axios from "axios";
-import showErrorMessage from "../../../dto/common_check/showErrorMessage";
 import SendCsvAndStragedShoshouDto from "../../../dto/read_csv/sendCsvAndStragedShoshouDto";
 import SaveStorageResultDto from "../../../dto/storage/saveStorageResultDto";
 import PropseCsvReadTemplateEntity from "../../../entity/proposeCsvReadTemplateEntity";
@@ -88,13 +86,21 @@ async function recieveGeneralCsvDataInterface(sendDto: SendCsvAndStragedShoshouD
 
     //実接続
     const url = "http://localhost:8080/csv-read-template/select-template-by-number";
-    await axios.post(url, csvReadTemplateCapsuleDto)
-        .then((response) => {
+    const method = "POST";
+    const body = JSON.stringify(csvReadTemplateCapsuleDto);
+    const headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    };
 
-            listCsvReadTemplate.value = response.data;
+    fetch(url, { method, headers, body })
+        .then(async (response) => {
+
+            listCsvReadTemplate.value = await response.json();
 
         })
-        .catch((error) => showErrorMessage(error));
+        .catch((error) => { alert(error); });
+
 
     selectedCsvReadTemplate.value = "0";//選択解除
 
@@ -309,9 +315,17 @@ async function onPromoteTemplate() {
 
     //登録
     const url = "http://localhost:8080/propose-csv-read-template/regist";
-    await axios.post(url, registProposeCsvReadRemplateCapsuleDto)
-        .then((response) => {
-            const resultDto: TemplateFrameworkResultDto = response.data;
+    const method = "POST";
+    const body = JSON.stringify(registProposeCsvReadRemplateCapsuleDto);
+    const headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    };
+
+    fetch(url, { method, headers, body })
+        .then(async (response) => {
+
+            const resultDto: TemplateFrameworkResultDto = await response.json();
             if (response.status === 200) {
                 alert(resultDto.message);
             }
@@ -320,7 +334,8 @@ async function onPromoteTemplate() {
                 alert(resultDto.message);
             }
         })
-        .catch((error) => { showErrorMessage(error)});
+        .catch((error) => { alert(error); });
+
 }
 </script>
 <template>

@@ -5,8 +5,6 @@ import VariousFinancialPayDto from "../../../dto/financial/vairousFinancialPayDt
 import createCheckTransactionDto from "../../../dto/common_check/createCheckTransactionDto";
 import SearchVariousFinancialPayCapsuleDto from "../../../dto/financial/searchVariousFinancialPayCapsuleDto";
 import SessionStorageCommonCheck from "../../../dto/common_check/sessionStorageCommonCheck";
-import axios from "axios";
-import showErrorMessage from "../../../dto/common_check/showErrorMessage";
 
 //props,emit
 const props = defineProps<{ isEditable: boolean }>();
@@ -93,11 +91,17 @@ async function onSearch() {
     variousFinancialPayCapsuleDto.searchWords = searchWords.value;
 
     const url = "http://localhost:8080/various-financial-pay/search-table";
-    await axios.post(url, variousFinancialPayCapsuleDto)
-        .then((response) => {
-            list.value = response.data;
+    const method = "POST";
+    const body = JSON.stringify(variousFinancialPayCapsuleDto);
+    const headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    };
+    fetch(url, { method, headers,body })
+        .then(async (response) => {
+            list.value = await response.json();
         })
-        .catch((error) => showErrorMessage(error));
+        .catch((error) => { alert(error); });
 }
 </script>
 <template>
