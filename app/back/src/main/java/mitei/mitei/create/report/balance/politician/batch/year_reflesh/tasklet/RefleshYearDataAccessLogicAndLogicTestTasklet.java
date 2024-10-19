@@ -49,23 +49,29 @@ public class RefleshYearDataAccessLogicAndLogicTestTasklet implements Tasklet, S
         // 機能ごとのBaseフォルダ(ここではLogic)
         final String pathFunctionSns = "main/java/mitei/mitei/create/report/balance/politician/task_alert/sns/logic/y";
         final String pathFunctionMail = "main/java/mitei/mitei/create/report/balance/politician/task_alert/mail/y";
+        final String pathFunctionTask = "main/java/mitei/mitei/create/report/balance/politician/task_plan/logic/y";
 
         // Logic複写作業
         this.worksByOneFunction(pathFunctionSns + baseYear, pathFunctionSns + copyYear);
         this.worksByOneFunction(pathFunctionMail + baseYear, pathFunctionMail + copyYear);
+        this.worksByOneFunction(pathFunctionTask + baseYear, pathFunctionTask + copyYear);
 
         // 機能ごとのBaseフォルダ(ここではLogicTest)
         final String pathFunctionSnsTest = "test/java/mitei/mitei/create/report/balance/politician/task_alert/sns/logic/y";
         final String pathFunctionMailTest = "test/java/mitei/mitei/create/report/balance/politician/task_alert/mail/y";
+        final String pathFunctionTaskTest = "test/java/mitei/mitei/create/report/balance/politician/task_plan/logic/y";
 
         final String pathFunctionSnsTestSql = "test/resources/mitei/mitei/create/report/balance/politician/task_alert/sns/logic/y";
         final String pathFunctionMailTestSql = "test/resources/mitei/mitei/create/report/balance/politician/task_alert/mail/y";
+        final String pathFunctionTaskTestSql = "test/resources/mitei/mitei/create/report/balance/politician/task_plan/logic/y";
 
         // LogicTest複写作業
         this.worksByOneFunction(pathFunctionSnsTest + baseYear, pathFunctionSnsTest + copyYear);
         this.worksByOneFunction(pathFunctionMailTest + baseYear, pathFunctionMailTest + copyYear);
+        this.worksByOneFunction(pathFunctionTaskTest + baseYear, pathFunctionTaskTest + copyYear);
         this.worksByOneFunction(pathFunctionSnsTestSql + baseYear, pathFunctionSnsTestSql + copyYear);
         this.worksByOneFunction(pathFunctionMailTestSql + baseYear, pathFunctionMailTestSql + copyYear);
+        this.worksByOneFunction(pathFunctionTaskTestSql + baseYear, pathFunctionTaskTestSql + copyYear);
 
         // 処理終了
         return RepeatStatus.FINISHED;

@@ -67,4 +67,42 @@ class CallMailSendingInfoFactoryLogicTest {
         assertThat(mailMessage.getText()).isEqualTo("メール本文1");
 
     }
+
+    @Test
+    @Transactional
+    @Sql("y2022/send_alert_mail_2022.sql")
+    void testPractice2022() {
+
+        // 運用上はシステム日付だが、テスト用の日付(テストデータのうち2027年データは除外されて抽出される、というテストを入れているため)
+        LocalDateTime localDateTime = LocalDateTime.of(2022, 11, 1, 0, 0, 0);
+
+        SendMailCapsuleDto capsuleDto = callMailSendingInfoFactoryLogic.practice(localDateTime);
+
+        // 2022年をしているので2022年で取得した結果と全く同じ結果が取得できる
+        // TODO その他の年については作成次第追加修正する
+        List<MailDataDto> list = capsuleDto.getListMailData();
+
+        assertThat(list.size()).isEqualTo(4); // 8件のうち、2件は最新でない、2件は実施時刻より後予定
+
+        MailDataDto mailDataDto00 = list.get(0);
+        assertThat(mailDataDto00.getSendAlertMailId()).isEqualTo(130);
+        MailDataDto mailDataDto01 = list.get(1);
+        assertThat(mailDataDto01.getSendAlertMailId()).isEqualTo(131);
+        MailDataDto mailDataDto02 = list.get(2);
+        assertThat(mailDataDto02.getSendAlertMailId()).isEqualTo(136);
+        MailDataDto mailDataDto03 = list.get(3);
+        assertThat(mailDataDto03.getSendAlertMailId()).isEqualTo(137);
+
+        SimpleMailMessage mailMessage = mailDataDto00.getSimpleMailMessage();
+
+        assertThat(mailMessage.getFrom()).isEqualTo("testA@test.net");
+        assertThat(mailMessage.getTo()[0]).isEqualTo("testB@test.net");
+        assertThat(mailMessage.getCc()[0]).isEqualTo("testC@test.net");
+        assertThat(mailMessage.getBcc()[0]).isEqualTo("testD@test.net");
+        assertThat(mailMessage.getReplyTo()).isEqualTo("testE@test.net");
+        assertThat(mailMessage.getSubject()).isEqualTo("メールタイトル1");
+        assertThat(mailMessage.getText()).isEqualTo("メール本文1");
+
+    }
+
 }

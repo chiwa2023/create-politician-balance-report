@@ -44,7 +44,7 @@ class RefleshYearDataAccessRepositoryAndEntityTaskletTest {
     private RefleshYearDataAccessRepositoryAndEntityTasklet refleshYearDataAccessRepositoryAndEntityTasklet;
 
     /** 複写元報告年 */
-    private static final int baseYear = 2022;
+    private static final int baseYear = 2024;
     /** 複写先報告年 */
     private static final int copyYear = 2025;
 
@@ -52,11 +52,15 @@ class RefleshYearDataAccessRepositoryAndEntityTaskletTest {
     private static final String pathFunctionSnsRepository = "main/java/mitei/mitei/create/report/balance/politician/repository/sns/";
     /** 通知メールフォルダ(Repository) */
     private static final String pathFunctionMailRepository = "main/java/mitei/mitei/create/report/balance/politician/repository/mail/";
+    /** タスク計画フォルダ(Repository) */
+    private static final String pathFunctionTaskRepository = "main/java/mitei/mitei/create/report/balance/politician/repository/task_plan/";
 
     /** 通知SNSフォルダ(Entity) */
     private static final String pathFunctionSnsEntity = "main/java/mitei/mitei/create/report/balance/politician/entity/sns/";
     /** 通知メールフォルダ(Entity) */
     private static final String pathFunctionMailEntity = "main/java/mitei/mitei/create/report/balance/politician/entity/mail/";
+    /** タスク計画フォルダ(Entity) */
+    private static final String pathFunctionTaskEntity = "main/java/mitei/mitei/create/report/balance/politician/entity/task_plan/";
 
     @Test
     void testExecute() throws Exception {
@@ -76,6 +80,7 @@ class RefleshYearDataAccessRepositoryAndEntityTaskletTest {
 
         final String fileNameSns = "SendAlertSnsMessage";
         final String fileNameMail = "SendAlertMail";
+        final String fileNameTask = "TaskPlan";
 
         String pathBaseAbsSnsRepository = GetCurrentResourcePath.getBackSrcPath(pathFunctionSnsRepository);
         Path pathBaseSnsRepository = Paths.get(pathBaseAbsSnsRepository, fileNameSns + baseYear + expandTextRepository);
@@ -86,6 +91,11 @@ class RefleshYearDataAccessRepositoryAndEntityTaskletTest {
                 fileNameMail + baseYear + expandTextRepository);
         assertTrue(Files.exists(pathBaseMailRepository), fileExistText);
 
+        String pathBaseAbsTaskRepository = GetCurrentResourcePath.getBackSrcPath(pathFunctionTaskRepository);
+        Path pathBaseTaskRepository = Paths.get(pathBaseAbsTaskRepository,
+                fileNameTask + baseYear + expandTextRepository);
+        assertTrue(Files.exists(pathBaseTaskRepository), fileExistText);
+
         final String expandTextEntity = "Entity.java";
 
         String pathBaseAbsSnsEntity = GetCurrentResourcePath.getBackSrcPath(pathFunctionSnsEntity);
@@ -95,6 +105,10 @@ class RefleshYearDataAccessRepositoryAndEntityTaskletTest {
         String pathBaseAbsMailEntity = GetCurrentResourcePath.getBackSrcPath(pathFunctionMailEntity);
         Path pathBaseMailEntity = Paths.get(pathBaseAbsMailEntity, fileNameMail + baseYear + expandTextEntity);
         assertTrue(Files.exists(pathBaseMailEntity), fileExistText);
+
+        String pathBaseAbsTaskEntity = GetCurrentResourcePath.getBackSrcPath(pathFunctionTaskEntity);
+        Path pathBaseTaskEntity = Paths.get(pathBaseAbsTaskEntity, fileNameTask + baseYear + expandTextEntity);
+        assertTrue(Files.exists(pathBaseTaskEntity), fileExistText);
 
         // FileTimeがUTCで返るのでそれに合わせる
         Instant kijunTime = LocalDateTime.now(ZoneOffset.UTC).toInstant(ZoneOffset.UTC);
@@ -112,6 +126,11 @@ class RefleshYearDataAccessRepositoryAndEntityTaskletTest {
         assertTrue(Files.exists(pathCopyMail), fileExistText);
         assertTrue(Files.getLastModifiedTime(pathCopyMail).toInstant().isAfter(kijunTime), updateText);
 
+        String pathCopyAbsTask = GetCurrentResourcePath.getBackSrcPath(pathFunctionTaskRepository);
+        Path pathCopyTask = Paths.get(pathCopyAbsTask, fileNameTask + copyYear + expandTextRepository);
+        assertTrue(Files.exists(pathCopyTask), fileExistText);
+        assertTrue(Files.getLastModifiedTime(pathCopyTask).toInstant().isAfter(kijunTime), updateText);
+        
         String pathCopyAbsSnsEntity = GetCurrentResourcePath.getBackSrcPath(pathFunctionSnsEntity);
         Path pathCopySnsEntity = Paths.get(pathCopyAbsSnsEntity, fileNameSns + copyYear + expandTextEntity);
         assertTrue(Files.exists(pathCopySnsEntity), fileExistText);
@@ -122,6 +141,10 @@ class RefleshYearDataAccessRepositoryAndEntityTaskletTest {
         assertTrue(Files.exists(pathCopyMailEntity), fileExistText);
         assertTrue(Files.getLastModifiedTime(pathCopyMailEntity).toInstant().isAfter(kijunTime), updateText);
 
+        String pathCopyAbsTaskEntity = GetCurrentResourcePath.getBackSrcPath(pathFunctionTaskEntity);
+        Path pathCopyTaskEntity = Paths.get(pathCopyAbsTaskEntity, fileNameTask + copyYear + expandTextEntity);
+        assertTrue(Files.exists(pathCopyTaskEntity), fileExistText);
+        assertTrue(Files.getLastModifiedTime(pathCopyTaskEntity).toInstant().isAfter(kijunTime), updateText);
     }
 
     private StepExecution getStepExecution() {

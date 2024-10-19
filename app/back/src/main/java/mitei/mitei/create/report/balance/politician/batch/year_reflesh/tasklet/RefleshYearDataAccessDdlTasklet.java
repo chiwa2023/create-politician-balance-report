@@ -60,11 +60,13 @@ public class RefleshYearDataAccessDdlTasklet implements Tasklet, StepExecutionLi
         // テーブル名検索のためにEntityに入る
         final String pathFunctionSnsEntity = "main/java/mitei/mitei/create/report/balance/politician/entity/sns/";
         final String pathFunctionMailEntity = "main/java/mitei/mitei/create/report/balance/politician/entity/mail/";
+        final String pathFunctionTaskEntity = "main/java/mitei/mitei/create/report/balance/politician/entity/task_plan/";
 
         // テーブル名リストを作成する
         List<String> listTablename = new ArrayList<>();
         listTablename.addAll(this.createTableList(pathFunctionSnsEntity));
         listTablename.addAll(this.createTableList(pathFunctionMailEntity));
+        listTablename.addAll(this.createTableList(pathFunctionTaskEntity));
 
         for (String tablename : listTablename) {
             if(-1 != tablename.indexOf(baseYear) ) {

@@ -23,4 +23,4 @@ CREATE TABLE `send_alert_mail_2025` (
   `update_user_name` varchar(300) COLLATE utf8mb4_bin DEFAULT NULL COMMENT '更新ユーザ姓名',
   `update_timestamp` datetime DEFAULT NULL COMMENT '更新タイムスタンプ',
   PRIMARY KEY (`send_alert_mail_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=172 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;

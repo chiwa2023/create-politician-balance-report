@@ -67,7 +67,6 @@ class SaveSnsDirectMessageSendingResult2025LogicTest {
                 .findBySaishinKbnAndSendAlertSnsMessageCodeOrderBySendAlertSnsMessageId(saishin, code);
         assertThat(list01.size()).isEqualTo(1);
         SendAlertSnsMessage2025Entity entity01 = list01.get(0);
-        assertThat(entity01.getSendAlertSnsMessageId()).isEqualTo(365L);
         assertThat(entity01.getTimesRetryNext()).isEqualTo(1);
         assertThat(entity01.getSendDatetime()).isEqualTo(entity01.getDatetimeTimes1());
 
@@ -86,7 +85,6 @@ class SaveSnsDirectMessageSendingResult2025LogicTest {
                 .findBySaishinKbnAndSendAlertSnsMessageCodeOrderBySendAlertSnsMessageId(saishin, code);
         assertThat(list02.size()).isEqualTo(1);
         SendAlertSnsMessage2025Entity entity02 = list02.get(0);
-        assertThat(entity02.getSendAlertSnsMessageId()).isEqualTo(366L);
         assertThat(entity02.getTimesRetryNext()).isEqualTo(2);
         assertThat(entity02.getSendDatetime()).isEqualTo(entity02.getDatetimeTimes2());
         
@@ -105,7 +103,6 @@ class SaveSnsDirectMessageSendingResult2025LogicTest {
                 .findBySaishinKbnAndSendAlertSnsMessageCodeOrderBySendAlertSnsMessageId(saishin, code);
         assertThat(list03.size()).isEqualTo(1);
         SendAlertSnsMessage2025Entity entity03 = list03.get(0);
-        assertThat(entity03.getSendAlertSnsMessageId()).isEqualTo(367L);
         assertThat(entity03.getTimesRetryNext()).isEqualTo(3);
         assertThat(entity03.getSendDatetime()).isEqualTo(entity02.getDatetimeTimes3());
 

@@ -64,7 +64,7 @@ public class MockSendMailUserLogic {
 
                 mailDataDto = listSend.get(index);
                 // TODO 環境が替わるたびにて動作テストする。現在smtp4devをテストして動作
-                //mailSender.send(mailDataDto.getSimpleMailMessage());
+                mailSender.send(mailDataDto.getSimpleMailMessage());
 
                 // TODO Mockでなくなったら削除する
                 this.mockRaiseException(index, mailCapsuleDto);

@@ -48,16 +48,20 @@ public class RefleshYearDataAccessRepositoryAndEntityTasklet implements Tasklet,
         // 機能ごとのBaseフォルダ(ここではRepository)
         final String pathFunctionSnsRepository = "main/java/mitei/mitei/create/report/balance/politician/repository/sns/";
         final String pathFunctionMailRepository = "main/java/mitei/mitei/create/report/balance/politician/repository/mail/";
+        final String pathFunctionTaskRepository = "main/java/mitei/mitei/create/report/balance/politician/repository/task_plan/";
 
         this.worksByOneFunction(pathFunctionSnsRepository);
         this.worksByOneFunction(pathFunctionMailRepository);
+        this.worksByOneFunction(pathFunctionTaskRepository);
 
         // 機能ごとのBaseフォルダ(ここではEntity)
         final String pathFunctionSnsEntity = "main/java/mitei/mitei/create/report/balance/politician/entity/sns/";
         final String pathFunctionMailEntity = "main/java/mitei/mitei/create/report/balance/politician/entity/mail/";
+        final String pathFunctionTaskEntity = "main/java/mitei/mitei/create/report/balance/politician/entity/task_plan/";
 
         this.worksByOneFunction(pathFunctionSnsEntity);
         this.worksByOneFunction(pathFunctionMailEntity);
+        this.worksByOneFunction(pathFunctionTaskEntity);
 
         // 処理終了
         return RepeatStatus.FINISHED;

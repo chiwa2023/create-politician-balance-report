@@ -1,14 +1,21 @@
 package mitei.mitei.create.report.balance.politician.task_alert.sns.logic.y2022;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
 import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
+import mitei.mitei.create.report.balance.politician.entity.TaskInfoEntity;
+import mitei.mitei.create.report.balance.politician.entity.UserWebAccessEntity;
 import mitei.mitei.create.report.balance.politician.entity.sns.SendAlertSnsMessage2022Entity;
 import mitei.mitei.create.report.balance.politician.repository.sns.SendAlertSnsMessage2022Repository;
+import mitei.mitei.create.report.balance.politician.task_plan.logic.CreateSendMessageLogic;
+import mitei.mitei.create.report.balance.politician.task_plan.logic.PickupRelatedUserListByTaskKengenLogic;
 import mitei.mitei.create.report.balance.politician.util.SetTableDataHistoryUtil;
 
 /**
@@ -28,32 +35,67 @@ public class InsertSnsDirectMessageSendingInfo2022Logic {
     /** 再試行5回目の日付間隔 */
     private static final int TIMES5_DAY = 2;
 
+    /** メッセージ本文作成Logic */
+    @Autowired
+    private CreateSendMessageLogic createSendMessageLogic;
+
+    /** タスク該当ユーザ抽出Logic */
+    @Autowired
+    private PickupRelatedUserListByTaskKengenLogic pickupRelatedUserListByTaskKengenLogic;
+
     /** SNSダイレクトメッセージ送信Repository(2022年) */
     @Autowired
     private SendAlertSnsMessage2022Repository sendAlertSnsMessage2022Repository;
 
-    public int practice(final LocalDateTime dateTimeShori) {
+    /**
+     * ダイレクトメッセージ送信計画データを挿入する
+     *
+     * @param privilegeDto  権限確認Dto
+     * @param listUser      ユーザリスト
+     * @param dateTimeShori 処理日時
+     * @param listTask      タスクリスト
+     */
+    public int practice(final CheckPrivilegeDto privilegeDto, final List<UserWebAccessEntity> listUser,
+            final LocalDateTime dateTimeShori, final List<TaskInfoEntity> listTask) {
 
-        // TODO 仮Logicのため修正する
-        
-        // 権限Dto
-        CheckPrivilegeDto checkPrivilegeDto = new CheckPrivilegeDto();
-        checkPrivilegeDto.setIsResult(true);
-        checkPrivilegeDto.setIsRaiseExcception(false);
-        checkPrivilegeDto.setLoginUserId(1000L); // SUPPRESS CHECKSTYLE MagicNumber
-        checkPrivilegeDto.setLoginUserCode(900); // SUPPRESS CHECKSTYLE MagicNumber
-        checkPrivilegeDto.setLoginUserName("ユーザ名");
-        checkPrivilegeDto.setPoliticalOrganizationId(2345L); // SUPPRESS CHECKSTYLE MagicNumber
-        checkPrivilegeDto.setPoliticalOrganizationCode(2333); // SUPPRESS CHECKSTYLE MagicNumber
-        checkPrivilegeDto.setPoliticalOrganizationName("サンプル政治団体");
+        List<SendAlertSnsMessage2022Entity> list = new ArrayList<>();
+        for (TaskInfoEntity taskEntity : listTask) {
+            List<UserWebAccessEntity> listPickup = pickupRelatedUserListByTaskKengenLogic
+                    .practice(taskEntity.getKengenKbn(), listUser);
+            for (UserWebAccessEntity userEntity : listPickup) {
+                list.add(this.createEntity(privilegeDto, dateTimeShori, userEntity, taskEntity));
+            }
+        }
+
+        // 同一識別コード設定
+        Integer code = 0;
+        Optional<SendAlertSnsMessage2022Entity> optionl = sendAlertSnsMessage2022Repository
+                .findFirstByOrderBySendAlertSnsMessageCodeDesc();
+        if (!optionl.isEmpty()) {
+            code = optionl.get().getSendAlertSnsMessageCode();
+        }
+        for (SendAlertSnsMessage2022Entity entity : list) {
+            code++;
+            entity.setSendAlertSnsMessageCode(code);
+        }
+
+        return sendAlertSnsMessage2022Repository.saveAll(list).size();
+    }
+
+    private SendAlertSnsMessage2022Entity createEntity(final CheckPrivilegeDto privilegeDto,
+            final LocalDateTime dateTimeShori, final UserWebAccessEntity userEntity, final TaskInfoEntity taskEntity) {
 
         SendAlertSnsMessage2022Entity entity = new SendAlertSnsMessage2022Entity();
-        SetTableDataHistoryUtil.practice(checkPrivilegeDto, entity, DataHistoryStatusConstants.INSERT);
+        SetTableDataHistoryUtil.practice(privilegeDto, entity, DataHistoryStatusConstants.INSERT);
 
-        entity.setTimesRetryNext(0);
-        entity.setSnsLogicId(1); // Mock Sample1を呼び出す
-        entity.setBodyText("ダイレクトメッセージ送信本文");
+        // 送信内容設定
+        entity.setSnsLogicId(userEntity.getSendSnsLogicId());
+        entity.setBodyText(createSendMessageLogic.practice(userEntity.getUserName(), taskEntity));
+        entity.setSendUserId(userEntity.getUserId());
+        entity.setSendUserCode(userEntity.getUserCode());
+        entity.setSendUserName(userEntity.getUserName());
 
+        // 送信条件の設定
         entity.setTimesRetryNext(0); // 初回は再試行回数0
         entity.setSendDatetime(dateTimeShori); // 初回は指定処理時間
 
@@ -78,13 +120,10 @@ public class InsertSnsDirectMessageSendingInfo2022Logic {
         // 2日後
         LocalDateTime time5 = time0.plusDays(TIMES5_DAY);
         entity.setDatetimeTimes5(time5);
-        
-        entity.setSendAlertSnsMessageId(323L);
-        entity.setSendAlertSnsMessageCode(320);
-        
-        
 
-        return sendAlertSnsMessage2022Repository.save(entity).getSendAlertSnsMessageCode();
+        entity.setSendAlertSnsMessageId(0L); // auto increment
+
+        return entity;
     }
 
 }

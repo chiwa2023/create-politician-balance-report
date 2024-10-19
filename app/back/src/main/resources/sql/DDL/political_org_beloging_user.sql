@@ -1,0 +1,21 @@
+CREATE TABLE `political_org_beloging_user` (
+  `political_org_beloging_user_id` bigint NOT NULL AUTO_INCREMENT COMMENT '政治団体ユーザ所属Id',
+  `political_org_beloging_user_code` int DEFAULT NULL COMMENT '政治団体ユーザ所属得同一識別コード',
+  `saishin_kbn` int DEFAULT NULL COMMENT '最新区分',
+  `political_organization_id` bigint DEFAULT NULL COMMENT '政治団体Id',
+  `political_organization_code` int DEFAULT NULL COMMENT '政治団体同一識別コード',
+  `political_organization_name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT '政治団体名称',
+  `user_id` bigint DEFAULT NULL COMMENT 'ユーザId',
+  `user_code` int DEFAULT NULL COMMENT 'ユーザ同一識別コード',
+  `user_name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT 'ユーザ名称',
+  `kengen_kbn` int DEFAULT NULL COMMENT '団体内権限',
+  `insert_user_id` bigint DEFAULT NULL COMMENT '挿入ユーザId',
+  `insert_user_code` int DEFAULT NULL COMMENT '挿入ユーザ同一識別コード',
+  `insert_user_name` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT '挿入ユーザ姓名',
+  `insert_timestamp` datetime DEFAULT NULL COMMENT '挿入タイムスタンプ',
+  `update_user_id` bigint DEFAULT NULL COMMENT '更新ユーザId',
+  `update_user_code` int DEFAULT NULL COMMENT '更新ユーザ同一識別コード',
+  `update_user_name` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL COMMENT '更新ユーザ姓名',
+  `update_timestamp` datetime DEFAULT NULL COMMENT '更新タイムスタンプ',
+  PRIMARY KEY (`political_org_beloging_user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1100 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;

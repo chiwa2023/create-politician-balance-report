@@ -44,7 +44,7 @@ class RefleshYearDataAccessDdlTaskletTest {
     private RefleshYearDataAccessDdlTasklet refleshYearDataAccessDdlTasklet;
 
     /** 複写元報告年 */
-    private static final int baseYear = 2022;
+    private static final int baseYear = 2024;
     /** 複写先報告年 */
     private static final int copyYear = 2025;
 
@@ -70,12 +70,16 @@ class RefleshYearDataAccessDdlTaskletTest {
 
         final String sqlSns = "send_alert_sns_message_";
         final String sqlMail = "send_alert_mail_";
+        final String sqlTask = "task_plan_";
 
         Path pathBaseSns = Paths.get(pathAbs, sqlSns + baseYear + expandText);
         assertTrue(Files.exists(pathBaseSns), fileExistText);
 
         Path pathBaseMail = Paths.get(pathAbs, sqlMail + baseYear + expandText);
         assertTrue(Files.exists(pathBaseMail), fileExistText);
+
+        Path pathBaseTask = Paths.get(pathAbs, sqlTask + baseYear + expandText);
+        assertTrue(Files.exists(pathBaseTask), fileExistText);
 
         // FileTimeがUTCで返るのでそれに合わせる
         Instant kijunTime = LocalDateTime.now(ZoneOffset.UTC).toInstant(ZoneOffset.UTC);
@@ -89,6 +93,9 @@ class RefleshYearDataAccessDdlTaskletTest {
         assertTrue(Files.exists(pathCopyMail), fileExistText);
         assertTrue(Files.getLastModifiedTime(pathCopyMail).toInstant().isAfter(kijunTime), updateText);
 
+        Path pathCopyTask = Paths.get(pathAbs, sqlTask + copyYear + expandText);
+        assertTrue(Files.exists(pathCopyTask), fileExistText);
+        assertTrue(Files.getLastModifiedTime(pathCopyTask).toInstant().isAfter(kijunTime), updateText);
     }
 
     private StepExecution getStepExecution() {

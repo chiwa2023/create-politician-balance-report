@@ -566,4 +566,8 @@ public class SendAlertMail2022Entity implements Serializable, AllTabeDataHistory
         this.updateTimestamp = updateTimestamp;
     }
 
+    
+    
+
+    
 }

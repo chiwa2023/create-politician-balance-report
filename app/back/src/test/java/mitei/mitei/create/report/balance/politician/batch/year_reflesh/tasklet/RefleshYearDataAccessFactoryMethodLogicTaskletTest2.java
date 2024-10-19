@@ -36,8 +36,6 @@ class RefleshYearDataAccessFactoryMethodLogicTaskletTest2 {
     @Test
     void testExecute() throws Exception { // NOPMD JUnitTestsShouldIncludeAssert
 
-        // 対象ファイル更新時間をassertにしても良いが、報告年重複時は変更がない(正常状態)
-
         // 処理実行
         StepExecution execution = this.getStepExecution();
         refleshYearDataAccessFactoryMethodLogicTasklet.beforeStep(execution);
