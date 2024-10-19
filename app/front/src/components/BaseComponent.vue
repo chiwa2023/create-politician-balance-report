@@ -6,9 +6,9 @@ import AddressBlockSupport2 from './addrerss_support/AddressBlockSupport2.vue';
 <template>
     <h1>コンポーネントをページと関係なく作成するための台紙</h1>
     <hr>
-    <AddressBlockSupport1></AddressBlockSupport1>
     <!--
-    <AddressBlockSupport2></AddressBlockSupport2>
+    <AddressBlockSupport1></AddressBlockSupport1>
     -->
+    <AddressBlockSupport2></AddressBlockSupport2>
 </template>
 <style scoped></style>

@@ -2,8 +2,7 @@
 import { Ref, ref, toRaw } from 'vue';
 import AddressPostalcodeDto from '../../dto/addressPostalcodeDto';
 import AddressBlockDto from '../../dto/addressBlockDto';
-import axios from 'axios';
-import PostalAddressBlockDto from '../../dto/postalAddressBlockDto';
+import PostalAddressBlockInterface from '../../dto/postalAddressBlockDto';
 
 //郵便番号情報
 const addressPostalcode: Ref<AddressPostalcodeDto> = ref(new AddressPostalcodeDto());
@@ -22,18 +21,21 @@ const filterCondition: Ref<string> = ref("");
 let isListPrepared = false;
 async function loadList() {
     if (String(addressPostalcode.value.postalcode).length === 7) {
-        //createListMock();
-        //getPoastalcodeInfo();
-        //バックアップ作成
-        //listBlockBack.value = structuredClone(toRaw(listBlock.value));
 
         //郵便番号から
         const url = "http://localhost:8080/zz-address/example2?postalCode=" + addressPostalcode.value.postalcode;
-        alert(url);
-        await axios.get(url)
-            .then((response) => {
+        const method = "GET";
+        //const body = JSON.stringify(conditonDto.value);
+        const headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        };
+
+        fetch(url, { method, headers })
+            .then(async (response) => {
+
                 //データを取得
-                const resultDto: PostalAddressBlockDto = response.data;
+                const resultDto: PostalAddressBlockInterface = await response.json();
 
                 //TODO ほとんどが1件だけ取得できるので、その想定であるが、複数に仕様変更の可能性もある
                 addressPostalcode.value = resultDto.listPostalcode[0];
@@ -43,11 +45,10 @@ async function loadList() {
                 listBlockBack.value = structuredClone(toRaw(listBlock.value));
 
                 //フィルタ条件を初期化
-                filterCondition.value ="";
+                filterCondition.value = "";
+
             })
-            .catch((error) => alert(error));
-
-
+            .catch((error) => { alert(error); });
 
         isListPrepared = true;
     }
@@ -58,7 +59,7 @@ async function loadList() {
 
 function filterList() {
     if (isListPrepared) {
-        listBlock.value = listBlockBack.value.filter(dto => { if("" === filterCondition.value){return true;}   return dto.text.startsWith(filterCondition.value) });
+        listBlock.value = listBlockBack.value.filter(dto => { if ("" === filterCondition.value) { return true; } return dto.text.startsWith(filterCondition.value) });
         selected.value = listBlock.value[0].value;
     }
 }
@@ -99,12 +100,14 @@ function filterList() {
     <div stye="clear:both;"></div>
 
     <div class="left-area">番地</div>
-    <div class="right-area"><select v-model="selected"><option v-for="dto in listBlock" :value="dto.value">{{dto.text}}</option></select><input type="text" v-model="filterCondition"
-            @input="filterList" placeholder="丁目・番地など" style="margin-left:2%;"></div>
+    <div class="right-area"><select v-model="selected">
+            <option v-for="dto in listBlock" :value="dto.value">{{ dto.text }}</option>
+        </select><input type="text" v-model="filterCondition" @input="filterList" placeholder="丁目・番地など"
+            style="margin-left:2%;"></div>
     <div stye="clear:both;"></div>
 
     <div class="left-area">建物</div>
-    <div class="right-area"><input type="text" v-model="building"/></div>
+    <div class="right-area"><input type="text" v-model="building" /></div>
     <div stye="clear:both;"></div>
 
     <div class="left-area">&nbsp;</div>

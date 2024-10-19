@@ -2,8 +2,7 @@
 import { Ref, ref, toRaw } from 'vue';
 import AddressBlockDto from '../../dto/addressBlockDto';
 import AddressPostalcodeDto from '../../dto/addressPostalcodeDto';
-import axios from 'axios';
-import PostalAddressBlockDto from '../../dto/postalAddressBlockDto';
+import PostalAddressBlockInterface from '../../dto/postalAddressBlockDto';
 
 //郵便番号情報
 const addressPostalcode: Ref<AddressPostalcodeDto> = ref(new AddressPostalcodeDto());
@@ -18,17 +17,22 @@ const building: Ref<string> = ref("");
 let isListPrepared = false;
 async function loadList() {
     if (String(addressPostalcode.value.postalcode).length === 7) {
-        //getPoastalcodeInfo();
-        //createListMock();
-        //address1.value = "広島県";
-        //listBlockBack.value = structuredClone(toRaw(listBlock.value));
 
         //郵便番号から
         const url = "http://localhost:8080/zz-address/example2?postalCode=" + addressPostalcode.value.postalcode;
-        await axios.get(url)
-            .then((response) => {
+
+        const method = "GET";
+        //const body = JSON.stringify(conditonDto.value);
+        const headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        };
+
+        fetch(url, { method, headers })
+            .then(async (response) => {
+
                 //データを取得
-                const resultDto: PostalAddressBlockDto = response.data;
+                const resultDto: PostalAddressBlockInterface = await response.json();
 
                 //TODO ほとんどが1件だけ取得できるので、その想定であるが、複数に仕様変更の可能性もある
                 addressPostalcode.value = resultDto.listPostalcode[0];
@@ -43,7 +47,7 @@ async function loadList() {
                 prc2.value = 0;
                 prc3.value = 0;
             })
-            .catch((error) => alert(error));
+            .catch((error) => { alert(error); });
 
         isListPrepared = true;
     }
@@ -69,31 +73,6 @@ function filterList() {
     }
 }
 
-//function getPoastalcodeInfo() {
-//    addressPostalcode.value.addressName = "熊本県";
-//    addressPostalcode.value.isChoume = false;
-//    addressPostalcode.value.isPrc1 = true;
-//    addressPostalcode.value.isPrc2 = true;
-//    addressPostalcode.value.isPrc3 = false;
-//}
-
-//function createListMock() {
-//    listBlock.value.push(createOption("1番地", 0, 1, 0, 0));
-//    listBlock.value.push(createOption("11番地", 0, 11, 0, 0));
-//    listBlock.value.push(createOption("21番地", 0, 21, 0, 0));
-//    listBlock.value.push(createOption("2番地", 0, 2, 0, 0));
-//}
-
-//function createOption(text: string, chome: number, prc1: number, prc2: number, prc3: number): AddressBlockDto {
-//    const dto: AddressBlockDto = new AddressBlockDto();
-//    dto.value = text;
-//    dto.text = text;
-//    dto.choume = chome;
-//    dto.prc1 = prc1;
-//    dto.prc2 = prc2;
-//    dto.prc3 = prc3;
-//    return dto;
-//}
 </script>
 <template>
     <h1>番地入力補助(実装例2)</h1>

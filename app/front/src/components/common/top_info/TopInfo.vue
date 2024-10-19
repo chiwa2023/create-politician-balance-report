@@ -8,6 +8,7 @@ import TaskPlanResultDto from "../../../dto/task_plan/taskPlanResultDto";
 import getPoliticalOrganizationList from "./mock/getPoliticalOrganizationList";
 import PoliticalOrganizationSelectOptionDto from "../../../dto/task_plan/politicalOrganizationSelectOptionDto";
 import TaskPlanSelectOptionDto from "../../../dto/task_plan/taskPlanSelectOptionDto";
+import TaskPlanResultInterface from "../../../dto/task_plan/taskPlanResultDto";
 
 // 政治団体Selectボタン
 const politicalOrganizationList: Ref<PoliticalOrganizationSelectOptionDto[]> = ref(getPoliticalOrganizationList());
@@ -32,26 +33,6 @@ const privilegeDto: CheckPrivilegeDto = conditonDto.value.checkPrivilegeDto;
 
 // 未処理タスク取得を行う
 const url = "http://localhost:8080/get-task-plan";
-
-//await axios.post(url, conditonDto.value)
-//    .then((response) => {
-//        const resultDto: Ref<TaskPlanResultDto> = ref(new TaskPlanResultDto());
-//        resultDto.value = response.data;
-//
-//        // TODO リストコピー(pushしなくてもよいなら直す)
-//        politicalOrganizationList.value = [];
-//        for (const dto of resultDto.value.listPoliticalOrganizationSelect) {
-//            politicalOrganizationList.value.push(dto);
-//        }
-//        taskPlanListBackup.value = [];
-//        for (const dto of resultDto.value.listTaskPlanSelect) {
-//            taskPlanListBackup.value.push(dto);
-//        }
-//        taskPlanList.value = structuredClone(toRaw(taskPlanListBackup.value));
-//
-//    })
-//    .catch((error) => showErrorMessage(error.response.status));
-
 const method = "POST";
 const body = JSON.stringify(conditonDto.value);
 const headers = {
@@ -61,20 +42,12 @@ const headers = {
 
 fetch(url, { method, headers, body })
     .then(async (response) => {
-        const resultDto: Ref<TaskPlanResultDto> = ref(new TaskPlanResultDto());
-        resultDto.value = toRaw(await response.json());
-        // TODO リストコピー(配列pushしなくてもよいなら直す)
-        politicalOrganizationList.value = [];
-        for (const dto of resultDto.value.listPoliticalOrganizationSelect) {
-            politicalOrganizationList.value.push(dto);
-        }
-        taskPlanListBackup.value = [];
-        for (const dto of resultDto.value.listTaskPlanSelect) {
-            taskPlanListBackup.value.push(dto);
-        }
+        const resultDto: Ref<TaskPlanResultInterface> = ref(new TaskPlanResultDto());
+        resultDto.value = await response.json();
+        politicalOrganizationList.value = resultDto.value.listPoliticalOrganizationSelect;
+        taskPlanListBackup.value = resultDto.value.listTaskPlanSelect;
         taskPlanList.value = structuredClone(toRaw(taskPlanListBackup.value));
-
-    })
+   })
     .catch((error) => {alert(error);});
 
 function onMenu() {
@@ -87,6 +60,7 @@ function onMenu() {
 function onPoliticalOrganization() {
     taskPlanList.value = taskPlanListBackup.value.filter(
         (dto) => { return String(dto.politicalOrganizationCode) === selectedPoliticalOrganization.value });
+        // 権限Dtoに現在編集中の政治団体を追加
 }
 
 /**
