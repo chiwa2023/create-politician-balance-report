@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -45,6 +46,7 @@ class InsertSnsDirectMessageSendingInfo2022LogicTest {
     private SendAlertSnsMessage2022Repository sendAlertSnsMessage2022Repository;
 
     @Test
+    @Tag("TableTruncate")
     @Transactional
     @Sql("truncate_alert_sns_message_2022.sql")
     void testPractice() { // NOPMD

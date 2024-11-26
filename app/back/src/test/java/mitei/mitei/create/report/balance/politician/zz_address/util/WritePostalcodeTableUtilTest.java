@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -35,6 +36,7 @@ class WritePostalcodeTableUtilTest {
     private WritePostalcodeTableUtil writePostalcodeTableUtil;
     
     @Test
+    @Tag("LoadTest")
     void testPractice()throws Exception {
         
         Path path = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "address/utf_ken_all.csv");

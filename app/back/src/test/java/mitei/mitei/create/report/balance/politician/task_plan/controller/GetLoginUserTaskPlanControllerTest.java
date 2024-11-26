@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -39,6 +40,7 @@ class GetLoginUserTaskPlanControllerTest {
     private MockMvc mockMvc;
 
     @Test
+    @Tag("TableTruncate")
     @Transactional
     @Sql({"../../logic/poli_org/political_org_beloging_user.sql","../logic/y2024/task_plan_2024.sql"})
     void testPractice()throws Exception {

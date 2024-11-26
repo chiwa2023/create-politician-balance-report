@@ -3,6 +3,7 @@ package mitei.mitei.create.report.balance.politician.task_alert.sns.logic.mock.s
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -33,6 +34,7 @@ class MockSendSnsDirectMessageSample1LogicTest {
     private MockSendSnsDirectMessageSample1Logic mockSendSnsDirectMessageSample1Logic;
 
     @Test
+    @Tag("TableTruncate")
     @Transactional
     @Sql("sns_dm_setting_mock_sample1.sql")
     void testPractice() {

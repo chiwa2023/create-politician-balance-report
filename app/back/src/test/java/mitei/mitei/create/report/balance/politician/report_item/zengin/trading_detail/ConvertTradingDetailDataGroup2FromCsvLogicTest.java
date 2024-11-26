@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.time.LocalDate;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import mitei.mitei.create.report.balance.politician.dto.report_item.zengin.record_line.TradingZenginFormatTransactionDetailDataRecordGroup2NoticeDto;
@@ -15,6 +16,7 @@ import mitei.mitei.create.report.balance.politician.dto.report_item.zengin.recor
 class ConvertTradingDetailDataGroup2FromCsvLogicTest {
     // CHECKSTYLE:OFF
     @Test
+    @Tag("TableTruncate")
     void testPractice() { // NOPMD
         ConvertTradingDetailDataGroup2FromCsvLogic convertTradingDetailDataGroup2FromCsvLogic = new ConvertTradingDetailDataGroup2FromCsvLogic();
 

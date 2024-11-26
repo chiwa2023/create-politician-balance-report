@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -42,6 +43,7 @@ class SaveSnsDirectMessageSendingResult2024LogicTest {
     private SendAlertSnsMessage2024Repository sendAlertSnsMessage2024Repository;
 
     @Test
+    @Tag("TableTruncate")
     @Transactional
     @Sql("save_alert_sns_message_2024.sql")
     void testPractice() { // NOPMD

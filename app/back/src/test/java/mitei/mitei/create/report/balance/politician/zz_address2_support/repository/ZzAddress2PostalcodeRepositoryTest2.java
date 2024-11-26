@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -29,6 +30,7 @@ class ZzAddress2PostalcodeRepositoryTest2 {
     private ZzAddress2PostalcodeRepository zzAddress2PostalcodeRepository;
 
     @Test
+    @Tag("LoadTest")
     void testFindByAddressNameStartingWith() throws Exception {
         String jichitai = "熊本県熊本市中央区";
         List<ZzAddress2PostalcodeEntity> listEntity = zzAddress2PostalcodeRepository
@@ -39,6 +41,7 @@ class ZzAddress2PostalcodeRepositoryTest2 {
     }
 
     @Test
+    @Tag("LoadTest")
     void testFindByPostalcode() throws Exception {
         String postalcode = "7201623";
         List<ZzAddress2PostalcodeEntity> listEntity = zzAddress2PostalcodeRepository.findByPostalcode(postalcode);

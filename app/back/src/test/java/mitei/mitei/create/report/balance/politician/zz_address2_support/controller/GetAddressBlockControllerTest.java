@@ -3,6 +3,7 @@ package mitei.mitei.create.report.balance.politician.zz_address2_support.control
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -28,6 +29,7 @@ class GetAddressBlockControllerTest {
     private MockMvc mockMvc;
 
     @Test
+    @Tag("LoadTest")
     void testPractice() throws Exception {
         // String responsContent =
         // this.mockMvc.perform(get("/zz-address/example2?postalCode=7201521")) // NOPMD

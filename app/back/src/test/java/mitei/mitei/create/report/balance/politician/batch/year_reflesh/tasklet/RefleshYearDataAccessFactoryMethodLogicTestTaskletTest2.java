@@ -2,6 +2,7 @@ package mitei.mitei.create.report.balance.politician.batch.year_reflesh.tasklet;
 
 import java.time.LocalDateTime;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -31,6 +32,7 @@ class RefleshYearDataAccessFactoryMethodLogicTestTaskletTest2 {
     private RefleshYearDataAccessFactoryMethodLogicTestTasklet refleshYearDataAccessFactoryMethodLogicTestTasklet;
 
     @Test
+    @Tag("SourceReflesh")
     void testExecute() throws Exception { // NOPMD
 
         // 処理実行

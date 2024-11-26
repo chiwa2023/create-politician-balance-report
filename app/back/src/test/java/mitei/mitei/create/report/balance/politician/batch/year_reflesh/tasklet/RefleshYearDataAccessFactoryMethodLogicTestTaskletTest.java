@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -53,6 +54,7 @@ class RefleshYearDataAccessFactoryMethodLogicTestTaskletTest {
     private static final String SQL_TEXT = "sql01";
 
     @Test
+    @Tag("SourceReflesh")
     void testExecute00() throws Exception {
 
         // 更新先ファイルが解析ファイルであるとの設定の場合

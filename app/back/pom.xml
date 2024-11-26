@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.4</version>
+		<version>3.4.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>mitei.mitei.create.report.balance.politician</groupId>
@@ -97,12 +97,19 @@
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
 		<dependency>
 			<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
 			<version>5.9</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -127,8 +134,8 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			
-			
+
+
 			<!-- ローカルjar用設定 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -151,9 +158,18 @@
 					</execution>
 				</executions>
 			</plugin>
-			
-			
-			
+
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<groups>TableTruncate</groups>
+					<groups>NaturalTextSearch</groups>
+					<groups>LoadTest</groups>
+					<groups>SourceReflesh</groups>
+					<groups>ExternalService</groups>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 

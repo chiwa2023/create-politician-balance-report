@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -40,6 +41,7 @@ class ZzAddress2BlockRepositoryTest {
     private ZzAddressInsertBlockTableUtil zzAddressInsertBlockTableUtil;
 
     @Test
+    @Tag("LoadTest")
     void test()throws Exception {
         
         Path path = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "address/mt_parcel_city431010.csv");

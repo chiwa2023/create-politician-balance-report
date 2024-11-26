@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDateTime;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -33,6 +34,7 @@ class CallTaskUserAlertMailServiceTest {
     private CallTaskUserAlertMailService callTaskUserAlertMailService;
 
     @Test
+    @Tag("ExternalService")
     @Transactional
     @Sql("../mail/y2024/send_alert_mail_2024.sql")
     void testPractice() {

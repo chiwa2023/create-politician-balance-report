@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -30,6 +31,7 @@ class UpdateAddressPostalCodeUtilTest {
     private UpdateAddressPostalCodeUtil updateAddressPostalCodeUtil;
     
     @Test
+    @Tag("LoadTest")
     void test() {
         
         // NOTE:データベース更新(と変更後のデータ取得)を行うのでめちゃくちゃ時間がかる。何度も実施するものではない

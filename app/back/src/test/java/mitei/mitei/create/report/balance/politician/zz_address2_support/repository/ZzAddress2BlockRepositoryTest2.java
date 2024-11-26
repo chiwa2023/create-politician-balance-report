@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -29,6 +30,7 @@ class ZzAddress2BlockRepositoryTest2 {
     private ZzAddress2BlockRepository zzAddress2BlockRepository;
     
     @Test
+    @Tag("LoadTest")
     void testFindByPostalCode() {
         String code = "7201623";
         List<ZzAddress2BlockEntity> list = zzAddress2BlockRepository.findByPostalCode(code);

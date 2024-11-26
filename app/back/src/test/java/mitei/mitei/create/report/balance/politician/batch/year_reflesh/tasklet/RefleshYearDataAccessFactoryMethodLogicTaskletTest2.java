@@ -2,6 +2,7 @@ package mitei.mitei.create.report.balance.politician.batch.year_reflesh.tasklet;
 
 import java.time.LocalDateTime;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -34,6 +35,7 @@ class RefleshYearDataAccessFactoryMethodLogicTaskletTest2 {
     private RefleshYearDataAccessFactoryMethodLogicTasklet refleshYearDataAccessFactoryMethodLogicTasklet;
 
     @Test
+    @Tag("SourceReflesh")
     void testExecute() throws Exception { // NOPMD JUnitTestsShouldIncludeAssert
 
         // 処理実行

@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -36,6 +37,7 @@ class CallSnsDirectMessageSendingInfoFactoryLogicTest {
     // TODO その他の年については追加次第テストを追加する
 
     @Test
+    @Tag("TableTruncate")
     @Transactional
     @Sql("y2024/send_alert_sns_message_2024.sql")
     void testPractice2024() {

@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,6 +25,7 @@ class ReadZenginFormatCsvLogicTest {
     // CHECKSTYLE:OFF
 
     @Test
+    @Tag("TableTruncate")
     void test()throws Exception {
         
         ReadZenginFormatCsvLogic readZenginFormatCsvLogic = new ReadZenginFormatCsvLogic();

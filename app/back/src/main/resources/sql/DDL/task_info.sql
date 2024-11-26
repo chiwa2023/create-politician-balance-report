@@ -3,7 +3,7 @@ CREATE TABLE `task_info` (
   `task_info_code` int DEFAULT NULL COMMENT 'タスク情報同一識別コード',
   `task_info_name` varchar(300) DEFAULT NULL COMMENT 'タスク情報名称',
   `saishin_kbn` tinyint DEFAULT NULL COMMENT '最新区分',
-  `kengen_kbn` int DEFAULT NULL COMMENT '権限区分',
+  `task_level_list` varchar(300) DEFAULT NULL COMMENT '権限区分',
   `message_template` varchar(300) DEFAULT NULL COMMENT 'メッセージテンプレート',
   `transfer_pass` text COMMENT '遷移パス(URL)',
   `param_query` text COMMENT 'SNS同一識別コード',

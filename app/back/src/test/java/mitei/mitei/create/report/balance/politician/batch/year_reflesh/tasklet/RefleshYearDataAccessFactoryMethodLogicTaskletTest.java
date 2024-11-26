@@ -10,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -54,6 +55,7 @@ class RefleshYearDataAccessFactoryMethodLogicTaskletTest {
     private static final String NOW = "now";
 
     @Test
+    @Tag("SourceReflesh")
     void testExecute00() throws Exception {
 
         // JobParameterの設定

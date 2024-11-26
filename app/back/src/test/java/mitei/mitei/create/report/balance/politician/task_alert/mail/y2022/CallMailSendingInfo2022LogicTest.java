@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -35,6 +36,7 @@ class CallMailSendingInfo2022LogicTest {
     private CallMailSendingInfo2022Logic callMailSendingInfo2022Logic;
 
     @Test
+    @Tag("TableTruncate")
     @Transactional
     @Sql("send_alert_mail_2022.sql")
     void testPractice() {

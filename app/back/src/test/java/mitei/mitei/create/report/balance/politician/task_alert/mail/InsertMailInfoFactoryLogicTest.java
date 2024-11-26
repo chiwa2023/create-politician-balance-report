@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -44,6 +45,7 @@ class InsertMailInfoFactoryLogicTest {
     private SendAlertMail2024Repository sendAlertMail2024Repository;
 
     @Test
+    @Tag("ExternalService")
     @Transactional
     @Sql("y2024/truncate_alert_mail_2024.sql")
     void testPractice() { // NOPMD

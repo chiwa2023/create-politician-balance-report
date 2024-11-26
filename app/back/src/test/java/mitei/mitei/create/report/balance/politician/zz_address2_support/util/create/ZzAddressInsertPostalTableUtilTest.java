@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import com.opencsv.CSVReader;
@@ -21,6 +22,7 @@ class ZzAddressInsertPostalTableUtilTest {
     // CHECKSTYLE:OFF
 
     @Test
+    @Tag("LoadTest")
     void testPractice() throws Exception {
         Path path = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "address/utf_ken_all.csv");
 

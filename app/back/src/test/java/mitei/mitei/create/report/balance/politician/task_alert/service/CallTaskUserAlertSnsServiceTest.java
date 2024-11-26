@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDateTime;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -34,6 +35,7 @@ class CallTaskUserAlertSnsServiceTest {
     private CallTaskUserAlertSnsService callTaskUserAlertSnsService;
 
     @Test
+    @Tag("TableTruncate")
     @Transactional
     @Sql({ "service_alert_sns_message_2024.sql", "../sns/logic/mock/sample1/sns_dm_setting_mock_sample1.sql",
             "../sns/logic/mock/sample2/sns_dm_setting_mock_sample2.sql" })

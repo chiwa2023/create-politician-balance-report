@@ -3,6 +3,7 @@ package mitei.mitei.create.report.balance.politician.task_alert.mail;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -31,6 +32,7 @@ class SendMailUserLogicTest {
     private SendMailUserLogic sendMailUserLogic;
 
     @Test
+    @Tag("ExternalService")
     void test() {
 
         // 正常終了

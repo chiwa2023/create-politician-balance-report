@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.time.LocalDate;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import mitei.mitei.create.report.balance.politician.dto.report_item.zengin.record_line.TradingZenginFormatTransactionDetailHeaderRecordDto;
@@ -15,6 +16,7 @@ import mitei.mitei.create.report.balance.politician.dto.report_item.zengin.recor
 class ConvertTradingDetailHeaderFromCsvLogicTest {
 // CHECKSTYLE:OFF
     @Test
+    @Tag("TableTruncate")
     void testPractice() {
 
         final String data = "1,03,0,041001,040901,050131,0123,ｷﾞﾝｺｳﾒｲ   ,098,ｼﾃﾝﾒｲ     ,ﾀﾞﾐｰ  ,1,00002345,ｺｳｻﾞﾒｲｼｮｳ     ,1,1,00024680,   ";

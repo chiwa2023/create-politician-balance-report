@@ -10,6 +10,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersBuilder;
@@ -63,6 +64,7 @@ class RefleshYearDataAccessRepositoryAndEntityTaskletTest {
     private static final String pathFunctionTaskEntity = "main/java/mitei/mitei/create/report/balance/politician/entity/task_plan/";
 
     @Test
+    @Tag("SourceReflesh")
     void testExecute() throws Exception {
 
         StepExecution execution = this.getStepExecution();

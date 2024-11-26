@@ -1,5 +1,6 @@
 package mitei.mitei.create.report.balance.politician.zz_address.controller;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -30,6 +31,7 @@ class GetAddressControllerTest {
     private MockMvc mockMvc;
 
     @Test
+    @Tag("LoadTest")
     void testPractice() throws Exception {
 
         // String responsContent =

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -49,6 +50,7 @@ class SaveMailSendingResultFactoryLogicTest {
     private SendAlertMail2024Repository sendAlertMail2024Repository;
 
     @Test
+    @Tag("TableTruncate")
     @Sql("y2024/send_alert_mail_2024.sql")
     void testPractice2024() {
 
