@@ -3,6 +3,7 @@ package mitei.mitei.create.report.balance.politician.logic.read_csv;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -11,6 +12,7 @@ import org.junit.jupiter.api.Test;
 class CheckValidateCsvPointListLogicTest {
 
     @Test
+    @Tag("TableTruncate")
     void testPractice() {
         
         CheckValidateCsvPointListLogic checkValidateCsvPointListLogic = new CheckValidateCsvPointListLogic();

@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,6 +33,7 @@ class ConvertTradingDetailAllFromCsvLogicTest {
     // CHECKSTYLE:OFF
 
     @Test
+    @Tag("TableTruncate")
     void testPractice()throws Exception { // NOPMD
         ConvertTradingDetailAllFromCsvLogic convertTradingDetailAllFromCsvLogic = new ConvertTradingDetailAllFromCsvLogic();
         

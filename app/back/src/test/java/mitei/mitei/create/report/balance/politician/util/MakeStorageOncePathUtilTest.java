@@ -9,6 +9,7 @@ import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -18,6 +19,7 @@ class MakeStorageOncePathUtilTest {
     // CHECKSTYLE:OFF
     
     @Test
+    @Tag("TableTruncate")
     void testPractice()throws Exception {
 
         //値を入れた場合予定した位置に値が入る

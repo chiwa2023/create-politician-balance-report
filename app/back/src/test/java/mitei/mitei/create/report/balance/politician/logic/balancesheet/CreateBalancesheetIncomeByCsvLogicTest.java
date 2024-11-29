@@ -9,6 +9,7 @@ import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.CsvTradingRowConstants;
@@ -22,7 +23,8 @@ class CreateBalancesheetIncomeByCsvLogicTest {
     // CHECKSTYLE:OFF
     
     @Test
-    void testPractice()throws Exception {// NOPMD
+    @Tag("TableTruncate")
+   void testPractice()throws Exception {// NOPMD
         
         CreateBalancesheetIncomeByCsvLogic createBalancesheetIncomeByCsvLogic = new CreateBalancesheetIncomeByCsvLogic();
         

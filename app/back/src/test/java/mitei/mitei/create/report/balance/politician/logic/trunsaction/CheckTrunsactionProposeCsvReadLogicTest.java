@@ -3,6 +3,7 @@ package mitei.mitei.create.report.balance.politician.logic.trunsaction;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -27,6 +28,7 @@ class CheckTrunsactionProposeCsvReadLogicTest {
     private CheckTrunsactionProposeCsvReadLogic checkTrunsactionProposeCsvReadLogic;
     
     @Test
+    @Tag("TableTruncate")
     void testPractice() {
 
         assertFalse(checkTrunsactionProposeCsvReadLogic.practice(100L),"申請になっていないIdを指定");

@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -38,6 +39,7 @@ class ProposeReadCsvControllerTest {
     private MockMvc mockMvc;
 
     @Test
+    @Tag("TableTruncate")
     void testPractice() throws Exception {
 
         ReadCsvByEntityCapsuleDto readCsvByEntityCapsuleDto = new ReadCsvByEntityCapsuleDto();
@@ -56,13 +58,6 @@ class ProposeReadCsvControllerTest {
         readCsvByEntityCapsuleDto.setProposeCsvReadTemplateEntity(proposeCsvReadTemplateEntity);
 
         ObjectMapper objectMapper = GetObjectMapperWithTimeModuleUtil.practice();
-        // String responseContent = mockMvc // NOPMD LawOfDemeter
-        // .perform(post("/read-csv-by-entity/practice")
-        // .content(objectMapper.writeValueAsString(readCsvByEntityCapsuleDto)) //
-        // リクエストボディを指定
-        // .contentType(MediaType.APPLICATION_JSON_VALUE)) // Content Typeを指定
-        // .andExpect(status().isOk()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
-        // System.out.println(responseContent);
 
         assertThat(mockMvc // NOPMD LawOfDemeter
                 .perform(post("/read-csv-by-entity/practice")

@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -28,6 +29,7 @@ class SearchSimilarDataListServiceTest {
     private SearchSimilarDataListService searchSimilarDataListService;
 
     @Test
+    @Tag("TableTruncate")
     void testPractice() {
 
         List<List<String>> list = searchSimilarDataListService.practice(null);

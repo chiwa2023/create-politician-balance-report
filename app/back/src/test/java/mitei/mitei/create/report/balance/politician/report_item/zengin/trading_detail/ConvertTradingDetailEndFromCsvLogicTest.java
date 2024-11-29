@@ -2,6 +2,7 @@ package mitei.mitei.create.report.balance.politician.report_item.zengin.trading_
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import mitei.mitei.create.report.balance.politician.dto.report_item.zengin.record_line.TradingZenginFormatTransactionDetailEndRecordDto;
@@ -13,6 +14,7 @@ class ConvertTradingDetailEndFromCsvLogicTest {
     // CHECKSTYLE:OFF
 
     @Test
+    @Tag("TableTruncate")
     void testPractice() {
         ConvertTradingDetailEndFromCsvLogic convertTradingDetailEndFromCsvLogic = new ConvertTradingDetailEndFromCsvLogic();
 

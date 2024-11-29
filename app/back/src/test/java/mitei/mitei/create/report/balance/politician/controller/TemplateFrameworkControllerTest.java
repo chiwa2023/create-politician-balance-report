@@ -3,6 +3,7 @@ package mitei.mitei.create.report.balance.politician.controller;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -41,6 +42,7 @@ class TemplateFrameworkControllerTest {
 
     /** セキュリティ例外 */
     @Test
+    @Tag("TableTruncate")
     @Transactional
     void testSecurityException()throws Exception { // NOPMD
 

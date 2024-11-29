@@ -1,6 +1,5 @@
 package mitei.mitei.create.report.balance.politician.controller.balancesheet;
 
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -10,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -41,33 +41,29 @@ class ReadXmlBalancesheetByFileControllerTest {
     /** mockMvc */
     @Autowired
     private MockMvc mockMvc;
-    
-    
-    
+
     @Test
-    void testPractice()throws Exception {
-        
-        
+    @Tag("TableTruncate")
+    void testPractice() throws Exception {
+
         ReadXmlByFileCapsuleDto readXmlByFileCapsuleDto = new ReadXmlByFileCapsuleDto();
-        
+
         CreateCommonCheckDtoTestOnlyUtil.practice(readXmlByFileCapsuleDto);
 
-        
         Path path = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "sample/2022_ホリエモン新党_SYUUSI.xml");
         String fileContent = Files.readString(path);
-        
+
         readXmlByFileCapsuleDto.setFileName(path.getFileName().toString());
         readXmlByFileCapsuleDto.setFileContent(fileContent);
-        
+
         ObjectMapper objectMapper = GetObjectMapperWithTimeModuleUtil.practice();
-        
+
         assertThat(mockMvc // NOPMD LawOfDemeter
-                .perform(post("/xml-balancesheet/read")
-                        .content(objectMapper.writeValueAsString(readXmlByFileCapsuleDto)) // リクエストボディを指定
-                        .contentType(MediaType.APPLICATION_JSON_VALUE)) // Content Typeを指定
+                .perform(
+                        post("/xml-balancesheet/read").content(objectMapper.writeValueAsString(readXmlByFileCapsuleDto)) // リクエストボディを指定
+                                .contentType(MediaType.APPLICATION_JSON_VALUE)) // Content Typeを指定
                 .andExpect(status().isOk()).andReturn().getResponse().getStatus()).isEqualTo(HttpStatus.OK.value());
 
-        
         fail("Not yet implemented");
     }
 

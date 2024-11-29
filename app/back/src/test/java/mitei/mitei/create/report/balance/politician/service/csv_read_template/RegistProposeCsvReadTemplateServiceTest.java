@@ -2,6 +2,7 @@ package mitei.mitei.create.report.balance.politician.service.csv_read_template;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -31,6 +32,7 @@ class RegistProposeCsvReadTemplateServiceTest {
     private RegistProposeCsvReadTemplateService registProposeCsvReadTemplateService;
     
     @Test
+    @Tag("TableTruncate")
     @Transactional
     void testPractice() {
 

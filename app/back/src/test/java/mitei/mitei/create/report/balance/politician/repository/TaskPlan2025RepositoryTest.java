@@ -2,6 +2,7 @@ package mitei.mitei.create.report.balance.politician.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -29,6 +30,7 @@ class TaskPlan2025RepositoryTest {
     private SetTableDataHistoryLogic setTableDataHistoryLogic;
     
     @Test
+    @Tag("TableTruncate")
     void testSave() {
 
         TaskPlan2025Entity plan2025Entity = new TaskPlan2025Entity();

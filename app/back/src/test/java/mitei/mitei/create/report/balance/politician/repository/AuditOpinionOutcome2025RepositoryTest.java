@@ -2,6 +2,7 @@ package mitei.mitei.create.report.balance.politician.repository;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -21,6 +22,7 @@ class AuditOpinionOutcome2025RepositoryTest {
     private AuditOpinionOutcome2025Repository auditOpinionOutcome2025Repository;
 
     @Test
+    @Tag("TableTruncate")
     @Transactional
     void testFindFullText() {
         // //全リスト

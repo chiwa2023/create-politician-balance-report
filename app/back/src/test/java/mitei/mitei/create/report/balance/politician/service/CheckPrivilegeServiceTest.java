@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import org.apache.tomcat.websocket.AuthenticationException;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
@@ -15,6 +16,7 @@ import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivil
 class CheckPrivilegeServiceTest {
 
     @Test
+    @Tag("TableTruncate")
     void testPractice()throws Exception {
         
         //他機能テストのためのMock処理

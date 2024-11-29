@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import mitei.mitei.create.report.balance.politician.constants.GetCurrentResourcePath;
@@ -19,6 +20,7 @@ class ReadCsvReadByFileServiceTest {
 // CHECKSTYLE:OFF
     
     @Test
+    @Tag("TableTruncate")
     void test() throws Exception {
 
         Path path = Paths.get(GetCurrentResourcePath.getBackTestResourcePath(), "service/read_csv/read_csv_test.csv");

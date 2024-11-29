@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.time.LocalDate;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -14,6 +15,7 @@ class ConvertWarekiToSeirekiUtilTest {
 //CHECKSTYLE:OFF MagicNumber
 
     @Test
+    @Tag("TableTruncate")
     void testPractice() {
 
         assertThrows(IllegalArgumentException.class, () -> ConvertWarekiToSeirekiUtil.practice(null), "文字列nullは例外");

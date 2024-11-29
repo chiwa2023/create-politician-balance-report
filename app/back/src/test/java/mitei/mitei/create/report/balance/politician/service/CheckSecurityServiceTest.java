@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import mitei.mitei.create.report.balance.politician.dto.common_check.CheckSecurityDto;
@@ -14,6 +15,7 @@ import mitei.mitei.create.report.balance.politician.dto.common_check.CheckSecuri
 class CheckSecurityServiceTest {
 
     @Test
+    @Tag("TableTruncate")
     void testPractice()throws Exception {
         
         //他機能テストのためのMock処理

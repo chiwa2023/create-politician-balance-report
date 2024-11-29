@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -43,6 +44,7 @@ class RegistTaskPlanAllPortalServiceTest {
     private SetTableDataHistoryLogic setTableDataHistoryLogic;
 
     @Test
+    @Tag("TableTruncate")
     @Transactional
     void testPractice() {
         

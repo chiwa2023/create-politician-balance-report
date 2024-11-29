@@ -6,6 +6,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.Optional;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -45,6 +46,7 @@ class SearchSimilarDataListContollerTest {
     private ProposeCsvReadTemplateRepository proposeCsvReadTemplateRepository;
 
     @Test
+    @Tag("TableTruncate")
     void testPractice() throws Exception {
 
         RegistProposeCsvReadRemplateCapsuleDto registProposeCsvReadRemplateCapsuleDto = new RegistProposeCsvReadRemplateCapsuleDto();
@@ -54,12 +56,6 @@ class SearchSimilarDataListContollerTest {
         registProposeCsvReadRemplateCapsuleDto.setProposeCsvReadTemplateEntity(optional.get());
 
         ObjectMapper objectMapper = GetObjectMapperWithTimeModuleUtil.practice();
-        //String responseContent = mockMvc // NOPMD LawOfDemeter
-        //        .perform(post("/propose-csv-read/search-similar")
-        //                .content(objectMapper.writeValueAsString(registProposeCsvReadRemplateCapsuleDto)) // リクエストボディを指定
-        //                .contentType(MediaType.APPLICATION_JSON_VALUE)) // Content Typeを指定
-        //        .andExpect(status().isOk()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
-        //System.out.println(responseContent);
         
         assertThat(mockMvc // NOPMD LawOfDemeter
                 .perform(post("/propose-csv-read/search-similar")

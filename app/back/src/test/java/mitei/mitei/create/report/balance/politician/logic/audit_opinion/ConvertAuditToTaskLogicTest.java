@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import mitei.mitei.create.report.balance.politician.entity.AuditOpinionIncome2025Entity;
@@ -19,6 +20,7 @@ class ConvertAuditToTaskLogicTest {
     // CHECKSTYLE:OFF
     
     @Test
+    @Tag("TableTruncate")
     void testPracticeIncome() {
         ConvertAuditToTaskLogic convertAuditToTaskLogic = new ConvertAuditToTaskLogic();
 
