@@ -131,6 +131,7 @@ public class AuditOpinionIncome2025Entity  implements Serializable,AllTabeDataHi
      *
      * @return 最新区分
      */
+    @Override
     public Integer getSaishinKbn() {
         return saishinKbn;
     }
@@ -140,6 +141,7 @@ public class AuditOpinionIncome2025Entity  implements Serializable,AllTabeDataHi
      *
      * @param saishinKbn 最新区分
      */
+    @Override
     public void setSaishinKbn(final Integer saishinKbn) {
         this.saishinKbn = saishinKbn;
     }

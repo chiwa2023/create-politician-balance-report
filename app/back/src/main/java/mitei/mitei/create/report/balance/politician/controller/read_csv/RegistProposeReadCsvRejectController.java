@@ -12,13 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.transaction.Transactional;
 import mitei.mitei.create.report.balance.politician.controller.AbstractTemplateCheckController;
-import mitei.mitei.create.report.balance.politician.dto.common_check.CheckPrivilegeDto;
-import mitei.mitei.create.report.balance.politician.dto.common_check.DataHistoryStatusConstants;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
 import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
-import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
-import mitei.mitei.create.report.balance.politician.logic.common.SetTableDataHistoryLogic;
-import mitei.mitei.create.report.balance.politician.service.read_csv.RegistProposeReadCsvRejectService;
 
 /**
  * CSV読み取り仕様申請を却下する
@@ -36,13 +31,9 @@ public class RegistProposeReadCsvRejectController extends AbstractTemplateCheckC
     /** ビジネス処理続行定数 */
     private static final int CHECK_TRUE = AbstractTemplateCheckController.CHECK_TRUE;
 
-    /** csv読み取り仕様申請却下Service */
-    @Autowired
-    private RegistProposeReadCsvRejectService registProposeReadCsvRejectService;
-
     /** テーブル履歴設定Logic */
     @Autowired
-    private SetTableDataHistoryLogic setTableDataHistoryLogic;
+    private RegistProposeReadCsvRejectControllerWorksBand workBandController;
 
     /**
      * 登録作業を行う
@@ -86,30 +77,7 @@ public class RegistProposeReadCsvRejectController extends AbstractTemplateCheckC
             /*
              * ここに固有のビジネス処理を記載する
              */
-
-            //ユーザ設定を行う
-            CheckPrivilegeDto privilegeDto = registProposeCsvReadRemplateCapsuleDto.getCheckPrivilegeDto();
-
-            ProposeCsvReadTemplateEntity proposeCsvReadTemplateEntity = registProposeCsvReadRemplateCapsuleDto
-                    .getProposeCsvReadTemplateEntity();
-            setTableDataHistoryLogic.practice(privilegeDto, proposeCsvReadTemplateEntity, DataHistoryStatusConstants.INSERT);
-
-            //登録を行う
-            long newId = registProposeReadCsvRejectService.practice(proposeCsvReadTemplateEntity);
-
-            final long initId = 0L;
-            
-            TemplateFrameworkResultDto resultDto = new TemplateFrameworkResultDto();
-            if (initId == newId) {
-                resultDto.setFailureCount(0);
-                resultDto.setMessage("登録できませんでした");
-            } else {
-                resultDto.setIsOk(true);
-                resultDto.setSuccessCount(1);
-                resultDto.setMessage("登録できました");
-            }
-
-            return ResponseEntity.ok(resultDto);
+            return ResponseEntity.ok(workBandController.wakeBusiness(registProposeCsvReadRemplateCapsuleDto));
 
             /* ここまで */
 

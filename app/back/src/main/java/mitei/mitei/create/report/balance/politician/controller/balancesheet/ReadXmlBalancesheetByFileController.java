@@ -30,6 +30,15 @@ public class ReadXmlBalancesheetByFileController extends AbstractTemplateCheckCo
     /** ビジネス処理続行定数 */
     private static final int CHECK_TRUE = AbstractTemplateCheckController.CHECK_TRUE;
 
+    /**
+     * 処理を行う
+     *
+     * @param readXmlByFileCapsuleDto XML読み取りDto
+     * @return Csv書証保存Dto
+     * @throws SecurityException                  セキュリティ例外
+     * @throws AuthenticationException            権限例外
+     * @throws PessimisticLockingFailureException トランザクション例外
+     */
     @Transactional
     @PostMapping("/read")
     public ResponseEntity<SendCsvAndStragedShoshouDto> practice(
@@ -62,9 +71,6 @@ public class ReadXmlBalancesheetByFileController extends AbstractTemplateCheckCo
             /*
              * ここに固有のビジネス処理を記載する
              */
-            System.out.println("ファイル名"+readXmlByFileCapsuleDto.getFileName());
-            System.out.println("ファイルコンテンツ"+readXmlByFileCapsuleDto.getFileContent());
-            
             return ResponseEntity.ok(null);
 
             /* ここまで */
@@ -86,5 +92,5 @@ public class ReadXmlBalancesheetByFileController extends AbstractTemplateCheckCo
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-    
+
 }

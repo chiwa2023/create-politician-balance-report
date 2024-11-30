@@ -44,7 +44,8 @@ public class GetRoleInPolitialOrganizationLogic {
      * @param userCode                    ユーザコード
      * @return 団体内役割テキスト
      */
-    public String practice(final PoliticalOrganizationEntity politicalOrganizationEntity, // NOPMD CHECKSTYLE:OFF
+    public String practice( // SUPPRESS CHECKSTYLE NOPMD
+            final PoliticalOrganizationEntity politicalOrganizationEntity,
             final Integer userCode) {
 
         if (Objects.isNull(userCode)) {

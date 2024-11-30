@@ -17,6 +17,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -35,12 +36,14 @@ import mitei.mitei.create.report.balance.politician.util.GetObjectMapperWithTime
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = ClassMode.BEFORE_CLASS)
 class RegistProposeCsvReadTemplateControllerTest {
+    // CHECKSTYLE:OFF
 
     /** mockMvc */
     @Autowired
     private MockMvc mockMvc;
 
     @Test
+    @Transactional
     @Tag("TableTruncate")
     void test()throws Exception {
         
@@ -58,6 +61,7 @@ class RegistProposeCsvReadTemplateControllerTest {
         entity.setFinancialOrgCode(2);
         entity.setFinancialOrgName("石のお金Pay");
         entity.setHasHeader(false);
+        entity.setEditId(320L);
         
         capsuleDto.setProposeCsvReadTemplateEntity(entity);
         

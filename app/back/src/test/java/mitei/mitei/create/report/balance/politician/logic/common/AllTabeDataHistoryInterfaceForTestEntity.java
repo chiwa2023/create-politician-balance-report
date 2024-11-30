@@ -45,6 +45,7 @@ public class AllTabeDataHistoryInterfaceForTestEntity implements AllTabeDataHist
     /**
      * 最新区分を取得する
      */
+    @Override
     public Integer getSaishinKbn() {
         return saishinKbn;
     }
@@ -52,6 +53,7 @@ public class AllTabeDataHistoryInterfaceForTestEntity implements AllTabeDataHist
     /**
      * 最新区分を設定する
      */
+    @Override
     public void setSaishinKbn(final Integer saishinKbn) {
         this.saishinKbn = saishinKbn;
     }

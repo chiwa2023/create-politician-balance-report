@@ -1,9 +1,6 @@
 package mitei.mitei.create.report.balance.politician.controller.read_csv;
 
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Optional;
 
@@ -13,60 +10,59 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.transaction.annotation.Transactional;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
 import mitei.mitei.create.report.balance.politician.entity.ProposeCsvReadTemplateEntity;
 import mitei.mitei.create.report.balance.politician.repository.ProposeCsvReadTemplateRepository;
 import mitei.mitei.create.report.balance.politician.util.CreateCommonCheckDtoTestOnlyUtil;
-import mitei.mitei.create.report.balance.politician.util.GetObjectMapperWithTimeModuleUtil;
 
 /**
- * RegistProposeReadCsvAcceptController単体テスト
+ * RegistProposeReadCsvRejectControllerWorksBand単体テスト
  */
 @SpringJUnitConfig
 @AutoConfigureMockMvc
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = ClassMode.BEFORE_CLASS)
-class RegistProposeReadCsvAcceptControllerTest {
+class RegistProposeReadCsvRejectControllerWorksBandTest {
     // CHECKSTYLE:OFF
 
-    /** mockMvc */
+    /** 単体テスト */
     @Autowired
-    private MockMvc mockMvc;
+    private RegistProposeReadCsvRejectControllerWorksBand registProposeReadCsvRejectControllerWorksBand;
 
     /** CSV読み取り使用申請テーブル */
     @Autowired
     private ProposeCsvReadTemplateRepository proposeCsvReadTemplateRepository;
 
     @Test
-    @Transactional
     @Tag("TableTruncate")
     @Sql("propose_csv_read_template.sql")
-    void testPractice()throws Exception {
+    void test() throws Exception {
+
+        assertEquals(1, proposeCsvReadTemplateRepository.findAll().size(), "truncateしてデータ挿入しているので1件");
 
         RegistProposeCsvReadRemplateCapsuleDto registProposeCsvReadRemplateCapsuleDto = new RegistProposeCsvReadRemplateCapsuleDto();
         CreateCommonCheckDtoTestOnlyUtil.practice(registProposeCsvReadRemplateCapsuleDto);
 
         Optional<ProposeCsvReadTemplateEntity> optional = proposeCsvReadTemplateRepository.findById(15L);
-        registProposeCsvReadRemplateCapsuleDto.setProposeCsvReadTemplateEntity(optional.get());
+        ProposeCsvReadTemplateEntity csvReadTemplateEntity = optional.get();
+        // 破綻要因
+        csvReadTemplateEntity.setProposeCsvReadTemplateName(
+                "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890");
+        registProposeCsvReadRemplateCapsuleDto.setProposeCsvReadTemplateEntity(csvReadTemplateEntity);
 
-        ObjectMapper objectMapper = GetObjectMapperWithTimeModuleUtil.practice();
+        try {
+            registProposeReadCsvRejectControllerWorksBand.wakeBusiness(registProposeCsvReadRemplateCapsuleDto);
+        } catch (Exception exception) { // NOPMD
+            exception.printStackTrace(); // NOPMD
+        }
 
-        assertThat(mockMvc // NOPMD LawOfDemeter
-                .perform(post("/propose-csv-read-accept/regist")
-                        .content(objectMapper.writeValueAsString(registProposeCsvReadRemplateCapsuleDto)) // リクエストボディを指定
-                        .contentType(MediaType.APPLICATION_JSON_VALUE)) // Content Typeを指定
-                .andExpect(status().isOk()).andReturn().getResponse().getStatus()).isEqualTo(HttpStatus.OK.value());
+        assertEquals(1, proposeCsvReadTemplateRepository.findAll().size(), "ロールバックしているので1件");
+
     }
 
 }

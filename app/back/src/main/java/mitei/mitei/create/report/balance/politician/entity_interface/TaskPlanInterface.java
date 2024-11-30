@@ -53,6 +53,7 @@ public interface TaskPlanInterface extends AllTabeDataHistoryInterface{
      *
      * @return 最新区分
      */
+    @Override
     Integer getSaishinKbn();
 
     /**
@@ -60,6 +61,7 @@ public interface TaskPlanInterface extends AllTabeDataHistoryInterface{
      *
      * @param saishinKbn 最新区分
      */
+    @Override
     void setSaishinKbn(Integer saishinKbn);
 
     /**

@@ -14,7 +14,6 @@ import jakarta.transaction.Transactional;
 import mitei.mitei.create.report.balance.politician.controller.AbstractTemplateCheckController;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.RegistProposeCsvReadRemplateCapsuleDto;
 import mitei.mitei.create.report.balance.politician.dto.template.TemplateFrameworkResultDto;
-import mitei.mitei.create.report.balance.politician.service.csv_read_template.RegistProposeCsvReadTemplateService;
 
 /**
  * csv結びつけ項目申請登録Contoroll
@@ -31,11 +30,11 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
     private static final int TRANSACION_CHECK_FALSE = AbstractTemplateCheckController.TRANSACION_CHECK_FALSE;
     /** ビジネス処理続行定数 */
     private static final int CHECK_TRUE = AbstractTemplateCheckController.CHECK_TRUE;
-
-    /** propose_csv_read_templateテーブルService */
+    
+    /** ビジネスロジック起動用WorksBandController */
     @Autowired
-    private RegistProposeCsvReadTemplateService registProposeCsvReadTemplateService;
-
+    private RegistProposeCsvReadTemplateControllerWorksBand worksBandController;
+    
     /**
      * 各種Payテーブルの検索を行う
      *
@@ -78,9 +77,7 @@ public class RegistProposeCsvReadTemplateController extends AbstractTemplateChec
             /*
              * ここに固有のビジネス処理を記載する
              */
-            return ResponseEntity.ok(registProposeCsvReadTemplateService.practice(
-                    registProposeCsvReadRemplateCapsuleDto.getProposeCsvReadTemplateEntity(),
-                    registProposeCsvReadRemplateCapsuleDto.getCheckPrivilegeDto()));
+            return ResponseEntity.ok(worksBandController.wakeBusiness(registProposeCsvReadRemplateCapsuleDto));
             /* ここまで */
 
         } catch (AuthenticationException authenticationException) { // NOPMD

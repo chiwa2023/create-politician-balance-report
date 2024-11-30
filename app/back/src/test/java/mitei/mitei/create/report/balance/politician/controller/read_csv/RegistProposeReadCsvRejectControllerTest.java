@@ -16,8 +16,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -46,7 +48,9 @@ class RegistProposeReadCsvRejectControllerTest {
     private ProposeCsvReadTemplateRepository proposeCsvReadTemplateRepository;
 
     @Test
+    @Transactional
     @Tag("TableTruncate")
+    @Sql("propose_csv_read_template.sql")
     void testPractice() throws Exception {
         RegistProposeCsvReadRemplateCapsuleDto registProposeCsvReadRemplateCapsuleDto = new RegistProposeCsvReadRemplateCapsuleDto();
         CreateCommonCheckDtoTestOnlyUtil.practice(registProposeCsvReadRemplateCapsuleDto);

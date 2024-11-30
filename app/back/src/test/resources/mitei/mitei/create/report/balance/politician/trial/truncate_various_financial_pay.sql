@@ -1,0 +1,1 @@
+DELETE FROM various_financial_pay;

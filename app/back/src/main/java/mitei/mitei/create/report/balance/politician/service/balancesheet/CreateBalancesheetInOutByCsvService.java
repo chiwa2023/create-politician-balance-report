@@ -10,6 +10,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import mitei.mitei.create.report.balance.politician.dto.balancesheet.CreateBalancsheetInOutItemResultDto;
@@ -91,7 +92,7 @@ public class CreateBalancesheetInOutByCsvService {
      */
     public CreateBalancsheetInOutItemResultDto practice(final List<List<CsvCellDto>> listCsvData,
             final SaveStorageResultDto saveStorageResultDto, final CheckPrivilegeDto checkPrivilegeDto,
-            final String[] listPoiner)throws Exception { // NOPMD
+            final String[] listPoiner)throws JsonProcessingException {
 
         //紐づけ妥当性チェックを行って失敗した場合
         TemplateFrameworkResultDto resultDto = checkValidateCsvPointListLogic.practice(listPoiner);

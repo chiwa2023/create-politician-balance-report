@@ -48,7 +48,7 @@ class UploadControllerTest {
         MockMultipartHttpServletRequestBuilder multipartRequest = MockMvcRequestBuilders.multipart("/upload");
 
         // とりあえずサーバステータスがOK(200)
-        assertThat(mockMvc.perform(multipartRequest.file(sampleFile)).andExpect(status().isOk()).andReturn()
+        assertThat(mockMvc.perform(multipartRequest.file(sampleFile)).andExpect(status().isOk()).andReturn() // NOPMD
                 .getResponse().getStatus()).isEqualTo(HttpStatus.OK.value());
     }
 

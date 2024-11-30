@@ -75,14 +75,6 @@ class CreateBalancesheetInOutByCsvControllerTest {
         createBalancesheetInOutDataCapsuleDto.setListPointer("15,1,2,16,0,0,0".split(","));
 
         ObjectMapper objectMapper = GetObjectMapperWithTimeModuleUtil.practice();
-        // String responseContent = mockMvc // NOPMD LawOfDemeter
-        // .perform(post("/create-balancesheet-in-out/by-csv")
-        // .content(objectMapper.writeValueAsString(createBalancesheetInOutDataCapsuleDto))
-        // // リクエストボディを指定
-        // .contentType(MediaType.APPLICATION_JSON_VALUE)) // Content Typeを指定
-        // .andExpect(status().isOk()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
-        //
-        // System.out.println(responseContent);
 
         assertThat(mockMvc // NOPMD LawOfDemeter
                 .perform(post("/create-balancesheet-in-out/by-csv")

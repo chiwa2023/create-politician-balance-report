@@ -14,8 +14,6 @@ import jakarta.transaction.Transactional;
 import mitei.mitei.create.report.balance.politician.controller.AbstractTemplateCheckController;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.ReadCsvByFileCapsuleDto;
 import mitei.mitei.create.report.balance.politician.dto.read_csv.SendCsvAndStragedShoshouDto;
-import mitei.mitei.create.report.balance.politician.service.read_csv.ReadCsvReadByFileService;
-import mitei.mitei.create.report.balance.politician.service.save_shoshou.SaveShoshouStrageService;
 
 /**
  * ファイルから読み込みしたテキストからCSV形式に変換するContoller
@@ -33,13 +31,9 @@ public class ReadCsvReadByFileController extends AbstractTemplateCheckController
     /** ビジネス処理続行定数 */
     private static final int CHECK_TRUE = AbstractTemplateCheckController.CHECK_TRUE;
 
-    /** csv変換Service */
+    /** ビジネスロジック起動WorksBandController */
     @Autowired
-    private ReadCsvReadByFileService readCsvReadByFileService;
-
-    /** 書証保存Service */
-    @Autowired
-    private SaveShoshouStrageService saveShoshouStrageService;
+    private ReadCsvReadByFileControllerWorksBand worksBandController;
 
     /**
      * fileからcsv形式に変更し、成功したら書証としてストレージ保存する
@@ -82,14 +76,8 @@ public class ReadCsvReadByFileController extends AbstractTemplateCheckController
             /*
              * ここに固有のビジネス処理を記載する
              */
-            SendCsvAndStragedShoshouDto csvDto = new SendCsvAndStragedShoshouDto();
 
-            csvDto.setListAllCsv(readCsvReadByFileService.practice(readCsvByFileCapsuleDto.getFileContent()));
-
-            csvDto.setSaveStorageResultDto(saveShoshouStrageService.practice(readCsvByFileCapsuleDto.getFileName(),
-                    readCsvByFileCapsuleDto.getCheckPrivilegeDto().getLoginUserId()));
-
-            return ResponseEntity.ok(csvDto);
+            return ResponseEntity.ok(worksBandController.wakeBusiness(readCsvByFileCapsuleDto));
 
             /* ここまで */
 

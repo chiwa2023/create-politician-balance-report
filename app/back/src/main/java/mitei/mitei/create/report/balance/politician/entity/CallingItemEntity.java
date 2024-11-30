@@ -108,6 +108,7 @@ public class CallingItemEntity  implements Serializable,AllTabeDataHistoryInterf
      *
      * @return 最新区分
      */
+    @Override
     public Integer getSaishinKbn() {
         return saishinKbn;
     }
@@ -117,6 +118,7 @@ public class CallingItemEntity  implements Serializable,AllTabeDataHistoryInterf
      *
      * @param saishinKbn 最新区分
      */
+    @Override
     public void setSaishinKbn(final Integer saishinKbn) {
         this.saishinKbn = saishinKbn;
     }
