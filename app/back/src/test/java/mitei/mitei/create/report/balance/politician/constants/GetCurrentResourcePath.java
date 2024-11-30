@@ -18,8 +18,18 @@ public final class GetCurrentResourcePath {
      * @return テストリソースフォルダ
      */
     public static String getBackTestResourcePath() {
-    
+
         return FileSystems.getDefault().getPath("src/test/resources/").toAbsolutePath().toString();
+    }
+
+    /**
+     * テストファイルを取得する
+     *
+     * @return テストJavaフォルダ
+     */
+    public static String getBackTestFilePath() {
+
+        return FileSystems.getDefault().getPath("src/test/java/").toAbsolutePath().toString();
     }
 
 }
