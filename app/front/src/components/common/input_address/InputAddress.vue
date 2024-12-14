@@ -30,15 +30,19 @@ const listBuildingSuggest: Ref<SelectOptionInterface[]> = ref([]);
 /** 郵便番号変更 */
 function mockMakeAddressPostal() {
     listPostalSuggest.value.splice(0);
+    //  郵便番号の形式となったらリストを取得する
     if (3 === inputAddressDto.value.postalcode1.length && 4 === inputAddressDto.value.postalcode2.length) {
         listPostalSuggest.value = mockMakeSuggestPostalList();
         listBackupPostalSuggest.value = structuredClone(toRaw(listPostalSuggest.value));
     }
+
 }
 
 /** 住所郵便番号候補選択時 */
 function selectSuggestPostal() {
     inputAddressDto.value.addressPostal = selectedAddressPostal.value;
+    // TODO 現状は選択肢でコードと名称だけだが、公共団体コードなどを紐づけて利用する
+    inputAddressDto.value.lgCode = "123456";
     //下層のサジェストの作成
     listBlockSuggest.value = mockMakeSuggestBlockList();
     listBackupBlockSuggest.value = structuredClone(toRaw(listBlockSuggest.value));
@@ -47,6 +51,12 @@ function selectSuggestPostal() {
 /** 住所番地候補選択時 */
 function selectSuggestBlock() {
     inputAddressDto.value.addressBlock = selectedAddressBlock.value;
+
+    // TODO 現状は選択肢でコードと名称だけだが、公共団体コードなどを紐づけて利用する
+    inputAddressDto.value.machiazaId = "2345678";
+    inputAddressDto.value.blkId = "123";
+    inputAddressDto.value.rsdtId = "456";
+
     //下層のサジェストの作成
     listBuildingSuggest.value = mockMakeSuggestBuildingList();
 }
@@ -140,6 +150,16 @@ function onSave() {
                     type="checkbox">編集</span><br>
             <textarea v-model="inputAddressDto.addressBuilding"
                 :disabled="!inputAddressDto.isEditAddressBuilding"></textarea>
+        </div>
+        <div class="clear-both"></div>
+        <div class="left-area">
+            住所コード
+        </div>
+        <div class="right-area">
+            <span>地方公共団体コード</span><input type="text" v-model="inputAddressDto.lgCode"  class="code-input" disabled="true">
+            <span class="left-space">町字Id</span><input type="text" v-model="inputAddressDto.machiazaId"  class="code-input" disabled="true">
+            <span class="left-space">街区Id</span><input type="text" v-model="inputAddressDto.blkId"  class="code-input" disabled="true">
+            <span class="left-space">住居Id</span><input type="text" v-model="inputAddressDto.rsdtId" class="code-input" disabled="true">
         </div>
         <div class="clear-both"></div>
 

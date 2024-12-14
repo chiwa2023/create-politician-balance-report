@@ -44,6 +44,17 @@ const inputAddressDto: WritableComputedRef<InputAddressDto> = computed(() => {re
     <div class="clear-both"></div>
 
     <div class="left-area-in">
+        住所コード
+    </div>
+    <div class="right-area">
+        <span>地方公共団体コード</span><input v-model="inputAddressDto.lgCode" type="text" class="code-input" disabled="true">
+        <span class="left-space">町字Id</span><input v-model="inputAddressDto.machiazaId" type="text" class="code-input" disabled="true">
+        <span class="left-space">街区Id</span><input v-model="inputAddressDto.blkId" type="text" class="code-input" disabled="true">
+        <span class="left-space">住居Id</span><input v-model="inputAddressDto.rsdtId" type="text" class="code-input" disabled="true">
+    </div>
+    <div class="clear-both"></div>
+
+    <div class="left-area-in">
         電話番号
     </div>
     <div class="right-area">

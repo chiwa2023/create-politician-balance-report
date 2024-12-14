@@ -887,8 +887,8 @@ function onSave() {
         政治団体の住所(署名)
     </div>
     <div class="right-area">
-        <textarea v-model="signatureAddress" disabled="true"></textarea><button @click="onInputAddress"
-            class="left-space">設定</button>
+        <button @click="onInputAddress">設定</button><br>
+        <textarea v-model="signatureAddress" disabled="true"></textarea>
     </div>
     <div class="clear-both"><br></div>
 

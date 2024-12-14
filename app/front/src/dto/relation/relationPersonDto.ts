@@ -63,6 +63,9 @@ export default class RelationPersonDto implements RelationPersonInterface {
     /** 住所(全) */
     addressAll: string;
 
+        /** 元住所(全) */
+        orginAddressAll: string;
+
     /** 郵便番号1 */
     postalcode1: string;
     /** 郵便番号2 */
@@ -121,6 +124,7 @@ export default class RelationPersonDto implements RelationPersonInterface {
         this.addressPostal = INIT_STRING;
         this.addressBlock = INIT_STRING;
         this.addressBuilding = INIT_STRING;
+        this.orginAddressAll = INIT_STRING;
 
         this.lgCode = INIT_STRING;
         this.machiazaId = INIT_STRING;

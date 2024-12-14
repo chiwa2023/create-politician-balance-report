@@ -10,6 +10,8 @@ import CheckPrivilegeDto from "../../../dto/common_check/checkPrivilegeDto";
 import SearchRelationPerson from "../../common/serach_relation_person/SearchRelationPerson.vue";
 import SearchRelationPersonCapsuleInterface from "../../../dto/relation/searchRelationPersonCapsuleDto";
 import SearchRelationPersonCapsuleDto from "../../../dto/relation/searchRelationPersonCapsuleDto";
+import InputAddressDto from "../../../dto/Input_address/inputAddressDto";
+import InputAddress from "../../common/input_address/InputAddress.vue";
 
 //　入力分のmockデータ
 const inquirePesonDto: Ref<RelationPersonInterface> = ref(mockGetInquirePesron());
@@ -49,6 +51,11 @@ function recieveCancelSearchRelationPerson() {
  */
 function recieveSearchRelationPersonInterface(sendDto: RelationPersonInterface) {
 
+    if (listInquireGroup.value.length >= 5) {
+        alert("一度に問い合わせ出来る人数を超えています");
+        return;
+    }
+
     sendDto.inquireId = getUnixTimeString() + "-" + getRandomString();
 
     listInquireGroup.value.push(sendDto);
@@ -57,21 +64,52 @@ function recieveSearchRelationPersonInterface(sendDto: RelationPersonInterface) 
     isVisibleSearchRelationPerson.value = false;
 }
 
-/** コード検索する  */
-function onCodeSearch() {
-    /** 地方公共団体コード */
-    inquirePesonDto.value.lgCode = "123456";
-    /** 町字Id */
-    inquirePesonDto.value.machiazaId = "7654321";
-    /** 街区Id */
-    inquirePesonDto.value.blkId = "221";
-    /** 住居Id */
-    inquirePesonDto.value.rsdtId = ""; // あえての空
+
+//住所入力表示フラグ
+const isVisibleInputAddress: Ref<boolean> = ref(false);
+
+/** 住所 */
+/**
+ * 住所入力コンポーネント表示
+ */
+ function onInputAddress() {
+    isVisibleInputAddress.value = true;
+}
+
+/**
+ * 住所入力キャンセル
+ */
+function recieveCancelInputAddress() {
+    //非表示
+    isVisibleInputAddress.value = false;
+}
+
+/**
+ * 住所入力選択
+ * @param sendDto 選択Dto
+ */
+function recieveInputAddressInterface(sendDto: InputAddressDto) {
+    //いったん親で保存(viewする)
+    inquirePesonDto.value.addressPostal = sendDto.addressPostal;
+    inquirePesonDto.value.addressBlock = sendDto.addressBlock;
+    inquirePesonDto.value.addressBuilding = sendDto.addressBuilding;
+    inquirePesonDto.value.tel1 = sendDto.tel1;
+    inquirePesonDto.value.tel2 = sendDto.tel3;
+    inquirePesonDto.value.tel3 = sendDto.tel3;
+    inquirePesonDto.value.postalcode1 = sendDto.postalcode1;
+    inquirePesonDto.value.postalcode2 = sendDto.postalcode2;
+    inquirePesonDto.value.lgCode = sendDto.lgCode;
+    inquirePesonDto.value.machiazaId = sendDto.machiazaId;
+    inquirePesonDto.value.blkId = sendDto.blkId;
+    inquirePesonDto.value.rsdtId = sendDto.rsdtId;
+
+    //非表示
+    isVisibleInputAddress.value = false;
 }
 
 
 function onAddList() {
-    if (listInquireGroup.value.length > 5) {
+    if (listInquireGroup.value.length >= 5) {
         alert("一度に問い合わせ出来る人数を超えています");
         return;
     }
@@ -189,7 +227,7 @@ function onSave() {
     <div class="right-area">
         <input type="text" v-model="inquirePesonDto.postalcode1" class="code-input">-
         <input type="text" v-model="inquirePesonDto.postalcode2" class="code-input">
-        <button @click="onCodeSearch" class="left-space">住所検索(現状住所コードを入れるだけ)</button>
+        <button @click="onInputAddress" class="left-space">住所編集</button>
      </div>
 
     <div class="left-area">
@@ -317,6 +355,15 @@ function onSave() {
         </div>
     </div>
 
+    <!-- 住所入力コンポーネント -->
+    <div v-if="isVisibleInputAddress" class="overBackground"></div>
+    <div v-if="isVisibleInputAddress">
+        <div class="overComponent">
+            <InputAddress @send-cancel-input-address="recieveCancelInputAddress"
+                @send-input-address-interface="recieveInputAddressInterface">
+            </InputAddress>
+        </div>
+    </div>
 
 
 </template>
