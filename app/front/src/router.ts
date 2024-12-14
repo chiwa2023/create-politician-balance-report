@@ -14,6 +14,9 @@ const routes = [
     { path: '/login_user', name: 'LoginUser', component: () => import("./components/pages/login_user/LoginUser.vue") },
     { path: '/publish_submisson', name: 'PublishSubmission', component: () => import("./components/pages/publish_submisson/PublishSubmission.vue") },
 
+    { path: '/regist-continue-buissiness', name: 'RegistContinueBuissiness', component: () => import("./components/pages/regist_continue_buissiness/RegistContinueBuissiness.vue") },
+    { path: '/inquire-nationarity', name: 'InquireNationarity', component: () => import("./components/pages/inquire_nationarity/InquireNationarity.vue") },
+
     //ユーザ登録
     { path: '/regist_account', name: 'RegistAccount', component: () => import("./components/pages/regist_user/RegistUserAccount.vue") },
     { path: '/accept_account', name: 'AcceptUserAccount', component: () => import("./components/pages/regist_user/AcceptUserAccount.vue") },
