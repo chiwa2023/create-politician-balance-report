@@ -72,7 +72,7 @@ const isVisibleInputAddress: Ref<boolean> = ref(false);
 /**
  * 住所入力コンポーネント表示
  */
- function onInputAddress() {
+function onInputAddress() {
     isVisibleInputAddress.value = true;
 }
 
@@ -134,51 +134,51 @@ function onCancel() {
 }
 
 function onSave() {
-
     // API接続時には不要な回答リスト初期処理
     listInquireAnswer.value.splice(0);
 
     // 外部APIに国籍情報問い合わせ
-    //    const url = "http://localhost:9080/listup-party-usage-charset/normal";
-    //    const method = "POST";
-    //    const body = JSON.stringify(listInquireGroup.value);
-    //    const headers = {
-    //        'Accept': 'application/json',
-    //        'Content-Type': 'application/json'
-    //    };
-    //    fetch(url, { method, headers, body })
-    //        .then(async (response) => {
-    //            listInquireAnswer.value = await response.json();
-    //        })
-    //        .catch((error) => { alert(error); });
-    //}
+    const url = "http://localhost:7080/inquire-nationarity";
+    const method = "POST";
+    const body = JSON.stringify(listInquireGroup.value);
+    const headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    };
+    fetch(url, { method, headers, body })
+        .then(async (response) => {
+            listInquireAnswer.value = await response.json();
+        })
+        .catch((error) => { alert(error); });
 
-    let counter: number = 1;
-    for (const dto of listInquireGroup.value) {
 
-        switch (counter % 3) {
-            case 0:
-                dto.nationalityAnswerKbn = "1";
-                dto.nationalityAnswerKbnText = "日本国籍保持";
-                break;
-
-            case 1:
-                dto.nationalityAnswerKbn = "2";
-                dto.nationalityAnswerKbnText = "外国人籍";
-                break;
-
-            case 2:
-                dto.nationalityAnswerKbn = "3";
-                dto.nationalityAnswerKbnText = "基礎情報不備";
-                break;
-
-            default:
-                break;
-        }
-
-        listInquireAnswer.value.push(dto);
-        counter++;
-    }
+// TODO 動作確認のたびにexternal_apiを動かすのは面倒なので数か月くらいでこのページのダミーロジックに戻す    
+//    let counter: number = 1;
+//    for (const dto of listInquireGroup.value) {
+//
+//        switch (counter % 3) {
+//            case 0:
+//                dto.nationalityAnswerKbn = "1";
+//                dto.nationalityAnswerKbnText = "日本国籍保持";
+//                break;
+//
+//            case 1:
+//                dto.nationalityAnswerKbn = "2";
+//                dto.nationalityAnswerKbnText = "外国人籍";
+//                break;
+//
+//            case 2:
+//                dto.nationalityAnswerKbn = "3";
+//                dto.nationalityAnswerKbnText = "基礎情報不備";
+//                break;
+//
+//            default:
+//                break;
+//        }
+//
+//        listInquireAnswer.value.push(dto);
+//        counter++;
+//    }
 
 }
 </script>
@@ -197,7 +197,7 @@ function onSave() {
         <select disabled="true">
             <option>会計責任者 花子(1234-5678-9012)</option>
             <option>事務代行者 英雄(2345-6789-0123)</option>
-        </select> 
+        </select>
         <button class="left-space" disabled="true">選択された関連者を編集</button>
         <button @click="onSearchRelationPerson" class="left-space">検索</button>
     </div>
@@ -228,7 +228,7 @@ function onSave() {
         <input type="text" v-model="inquirePesonDto.postalcode1" class="code-input">-
         <input type="text" v-model="inquirePesonDto.postalcode2" class="code-input">
         <button @click="onInputAddress" class="left-space">住所編集</button>
-     </div>
+    </div>
 
     <div class="left-area">
         住所
@@ -300,11 +300,8 @@ function onSave() {
     </div>
     <div class="clear-both"><br></div>
 
-
-
-
     <div class="one-line" v-show="listInquireAnswer.length > 0">
-        問い合わせを回答<br>
+        問い合わせを回答(プロトタイプでは電話番号が9で始まると外国籍、7で始まると情報不足)<br>
         <table>
             <tr>
                 <th>問い合わせ回答</th>
