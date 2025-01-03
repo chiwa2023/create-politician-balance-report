@@ -38,7 +38,7 @@ public final class MakeStorageOncePathUtil {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
         String datetimeText = nowDatetime.format(dateTimeFormatter);
         // パスを推測されにくくするランダム文字
-        String randomText = RandomStringUtils.randomAlphanumeric(RANDOMM_CHAR_COUNT);
+        String randomText = RandomStringUtils.secure().nextAlphanumeric(RANDOMM_CHAR_COUNT);
 
         return joint(String.valueOf(loginUserid == null ? "" : loginUserid), datetimeText, randomText);
     }

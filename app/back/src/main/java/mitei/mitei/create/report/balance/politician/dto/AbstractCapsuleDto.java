@@ -10,13 +10,13 @@ import mitei.mitei.create.report.balance.politician.dto.common_check.CheckTransa
 public abstract class AbstractCapsuleDto { // NOPMD DataClass
 
     /** セキュリティチェック情報 */
-    private CheckSecurityDto checkSecurityDto;
+    private CheckSecurityDto checkSecurityDto = new CheckSecurityDto();
 
     /** 権限チェック情報 */
-    private CheckPrivilegeDto checkPrivilegeDto;
+    private CheckPrivilegeDto checkPrivilegeDto = new CheckPrivilegeDto();
 
     /** 排他制御情報 */
-    private CheckTransactionDto checkTransactionDto;
+    private CheckTransactionDto checkTransactionDto = new CheckTransactionDto();
 
     /**
      * セキュリティ情報を取得する

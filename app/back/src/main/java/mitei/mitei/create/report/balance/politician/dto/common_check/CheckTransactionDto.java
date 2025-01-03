@@ -12,13 +12,13 @@ public class CheckTransactionDto implements Serializable { // NOPMD DataClass
     private static final long serialVersionUID = 1L;
 
     /** 他機能確認用Mock強制例外発生フラグ */
-    private Boolean isRaiseExcception;
+    private Boolean isRaiseExcception = false;
 
     /** 他機能確認用Mock判定結果 */
-    private Boolean isResult;
+    private Boolean isResult = true;
 
     /** 照会専用フラグ(排他制御チェック不要) */
-    private Boolean isSelectOnly;
+    private Boolean isSelectOnly = false;
 
     /**
      * 他機能確認用Mock強制例外発生フラグを取得する

@@ -14,7 +14,7 @@ public class CheckPrivilegeDto implements Serializable { // NOPMD DataClass
     private Boolean isRaiseExcception = false;
 
     /** 他機能確認用Mock判定結果 */
-    private Boolean isResult;
+    private Boolean isResult = true;
 
     /** ログインユーザId */
     private Long loginUserId;
