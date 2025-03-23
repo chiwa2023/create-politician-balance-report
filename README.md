@@ -105,6 +105,16 @@ b. eslint:9.4.0
 c. typesceipt:5.2.2
 d. vitest:1.6.0
 
+手順
+
+1. vite-vue導入 'npm create vite@latest --save-dev  . -- --template vue-ts'
+
+2. vue-router導入 'npm install vue-router --save-dev'
+
+3. eslint導入 'npm install eslint --save-dev'
+
+4. vitest導入 'npm i -D vitest'
+
 ### 2. back側
 
 1. spring boot
@@ -122,15 +132,7 @@ pom.xml内のspring-boot-starter-parentのVersion番号を通知があり次第�
 
 b.front側
 
-1. vite-vue導入 'npm create vite@latest --save-dev  . -- --template vue-ts'
-
-2. axios 'npm install axios --save-dev'
-
-3. vue-router導入 'npm install vue-router --save-dev'
-
-4. eslint導入 'npm install eslint --save-dev'
-
-5. vitest導入 'npm i -D vitest'
+npm audit fix またはvite全体更新の時は npm i vite
 
 ## 4.起動
 
